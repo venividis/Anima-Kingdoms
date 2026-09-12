@@ -1,0 +1,402 @@
+{
+  "recordedAt": "2026-09-12T22:25:08.850Z",
+  "state": {
+    "rulesVersion": "anima-shared-1",
+    "realmId": "ccfb6913-4057-4a51-b4d3-edde75fe3138",
+    "revision": 54,
+    "serverTime": 1789251908835,
+    "you": {
+      "id": "baa58a25-0796-401f-a2d3-6519affd45a0",
+      "name": "Melu",
+      "x": -1.3877787807814457e-17,
+      "z": -2.7755575615628914e-17,
+      "inventory": {
+        "wood": 8,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0,
+        "marks": 0
+      },
+      "agent": false,
+      "expiresAt": 1791843895830
+    },
+    "world": {
+      "bridgeOpen": false,
+      "bounds": {
+        "xMin": -55,
+        "xMax": 55,
+        "zMin": -62,
+        "zMax": 48
+      },
+      "bridge": {
+        "id": "living-crossing",
+        "x": 0,
+        "near": -7,
+        "far": -19,
+        "halfWidth": 3.2,
+        "requiredWater": 6
+      },
+      "obstacles": [
+        {
+          "x": 11,
+          "z": 21,
+          "r": 3.2
+        },
+        {
+          "x": 21,
+          "z": 28,
+          "r": 3
+        },
+        {
+          "x": -21,
+          "z": 23,
+          "r": 3
+        },
+        {
+          "x": -6,
+          "z": 28,
+          "r": 2.4
+        }
+      ],
+      "spawn": {
+        "x": 0,
+        "z": 16
+      }
+    },
+    "players": [
+      {
+        "id": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+        "name": "Rema",
+        "x": 1.3877787807814457e-17,
+        "z": -2.7755575615628914e-17,
+        "online": true
+      },
+      {
+        "id": "baa58a25-0796-401f-a2d3-6519affd45a0",
+        "name": "Melu",
+        "x": -1.3877787807814457e-17,
+        "z": -2.7755575615628914e-17,
+        "online": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "grove",
+        "name": "Fallen boughs",
+        "item": "wood",
+        "x": -9,
+        "z": 17,
+        "initial": 160,
+        "remaining": 152
+      },
+      {
+        "id": "quarry",
+        "name": "Basalt quarry",
+        "item": "stone",
+        "x": 9,
+        "z": 17,
+        "initial": 140,
+        "remaining": 132
+      },
+      {
+        "id": "reeds",
+        "name": "Silverleaf reeds",
+        "item": "herb",
+        "x": -12,
+        "z": 5,
+        "initial": 60,
+        "remaining": 60
+      },
+      {
+        "id": "fruit",
+        "name": "Orchard fruit",
+        "item": "food",
+        "x": 12,
+        "z": 5,
+        "initial": 100,
+        "remaining": 100
+      },
+      {
+        "id": "ore",
+        "name": "Star-iron seam",
+        "item": "ore",
+        "x": -20,
+        "z": -32,
+        "initial": 50,
+        "remaining": 50
+      },
+      {
+        "id": "crystal",
+        "name": "Singing crystals",
+        "item": "crystal",
+        "x": 20,
+        "z": -32,
+        "initial": 30,
+        "remaining": 30
+      }
+    ],
+    "offers": [],
+    "projects": [
+      {
+        "id": "crossing",
+        "name": "The Joined Span",
+        "x": 0,
+        "z": -3,
+        "required": {
+          "wood": 8,
+          "stone": 8
+        },
+        "delivered": {
+          "wood": 0,
+          "stone": 0
+        },
+        "complete": false,
+        "contributors": {}
+      },
+      {
+        "id": "beacon",
+        "name": "The Concord Beacon",
+        "x": 0,
+        "z": -28,
+        "required": {
+          "wood": 6,
+          "stone": 4,
+          "ore": 2,
+          "crystal": 2
+        },
+        "delivered": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "crystal": 0
+        },
+        "complete": false,
+        "contributors": {}
+      }
+    ],
+    "treasury": {
+      "wood": 0,
+      "stone": 0,
+      "ore": 0,
+      "food": 0,
+      "herb": 0,
+      "crystal": 0,
+      "marks": 500
+    },
+    "market": {
+      "x": 6,
+      "z": 20,
+      "name": "The Commons Exchange",
+      "bid": {
+        "wood": 1,
+        "stone": 1,
+        "ore": 3,
+        "food": 1,
+        "herb": 2,
+        "crystal": 5
+      },
+      "ask": {
+        "wood": 2,
+        "stone": 2,
+        "ore": 4,
+        "food": 2,
+        "herb": 3,
+        "crystal": 7
+      }
+    },
+    "totals": {
+      "wood": 160,
+      "stone": 140,
+      "ore": 50,
+      "food": 100,
+      "herb": 60,
+      "crystal": 30,
+      "marks": 500
+    },
+    "ledger": {
+      "residual": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0,
+        "marks": 0
+      }
+    },
+    "chat": [],
+    "events": [],
+    "agents": [],
+    "blueprints": [],
+    "gifts": [],
+    "luma": {
+      "schema": 1,
+      "utterances": [
+        {
+          "id": 27,
+          "at": 1789251895953,
+          "playerId": "baa58a25-0796-401f-a2d3-6519affd45a0",
+          "text": "       # \"wood\".",
+          "latin": "i mi me bani ta bana ki #f \"wood\".",
+          "native": "       # \"wood\".",
+          "mode": "i",
+          "status": "imagined",
+          "operation": "project.contribute",
+          "context": {
+            "kind": "project",
+            "projectId": "crossing",
+            "item": "wood",
+            "quantity": 8
+          },
+          "result": {
+            "mode": "i",
+            "status": "imagined",
+            "operation": "project.contribute",
+            "ready": false,
+            "preview": {
+              "context": {
+                "projectId": "crossing",
+                "projectName": "The Joined Span",
+                "item": "wood",
+                "quantity": 8
+              },
+              "cost": {
+                "wood": 8
+              }
+            },
+            "utteranceId": 27,
+            "latin": "i mi me bani ta bana ki #f \"wood\".",
+            "native": "       # \"wood\".",
+            "blocker": {
+              "code": "OUT_OF_REACH",
+              "message": "Walk closer to this place first."
+            }
+          },
+          "playerName": "Melu"
+        },
+        {
+          "id": 34,
+          "at": 1789251898295,
+          "playerId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+          "text": "       # .",
+          "latin": "i mi me bani ta bana ki #f bema.",
+          "native": "       # .",
+          "mode": "i",
+          "status": "imagined",
+          "operation": "project.contribute",
+          "context": {
+            "kind": "project",
+            "projectId": "crossing",
+            "item": "stone",
+            "quantity": 8
+          },
+          "result": {
+            "mode": "i",
+            "status": "imagined",
+            "operation": "project.contribute",
+            "ready": true,
+            "preview": {
+              "context": {
+                "projectId": "crossing",
+                "projectName": "The Joined Span",
+                "item": "stone",
+                "quantity": 8
+              },
+              "cost": {
+                "stone": 8
+              },
+              "complete": false,
+              "reward": 16
+            },
+            "utteranceId": 34,
+            "latin": "i mi me bani ta bana ki #f bema.",
+            "native": "       # ."
+          },
+          "playerName": "Rema"
+        },
+        {
+          "id": 35,
+          "at": 1789251898384,
+          "playerId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+          "text": "       # .",
+          "latin": "u mi me bani ta bana ki #f bema.",
+          "native": "       # .",
+          "mode": "u",
+          "status": "intended",
+          "operation": "project.contribute",
+          "context": {
+            "kind": "project",
+            "projectId": "crossing",
+            "item": "stone",
+            "quantity": 8
+          },
+          "result": {
+            "mode": "u",
+            "status": "intended",
+            "operation": "project.contribute",
+            "ready": true,
+            "preview": {
+              "context": {
+                "projectId": "crossing",
+                "projectName": "The Joined Span",
+                "item": "stone",
+                "quantity": 8
+              },
+              "cost": {
+                "stone": 8
+              },
+              "complete": false,
+              "reward": 16
+            },
+            "utteranceId": 35,
+            "latin": "u mi me bani ta bana ki #f bema.",
+            "native": "       # ."
+          },
+          "playerName": "Rema"
+        },
+        {
+          "id": 36,
+          "at": 1789251898446,
+          "playerId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+          "text": "       # .",
+          "latin": "e mi me bani ta bana ki #f bema.",
+          "native": "       # .",
+          "mode": "e",
+          "status": "inspected",
+          "operation": "project.contribute",
+          "context": {
+            "kind": "project",
+            "projectId": "crossing",
+            "item": "stone",
+            "quantity": 8
+          },
+          "result": {
+            "mode": "e",
+            "status": "inspected",
+            "operation": "project.contribute",
+            "ready": true,
+            "preview": {
+              "context": {
+                "projectId": "crossing",
+                "projectName": "The Joined Span",
+                "item": "stone",
+                "quantity": 8
+              },
+              "cost": {
+                "stone": 8
+              },
+              "complete": false,
+              "reward": 16
+            },
+            "utteranceId": 36,
+            "latin": "e mi me bani ta bana ki #f bema.",
+            "native": "       # ."
+          },
+          "playerName": "Rema"
+        }
+      ]
+    }
+  }
+}
