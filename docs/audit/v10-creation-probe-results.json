@@ -1,0 +1,204 @@
+{
+  "arrayColor": {
+    "accepted": false,
+    "reason": "A part has an unsupported shape, role or color."
+  },
+  "invalidAngle": {
+    "accepted": false,
+    "reason": "Malformed creation body."
+  },
+  "failedNavigationCache": [
+    {
+      "tick": 1,
+      "next": null,
+      "legalCalls": 4354
+    },
+    {
+      "tick": 2,
+      "next": null,
+      "legalCalls": 21
+    },
+    {
+      "tick": 3,
+      "next": null,
+      "legalCalls": 21
+    }
+  ],
+  "landSculptureRehearsal": {
+    "name": "Village sculpture",
+    "kind": "structure",
+    "ticks": 1,
+    "damage": 0,
+    "healing": 0,
+    "travel": 0.07,
+    "energyRemaining": 0,
+    "deliveries": 0,
+    "notes": 0,
+    "trialResult": null,
+    "farBank": false,
+    "ledgerDelta": {
+      "wood": 0,
+      "stone": 0,
+      "ore": 0,
+      "food": 0,
+      "herb": 0,
+      "crystal": 0
+    }
+  },
+  "reclaimClosedWall": {
+    "cost": {
+      "wood": 23,
+      "stone": 1,
+      "ore": 0,
+      "food": 0,
+      "herb": 0,
+      "crystal": 0
+    },
+    "nearest": 8.550000000000004,
+    "reclaimed": true
+  },
+  "reclaimRedundantBridge": {
+    "reclaimed": true
+  },
+  "pausedInstrumentTiming": {
+    "before": {
+      "index": 1,
+      "next": 24,
+      "tick": 1
+    },
+    "notesAfter": [
+      {
+        "tick": 624,
+        "notes": 1,
+        "index": 2
+      },
+      {
+        "tick": 648,
+        "notes": 1,
+        "index": 3
+      }
+    ]
+  },
+  "fivePositiveBehaviors": [
+    {
+      "name": "Lanternwing",
+      "kind": "creature",
+      "ticks": 1800,
+      "damage": 34,
+      "healing": 0,
+      "travel": 0,
+      "energyRemaining": 32,
+      "deliveries": 0,
+      "notes": 0,
+      "trialResult": null,
+      "farBank": false,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "name": "The Far Note",
+      "kind": "relic",
+      "ticks": 1800,
+      "damage": 34,
+      "healing": 0,
+      "travel": 0,
+      "energyRemaining": 0,
+      "deliveries": 0,
+      "notes": 0,
+      "trialResult": null,
+      "farBank": false,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "name": "Rainstep Span",
+      "kind": "structure",
+      "ticks": 1800,
+      "damage": 0,
+      "healing": 0,
+      "travel": 50.95,
+      "energyRemaining": 0,
+      "deliveries": 0,
+      "notes": 0,
+      "trialResult": null,
+      "farBank": true,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "name": "An Orchard Remembered",
+      "kind": "instrument",
+      "ticks": 1800,
+      "damage": 0,
+      "healing": 24,
+      "travel": 0,
+      "energyRemaining": 0,
+      "deliveries": 0,
+      "notes": 8,
+      "trialResult": null,
+      "farBank": false,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "name": "A Letter Written in Footsteps",
+      "kind": "trial",
+      "ticks": 426,
+      "damage": 0,
+      "healing": 0,
+      "travel": 48.28,
+      "energyRemaining": 0,
+      "deliveries": 0,
+      "notes": 0,
+      "trialResult": "completed",
+      "farBank": false,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    }
+  ],
+  "draftCargoFeedReclaimLifecycle": {
+    "sameLiveCopy": true,
+    "foodDebited": 1,
+    "repeatFeed": "This creature has enough energy; food will not be wasted.",
+    "ledgerMaximum": 0,
+    "cargoSnapshot": true,
+    "deliveries": 5,
+    "energy": 8,
+    "reclaimBalanced": true,
+    "repeatReclaim": "That instance no longer exists."
+  },
+  "labImport": {
+    "accepted": false,
+    "reason": "Material ledger does not balance"
+  }
+}

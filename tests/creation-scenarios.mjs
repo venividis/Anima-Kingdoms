@@ -1,0 +1,13 @@
+// Deliberately narrow, reproducible experiments; not balance or human-play evidence.
+import fs from 'node:fs';
+import * as C from '../dist/creation.js';
+import {measure} from '../dist/rehearsal.js';
+const stamp='2026-09-11';
+const families=C.KINDS.map(k=>measure(C.seed(k)));
+const carrier=C.seed('creature');carrier.name='A patient gatherer';carrier.rules=[{when:'always',do:'harvest'}];
+const experiments=[...families,measure(carrier,3600)];
+const frontier=[];
+for(let power=1;power<=8;power++)for(let reach=1;reach<=8;reach++)for(let tempo=1;tempo<=8;tempo++)if(power+reach+tempo===12){const b=C.seed('relic');Object.assign(b,{name:`Bolt ${power}/${reach}/${tempo}`,power,reach,tempo});const m=C.compile(b).move,r=measure(b,1200);frontier.push({power,reach,tempo,damagePerHit:m.damage,startup:m.startup,recovery:m.recovery,breath:m.cost,firstImpactTick:r.firstImpactTick,targetDefeatTick:r.targetDefeatTick,totalDamage:r.damage,attacksStarted:r.attacksStarted,ledgerBalanced:Object.values(r.ledgerDelta).every(n=>n===0)});}
+const result={date:stamp,profile:'awe-dream-foundry-0.10.0',method:{scenario:'orchard-bench-1',tickRate:60,familyPolicy:'Fresh orchard, one nearby 34-health target with delayed attack decisions, normal movement, original closed crossing; creature acts, relic aims/fires using complete state, structure policy walks north, instrument begins score, trial policy runs to next sigil.',materialRule:'Lab issues exact construction bill; residual delta is measured against that lab baseline. Lab snapshots fail real-world conservation validation.',limitations:['State-informed policies are not human players or equal-observation agents.','The target does not attack; this cannot establish competitive balance, safety or optimal strategies.','Damage saturates at 34 for the single nearby target.','Family scene durations differ when a trial terminates.','No browser, graphics, sound-device or frame-rate measurement.']},experiments,fullBudgetBoltSweep:{allocations:frontier.length,ticksPerRun:1200,rows:frontier}};
+fs.writeFileSync(new URL('../docs/creation-scenarios-v10.json',import.meta.url),JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify({families:experiments.map(({name,kind,damage,healing,notes,deliveries,farBank,trialResult,firstImpactTick,targetDefeatTick})=>({name,kind,damage,healing,notes,deliveries,farBank,trialResult,firstImpactTick,targetDefeatTick})),sweep:{allocations:frontier.length,completed:frontier.filter(r=>r.targetDefeatTick!==null).length,fastest:frontier.filter(r=>r.targetDefeatTick!==null).sort((a,b)=>a.targetDefeatTick-b.targetDefeatTick).slice(0,3),ledgerFailures:frontier.filter(r=>!r.ledgerBalanced).length}},null,2));

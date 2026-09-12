@@ -1,62 +1,47 @@
-# AWE — The Living Concord
+# AWE — the Dream Foundry
 
-A rebuilt, interconnected local fantasy browser game. Open the website and choose **Enter the living world**. Its complete accountability audit is at `audit.html`.
+A local fantasy browser game with working creation. Play from the existing website and press **V** or choose **Create**. The complete guide, whole-game plan and evidence are at `vision.html`; the retained accountability record is at `audit.html`.
 
-The current application runs from `dist/index.html` → `app.js`. It has no external JavaScript runtime dependency, account, API key or wallet requirement. WebGL 2 is required. This is an implemented local game; the production MMORPG, connected LLM service and crypto network remain unbuilt.
+## What you can make
 
-## Begin exploring
+Compose up to 32 parts into a creature, relic, structure, instrument or trial gate. Author its bounded rules, move, score or sigil course. Rehearse in a disposable world, compare actual outcomes, save/branch/share the recipe, and instantiate it with real materials. Reclaim its invested matter safely once. Five individually affordable starter recipes are supplied in a fresh world.
 
-1. Choose Thread, Gale or Stone. Walk with WASD, drag to turn the camera, and jump with Space. The Atlas locates places and resources.
-2. Press Q, preview the Mercy Braid, accept its six lasting connections, then pulse rain twice. The first balanced pulse stores four at each destination; the second accumulates enough for the six-water crossing. Close the panel to resume the world.
-3. Follow Vey's physical wagon across the crossing. Gather wood, stone or watered plants with E beside resource nodes. Trade at Vey's Exchange in the village.
-4. Press B to build a workshop or workplace on an empty marked plot. Assign Mira and Fen to carry resources. Each gathered worker bundle consumes one food. Cargo is counted during transit.
-5. Craft gear through Character. Fight with 1/2, shoot with 3, guard with C and evade with R. Explore the far orchard and enter the Root Warden's gate.
-6. Visit the Bell Pavilion for Raincatch or Loom Table. Try the Singing Range, Tension Court and Lanternwake Gate. E or Escape opens the return option from an arena.
-7. Open World Journal from Settings to inspect accounting, see events, and export/import a world snapshot.
-
-These are suggested actions, not a measured playtest itinerary. Materials and merchant money are finite.
+The existing world contains exploration, exact water allocation, finite trading/crafting, original settlement plots and physical workers, timed combat, a Root Warden encounter, bot CTF, local two-player duels, a shooting range, Raincatch and Loom Table. This is not yet an online MMORPG, connected LLM society, renewable civilization or crypto network.
 
 ## Controls
 
 | Input | Action |
 |---|---|
-| WASD; arrows outside a local duel | Camera-relative movement |
-| Drag / right-drag / scroll | Orbit / zoom |
-| Space / Shift | Jump / run |
-| Click or 1 / 2 / 3 / 4 | Palm / Reach / Glass Note / Gale Break |
-| C / R | Frontal guard / evade |
-| E | Nearby interaction; return panel in activities |
-| Q / F | Water loom / manual rain |
-| I / J / B | Character / quests / settlement |
-| M / Escape | Overhead lens / close or menu |
-| Player two: arrows, K/L/O, P, Enter | World-axis movement; Palm/Reach/Note; guard; evade |
-| Raincatch: A/D, arrows or drag | Move bowl |
+| V / T | Creation workshop / attuned relic |
+| WASD / drag / wheel | Move / orbit / zoom |
+| Space / Left Shift | Jump / run |
+| 1 or click / 2 / 3 / 4 | Palm / Reach / Note / Gale |
+| C / R / E | Guard / evade / nearby interaction |
+| Q / F / B / I / J | Water loom / rain / settlement / character / quests |
+| M / Escape | Atlas lens / close or menu |
+| Placement: E / R / Escape | Commit current ghost / rotate / cancel |
+| Player two: arrows, K/L/O/U, P, Enter, Right Shift | Move; Palm/Reach/Note/Gale; guard; evade; run |
 
-Touch movement, guard, jump and ability buttons are included. Actual devices and keyboard rollover have not been tested. Sound starts after choosing it.
+Touch buttons are included; devices, visual fidelity and keyboard rollover are not verified. Panels and hidden tabs pause simulation. No offline catch-up.
 
-## Source and version boundaries
+## Implementation and evidence
 
-- `world.js`: inherited exact rain solver, authority, finite funded cargo, shared terrain polygon and bridge.
-- `realm.js`: 60 Hz combat, enemies, boss, CTF, local duel, finite resources, quotes, building, physical workers, crafting, quests, pet memory and snapshots.
-- `pavilions.js`: Raincatch and the v0.9 shared-port Loom Table variant.
-- `engine.js`, `scene.js`, `visual.js`: custom WebGL, geometry, actors, camera, map and state presentation.
-- `app.js`, `index.html`, `interface.css`: input, panels, local save lock and activities.
-- `audit.html`, `audit.md`: complete audit and all version-specific findings.
-- `docs/audit/`: baseline source, reviews and probe results.
-- `tests/`: retained water checks and new state/scenario checks.
+- `docs/UPGRADE-v10.md`: guide, repairs, measurements and limits.
+- `docs/CREATION-CONTRACT.md`: exact schema, mechanics, custody, activities and persistence.
+- `docs/WHOLE-GAME-PLAN.md`: all major original ambitions, two critical passes and next acceptance gates.
+- `dist/creation.js`, `navigation.js`, `rehearsal.js`: bounded data/runtime modules.
+- `dist/creation-view.js`, `studio.js`, `studio.css`: shared procedural geometry and editing interface.
+- `dist/realm.js`, `world.js`, `pavilions.js`: connected original world solvers.
+- `tests/creation.test.mjs`: meaningful lifecycle, regression and selected application-function tests.
+- `tests/creation-scenarios.mjs`: six family experiments plus 46 full-budget bolt allocations.
+- `docs/verification-v10.txt`, `docs/creation-scenarios-v10.json`: exact recorded evidence.
 
-The archived v0.7 research remains historical. Its architecture and activity protocols are not automatically implemented or wire-compatible here. Old v0.8 sources remain in Git history; unused old entry scripts were removed from served output.
+Run `npm test`. Reproduce the bounded experiments with `node tests/creation-scenarios.mjs`. Documentation builders accept an installed `marked` ES-module path; generated pages have no runtime dependency on it. Plain static output is `dist`; WebGL 2 and HTTP module serving are required. There is no external runtime dependency, wallet or API key.
 
-## Saving and simulation
+The release records 91 automated methods (61 retained plus 30 new). One retained method contains 252 historical water fixtures; those are not extra gameplay tests. Tests do not establish browser usability, fun, balance, frame rate, online capacity or economic sustainability.
 
-Autosave uses local storage `awe-concord-v09`, guarded by an exclusive Web Lock where supported. The latest snapshot is read after acquiring the lock. Another active tab shows a reload message. Without Web Locks, play/export work but autosave is disabled.
+## Persistence
 
-Import replaces one validated snapshot and never merges inventories. It accepts only the new profile. Old v0.8 saves are not migrated or deleted. Activity snapshots return to the original world entrance and discard exhibition bodies/projectiles. Worker cargo and the original wagon lot remain conserved. Panels, pavilion games and hidden tabs pause the world; no offline catch-up.
+The v0.10 profile accepts its own snapshots and migrates valid v0.9 snapshots. Rehearsal autosave always serializes the separately retained original world; lab supplies never merge. World import replaces a validated snapshot. Web Locks serialize active local saving where available; without them, play/export remain available and autosave is disabled. No shared-server or external ownership authority is implied. Earlier v0.8 worlds are not migrated.
 
-## Verification
-
-Run `node --test tests/*.test.mjs`. The recorded final run contains 61 methods: 30 retained and 31 new. One retained method includes 252 historical water fixtures; these are not additional gameplay tests. `docs/verification-v09.tap` preserves the output. `docs/boss-scenarios.json` records a failed ranged policy and successful legal melee policy; `tests/boss-scenarios.mjs` reproduces them.
-
-No browser visual QA, actual device check, human playtest, frame-rate measurement, network test, balance proof or economic sustainability evidence is claimed. See the complete audit for unresolved requirements and known limitations.
-
-The deployment is static in `dist`. Serve a separate source copy over HTTP; browser ES modules do not reliably run from `file://`. Source and audit are preserved with the existing Site.
+The old README is preserved at `docs/README-v09.md`. Current and historical source/reviews remain versioned with this Site.

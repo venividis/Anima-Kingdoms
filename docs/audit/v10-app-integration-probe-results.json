@@ -1,0 +1,14 @@
+{
+  "rehearsalSavedOriginal": true,
+  "rehearsalDidNotSaveLab": true,
+  "savedLedger": {
+    "wood": 0,
+    "stone": 0,
+    "ore": 0,
+    "food": 0,
+    "herb": 0,
+    "crystal": 0
+  },
+  "pausedTabDoesNotWrite": true,
+  "NoLockDoesNotWrite": true
+}

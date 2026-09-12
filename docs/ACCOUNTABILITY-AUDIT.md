@@ -1,3 +1,15 @@
+# Current release note · Dream Foundry v0.10
+
+11 September 2026. The **[current creation guide, whole-game plan and technical contract](./vision.html)** supersede the v0.9 feature-status statements below. This historical audit is retained so earlier omissions and claims remain inspectable.
+
+The upgrade adds five bounded creation families, a shared recipe compiler, actual creature/cargo and authored relic behavior, supporting/colliding structures, timed instrument waves, sigil-course gates, isolated rehearsals, controlled comparisons, instance reclamation and a human-reviewed local proposal interface. The final release records 91 automated methods and 46 separate full-budget bolt scenarios. Exact results and limitations appear in the current guide; these are not human playtests.
+
+The new adversarial pass found and repaired an undefined landmark-dispatch reference, a Create-button event binding, exhibition crafting/protection leaks, unavailable demolition/recovery, unsafe building placement, stale musical timing/events, malformed creation data, unreachable reclamation, failed-route caching, and keyboard/sigil-selection/focus problems. Source, independent reviews and test cases are preserved with the project. Browser/device quality and the complete production vision remain open.
+
+Online shared authority, a connected model service, renewable civilization, exhaustive title-by-title game research and crypto settlement are still unimplemented. An authored dry span does not fulfill the original hydraulic wagon contract; visible creature anatomy and relic shape do not define full physics. These are explicit limitations, not erased obligations.
+
+---
+
 # AWE: the accountability audit and rebuilt game
 
 11 September 2026 · The Living Concord · v0.9

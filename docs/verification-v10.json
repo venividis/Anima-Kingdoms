@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-11",
+  "profile": "awe-dream-foundry-0.10.0",
+  "automatedMethods": 91,
+  "passed": 91,
+  "failed": 0,
+  "retainedMethods": 61,
+  "newMethods": 30,
+  "historicalWaterFixturesInsideOneMethod": 252,
+  "controlledFamilyExperiments": 6,
+  "fullBudgetBoltScenarios": 46,
+  "syntaxCheckedFiles": 14,
+  "htmlFilesChecked": 3,
+  "relativeHtmlReferencesResolved": 17,
+  "browserVisualQA": false,
+  "humanPlaytest": false,
+  "performanceBenchmark": false,
+  "networkGameOrChain": false
+}

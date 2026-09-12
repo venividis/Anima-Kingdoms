@@ -1,0 +1,1625 @@
+{
+  "date": "2026-09-11",
+  "profile": "awe-dream-foundry-0.10.0",
+  "method": {
+    "scenario": "orchard-bench-1",
+    "tickRate": 60,
+    "familyPolicy": "Fresh orchard, one nearby 34-health target with delayed attack decisions, normal movement, original closed crossing; creature acts, relic aims/fires using complete state, structure policy walks north, instrument begins score, trial policy runs to next sigil.",
+    "materialRule": "Lab issues exact construction bill; residual delta is measured against that lab baseline. Lab snapshots fail real-world conservation validation.",
+    "limitations": [
+      "State-informed policies are not human players or equal-observation agents.",
+      "The target does not attack; this cannot establish competitive balance, safety or optimal strategies.",
+      "Damage saturates at 34 for the single nearby target.",
+      "Family scene durations differ when a trial terminates.",
+      "No browser, graphics, sound-device or frame-rate measurement."
+    ]
+  },
+  "experiments": [
+    {
+      "name": "Lanternwing",
+      "kind": "creature",
+      "scenario": "orchard-bench-1",
+      "method": "deterministic state-informed policy",
+      "blueprint": {
+        "schema": "awe-blueprint-1",
+        "id": "a13498a5-38a2-41d9-b796-052200f96e6e",
+        "revision": 1,
+        "parent": null,
+        "name": "Lanternwing",
+        "kind": "creature",
+        "material": "wood",
+        "power": 4,
+        "reach": 4,
+        "tempo": 4,
+        "verb": "bolt",
+        "rules": [
+          {
+            "when": "threat",
+            "do": "guard"
+          },
+          {
+            "when": "always",
+            "do": "follow"
+          }
+        ],
+        "resource": "wood",
+        "score": [
+          0,
+          4,
+          7,
+          12,
+          7,
+          4,
+          2,
+          0
+        ],
+        "beat": 24,
+        "voice": "mend",
+        "course": [
+          {
+            "x": -8,
+            "z": 6
+          },
+          {
+            "x": -8,
+            "z": -6
+          },
+          {
+            "x": 0,
+            "z": -10
+          },
+          {
+            "x": 8,
+            "z": -6
+          },
+          {
+            "x": 8,
+            "z": 6
+          }
+        ],
+        "seconds": 60,
+        "order": "sequence",
+        "parts": [
+          {
+            "shape": "orb",
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "w": 1,
+            "h": 1.1,
+            "d": 1.3,
+            "color": "#61e1d2",
+            "role": "ornament",
+            "yaw": 0
+          },
+          {
+            "shape": "orb",
+            "x": 0,
+            "y": 1.6,
+            "z": 0.5,
+            "w": 0.7,
+            "h": 0.6,
+            "d": 0.7,
+            "color": "#f5ce83",
+            "role": "ornament",
+            "yaw": 0
+          },
+          {
+            "shape": "box",
+            "x": -0.95,
+            "y": 1.3,
+            "z": 0,
+            "w": 1.7,
+            "h": 0.08,
+            "d": 0.8,
+            "color": "#58baf5",
+            "role": "ornament",
+            "yaw": -18
+          },
+          {
+            "shape": "box",
+            "x": 0.95,
+            "y": 1.3,
+            "z": 0,
+            "w": 1.7,
+            "h": 0.08,
+            "d": 0.8,
+            "color": "#58baf5",
+            "role": "ornament",
+            "yaw": 18
+          },
+          {
+            "shape": "spire",
+            "x": 0,
+            "y": 2,
+            "z": 0.55,
+            "w": 0.25,
+            "h": 0.7,
+            "d": 0.25,
+            "color": "#f5ce83",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "orb",
+            "x": -0.18,
+            "y": 1.7,
+            "z": 0.8,
+            "w": 0.12,
+            "h": 0.12,
+            "d": 0.12,
+            "color": "#ffffff",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "orb",
+            "x": 0.18,
+            "y": 1.7,
+            "z": 0.8,
+            "w": 0.12,
+            "h": 0.12,
+            "d": 0.12,
+            "color": "#ffffff",
+            "role": "light",
+            "yaw": 0
+          }
+        ]
+      },
+      "firstImpactTick": 32,
+      "targetDefeatTick": 267,
+      "attacksStarted": 0,
+      "ticks": 1800,
+      "damage": 34,
+      "healing": 0,
+      "travel": 0,
+      "energyRemaining": 32,
+      "deliveries": 0,
+      "notes": 0,
+      "trialResult": null,
+      "farBank": false,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "name": "The Far Note",
+      "kind": "relic",
+      "scenario": "orchard-bench-1",
+      "method": "deterministic state-informed policy",
+      "blueprint": {
+        "schema": "awe-blueprint-1",
+        "id": "ab06c76b-d474-43ea-9bf0-dc60b0087a48",
+        "revision": 1,
+        "parent": null,
+        "name": "The Far Note",
+        "kind": "relic",
+        "material": "ore",
+        "power": 4,
+        "reach": 4,
+        "tempo": 4,
+        "verb": "bolt",
+        "rules": [
+          {
+            "when": "threat",
+            "do": "guard"
+          },
+          {
+            "when": "always",
+            "do": "follow"
+          }
+        ],
+        "resource": "wood",
+        "score": [
+          0,
+          4,
+          7,
+          12,
+          7,
+          4,
+          2,
+          0
+        ],
+        "beat": 24,
+        "voice": "mend",
+        "course": [
+          {
+            "x": -8,
+            "z": 6
+          },
+          {
+            "x": -8,
+            "z": -6
+          },
+          {
+            "x": 0,
+            "z": -10
+          },
+          {
+            "x": 8,
+            "z": -6
+          },
+          {
+            "x": 8,
+            "z": 6
+          }
+        ],
+        "seconds": 60,
+        "order": "sequence",
+        "parts": [
+          {
+            "shape": "box",
+            "x": 0,
+            "y": 0.8,
+            "z": 0,
+            "w": 0.16,
+            "h": 1.6,
+            "d": 0.16,
+            "color": "#d8b877",
+            "role": "ornament",
+            "yaw": 0
+          },
+          {
+            "shape": "ring",
+            "x": 0,
+            "y": 1.8,
+            "z": 0,
+            "w": 1.2,
+            "h": 0.08,
+            "d": 1.2,
+            "color": "#61e1d2",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": 0,
+            "y": 2.1,
+            "z": 0,
+            "w": 0.45,
+            "h": 0.9,
+            "d": 0.45,
+            "color": "#75baff",
+            "role": "light",
+            "yaw": 0
+          }
+        ]
+      },
+      "firstImpactTick": 47,
+      "targetDefeatTick": 128,
+      "attacksStarted": 14,
+      "ticks": 1800,
+      "damage": 34,
+      "healing": 0,
+      "travel": 0,
+      "energyRemaining": 0,
+      "deliveries": 0,
+      "notes": 0,
+      "trialResult": null,
+      "farBank": false,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "name": "Rainstep Span",
+      "kind": "structure",
+      "scenario": "orchard-bench-1",
+      "method": "deterministic state-informed policy",
+      "blueprint": {
+        "schema": "awe-blueprint-1",
+        "id": "9bd821d8-05b4-43fc-b9ac-b6a366d93df4",
+        "revision": 1,
+        "parent": null,
+        "name": "Rainstep Span",
+        "kind": "structure",
+        "material": "wood",
+        "power": 4,
+        "reach": 4,
+        "tempo": 4,
+        "verb": "bolt",
+        "rules": [
+          {
+            "when": "threat",
+            "do": "guard"
+          },
+          {
+            "when": "always",
+            "do": "follow"
+          }
+        ],
+        "resource": "wood",
+        "score": [
+          0,
+          4,
+          7,
+          12,
+          7,
+          4,
+          2,
+          0
+        ],
+        "beat": 24,
+        "voice": "mend",
+        "course": [
+          {
+            "x": -8,
+            "z": 6
+          },
+          {
+            "x": -8,
+            "z": -6
+          },
+          {
+            "x": 0,
+            "z": -10
+          },
+          {
+            "x": 8,
+            "z": -6
+          },
+          {
+            "x": 8,
+            "z": 6
+          }
+        ],
+        "seconds": 60,
+        "order": "sequence",
+        "parts": [
+          {
+            "shape": "box",
+            "x": 0,
+            "y": 0.08,
+            "z": -6,
+            "w": 3,
+            "h": 0.16,
+            "d": 3,
+            "color": "#b9cbd3",
+            "role": "walkway",
+            "yaw": 0
+          },
+          {
+            "shape": "box",
+            "x": 0,
+            "y": 0.08,
+            "z": -3,
+            "w": 3,
+            "h": 0.16,
+            "d": 3,
+            "color": "#b9cbd3",
+            "role": "walkway",
+            "yaw": 0
+          },
+          {
+            "shape": "box",
+            "x": 0,
+            "y": 0.08,
+            "z": 0,
+            "w": 3,
+            "h": 0.16,
+            "d": 3,
+            "color": "#b9cbd3",
+            "role": "walkway",
+            "yaw": 0
+          },
+          {
+            "shape": "box",
+            "x": 0,
+            "y": 0.08,
+            "z": 3,
+            "w": 3,
+            "h": 0.16,
+            "d": 3,
+            "color": "#b9cbd3",
+            "role": "walkway",
+            "yaw": 0
+          },
+          {
+            "shape": "box",
+            "x": 0,
+            "y": 0.08,
+            "z": 6,
+            "w": 3,
+            "h": 0.16,
+            "d": 3,
+            "color": "#b9cbd3",
+            "role": "walkway",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": -1.35,
+            "y": 0.85,
+            "z": -6,
+            "w": 0.15,
+            "h": 1.4,
+            "d": 0.15,
+            "color": "#70ebd7",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": 1.35,
+            "y": 0.85,
+            "z": 6,
+            "w": 0.15,
+            "h": 1.4,
+            "d": 0.15,
+            "color": "#70ebd7",
+            "role": "light",
+            "yaw": 0
+          }
+        ]
+      },
+      "firstImpactTick": null,
+      "targetDefeatTick": null,
+      "attacksStarted": 0,
+      "ticks": 1800,
+      "damage": 0,
+      "healing": 0,
+      "travel": 50.95,
+      "energyRemaining": 0,
+      "deliveries": 0,
+      "notes": 0,
+      "trialResult": null,
+      "farBank": true,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "name": "An Orchard Remembered",
+      "kind": "instrument",
+      "scenario": "orchard-bench-1",
+      "method": "deterministic state-informed policy",
+      "blueprint": {
+        "schema": "awe-blueprint-1",
+        "id": "b4a657ae-f8c2-4f4c-9ed9-ba6d98a42888",
+        "revision": 1,
+        "parent": null,
+        "name": "An Orchard Remembered",
+        "kind": "instrument",
+        "material": "herb",
+        "power": 4,
+        "reach": 4,
+        "tempo": 4,
+        "verb": "bolt",
+        "rules": [
+          {
+            "when": "threat",
+            "do": "guard"
+          },
+          {
+            "when": "always",
+            "do": "follow"
+          }
+        ],
+        "resource": "wood",
+        "score": [
+          0,
+          4,
+          7,
+          12,
+          7,
+          4,
+          2,
+          0
+        ],
+        "beat": 24,
+        "voice": "mend",
+        "course": [
+          {
+            "x": -8,
+            "z": 6
+          },
+          {
+            "x": -8,
+            "z": -6
+          },
+          {
+            "x": 0,
+            "z": -10
+          },
+          {
+            "x": 8,
+            "z": -6
+          },
+          {
+            "x": 8,
+            "z": 6
+          }
+        ],
+        "seconds": 60,
+        "order": "sequence",
+        "parts": [
+          {
+            "shape": "box",
+            "x": 0,
+            "y": 0.18,
+            "z": 0,
+            "w": 2,
+            "h": 0.35,
+            "d": 1.2,
+            "color": "#9ca8d1",
+            "role": "ornament",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": -0.805,
+            "y": 0.8,
+            "z": 0,
+            "w": 0.12,
+            "h": 1,
+            "d": 0.12,
+            "color": "#61e1d2",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": -0.5750000000000001,
+            "y": 0.88,
+            "z": 0,
+            "w": 0.12,
+            "h": 1.16,
+            "d": 0.12,
+            "color": "#61e1d2",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": -0.34500000000000003,
+            "y": 0.9600000000000001,
+            "z": 0,
+            "w": 0.12,
+            "h": 1.32,
+            "d": 0.12,
+            "color": "#61e1d2",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": -0.115,
+            "y": 1.04,
+            "z": 0,
+            "w": 0.12,
+            "h": 1.48,
+            "d": 0.12,
+            "color": "#61e1d2",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": 0.115,
+            "y": 1.12,
+            "z": 0,
+            "w": 0.12,
+            "h": 1.6400000000000001,
+            "d": 0.12,
+            "color": "#61e1d2",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": 0.34500000000000003,
+            "y": 1.2000000000000002,
+            "z": 0,
+            "w": 0.12,
+            "h": 1.8,
+            "d": 0.12,
+            "color": "#61e1d2",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": 0.5750000000000001,
+            "y": 1.28,
+            "z": 0,
+            "w": 0.12,
+            "h": 1.96,
+            "d": 0.12,
+            "color": "#61e1d2",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": 0.805,
+            "y": 1.36,
+            "z": 0,
+            "w": 0.12,
+            "h": 2.12,
+            "d": 0.12,
+            "color": "#61e1d2",
+            "role": "light",
+            "yaw": 0
+          }
+        ]
+      },
+      "firstImpactTick": null,
+      "targetDefeatTick": null,
+      "attacksStarted": 0,
+      "ticks": 1800,
+      "damage": 0,
+      "healing": 24,
+      "travel": 0,
+      "energyRemaining": 0,
+      "deliveries": 0,
+      "notes": 8,
+      "trialResult": null,
+      "farBank": false,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "name": "A Letter Written in Footsteps",
+      "kind": "trial",
+      "scenario": "orchard-bench-1",
+      "method": "deterministic state-informed policy",
+      "blueprint": {
+        "schema": "awe-blueprint-1",
+        "id": "e0455f0b-b556-4af9-9f5c-e0bf2b8382d5",
+        "revision": 1,
+        "parent": null,
+        "name": "A Letter Written in Footsteps",
+        "kind": "trial",
+        "material": "wood",
+        "power": 4,
+        "reach": 4,
+        "tempo": 4,
+        "verb": "bolt",
+        "rules": [
+          {
+            "when": "threat",
+            "do": "guard"
+          },
+          {
+            "when": "always",
+            "do": "follow"
+          }
+        ],
+        "resource": "wood",
+        "score": [
+          0,
+          4,
+          7,
+          12,
+          7,
+          4,
+          2,
+          0
+        ],
+        "beat": 24,
+        "voice": "mend",
+        "course": [
+          {
+            "x": -8,
+            "z": 6
+          },
+          {
+            "x": -8,
+            "z": -6
+          },
+          {
+            "x": 0,
+            "z": -10
+          },
+          {
+            "x": 8,
+            "z": -6
+          },
+          {
+            "x": 8,
+            "z": 6
+          }
+        ],
+        "seconds": 60,
+        "order": "sequence",
+        "parts": [
+          {
+            "shape": "ring",
+            "x": 0,
+            "y": 1.5,
+            "z": 0,
+            "w": 2.4,
+            "h": 0.2,
+            "d": 2.4,
+            "color": "#7ab8fc",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": -1,
+            "y": 1,
+            "z": 0,
+            "w": 0.2,
+            "h": 2,
+            "d": 0.2,
+            "color": "#f5ce83",
+            "role": "ornament",
+            "yaw": 0
+          },
+          {
+            "shape": "spire",
+            "x": 1,
+            "y": 1,
+            "z": 0,
+            "w": 0.2,
+            "h": 2,
+            "d": 0.2,
+            "color": "#f5ce83",
+            "role": "ornament",
+            "yaw": 0
+          }
+        ]
+      },
+      "firstImpactTick": null,
+      "targetDefeatTick": null,
+      "attacksStarted": 0,
+      "ticks": 426,
+      "damage": 0,
+      "healing": 0,
+      "travel": 48.28,
+      "energyRemaining": 0,
+      "deliveries": 0,
+      "notes": 0,
+      "trialResult": "completed",
+      "farBank": false,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "name": "A patient gatherer",
+      "kind": "creature",
+      "scenario": "orchard-bench-1",
+      "method": "deterministic state-informed policy",
+      "blueprint": {
+        "schema": "awe-blueprint-1",
+        "id": "678c867f-d2d0-42da-8ed6-d6d4390f6202",
+        "revision": 1,
+        "parent": null,
+        "name": "A patient gatherer",
+        "kind": "creature",
+        "material": "wood",
+        "power": 4,
+        "reach": 4,
+        "tempo": 4,
+        "verb": "bolt",
+        "rules": [
+          {
+            "when": "always",
+            "do": "harvest"
+          }
+        ],
+        "resource": "wood",
+        "score": [
+          0,
+          4,
+          7,
+          12,
+          7,
+          4,
+          2,
+          0
+        ],
+        "beat": 24,
+        "voice": "mend",
+        "course": [
+          {
+            "x": -8,
+            "z": 6
+          },
+          {
+            "x": -8,
+            "z": -6
+          },
+          {
+            "x": 0,
+            "z": -10
+          },
+          {
+            "x": 8,
+            "z": -6
+          },
+          {
+            "x": 8,
+            "z": 6
+          }
+        ],
+        "seconds": 60,
+        "order": "sequence",
+        "parts": [
+          {
+            "shape": "orb",
+            "x": 0,
+            "y": 1,
+            "z": 0,
+            "w": 1,
+            "h": 1.1,
+            "d": 1.3,
+            "color": "#61e1d2",
+            "role": "ornament",
+            "yaw": 0
+          },
+          {
+            "shape": "orb",
+            "x": 0,
+            "y": 1.6,
+            "z": 0.5,
+            "w": 0.7,
+            "h": 0.6,
+            "d": 0.7,
+            "color": "#f5ce83",
+            "role": "ornament",
+            "yaw": 0
+          },
+          {
+            "shape": "box",
+            "x": -0.95,
+            "y": 1.3,
+            "z": 0,
+            "w": 1.7,
+            "h": 0.08,
+            "d": 0.8,
+            "color": "#58baf5",
+            "role": "ornament",
+            "yaw": -18
+          },
+          {
+            "shape": "box",
+            "x": 0.95,
+            "y": 1.3,
+            "z": 0,
+            "w": 1.7,
+            "h": 0.08,
+            "d": 0.8,
+            "color": "#58baf5",
+            "role": "ornament",
+            "yaw": 18
+          },
+          {
+            "shape": "spire",
+            "x": 0,
+            "y": 2,
+            "z": 0.55,
+            "w": 0.25,
+            "h": 0.7,
+            "d": 0.25,
+            "color": "#f5ce83",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "orb",
+            "x": -0.18,
+            "y": 1.7,
+            "z": 0.8,
+            "w": 0.12,
+            "h": 0.12,
+            "d": 0.12,
+            "color": "#ffffff",
+            "role": "light",
+            "yaw": 0
+          },
+          {
+            "shape": "orb",
+            "x": 0.18,
+            "y": 1.7,
+            "z": 0.8,
+            "w": 0.12,
+            "h": 0.12,
+            "d": 0.12,
+            "color": "#ffffff",
+            "role": "light",
+            "yaw": 0
+          }
+        ]
+      },
+      "firstImpactTick": null,
+      "targetDefeatTick": null,
+      "attacksStarted": 0,
+      "ticks": 3600,
+      "damage": 0,
+      "healing": 0,
+      "travel": 0,
+      "energyRemaining": 20,
+      "deliveries": 4,
+      "notes": 0,
+      "trialResult": null,
+      "farBank": false,
+      "ledgerDelta": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    }
+  ],
+  "fullBudgetBoltSweep": {
+    "allocations": 46,
+    "ticksPerRun": 1200,
+    "rows": [
+      {
+        "power": 1,
+        "reach": 3,
+        "tempo": 8,
+        "damagePerHit": 7,
+        "startup": 12,
+        "recovery": 16,
+        "breath": 15,
+        "firstImpactTick": 31,
+        "targetDefeatTick": 138,
+        "totalDamage": 34,
+        "attacksStarted": 14,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 1,
+        "reach": 4,
+        "tempo": 7,
+        "damagePerHit": 7,
+        "startup": 15,
+        "recovery": 16,
+        "breath": 16,
+        "firstImpactTick": 34,
+        "targetDefeatTick": 153,
+        "totalDamage": 34,
+        "attacksStarted": 13,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 1,
+        "reach": 5,
+        "tempo": 6,
+        "damagePerHit": 7,
+        "startup": 18,
+        "recovery": 16,
+        "breath": 17,
+        "firstImpactTick": 38,
+        "targetDefeatTick": 169,
+        "totalDamage": 34,
+        "attacksStarted": 12,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 1,
+        "reach": 6,
+        "tempo": 5,
+        "damagePerHit": 7,
+        "startup": 21,
+        "recovery": 16,
+        "breath": 18,
+        "firstImpactTick": 42,
+        "targetDefeatTick": 184,
+        "totalDamage": 34,
+        "attacksStarted": 12,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 1,
+        "reach": 7,
+        "tempo": 4,
+        "damagePerHit": 7,
+        "startup": 24,
+        "recovery": 16,
+        "breath": 19,
+        "firstImpactTick": 47,
+        "targetDefeatTick": 200,
+        "totalDamage": 34,
+        "attacksStarted": 11,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 1,
+        "reach": 8,
+        "tempo": 3,
+        "damagePerHit": 7,
+        "startup": 27,
+        "recovery": 16,
+        "breath": 20,
+        "firstImpactTick": 51,
+        "targetDefeatTick": 216,
+        "totalDamage": 34,
+        "attacksStarted": 11,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 2,
+        "reach": 2,
+        "tempo": 8,
+        "damagePerHit": 10,
+        "startup": 12,
+        "recovery": 18,
+        "breath": 16,
+        "firstImpactTick": 59,
+        "targetDefeatTick": 146,
+        "totalDamage": 34,
+        "attacksStarted": 13,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 2,
+        "reach": 3,
+        "tempo": 7,
+        "damagePerHit": 10,
+        "startup": 15,
+        "recovery": 18,
+        "breath": 17,
+        "firstImpactTick": 34,
+        "targetDefeatTick": 126,
+        "totalDamage": 34,
+        "attacksStarted": 12,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 2,
+        "reach": 4,
+        "tempo": 6,
+        "damagePerHit": 10,
+        "startup": 18,
+        "recovery": 18,
+        "breath": 18,
+        "firstImpactTick": 38,
+        "targetDefeatTick": 139,
+        "totalDamage": 34,
+        "attacksStarted": 12,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 2,
+        "reach": 5,
+        "tempo": 5,
+        "damagePerHit": 10,
+        "startup": 21,
+        "recovery": 18,
+        "breath": 19,
+        "firstImpactTick": 42,
+        "targetDefeatTick": 151,
+        "totalDamage": 34,
+        "attacksStarted": 11,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 2,
+        "reach": 6,
+        "tempo": 4,
+        "damagePerHit": 10,
+        "startup": 24,
+        "recovery": 18,
+        "breath": 20,
+        "firstImpactTick": 47,
+        "targetDefeatTick": 164,
+        "totalDamage": 34,
+        "attacksStarted": 11,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 2,
+        "reach": 7,
+        "tempo": 3,
+        "damagePerHit": 10,
+        "startup": 27,
+        "recovery": 18,
+        "breath": 21,
+        "firstImpactTick": 51,
+        "targetDefeatTick": 177,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 2,
+        "reach": 8,
+        "tempo": 2,
+        "damagePerHit": 10,
+        "startup": 30,
+        "recovery": 18,
+        "breath": 22,
+        "firstImpactTick": 56,
+        "targetDefeatTick": 190,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 3,
+        "reach": 1,
+        "tempo": 8,
+        "damagePerHit": 13,
+        "startup": 12,
+        "recovery": 20,
+        "breath": 17,
+        "firstImpactTick": 90,
+        "targetDefeatTick": 154,
+        "totalDamage": 34,
+        "attacksStarted": 12,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 3,
+        "reach": 2,
+        "tempo": 7,
+        "damagePerHit": 13,
+        "startup": 15,
+        "recovery": 20,
+        "breath": 18,
+        "firstImpactTick": 67,
+        "targetDefeatTick": 132,
+        "totalDamage": 34,
+        "attacksStarted": 12,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 3,
+        "reach": 3,
+        "tempo": 6,
+        "damagePerHit": 13,
+        "startup": 18,
+        "recovery": 20,
+        "breath": 19,
+        "firstImpactTick": 38,
+        "targetDefeatTick": 107,
+        "totalDamage": 34,
+        "attacksStarted": 11,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 3,
+        "reach": 4,
+        "tempo": 5,
+        "damagePerHit": 13,
+        "startup": 21,
+        "recovery": 20,
+        "breath": 20,
+        "firstImpactTick": 42,
+        "targetDefeatTick": 116,
+        "totalDamage": 34,
+        "attacksStarted": 11,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 3,
+        "reach": 5,
+        "tempo": 4,
+        "damagePerHit": 13,
+        "startup": 24,
+        "recovery": 20,
+        "breath": 21,
+        "firstImpactTick": 47,
+        "targetDefeatTick": 124,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 3,
+        "reach": 6,
+        "tempo": 3,
+        "damagePerHit": 13,
+        "startup": 27,
+        "recovery": 20,
+        "breath": 22,
+        "firstImpactTick": 51,
+        "targetDefeatTick": 134,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 3,
+        "reach": 7,
+        "tempo": 2,
+        "damagePerHit": 13,
+        "startup": 30,
+        "recovery": 20,
+        "breath": 23,
+        "firstImpactTick": 56,
+        "targetDefeatTick": 144,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 3,
+        "reach": 8,
+        "tempo": 1,
+        "damagePerHit": 13,
+        "startup": 33,
+        "recovery": 20,
+        "breath": 24,
+        "firstImpactTick": 61,
+        "targetDefeatTick": 155,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 4,
+        "reach": 1,
+        "tempo": 7,
+        "damagePerHit": 16,
+        "startup": 15,
+        "recovery": 22,
+        "breath": 19,
+        "firstImpactTick": 102,
+        "targetDefeatTick": 177,
+        "totalDamage": 34,
+        "attacksStarted": 11,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 4,
+        "reach": 2,
+        "tempo": 6,
+        "damagePerHit": 16,
+        "startup": 18,
+        "recovery": 22,
+        "breath": 20,
+        "firstImpactTick": 74,
+        "targetDefeatTick": 151,
+        "totalDamage": 34,
+        "attacksStarted": 11,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 4,
+        "reach": 3,
+        "tempo": 5,
+        "damagePerHit": 16,
+        "startup": 21,
+        "recovery": 22,
+        "breath": 21,
+        "firstImpactTick": 42,
+        "targetDefeatTick": 119,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 4,
+        "reach": 4,
+        "tempo": 4,
+        "damagePerHit": 16,
+        "startup": 24,
+        "recovery": 22,
+        "breath": 22,
+        "firstImpactTick": 47,
+        "targetDefeatTick": 128,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 4,
+        "reach": 5,
+        "tempo": 3,
+        "damagePerHit": 16,
+        "startup": 27,
+        "recovery": 22,
+        "breath": 23,
+        "firstImpactTick": 51,
+        "targetDefeatTick": 138,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 4,
+        "reach": 6,
+        "tempo": 2,
+        "damagePerHit": 16,
+        "startup": 30,
+        "recovery": 22,
+        "breath": 24,
+        "firstImpactTick": 56,
+        "targetDefeatTick": 148,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 4,
+        "reach": 7,
+        "tempo": 1,
+        "damagePerHit": 16,
+        "startup": 33,
+        "recovery": 22,
+        "breath": 25,
+        "firstImpactTick": 61,
+        "targetDefeatTick": 159,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 5,
+        "reach": 1,
+        "tempo": 6,
+        "damagePerHit": 19,
+        "startup": 18,
+        "recovery": 24,
+        "breath": 21,
+        "firstImpactTick": 114,
+        "targetDefeatTick": 157,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 5,
+        "reach": 2,
+        "tempo": 5,
+        "damagePerHit": 19,
+        "startup": 21,
+        "recovery": 24,
+        "breath": 22,
+        "firstImpactTick": 82,
+        "targetDefeatTick": 122,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 5,
+        "reach": 3,
+        "tempo": 4,
+        "damagePerHit": 19,
+        "startup": 24,
+        "recovery": 24,
+        "breath": 23,
+        "firstImpactTick": 47,
+        "targetDefeatTick": 89,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 5,
+        "reach": 4,
+        "tempo": 3,
+        "damagePerHit": 19,
+        "startup": 27,
+        "recovery": 24,
+        "breath": 24,
+        "firstImpactTick": 51,
+        "targetDefeatTick": 95,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 5,
+        "reach": 5,
+        "tempo": 2,
+        "damagePerHit": 19,
+        "startup": 30,
+        "recovery": 24,
+        "breath": 25,
+        "firstImpactTick": 56,
+        "targetDefeatTick": 101,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 5,
+        "reach": 6,
+        "tempo": 1,
+        "damagePerHit": 19,
+        "startup": 33,
+        "recovery": 24,
+        "breath": 26,
+        "firstImpactTick": 61,
+        "targetDefeatTick": 107,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 6,
+        "reach": 1,
+        "tempo": 5,
+        "damagePerHit": 22,
+        "startup": 21,
+        "recovery": 26,
+        "breath": 23,
+        "firstImpactTick": 126,
+        "targetDefeatTick": 175,
+        "totalDamage": 34,
+        "attacksStarted": 10,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 6,
+        "reach": 2,
+        "tempo": 4,
+        "damagePerHit": 22,
+        "startup": 24,
+        "recovery": 26,
+        "breath": 24,
+        "firstImpactTick": 90,
+        "targetDefeatTick": 136,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 6,
+        "reach": 3,
+        "tempo": 3,
+        "damagePerHit": 22,
+        "startup": 27,
+        "recovery": 26,
+        "breath": 25,
+        "firstImpactTick": 51,
+        "targetDefeatTick": 96,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 6,
+        "reach": 4,
+        "tempo": 2,
+        "damagePerHit": 22,
+        "startup": 30,
+        "recovery": 26,
+        "breath": 26,
+        "firstImpactTick": 56,
+        "targetDefeatTick": 103,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 6,
+        "reach": 5,
+        "tempo": 1,
+        "damagePerHit": 22,
+        "startup": 33,
+        "recovery": 26,
+        "breath": 27,
+        "firstImpactTick": 61,
+        "targetDefeatTick": 109,
+        "totalDamage": 34,
+        "attacksStarted": 8,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 7,
+        "reach": 1,
+        "tempo": 4,
+        "damagePerHit": 25,
+        "startup": 24,
+        "recovery": 28,
+        "breath": 25,
+        "firstImpactTick": 92,
+        "targetDefeatTick": 140,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 7,
+        "reach": 2,
+        "tempo": 3,
+        "damagePerHit": 25,
+        "startup": 27,
+        "recovery": 28,
+        "breath": 26,
+        "firstImpactTick": 51,
+        "targetDefeatTick": 98,
+        "totalDamage": 34,
+        "attacksStarted": 9,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 7,
+        "reach": 3,
+        "tempo": 2,
+        "damagePerHit": 25,
+        "startup": 30,
+        "recovery": 28,
+        "breath": 27,
+        "firstImpactTick": 56,
+        "targetDefeatTick": 104,
+        "totalDamage": 34,
+        "attacksStarted": 8,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 7,
+        "reach": 4,
+        "tempo": 1,
+        "damagePerHit": 25,
+        "startup": 33,
+        "recovery": 28,
+        "breath": 28,
+        "firstImpactTick": 61,
+        "targetDefeatTick": 111,
+        "totalDamage": 34,
+        "attacksStarted": 8,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 8,
+        "reach": 1,
+        "tempo": 3,
+        "damagePerHit": 28,
+        "startup": 27,
+        "recovery": 30,
+        "breath": 27,
+        "firstImpactTick": 100,
+        "targetDefeatTick": 154,
+        "totalDamage": 34,
+        "attacksStarted": 8,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 8,
+        "reach": 2,
+        "tempo": 2,
+        "damagePerHit": 28,
+        "startup": 30,
+        "recovery": 30,
+        "breath": 28,
+        "firstImpactTick": 56,
+        "targetDefeatTick": 106,
+        "totalDamage": 34,
+        "attacksStarted": 8,
+        "ledgerBalanced": true
+      },
+      {
+        "power": 8,
+        "reach": 3,
+        "tempo": 1,
+        "damagePerHit": 28,
+        "startup": 33,
+        "recovery": 30,
+        "breath": 29,
+        "firstImpactTick": 61,
+        "targetDefeatTick": 112,
+        "totalDamage": 34,
+        "attacksStarted": 8,
+        "ledgerBalanced": true
+      }
+    ]
+  }
+}
