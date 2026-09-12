@@ -19,7 +19,7 @@ const receiver=(s,id)=>s.kingdoms?.receivers.find(r=>r.id===id);
 export function supported(s,id){const r=receiver(s,id);return !r||r.kind==='gate'||r.status!=='dormant';}
 export function blocking(s,id){const r=receiver(s,id);return !r||r.kind!=='gate'||r.status==='dormant';}
 function footprint(e){return e.blueprint.parts.filter(p=>['walkway','solid'].includes(p.role)).map(p=>C.point(e,p));}
-function occupied(s,e){const boxes=footprint(e);return [s.hero,s.pet,...s.workers,...s.enemies.filter(a=>a.hp>0),...s.creation.instances.filter(a=>a!==e)].some(a=>boxes.some(p=>C.inside(a.x,a.z,p,.8)));}
+function occupied(s,e){const boxes=footprint(e);return [s.hero,s.pet,...s.workers,...(s.civilization?.active?[s.civilization.courier]:[]),...s.enemies.filter(a=>a.hp>0),...s.creation.instances.filter(a=>a!==e)].some(a=>boxes.some(p=>C.inside(a.x,a.z,p,.8)));}
 function status(s,r,next){if(r.status!==next){r.status=next;s.kingdoms.topology++;trace(s,'route',`${instance(s,r.id).blueprint.name}: ${next}.`,r.cause);}}
 function convert(s,e){near(s,e);if(receiver(s,e.id))fail('This structure already has a receiver.');const roles=e.blueprint.parts.map(p=>p.role);if(roles.includes('walkway')&&roles.includes('solid'))fail('Separate walking decks and solid gates into two structures.');if(!roles.some(p=>['walkway','solid'].includes(p)))fail('A receiver needs a walking deck or a solid gate.');if(occupied(s,e))fail('Move every body and creation off the structure before conversion.');s.kingdoms.receivers.push({id:e.id,revision:e.blueprint.revision,kind:roles.includes('walkway')?'bridge':'gate',charge:0,until:0,status:'dormant',cause:null});s.kingdoms.topology++;}
 function connect(s,p){const k=s.kingdoms,a=instance(s,p.source,'instrument'),b=instance(s,p.target,'structure');near(s,a);if(!receiver(s,b.id))fail('First convert the structure to a powered receiver.');if(Math.hypot(a.x-b.x,a.z-b.z)>32)fail('Keep connected endpoints within thirty-two steps.');if(k.links.length>=24||k.links.some(l=>l.source===a.id&&l.target===b.id))fail('Connection already exists or the twenty-four wire limit is reached.');if(!k.sources.some(x=>x.id===a.id))k.sources.push({id:a.id,revision:a.blueprint.revision,charge:0});const link={id:id(),source:a.id,target:b.id,sourceRevision:a.blueprint.revision,targetRevision:b.blueprint.revision,pitches:p.pitches.slice()};k.links.push(link);trace(s,'wire',`Connected ${a.blueprint.name} to ${b.blueprint.name}.`);return link.id;}
@@ -37,7 +37,7 @@ export function command(s,envelope,ctx){
  if(controller==='agent'&&k.grant.remaining<1)fail('The agent command budget is exhausted.');
  if(s.mode!=='world'||s.hero.dead||s.hero.hp<=0)fail('Return to your living world body first.');
  const draft=copy(s),d=draft.kingdoms;let result=null;
- if(op==='grant'){d.grant={enabled:p.enabled,epoch:d.grant.epoch+1,remaining:p.enabled?p.limit:0};}
+ if(op==='grant'){d.grant={enabled:p.enabled,epoch:d.grant.epoch+1,remaining:p.enabled?p.limit:0};if(!p.enabled)d.journey=null;}
  if(op==='walk'){if(!ctx.legal(draft,p.x,p.z,.4))fail('This destination has no open, clear ground.');d.journey={...p};}
  if(op==='receiver')convert(draft,instance(draft,p.id,'structure'));
  if(op==='link')result=connect(draft,p);
@@ -81,7 +81,10 @@ export function tick(s,ctx,input={}){const k=s.kingdoms;if(!k||s.mode!=='world')
  for(const p of k.packets.filter(p=>p.due<=k.clock)){const r=receiver(s,p.target);if(r&&r.charge<16){r.charge++;r.cause=p.cause;trace(s,'arrival',`Pitch ${p.pitch} delivered one charge.`,p.cause);}else{k.ledger.dissipated++;trace(s,'overflow','Receiver capacity reached; one charge dissipated.',p.cause);}}
  k.packets=k.packets.filter(p=>p.due>k.clock);
  for(const r of k.receivers){if(k.clock>=r.until&&r.charge){r.charge--;k.ledger.spent++;r.until=k.clock+TICKS_PER_CHARGE;status(s,r,'active');}else if(k.clock>=r.until){const e=instance(s,r.id);status(s,r,occupied(s,e)?'clearing':'dormant');}}
- if(k.journey){if(input.move?.some(n=>n)||input.attack||input.dodge||s.hero.dead)k.journey=null;else if(Math.hypot(s.hero.x-k.journey.x,s.hero.z-k.journey.z)<.6)k.journey=null;else ctx.steer(s,s.hero,k.journey,4.3);}
+ // Guided walking yields to committed combat and manual control. It cannot add
+ // a second movement step or bypass guard/action penalties. Revocation above
+ // deliberately stops any queued local walk because the journey has one body.
+ if(k.journey){if(input.move?.some(n=>n)||input.attack||input.attackHeld||input.guard||input.dodge||input.jump||s.hero.action||s.hero.dodge||s.hero.y>0||s.hero.vy>0||s.hero.dead)k.journey=null;else if(Math.hypot(s.hero.x-k.journey.x,s.hero.z-k.journey.z)<.6)k.journey=null;else ctx.steer(s,s.hero,k.journey,4.3);}
 }
 export function detach(s,id){const k=s.kingdoms;if(k.jobs.some(j=>j.carrier===id))fail('Finish or cancel the civic consignment before reclaiming this courier.');if(k.links.some(l=>l.source===id||l.target===id))fail('Disconnect this creation’s wires before reclaiming it.');const source=k.sources.find(a=>a.id===id),r=receiver(s,id);k.ledger.dissipated+=(source?.charge||0)+(r?.charge||0);k.sources=k.sources.filter(a=>a.id!==id);k.receivers=k.receivers.filter(a=>a.id!==id);k.topology++;k.revision++;}
 export function inspect(s){const k=s.kingdoms;return copy({world:s.id,rules:RULES,revision:k.revision,epoch:k.grant.epoch,grant:k.grant,mode:s.mode,body:{x:s.hero.x,z:s.hero.z,breath:s.hero.breath},pack:s.pack,marks:s.rain.balances.human,creations:s.creation.instances.map(e=>({id:e.id,name:e.blueprint.name,kind:e.blueprint.kind,x:e.x,z:e.z,energy:e.energy,cargo:e.cargo,task:e.task,cooldown:Math.max(0,e.cooldown-s.tick)})),sources:k.sources,receivers:k.receivers,links:k.links,packets:k.packets,jobs:k.jobs,order:k.order,charge:chargeLedger(s),journey:k.journey,trace:k.trace.slice(-24)});}

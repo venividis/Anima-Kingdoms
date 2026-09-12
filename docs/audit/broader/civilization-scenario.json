@@ -1,0 +1,114 @@
+{
+  "scenario": "Legal council, farm, water, physical harvest, depot, courier, household meal and compost journey",
+  "method": "Deterministic core commands and real 60 Hz simulation movement. No teleport or material fixture injection in this scenario. Automatic-rain flag is the existing player Settings choice.",
+  "clock": 60000,
+  "seconds": 1000,
+  "checkpoints": 10,
+  "sources": {
+    "realm.js": "2c7bf4cbc3e543e53653134ed1ca9fc33d6f6a8c8470b532847bcadaba66bc06",
+    "civilization.js": "a9922fa4b03638b9c7bd6ba4294da9a2a4c15b22747f4e300f3c9c5bed5e890d",
+    "world.js": "8432eed2613bf536b3a0c7606556f7f75e0cb9b4f8f47fcff4c8928a0de436ee",
+    "navigation.js": "46e32a3b7ba4fe02a4e90ed0f3017d23af55b7081134945bb14fbe575c85c6f3"
+  },
+  "final": {
+    "pack": {
+      "wood": 6,
+      "stone": 6,
+      "ore": 3,
+      "food": 1,
+      "herb": 2,
+      "crystal": 0
+    },
+    "reserve": {
+      "wood": 120,
+      "stone": 100,
+      "ore": 57,
+      "food": 54,
+      "herb": 38,
+      "crystal": 12
+    },
+    "depot": {
+      "food": 14,
+      "harvest": true
+    },
+    "households": [
+      {
+        "id": "hearth",
+        "pantry": 2,
+        "hunger": 0,
+        "due": 61200,
+        "received": 18,
+        "consumed": 16,
+        "missed": 0
+      },
+      {
+        "id": "lantern",
+        "pantry": 3,
+        "hunger": 0,
+        "due": 61650,
+        "received": 19,
+        "consumed": 16,
+        "missed": 0
+      },
+      {
+        "id": "bough",
+        "pantry": 3,
+        "hunger": 0,
+        "due": 62100,
+        "received": 19,
+        "consumed": 16,
+        "missed": 0
+      },
+      {
+        "id": "reed",
+        "pantry": 3,
+        "hunger": 0,
+        "due": 62550,
+        "received": 19,
+        "consumed": 16,
+        "missed": 0
+      }
+    ],
+    "soil": 6,
+    "compost": 0,
+    "ledger": {
+      "produced": {
+        "food": 132,
+        "herb": 0,
+        "wood": 0
+      },
+      "water": {
+        "orchard": 88,
+        "habitat": 0
+      },
+      "soilUsed": 132,
+      "recovered": 16,
+      "compostCreated": 110,
+      "compostReturned": 110,
+      "compostDiscarded": 0,
+      "donated": {
+        "food": 0,
+        "herb": 0,
+        "wood": 0
+      },
+      "workerMeals": 46,
+      "funded": 89,
+      "withdrawn": 0,
+      "delivered": 75,
+      "consumed": 64
+    }
+  },
+  "invariants": {
+    "materials": {
+      "wood": 0,
+      "stone": 0,
+      "ore": 0,
+      "food": 0,
+      "herb": 0,
+      "crystal": 0
+    },
+    "water": 0,
+    "money": 50
+  },
+  "limits": "Four local households, twelve fixed residents, one courier, one food need, declared game growth/fertility units. Automated state exercise; not browser/device observation, biological physics, a full ecology or a human study."
+}

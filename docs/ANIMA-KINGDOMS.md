@@ -2,6 +2,8 @@
 
 12 September 2026 · connected-creation release, development build 0.11
 
+This document retains the First Concord contract. The subsequent [Living Commons release](BROADER-FOUNDATION.md) adds local households and a separate authenticated shared realm; its current scope and evidence supersede the corresponding future gates below.
+
 The central promise is **imagination that has consequences**. A player can author a score, connect it to a structure, give a creature an actual delivery, and see that delivery change a place. The world already contained expressive parts and bounded behaviors. This release makes several of those creations cooperate through one inspectable, conserved system.
 
 This is a playable local prototype and an engineering foundation. It is not a completed MMORPG, an autonomous language-model society, an exhaustive reconstruction of Blizzard/Nintendo/strategy/fighting/shooter games, or a functioning crypto economy. The historical dossier’s accountability audit and the existing game documentation are retained. No fresh exhaustive game research or empirical human-subject research is claimed for this implementation phase.

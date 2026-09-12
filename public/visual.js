@@ -1,7 +1,7 @@
 import {CreationMeshes} from './creation-view.js';
 import {Renderer,Geometry,transform,project,V} from './engine.js';
 import {makeScene,channelGeometry,channelPoint,drawPerson,C,PEOPLE} from './scene.js';
-import {Creation,Rain,ARENAS,PLOTS,RESOURCES,LANDMARKS,MOVES,obstacles,segmentCircle,segmentObstacle} from './realm.js';
+import {Creation,Civilization,Rain,ARENAS,PLOTS,RESOURCES,LANDMARKS,MOVES,obstacles,segmentCircle,segmentObstacle} from './realm.js';
 export class WorldView {
  constructor(canvas){this.r=new Renderer(canvas);this.base=makeScene(this.r);this.creations=new CreationMeshes(this.r);this.placement=null;this.eye=[15,17,34];this.target=[0,1,8];this.yaw=0;this.pitch=.48;this.distance=12;this.atlas=false;this.channelKey='';this.channels=null;this.preview=null;this.reduced=false;const r=this.r;
  const arenas=new Geometry();for(const a of Object.values(ARENAS)){arenas.cone([a.x,-.05,a.z],[a.x,0,a.z],a.r,a.r,[.26,.32,.35],96);arenas.cone([a.x,-18,a.z],[a.x,-.06,a.z],a.r*.6,a.r,[.13,.22,.26],40);arenas.ring(a.x,.08,a.z,a.r-.4,.09,C.pale,80);for(let i=0;i<12;i++){const angle=i/12*Math.PI*2,x=a.x+Math.cos(angle)*(a.r-1),z=a.z+Math.sin(angle)*(a.r-1);arenas.cone([x,0,z],[x,3.7,z],.25,.12,C.pale);arenas.sphere(x,3.8,z,.22,.3,.22,C.gold,8,5);}}
@@ -32,6 +32,7 @@ export class WorldView {
  for(const[id,n]of Object.entries(Rain.NODES)){const fill=id==='spring'?1.65:Rain.SINKS.includes(id)?.85*Math.sqrt(s.rain.storage[id]/10):.75;r.draw(this.base.water,transform(n.x,.44,n.z,fill,1,fill),{glow:.35,alpha:.85});r.draw(this.base.orb,transform(n.x,1.15+Math.sin(at+n.x)*.08,n.z,.65,.65,.65),{glow:.6});}if(this.channels)r.draw(this.channels,transform(),{glow:.18});if(this.preview)r.draw(this.preview,transform(),{glow:.7,alpha:.6});for(const c of Object.values(s.rain.channels)){const f=s.rain.flows[c.from+'>'+c.to]||0;for(let i=0;i<f;i++){let p=channelPoint(c.from,c.to,(at*.17+i/f)%1);r.draw(this.base.orb,transform(...p,.4,.4,.4),{glow:1});}}
  for(const p of PEOPLE){const x=p.id==='vey'?s.rain.cargo.x+2.4:p.x,z=p.id==='vey'?s.rain.cargo.z+.6:p.z;drawPerson(r,this.base,x,0,z,p.id==='vey'?Math.PI:.5,at,p.id==='vey'&&s.rain.cargo.status==='traveling'&&!paused?.5:0,p.color.map(v=>v/.7));}r.draw(this.base.cart,transform(s.rain.cargo.x,Rain.onBridge(0,s.rain.cargo.z)&&Rain.bridgeOpen(s.rain)?.16:0,s.rain.cargo.z));
  for(const w of s.workers){drawPerson(r,this.base,w.x,0,w.z,w.angle||0,at,w.phase==='traveling'||w.phase==='carrying'?.6:0,[.86,1,.85]);if(w.cargo)r.draw(this.cover,transform(w.x,1.3,w.z,.16,.16,.16),{tint:C.gold});}
+ if(s.mode==='world'&&s.civilization.active)this.drawCivilization(s,at,paused);
  if(s.mode==='world')r.draw(this.base.pet,transform(s.pet.x,.03+Math.abs(Math.sin(at*6))*.055,s.pet.z,1,1,1,s.pet.angle),{glow:s.pet.bond*.025});
  if(s.mode!=='world')for(const o of obstacles(s))r.draw(this.cover,transform(o.x,0,o.z,o.r/2,1,o.r/2));
  this.creations.instances(s,at);if(this.placement){const p=this.placement;this.creations.draw(p.blueprint,p.x,0,p.z,p.yaw*Math.PI/180,at,{alpha:.55,tint:p.valid?[.45,1,.75]:[1,.3,.35]});}this.drawActor(s,h,at,true);for(const a of s.enemies)this.drawActor(s,a,at);
@@ -40,6 +41,27 @@ export class WorldView {
  for(const b of s.bolts){r.draw(this.base.orb,transform(b.x,b.y,b.z,1,1,1),{tint:b.team==='human'||b.team==='amber'?[.9,1,1]:[1,.3,.2],glow:1.3});r.draw(this.sword,transform(b.x,b.y,b.z,.35,.35,.45,Math.atan2(b.dx,b.dz)+Math.PI),{glow:1,tint:C.teal});}
  if(s.range)for(const n of s.range.targets)if(!n.hit){r.draw(this.crystal,transform(n.x,.4,n.z,.55,.65,.55),{tint:C.gold,glow:.5});r.draw(this.ring,transform(n.x,.08,n.z,.8,1,.8),{tint:C.gold,glow:.5});}
  for(let i=0;i<(this.reduced?0:24);i++){let x=Math.sin(i*47.1)*39,z=Math.cos(i*31.7)*29+8,y=1.3+Math.sin(at*.5+i)*.5;r.draw(this.base.orb,transform(x,y,z,.16,.16,.16),{glow:1.1,alpha:.65});}
+ }
+ drawCivilization(s,t,paused){
+  const r=this.r,c=s.civilization,courier=c.courier;
+  const moving=['carrying','returning','returning cargo'].includes(courier.phase)&&!paused;
+  drawPerson(r,this.base,courier.x,0,courier.z,courier.angle,t,moving?.65:0,[1.12,.91,.71]);
+  if(courier.cargo)for(let i=0;i<courier.cargo.count;i++)r.draw(this.cover,transform(courier.x+(i-.5)*.26,1.1,courier.z-.2,.11,.12,.11),{tint:C.gold});
+  r.draw(this.ring,transform(Civilization.DEPOT.x,.065,Civilization.DEPOT.z,1.25,1,1.25),{tint:C.gold,alpha:.7});
+  for(let i=0;i<Math.min(8,Math.ceil(c.depot.food/4));i++)r.draw(this.cover,transform(-1.6+(i%2)*.5,.08+Math.floor(i/4)*.3,23+Math.floor(i/2)%2*.5,.12,.12,.12),{tint:[1.2,1.05,.65]});
+  for(const home of c.households){
+   const place=Civilization.HOMES.find(h=>h.id===home.id),tint=home.hunger>=3?[1,.44,.3]:home.hunger?[1,.7,.4]:[.55,1,.74];
+   r.draw(this.ring,transform(place.x,.06,place.z,.8,1,.8),{tint,alpha:.75});
+   for(const[dx,dz]of[[-1.1,.75],[1.1,.75],[0,1.65]])drawPerson(r,this.base,place.x+dx,0,place.z+dz,Math.PI,t,0,[1,.95,.83]);
+   for(let i=0;i<home.pantry;i++)r.draw(this.cover,transform(place.x-.55+i*.42,.03,place.z-.35,.09,.1,.09),{tint:C.gold});
+   if(home.consumed)r.draw(this.base.orb,transform(place.x,1.2,place.z-.9,.24,.24,.24),{tint,glow:.8});
+  }
+  for(const[item,rule]of Object.entries(Civilization.PATCHES)){
+   const ratio=Math.max(0,Math.min(1,s.reserve[item]/rule.capacity));
+   r.draw(this.ring,transform(rule.x,.065,rule.z,1.65,1,1.65),{tint:ratio>.25?[.6,.86,.64]:[.74,.53,.35],alpha:.5});
+   // These fruit/bough markers show stored harvest, never growth without stock.
+   for(let i=0;i<Math.ceil(ratio*5);i++){const angle=i/5*Math.PI*2;r.draw(this.base.orb,transform(rule.x+Math.sin(angle)*1.2,.45,rule.z+Math.cos(angle)*1.2,.32,.32,.32),{tint:item==='food'?[1,.75,.38]:item==='herb'?[.4,1,.76]:[.75,.64,.42],glow:.18});}
+  }
  }
  groundPoint(x,y){
   if(!this.r.vp)return null;const rows=Array.from({length:4},(_,i)=>Array.from({length:8},(_,j)=>j<4?this.r.vp[j*4+i]:j-4===i?1:0));

@@ -44,3 +44,9 @@ next-env.d.ts
 /.codex/
 /outputs/
 /work/
+
+# Runtime realm custody and local recovery archives
+/data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

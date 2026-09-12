@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102b31">
+  <title>Anima Kingdoms · The Living Commons</title>
+  <meta name="description" content="Build a crossing together. Carry actual materials, trade with other players, and leave a place changed by your cooperation.">
+  <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./shared.css">
+</head>
+<body>
+  <div class="sky-light" aria-hidden="true"></div>
+  <canvas id="commons-world" tabindex="0" aria-label="The shared realm. W A S D or arrows move. E gathers nearby resources. Drag to orbit; scroll or pinch to zoom."></canvas>
+  <div id="commons-labels" aria-hidden="true"></div>
+  <header class="commons-header">
+    <a class="wordmark" href="./play.html" aria-label="Return to your First Orchard"><img src="./assets/mark.svg" alt="" width="37" height="37"><span>ANIMA <small>KINGDOMS</small></span></a>
+    <div class="realm-title"><span>THE LIVING COMMONS</span><small>A place we make together.</small></div>
+    <button id="connection-status" class="status-pill" aria-live="polite"><i></i><span>Connecting</span></button>
+  </header>
+  <main id="commons-play" hidden>
+    <aside class="chapter-card">
+      <p class="eyebrow">OUR FIRST CHAPTER</p>
+      <h1 id="chapter-title">The river between us.</h1>
+      <p id="chapter-copy">A crossing needs eight wood and eight stone. Every piece comes from someone's hands.</p>
+      <div id="chapter-progress"></div>
+      <button class="quiet-button" id="walk-project">Walk to the bridgehead <span>↗</span></button>
+      <p class="chapter-witness" id="chapter-witness">Your work stays in this shared realm.</p>
+    </aside>
+    <section class="commons-dock" aria-label="Realm activities">
+      <div class="dock-heading"><span id="player-label">Wayfarer</span><button id="toggle-dock" class="icon-button" aria-label="Collapse activities" aria-expanded="true">−</button></div>
+      <div id="dock-body">
+        <nav class="dock-tabs" aria-label="Commons panels">
+          <button data-tab="works" aria-pressed="true">Works</button>
+          <button data-tab="exchange" aria-pressed="false">Exchange</button>
+          <button data-tab="people" aria-pressed="false">People</button>
+          <button data-tab="studio" aria-pressed="false">Studio</button>
+          <button data-tab="agents" aria-pressed="false">Agents</button>
+          <button data-tab="journal" aria-pressed="false">Journal</button>
+        </nav>
+        <div id="dock-content"></div>
+      </div>
+    </section>
+    <footer class="commons-footer">
+      <div class="footsteps"><span id="journey-label">WASD / arrows · move</span><small id="position-label">THE NEAR BANK</small></div>
+      <div id="commons-inventory" aria-label="Your inventory"></div>
+      <div class="world-actions"><button id="gather-near" class="gold-button" disabled>Approach a resource</button><button id="center-view" class="icon-button" aria-label="Center the camera">◎</button><button id="atlas-view" class="icon-button" aria-label="Toggle overview">⌘</button></div>
+    </footer>
+    <nav id="touch-walk" class="touch-walk" aria-label="Touch movement"><button data-direction="up" aria-label="Walk north">↑</button><button data-direction="left" aria-label="Walk west">←</button><button data-direction="down" aria-label="Walk south">↓</button><button data-direction="right" aria-label="Walk east">→</button></nav>
+  </main>
+  <section id="commons-entry" class="entry-screen" aria-labelledby="entry-title">
+    <div class="entry-card">
+      <p class="eyebrow">ANIMA KINGDOMS · SHARED WORLD</p>
+      <h1 id="entry-title">Some wonders<br>take <em>all of us.</em></h1>
+      <p>Gather at the river. Trade what you carry.<br>Build a crossing that everyone can walk.</p>
+      <form id="join-realm"><label for="wayfarer-name">What shall we call you?</label><div class="join-row"><input id="wayfarer-name" name="name" placeholder="Your wayfarer name" maxlength="24" minlength="2" autocomplete="off" required><button class="gold-button" type="submit" id="join-button">Enter the commons ↗</button></div></form>
+      <p class="entry-note">A pseudonymous player in a persistent shared commons. Your First Orchard and its creations remain available through the Anima mark above.</p>
+      <p id="entry-status" role="status">Finding the realm…</p>
+      <details id="restore-player"><summary>Return with a recovery key</summary><label for="recovery-key">Player recovery key</label><input id="recovery-key" type="password" autocomplete="off"><button id="restore-session" class="quiet-button">Return as this player</button></details>
+    </div>
+  </section>
+  <section id="service-unavailable" class="entry-screen" hidden aria-labelledby="service-title"><div class="entry-card"><p class="eyebrow">THE LIVING COMMONS</p><h1 id="service-title">The realm is<br><em>not connected yet.</em></h1><p>This shared world needs its realm service running. You can continue exploring, composing, and caring for your First Orchard.</p><a href="./play.html" class="gold-button">Enter your First Orchard ↗</a><button id="retry-service" class="quiet-button">Check the realm again</button><details><summary>Run this shared world</summary><p>From the project folder, use Node 24 and run <code>npm run realm</code>. Open the address it prints. The shared service has its own persistent database.</p></details></div></section>
+  <div id="commons-notice" role="status" aria-live="polite" hidden></div>
+  <section id="pending-action" hidden role="alert"><p>Your last action is awaiting confirmation.</p><button id="recover-action" class="gold-button">Recover that exact action</button></section>
+  <script type="module" src="./shared-client.js"></script>
+</body>
+</html>

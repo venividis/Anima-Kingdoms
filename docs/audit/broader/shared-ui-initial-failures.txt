@@ -1,0 +1,68 @@
+✔ DOM form creates a player, rejects remote gathering, walks legally and enforces real gather timing (179.147619ms)
+✔ two DOM-created players gather their own goods, escrow and complete an exchange, then restore custody (214.535635ms)
+✖ polling preserves edited offer fields both while focused and after focus moves to the world (38.698583ms)
+✖ uncertain committed offer remains recoverable after polling and reload without duplicate escrow (91.328769ms)
+✖ a delayed old-player refresh cannot overwrite the player restored through the recovery form (28.135875ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 2
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 854.916558
+
+✖ failing tests:
+
+test at tests/shared-ui.test.mjs:157:1
+✖ polling preserves edited offer fields both while focused and after focus moves to the world (38.698583ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'wood' !== 'herb'
+
+      at TestContext.<anonymous> (file:///workspace/scratch/dd1db9da8150/Anima-Kingdoms/tests/shared-ui.test.mjs:166:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'wood',
+    expected: 'herb',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/shared-ui.test.mjs:171:1
+✖ uncertain committed offer remains recoverable after polling and reload without duplicate escrow (91.328769ms)
+  AssertionError [ERR_ASSERTION]: ordinary polling must not conceal an unresolved action
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///workspace/scratch/dd1db9da8150/Anima-Kingdoms/tests/shared-ui.test.mjs:182:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/shared-ui.test.mjs:197:1
+✖ a delayed old-player refresh cannot overwrite the player restored through the recovery form (28.135875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'Old DOM Player'
+  - 'Current DOM Player'
+
+      at TestContext.<anonymous> (file:///workspace/scratch/dd1db9da8150/Anima-Kingdoms/tests/shared-ui.test.mjs:212:12)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'Old DOM Player',
+    expected: 'Current DOM Player',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,23 @@
+✔ an uncertain committed trade survives reload and recovers the identical command once (2.579764ms)
+✔ an explicit conflict refreshes revision while preserving operation payload and idempotency key (0.389297ms)
+✔ out-of-order state polling cannot replace a newer committed inventory view (0.217107ms)
+✔ storage failure prevents a mutation before it can spend any goods (0.210408ms)
+✔ unreadable successful response and server failures retain exact recovery intent (0.449137ms)
+✔ business rejection leaves no pending mutation, while another active command is refused (0.347535ms)
+✔ DOM form creates a player, rejects remote gathering, walks legally and enforces real gather timing (213.685896ms)
+✔ two DOM-created players gather their own goods, escrow and complete an exchange, then restore custody (220.641249ms)
+✔ polling preserves edited offer fields both while focused and after focus moves to the world (37.27665ms)
+✔ uncertain committed offer remains recoverable after polling and reload without duplicate escrow (112.924061ms)
+✔ a delayed old-player refresh cannot overwrite the player restored through the recovery form (24.802283ms)
+✔ market buttons use the correct sale/purchase API and conserve actual stock, prices and Marks (185.018287ms)
+✔ agent invitation form issues selected scopes and the revoke button disables its actual API key (53.097527ms)
+✔ Studio file input publishes a compiled design and emits the correct downloadable JSON without markup execution (46.100557ms)
+✔ an old-session auth failure cannot discard a different valid recovery key (27.565824ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1216.48362

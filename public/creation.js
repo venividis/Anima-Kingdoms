@@ -80,7 +80,7 @@ export function placement(s,raw,x,z,yaw,ctx){
   else {
     const decks=def.blueprint.parts.filter(p=>p.role==='walkway').map(p=>point(e,p));
     if(!ctx.baseGround(x,z)&&!decks.some(p=>[-1,0,1].some(a=>[-1,0,1].some(b=>ctx.baseGround(p.x+a*p.hx,p.z+b*p.hz)))))fail('Anchor the structure to the original island ground.');
-    const bodies=[s.hero,...s.workers,s.pet,...s.creation.instances.filter(e=>e.blueprint.kind==='creature')];
+    const bodies=[s.hero,...s.workers,s.pet,...(s.civilization?.active?[s.civilization.courier]:[]),...s.creation.instances.filter(e=>e.blueprint.kind==='creature')];
     for(const p of def.blueprint.parts.filter(p=>p.role==='solid')){const o=point(e,p);if((ctx.protectedPlaces||[]).some(a=>inside(a.x,a.z,o,2)))fail('Keep clear access around resources, landmarks and safety landings.');if(bodies.some(a=>inside(a.x,a.z,o,.8)))fail('A person or companion occupies a solid part. Move or redesign it.');if(ctx.obstacles(s).some(a=>inside(a.x,a.z,o,a.r||.8)))fail('A solid part overlaps existing construction.');}
   }
   return def;
@@ -95,7 +95,7 @@ export function reclaim(s,id,ctx){
   if(s.mode!=='world')fail('Return to the world to reclaim a creation.');const e=s.creation.instances.find(e=>e.id===id);if(!e)fail('That instance no longer exists.');
   const distance=e.blueprint.kind==='structure'?Math.min(...e.blueprint.parts.map(p=>{const o=point(e,p);return Math.max(0,Math.hypot(s.hero.x-o.x,s.hero.z-o.z)-Math.hypot(o.hx,o.hz));})):Math.hypot(e.x-s.hero.x,e.z-s.hero.z);if(distance>8)fail('Stand within eight steps of a visible part to reclaim it.');
   if(e.cargo||e.performance)fail('Finish this delivery or performance before reclaiming it.');
-  if(e.blueprint.kind==='structure')for(const a of[s.hero,...s.workers,s.pet,...s.creation.instances.filter(a=>a.id!==id)])if(surfaces(s).some(p=>p.owner===id&&inside(a.x,a.z,p))&&!ctx.originalWalkable(s,a.x,a.z)&&!surface(s,a.x,a.z,id))fail('Another body or creation depends on this surface. Move it to an island first.');
+  if(e.blueprint.kind==='structure')for(const a of[s.hero,...s.workers,s.pet,...(s.civilization?.active?[s.civilization.courier]:[]),...s.creation.instances.filter(a=>a.id!==id)])if(surfaces(s).some(p=>p.owner===id&&inside(a.x,a.z,p))&&!ctx.originalWalkable(s,a.x,a.z)&&!surface(s,a.x,a.z,id))fail('Another body or creation depends on this surface. Move it to an island first.');
   for(const k of GOODS)s.pack[k]+=e.investment[k];s.creation.instances=s.creation.instances.filter(a=>a!==e);if(s.creation.equipped===id)s.creation.equipped=null;remember(s,`Reclaimed the actual materials of ${e.blueprint.name}.`);
 }
 export function feed(s,id){const e=s.creation.instances.find(e=>e.id===id&&e.blueprint.kind==='creature');if(s.mode!=='world'||s.hero.dead||s.hero.hp<=0||!e||Math.hypot(e.x-s.hero.x,e.z-s.hero.z)>8)fail('Stand near your creature in the world.');if(e.energy>20)fail('This creature has enough energy; food will not be wasted.');if(s.pack.food<1)fail('One food is needed.');s.pack.food--;s.spent.food++;e.energy=Math.min(100,e.energy+80);remember(s,`Fed ${e.blueprint.name}; one food became eighty energy.`);}

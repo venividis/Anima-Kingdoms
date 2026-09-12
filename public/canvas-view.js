@@ -21,6 +21,14 @@ export class CanvasWorldView{
   for(const p of s.kingdoms.packets){const a=s.creation.instances.find(e=>e.id===p.source),b=s.creation.instances.find(e=>e.id===p.target),f=Math.max(0,Math.min(1,(s.kingdoms.clock-p.start)/(p.due-p.start)));dot(a.x+(b.x-a.x)*f,.8,a.z+(b.z-a.z)*f,.2,'#d5ffe4');}
   const o=s.kingdoms.order;dot(o.x,0,o.z,o.paid?1.7:.9,o.paid?'#e1ac64':'#829f9c');if(o.paid){dot(o.x,1+Math.sin(t*3)*.1,o.z,.4,'#ffdf94');}
   for(const w of s.workers)dot(w.x,.7,w.z,.45,'#b5ceab');dot(s.pet.x,.7,s.pet.z,.32,'#b6a6e4');
+  if(s.civilization.active){const cv=s.civilization,carrier=cv.courier;
+   const label=(x,z,text,color='#e6d5ad')=>{const p=this.project(x,1.7,z);c.font='11px system-ui';c.textAlign='center';c.fillStyle=color;c.fillText(text,p.x,p.y);c.textAlign='start';};
+   dot(R.Civilization.DEPOT.x,.1,R.Civilization.DEPOT.z,1,'#bb9963');label(0,23,`Depot ${cv.depot.food}/32`);
+   for(const h of cv.households){const home=R.Civilization.HOMES.find(a=>a.id===h.id),color=h.hunger>=3?'#de8874':h.hunger?'#d4b06a':'#8cc7a0';dot(home.x,.1,home.z,.85,color);label(home.x,home.z,`${home.name.split(' ')[0]} · ${h.pantry} food`,color);for(const[dx,dz]of[[-1.1,.75],[1.1,.75],[0,1.65]])dot(home.x+dx,.7,home.z+dz,.3,'#e8d9b9');for(let i=0;i<h.pantry;i++)dot(home.x-.45+i*.45,.4,home.z,.12,'#f4d28b');}
+   dot(carrier.x,.8,carrier.z,.43,'#f4ca99');if(carrier.cargo)dot(carrier.x,1.4,carrier.z,.22,'#edbd65');label(carrier.x,carrier.z,carrier.cargo?`Tavi · ${carrier.cargo.count} food`:'Tavi');
+   if(carrier.cargo){const destination=R.Civilization.HOMES.find(h=>h.id===carrier.cargo.household),p=this.project(carrier.x,.1,carrier.z),q=this.project(destination.x,.1,destination.z);c.strokeStyle='#e4c68865';c.setLineDash([3,7]);c.beginPath();c.moveTo(p.x,p.y);c.lineTo(q.x,q.y);c.stroke();c.setLineDash([]);}
+   for(const[item,rule]of Object.entries(R.Civilization.PATCHES))label(rule.x,rule.z,`${s.reserve[item]}/${rule.capacity} ${item}`,'#b9d3ae');
+  }
  }
  if(s.mode!=='world')for(const o of R.obstacles(s)){const p=this.project(o.x,0,o.z);c.fillStyle='#172f36';c.strokeStyle='#bed8c166';c.lineWidth=2;c.beginPath();c.ellipse(p.x,p.y,o.r*this.scale,o.r*this.scale*.68,0,0,tau);c.fill();c.stroke();const top=this.project(o.x,1.2,o.z);c.fillStyle='#56716e';c.beginPath();c.ellipse(top.x,top.y,o.r*this.scale,o.r*this.scale*.68,0,0,tau);c.fill();c.stroke();}
  for(const e of s.enemies)if(e.hp>0&&!e.dead){dot(e.x,.6,e.z,e.boss?1.8:.65,e.team==='amber'?'#f0c675':'#cc7973');const p=this.project(e.x,.6,e.z);c.strokeStyle='#f4ddd0';c.lineWidth=2;c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x+Math.sin(e.angle-this.yaw)*14,p.y+Math.cos(e.angle-this.yaw)*10);c.stroke();}
