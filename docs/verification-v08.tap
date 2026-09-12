@@ -1,0 +1,190 @@
+TAP version 13
+# Subtest: genesis preserves all five inherited ledgers
+ok 1 - genesis preserves all five inherited ledgers
+  ---
+  duration_ms: 1.698868
+  type: 'test'
+  ...
+# Subtest: Mercy Braid distributes four to all three living places
+ok 2 - Mercy Braid distributes four to all three living places
+  ---
+  duration_ms: 1.715763
+  type: 'test'
+  ...
+# Subtest: drought remains a real tradeoff; no fabricated abundance
+ok 3 - drought remains a real tradeoff; no fabricated abundance
+  ---
+  duration_ms: 1.420459
+  type: 'test'
+  ...
+# Subtest: bridge visual selection and walkability share the six-water predicate
+ok 4 - bridge visual selection and walkability share the six-water predicate
+  ---
+  duration_ms: 0.209084
+  type: 'test'
+  ...
+# Subtest: bridge joins both banks without an equality crack
+ok 5 - bridge joins both banks without an equality crack
+  ---
+  duration_ms: 0.532242
+  type: 'test'
+  ...
+# Subtest: cargo is physical and cannot settle just because a rain is safe
+ok 6 - cargo is physical and cannot settle just because a rain is safe
+  ---
+  duration_ms: 1.90547
+  type: 'test'
+  ...
+# Subtest: closed crossing prevents wagon travel and oversized time steps reject
+ok 7 - closed crossing prevents wagon travel and oversized time steps reject
+  ---
+  duration_ms: 0.608737
+  type: 'test'
+  ...
+# Subtest: physical arrival transfers one lot and one finite commission exactly once
+ok 8 - physical arrival transfers one lot and one finite commission exactly once
+  ---
+  duration_ms: 1.096671
+  type: 'test'
+  ...
+# Subtest: closure rescues the full wagon footprint, never pays prematurely
+ok 9 - closure rescues the full wagon footprint, never pays prematurely
+  ---
+  duration_ms: 0.851072
+  type: 'test'
+  ...
+# Subtest: wagon fully clear of bridge continues after closure
+ok 10 - wagon fully clear of bridge continues after closure
+  ---
+  duration_ms: 0.495296
+  type: 'test'
+  ...
+# Subtest: rescued wagon resumes with the same food and reserve
+ok 11 - rescued wagon resumes with the same food and reserve
+  ---
+  duration_ms: 0.406011
+  type: 'test'
+  ...
+# Subtest: saved snapshot immediately before and after arrival preserves settlement
+ok 12 - saved snapshot immediately before and after arrival preserves settlement
+  ---
+  duration_ms: 1.457474
+  type: 'test'
+  ...
+# Subtest: exhausted build and weave attempts are atomic
+ok 13 - exhausted build and weave attempts are atomic
+  ---
+  duration_ms: 0.251989
+  type: 'test'
+  ...
+# Subtest: multi-channel blueprint failure rolls back all costs and changes
+ok 14 - multi-channel blueprint failure rolls back all costs and changes
+  ---
+  duration_ms: 0.27895
+  type: 'test'
+  ...
+# Subtest: odd capacity salvage returns floor half and tracks scrap
+ok 15 - odd capacity salvage returns floor half and tracks scrap
+  ---
+  duration_ms: 0.198479
+  type: 'test'
+  ...
+# Subtest: temporary and installed channels share water law, expiry retains water
+ok 16 - temporary and installed channels share water law, expiry retains water
+  ---
+  duration_ms: 0.346592
+  type: 'test'
+  ...
+# Subtest: same slot, reverse edges, fractional values and invalid priorities reject
+ok 17 - same slot, reverse edges, fractional values and invalid priorities reject
+  ---
+  duration_ms: 0.23279
+  type: 'test'
+  ...
+# Subtest: agent needs invitation and cannot take a reserved bridge inlet
+ok 18 - agent needs invitation and cannot take a reserved bridge inlet
+  ---
+  duration_ms: 0.568586
+  type: 'test'
+  ...
+# Subtest: agent preview has no live mutation and exact acceptance uses agent fiber
+ok 19 - agent preview has no live mutation and exact acceptance uses agent fiber
+  ---
+  duration_ms: 0.379191
+  type: 'test'
+  ...
+# Subtest: pulse invalidates a viewed proposal without spending
+ok 20 - pulse invalidates a viewed proposal without spending
+  ---
+  duration_ms: 0.293632
+  type: 'test'
+  ...
+# Subtest: revocation and regrant do not revive old permission epoch
+ok 21 - revocation and regrant do not revive old permission epoch
+  ---
+  duration_ms: 0.288694
+  type: 'test'
+  ...
+# Subtest: Serein ownership remains after revocation; no player confiscation
+ok 22 - Serein ownership remains after revocation; no player confiscation
+  ---
+  duration_ms: 0.110426
+  type: 'test'
+  ...
+# Subtest: helper exhaustion is reported without a hidden transfer
+ok 23 - helper exhaustion is reported without a hidden transfer
+  ---
+  duration_ms: 0.126821
+  type: 'test'
+  ...
+# Subtest: long-running world survives old pulse and journal caps
+ok 24 - long-running world survives old pulse and journal caps
+  ---
+  duration_ms: 178.614508
+  type: 'test'
+  ...
+# Subtest: save validation rejects malformed, missing and inconsistent accounts
+ok 25 - save validation rejects malformed, missing and inconsistent accounts
+  ---
+  duration_ms: 0.525071
+  type: 'test'
+  ...
+# Subtest: new world is independent; no merging conserved assets
+ok 26 - new world is independent; no merging conserved assets
+  ---
+  duration_ms: 0.262095
+  type: 'test'
+  ...
+# Subtest: camera matrix projects its target to the viewport center
+ok 27 - camera matrix projects its target to the viewport center
+  ---
+  duration_ms: 0.346171
+  type: 'test'
+  ...
+# Subtest: all generated scene vertices, normals and colors are finite
+ok 28 - all generated scene vertices, normals and colors are finite
+  ---
+  duration_ms: 165.439106
+  type: 'test'
+  ...
+# Subtest: all authored static asset references resolve
+ok 29 - all authored static asset references resolve
+  ---
+  duration_ms: 0.806234
+  type: 'test'
+  ...
+# Subtest: browser water solver matches 252 exact inherited Python fixtures
+ok 30 - browser water solver matches 252 exact inherited Python fixtures
+  ---
+  duration_ms: 38.142287
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 506.986833
