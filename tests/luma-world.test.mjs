@@ -51,7 +51,7 @@ test('an intention preserves its exact passage and a matching undertaking pays t
 
 test('typed actor, role, manner and negation checks never silently coerce a different claim',()=>{
   const s=R.newRealm();
-  for(const text of ['pe ni me peli ta musa.','pe "mi" me peli ta musa.','pe mi me peli ta musa li ti.','pe mi me peli ta musa ki bema.','pe mi me peli remu ta musa.','pe mi me peli ta #e musa.','pe mi me doni ta #e bama li ti.','pe mi me yuni ta yuna.','pe mi me remi ta "mi".']) rejectAtomic(s,()=>speak(s,text,{x:-4,z:15}));
+  for(const text of ['pe ni me peli ta musa.','pe "mi" me peli ta musa.','pe mi me nu peli ta musa.','pe e mi me peli ta musa.','pe #e mi me peli ta musa.','pe mi me peli ta musa li ti.','pe mi me peli ta musa ki bema.','pe mi me peli remu ta musa.','pe mi me peli ta #e musa.','pe mi me doni ta #e bama li ti.','pe mi me yuni ta yuna.','pe mi me remi ta "mi".']) rejectAtomic(s,()=>speak(s,text,{x:-4,z:15}));
   for(const c of [{x:-4},{x:NaN,z:15},{x:-4,z:15,dimension:17},{x:-4,z:15,extra:true},{focusId:3}])rejectAtomic(s,()=>speak(s,createPhrase,c));
   invariants(s);
 });

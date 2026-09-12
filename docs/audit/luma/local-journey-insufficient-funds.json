@@ -1,0 +1,1939 @@
+{
+  "schema": "anima-luma-legal-local-journey-1",
+  "method": "One fresh ordinary world; public local APIs, guided legal movement and 60-Hz ticks. Current-state persistence checkpoints only. This is scripted agent play, not a browser or human playtest.",
+  "runtime": "v24.19.0",
+  "source": [
+    {
+      "file": "public/realm.js",
+      "sha256": "b56161c3f878bbbfb1e8d946ece8bf6ccfc9bad9c1f6e1579f99b037ee6b372d"
+    },
+    {
+      "file": "public/world.js",
+      "sha256": "8432eed2613bf536b3a0c7606556f7f75e0cb9b4f8f47fcff4c8928a0de436ee"
+    },
+    {
+      "file": "public/creation.js",
+      "sha256": "eabd34ff7f166e2e388fb32e76fe1d14a9e1f2d88bdb406adb446780c22fd2ee"
+    },
+    {
+      "file": "public/kingdoms.js",
+      "sha256": "271304d235deb377f89264b2939864bc93e790082977524b1a858fa67d91f0ae"
+    },
+    {
+      "file": "public/civilization.js",
+      "sha256": "a9922fa4b03638b9c7bd6ba4294da9a2a4c15b22747f4e300f3c9c5bed5e890d"
+    },
+    {
+      "file": "public/navigation.js",
+      "sha256": "46e32a3b7ba4fe02a4e90ed0f3017d23af55b7081134945bb14fbe575c85c6f3"
+    },
+    {
+      "file": "public/luma-world.js",
+      "sha256": "fa2950b5994dea511713adc8d316d362d8253a0fbc94d733d4034c7166099771"
+    },
+    {
+      "file": "public/luma/language.js",
+      "sha256": "d3b1a84cce3d769a359c95014d977f24f12cd60b63c00fb7e0513a2153759be9"
+    },
+    {
+      "file": "public/luma/geometry.js",
+      "sha256": "c43b5c717f47f4895bc2085cdfafb65f3eb69d9acfdfaa4b7ffbabfc817295ba"
+    },
+    {
+      "file": "public/luma/numbers.js",
+      "sha256": "78914da3be28fa8e296bbe4d3b88eed3016ba6611d974d787c0d053bbd4c3807"
+    },
+    {
+      "file": "public/luma/data.js",
+      "sha256": "97bb31145499b0f9c58c886034211260d7556526aa51c2a70fe59dd5b5f116db"
+    },
+    {
+      "file": "public/luma/origin.html",
+      "sha256": "86f7c110a82587eb50f302def2261b5ae9b431a41cdabf46b8f48a6c7a8f0668"
+    },
+    {
+      "file": "docs/audit/luma/local-journey.mjs",
+      "sha256": "d03ce022a6c2e508d15df77fe8bdfdae95884418530a930283db7be4e25f25dc"
+    }
+  ],
+  "status": "failed",
+  "actions": [
+    {
+      "label": "walk",
+      "tick": 0,
+      "result": {
+        "key": "legal-journey:1",
+        "bytes": "{\"world\":\"b13949ed-676b-4926-ba11-165096b9e23d\",\"rules\":\"anima-concord-1\",\"controller\":\"human\",\"epoch\":0,\"revision\":0,\"key\":\"legal-journey:1\",\"op\":\"walk\",\"payload\":{\"x\":6,\"z\":20}}",
+        "revision": 1,
+        "op": "walk",
+        "result": null
+      },
+      "before": {
+        "tick": 0,
+        "body": {
+          "x": 0,
+          "z": 16,
+          "hp": 100,
+          "breath": 100,
+          "bank": "near"
+        },
+        "pack": {
+          "wood": 10,
+          "stone": 8,
+          "ore": 3,
+          "food": 4,
+          "herb": 2,
+          "crystal": 0
+        },
+        "market": {
+          "wood": 24,
+          "stone": 20,
+          "ore": 10,
+          "food": 15,
+          "herb": 6,
+          "crystal": 2
+        },
+        "reserve": {
+          "wood": 120,
+          "stone": 100,
+          "ore": 57,
+          "food": 60,
+          "herb": 38,
+          "crystal": 12
+        },
+        "spent": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "marks": {
+          "human": 20,
+          "agent": 0,
+          "keeper": 18,
+          "carrier": 0
+        },
+        "escrow": 12,
+        "instances": [],
+        "households": {
+          "schema": "anima-households-1",
+          "active": false,
+          "revision": 0,
+          "clock": 0,
+          "serial": 0,
+          "depot": {
+            "food": 0,
+            "harvest": false
+          },
+          "courier": {
+            "x": 0,
+            "z": 23,
+            "angle": 0,
+            "enabled": true,
+            "phase": "rest",
+            "cargo": null,
+            "target": null
+          },
+          "households": [
+            {
+              "id": "hearth",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 3600,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "lantern",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4050,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "bough",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4500,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "reed",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4950,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            }
+          ],
+          "patches": {
+            "food": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "herb": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "wood": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            }
+          },
+          "soil": 12,
+          "compost": 0,
+          "compostClock": 0,
+          "fallowClock": 0,
+          "ledger": {
+            "produced": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "water": {
+              "orchard": 0,
+              "habitat": 0
+            },
+            "soilUsed": 0,
+            "recovered": 0,
+            "compostCreated": 0,
+            "compostReturned": 0,
+            "compostDiscarded": 0,
+            "donated": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "workerMeals": 0,
+            "funded": 0,
+            "withdrawn": 0,
+            "delivered": 0,
+            "consumed": 0
+          },
+          "trace": []
+        },
+        "ledger": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "water": 0,
+          "money": 50,
+          "charge": {
+            "issued": 0,
+            "source": 0,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 0,
+            "dissipated": 0
+          }
+        }
+      },
+      "after": {
+        "tick": 0,
+        "body": {
+          "x": 0,
+          "z": 16,
+          "hp": 100,
+          "breath": 100,
+          "bank": "near"
+        },
+        "pack": {
+          "wood": 10,
+          "stone": 8,
+          "ore": 3,
+          "food": 4,
+          "herb": 2,
+          "crystal": 0
+        },
+        "market": {
+          "wood": 24,
+          "stone": 20,
+          "ore": 10,
+          "food": 15,
+          "herb": 6,
+          "crystal": 2
+        },
+        "reserve": {
+          "wood": 120,
+          "stone": 100,
+          "ore": 57,
+          "food": 60,
+          "herb": 38,
+          "crystal": 12
+        },
+        "spent": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "marks": {
+          "human": 20,
+          "agent": 0,
+          "keeper": 18,
+          "carrier": 0
+        },
+        "escrow": 12,
+        "instances": [],
+        "households": {
+          "schema": "anima-households-1",
+          "active": false,
+          "revision": 0,
+          "clock": 0,
+          "serial": 0,
+          "depot": {
+            "food": 0,
+            "harvest": false
+          },
+          "courier": {
+            "x": 0,
+            "z": 23,
+            "angle": 0,
+            "enabled": true,
+            "phase": "rest",
+            "cargo": null,
+            "target": null
+          },
+          "households": [
+            {
+              "id": "hearth",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 3600,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "lantern",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4050,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "bough",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4500,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "reed",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4950,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            }
+          ],
+          "patches": {
+            "food": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "herb": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "wood": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            }
+          },
+          "soil": 12,
+          "compost": 0,
+          "compostClock": 0,
+          "fallowClock": 0,
+          "ledger": {
+            "produced": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "water": {
+              "orchard": 0,
+              "habitat": 0
+            },
+            "soilUsed": 0,
+            "recovered": 0,
+            "compostCreated": 0,
+            "compostReturned": 0,
+            "compostDiscarded": 0,
+            "donated": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "workerMeals": 0,
+            "funded": 0,
+            "withdrawn": 0,
+            "delivered": 0,
+            "consumed": 0
+          },
+          "trace": []
+        },
+        "ledger": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "water": 0,
+          "money": 50,
+          "charge": {
+            "issued": 0,
+            "source": 0,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 0,
+            "dissipated": 0
+          }
+        }
+      }
+    },
+    {
+      "label": "buy_crystal",
+      "tick": 94,
+      "result": {
+        "key": "legal-journey:2",
+        "bytes": "{\"world\":\"b13949ed-676b-4926-ba11-165096b9e23d\",\"rules\":\"anima-concord-1\",\"controller\":\"human\",\"epoch\":0,\"revision\":1,\"key\":\"legal-journey:2\",\"op\":\"buy_crystal\",\"payload\":{}}",
+        "revision": 2,
+        "op": "buy_crystal",
+        "result": null
+      },
+      "before": {
+        "tick": 94,
+        "body": {
+          "x": 5.545615211761743,
+          "z": 19.697076807841167,
+          "hp": 100,
+          "breath": 100,
+          "bank": "near"
+        },
+        "pack": {
+          "wood": 10,
+          "stone": 8,
+          "ore": 3,
+          "food": 4,
+          "herb": 2,
+          "crystal": 0
+        },
+        "market": {
+          "wood": 24,
+          "stone": 20,
+          "ore": 10,
+          "food": 15,
+          "herb": 6,
+          "crystal": 2
+        },
+        "reserve": {
+          "wood": 120,
+          "stone": 100,
+          "ore": 57,
+          "food": 60,
+          "herb": 38,
+          "crystal": 12
+        },
+        "spent": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "marks": {
+          "human": 20,
+          "agent": 0,
+          "keeper": 18,
+          "carrier": 0
+        },
+        "escrow": 12,
+        "instances": [],
+        "households": {
+          "schema": "anima-households-1",
+          "active": false,
+          "revision": 0,
+          "clock": 0,
+          "serial": 0,
+          "depot": {
+            "food": 0,
+            "harvest": false
+          },
+          "courier": {
+            "x": 0,
+            "z": 23,
+            "angle": 0,
+            "enabled": true,
+            "phase": "rest",
+            "cargo": null,
+            "target": null
+          },
+          "households": [
+            {
+              "id": "hearth",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 3600,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "lantern",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4050,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "bough",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4500,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "reed",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4950,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            }
+          ],
+          "patches": {
+            "food": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "herb": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "wood": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            }
+          },
+          "soil": 12,
+          "compost": 0,
+          "compostClock": 0,
+          "fallowClock": 0,
+          "ledger": {
+            "produced": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "water": {
+              "orchard": 0,
+              "habitat": 0
+            },
+            "soilUsed": 0,
+            "recovered": 0,
+            "compostCreated": 0,
+            "compostReturned": 0,
+            "compostDiscarded": 0,
+            "donated": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "workerMeals": 0,
+            "funded": 0,
+            "withdrawn": 0,
+            "delivered": 0,
+            "consumed": 0
+          },
+          "trace": []
+        },
+        "ledger": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "water": 0,
+          "money": 50,
+          "charge": {
+            "issued": 0,
+            "source": 0,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 0,
+            "dissipated": 0
+          }
+        }
+      },
+      "after": {
+        "tick": 94,
+        "body": {
+          "x": 5.545615211761743,
+          "z": 19.697076807841167,
+          "hp": 100,
+          "breath": 100,
+          "bank": "near"
+        },
+        "pack": {
+          "wood": 10,
+          "stone": 8,
+          "ore": 3,
+          "food": 4,
+          "herb": 2,
+          "crystal": 1
+        },
+        "market": {
+          "wood": 24,
+          "stone": 20,
+          "ore": 10,
+          "food": 15,
+          "herb": 6,
+          "crystal": 1
+        },
+        "reserve": {
+          "wood": 120,
+          "stone": 100,
+          "ore": 57,
+          "food": 60,
+          "herb": 38,
+          "crystal": 12
+        },
+        "spent": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "marks": {
+          "human": 12,
+          "agent": 0,
+          "keeper": 26,
+          "carrier": 0
+        },
+        "escrow": 12,
+        "instances": [],
+        "households": {
+          "schema": "anima-households-1",
+          "active": false,
+          "revision": 0,
+          "clock": 0,
+          "serial": 0,
+          "depot": {
+            "food": 0,
+            "harvest": false
+          },
+          "courier": {
+            "x": 0,
+            "z": 23,
+            "angle": 0,
+            "enabled": true,
+            "phase": "rest",
+            "cargo": null,
+            "target": null
+          },
+          "households": [
+            {
+              "id": "hearth",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 3600,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "lantern",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4050,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "bough",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4500,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "reed",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4950,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            }
+          ],
+          "patches": {
+            "food": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "herb": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "wood": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            }
+          },
+          "soil": 12,
+          "compost": 0,
+          "compostClock": 0,
+          "fallowClock": 0,
+          "ledger": {
+            "produced": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "water": {
+              "orchard": 0,
+              "habitat": 0
+            },
+            "soilUsed": 0,
+            "recovered": 0,
+            "compostCreated": 0,
+            "compostReturned": 0,
+            "compostDiscarded": 0,
+            "donated": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "workerMeals": 0,
+            "funded": 0,
+            "withdrawn": 0,
+            "delivered": 0,
+            "consumed": 0
+          },
+          "trace": []
+        },
+        "ledger": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "water": 0,
+          "money": 50,
+          "charge": {
+            "issued": 0,
+            "source": 0,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 0,
+            "dissipated": 0
+          }
+        }
+      }
+    },
+    {
+      "label": "Buy 3 herb at the market",
+      "tick": 94,
+      "result": {
+        "realm": "b13949ed-676b-4926-ba11-165096b9e23d",
+        "revision": 6,
+        "item": "herb",
+        "side": "buy",
+        "qty": 3,
+        "unit": 3,
+        "total": 9
+      },
+      "before": {
+        "tick": 94,
+        "body": {
+          "x": 5.545615211761743,
+          "z": 19.697076807841167,
+          "hp": 100,
+          "breath": 100,
+          "bank": "near"
+        },
+        "pack": {
+          "wood": 10,
+          "stone": 8,
+          "ore": 3,
+          "food": 4,
+          "herb": 2,
+          "crystal": 1
+        },
+        "market": {
+          "wood": 24,
+          "stone": 20,
+          "ore": 10,
+          "food": 15,
+          "herb": 6,
+          "crystal": 1
+        },
+        "reserve": {
+          "wood": 120,
+          "stone": 100,
+          "ore": 57,
+          "food": 60,
+          "herb": 38,
+          "crystal": 12
+        },
+        "spent": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "marks": {
+          "human": 12,
+          "agent": 0,
+          "keeper": 26,
+          "carrier": 0
+        },
+        "escrow": 12,
+        "instances": [],
+        "households": {
+          "schema": "anima-households-1",
+          "active": false,
+          "revision": 0,
+          "clock": 0,
+          "serial": 0,
+          "depot": {
+            "food": 0,
+            "harvest": false
+          },
+          "courier": {
+            "x": 0,
+            "z": 23,
+            "angle": 0,
+            "enabled": true,
+            "phase": "rest",
+            "cargo": null,
+            "target": null
+          },
+          "households": [
+            {
+              "id": "hearth",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 3600,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "lantern",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4050,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "bough",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4500,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "reed",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4950,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            }
+          ],
+          "patches": {
+            "food": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "herb": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "wood": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            }
+          },
+          "soil": 12,
+          "compost": 0,
+          "compostClock": 0,
+          "fallowClock": 0,
+          "ledger": {
+            "produced": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "water": {
+              "orchard": 0,
+              "habitat": 0
+            },
+            "soilUsed": 0,
+            "recovered": 0,
+            "compostCreated": 0,
+            "compostReturned": 0,
+            "compostDiscarded": 0,
+            "donated": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "workerMeals": 0,
+            "funded": 0,
+            "withdrawn": 0,
+            "delivered": 0,
+            "consumed": 0
+          },
+          "trace": []
+        },
+        "ledger": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "water": 0,
+          "money": 50,
+          "charge": {
+            "issued": 0,
+            "source": 0,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 0,
+            "dissipated": 0
+          }
+        }
+      },
+      "after": {
+        "tick": 94,
+        "body": {
+          "x": 5.545615211761743,
+          "z": 19.697076807841167,
+          "hp": 100,
+          "breath": 100,
+          "bank": "near"
+        },
+        "pack": {
+          "wood": 10,
+          "stone": 8,
+          "ore": 3,
+          "food": 4,
+          "herb": 5,
+          "crystal": 1
+        },
+        "market": {
+          "wood": 24,
+          "stone": 20,
+          "ore": 10,
+          "food": 15,
+          "herb": 3,
+          "crystal": 1
+        },
+        "reserve": {
+          "wood": 120,
+          "stone": 100,
+          "ore": 57,
+          "food": 60,
+          "herb": 38,
+          "crystal": 12
+        },
+        "spent": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "marks": {
+          "human": 3,
+          "agent": 0,
+          "keeper": 35,
+          "carrier": 0
+        },
+        "escrow": 12,
+        "instances": [],
+        "households": {
+          "schema": "anima-households-1",
+          "active": false,
+          "revision": 0,
+          "clock": 0,
+          "serial": 0,
+          "depot": {
+            "food": 0,
+            "harvest": false
+          },
+          "courier": {
+            "x": 0,
+            "z": 23,
+            "angle": 0,
+            "enabled": true,
+            "phase": "rest",
+            "cargo": null,
+            "target": null
+          },
+          "households": [
+            {
+              "id": "hearth",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 3600,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "lantern",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4050,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "bough",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4500,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "reed",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4950,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            }
+          ],
+          "patches": {
+            "food": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "herb": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "wood": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            }
+          },
+          "soil": 12,
+          "compost": 0,
+          "compostClock": 0,
+          "fallowClock": 0,
+          "ledger": {
+            "produced": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "water": {
+              "orchard": 0,
+              "habitat": 0
+            },
+            "soilUsed": 0,
+            "recovered": 0,
+            "compostCreated": 0,
+            "compostReturned": 0,
+            "compostDiscarded": 0,
+            "donated": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "workerMeals": 0,
+            "funded": 0,
+            "withdrawn": 0,
+            "delivered": 0,
+            "consumed": 0
+          },
+          "trace": []
+        },
+        "ledger": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "water": 0,
+          "money": 50,
+          "charge": {
+            "issued": 0,
+            "source": 0,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 0,
+            "dissipated": 0
+          }
+        }
+      }
+    },
+    {
+      "label": "Buy 1 food at the market",
+      "tick": 94,
+      "error": "You do not have enough Marks.",
+      "before": {
+        "tick": 94,
+        "body": {
+          "x": 5.545615211761743,
+          "z": 19.697076807841167,
+          "hp": 100,
+          "breath": 100,
+          "bank": "near"
+        },
+        "pack": {
+          "wood": 10,
+          "stone": 8,
+          "ore": 3,
+          "food": 4,
+          "herb": 5,
+          "crystal": 1
+        },
+        "market": {
+          "wood": 24,
+          "stone": 20,
+          "ore": 10,
+          "food": 15,
+          "herb": 3,
+          "crystal": 1
+        },
+        "reserve": {
+          "wood": 120,
+          "stone": 100,
+          "ore": 57,
+          "food": 60,
+          "herb": 38,
+          "crystal": 12
+        },
+        "spent": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "marks": {
+          "human": 3,
+          "agent": 0,
+          "keeper": 35,
+          "carrier": 0
+        },
+        "escrow": 12,
+        "instances": [],
+        "households": {
+          "schema": "anima-households-1",
+          "active": false,
+          "revision": 0,
+          "clock": 0,
+          "serial": 0,
+          "depot": {
+            "food": 0,
+            "harvest": false
+          },
+          "courier": {
+            "x": 0,
+            "z": 23,
+            "angle": 0,
+            "enabled": true,
+            "phase": "rest",
+            "cargo": null,
+            "target": null
+          },
+          "households": [
+            {
+              "id": "hearth",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 3600,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "lantern",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4050,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "bough",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4500,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "reed",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4950,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            }
+          ],
+          "patches": {
+            "food": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "herb": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "wood": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            }
+          },
+          "soil": 12,
+          "compost": 0,
+          "compostClock": 0,
+          "fallowClock": 0,
+          "ledger": {
+            "produced": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "water": {
+              "orchard": 0,
+              "habitat": 0
+            },
+            "soilUsed": 0,
+            "recovered": 0,
+            "compostCreated": 0,
+            "compostReturned": 0,
+            "compostDiscarded": 0,
+            "donated": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "workerMeals": 0,
+            "funded": 0,
+            "withdrawn": 0,
+            "delivered": 0,
+            "consumed": 0
+          },
+          "trace": []
+        },
+        "ledger": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "water": 0,
+          "money": 50,
+          "charge": {
+            "issued": 0,
+            "source": 0,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 0,
+            "dissipated": 0
+          }
+        }
+      },
+      "after": {
+        "tick": 94,
+        "body": {
+          "x": 5.545615211761743,
+          "z": 19.697076807841167,
+          "hp": 100,
+          "breath": 100,
+          "bank": "near"
+        },
+        "pack": {
+          "wood": 10,
+          "stone": 8,
+          "ore": 3,
+          "food": 4,
+          "herb": 5,
+          "crystal": 1
+        },
+        "market": {
+          "wood": 24,
+          "stone": 20,
+          "ore": 10,
+          "food": 15,
+          "herb": 3,
+          "crystal": 1
+        },
+        "reserve": {
+          "wood": 120,
+          "stone": 100,
+          "ore": 57,
+          "food": 60,
+          "herb": 38,
+          "crystal": 12
+        },
+        "spent": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "marks": {
+          "human": 3,
+          "agent": 0,
+          "keeper": 35,
+          "carrier": 0
+        },
+        "escrow": 12,
+        "instances": [],
+        "households": {
+          "schema": "anima-households-1",
+          "active": false,
+          "revision": 0,
+          "clock": 0,
+          "serial": 0,
+          "depot": {
+            "food": 0,
+            "harvest": false
+          },
+          "courier": {
+            "x": 0,
+            "z": 23,
+            "angle": 0,
+            "enabled": true,
+            "phase": "rest",
+            "cargo": null,
+            "target": null
+          },
+          "households": [
+            {
+              "id": "hearth",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 3600,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "lantern",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4050,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "bough",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4500,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            },
+            {
+              "id": "reed",
+              "pantry": 0,
+              "hunger": 0,
+              "due": 4950,
+              "received": 0,
+              "consumed": 0,
+              "missed": 0
+            }
+          ],
+          "patches": {
+            "food": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "herb": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            },
+            "wood": {
+              "enabled": true,
+              "progress": 0,
+              "cycles": 0,
+              "produced": 0
+            }
+          },
+          "soil": 12,
+          "compost": 0,
+          "compostClock": 0,
+          "fallowClock": 0,
+          "ledger": {
+            "produced": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "water": {
+              "orchard": 0,
+              "habitat": 0
+            },
+            "soilUsed": 0,
+            "recovered": 0,
+            "compostCreated": 0,
+            "compostReturned": 0,
+            "compostDiscarded": 0,
+            "donated": {
+              "food": 0,
+              "herb": 0,
+              "wood": 0
+            },
+            "workerMeals": 0,
+            "funded": 0,
+            "withdrawn": 0,
+            "delivered": 0,
+            "consumed": 0
+          },
+          "trace": []
+        },
+        "ledger": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "water": 0,
+          "money": 50,
+          "charge": {
+            "issued": 0,
+            "source": 0,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 0,
+            "dissipated": 0
+          }
+        }
+      }
+    }
+  ],
+  "walks": [
+    {
+      "from": {
+        "x": 0,
+        "z": 16,
+        "hp": 100,
+        "breath": 100,
+        "bank": "near"
+      },
+      "target": {
+        "x": 6,
+        "z": 20
+      },
+      "arrival": {
+        "x": 5.545615211761743,
+        "z": 19.697076807841167,
+        "hp": 100,
+        "breath": 100,
+        "bank": "near"
+      },
+      "start": 0,
+      "end": 94,
+      "ticks": 94
+    }
+  ],
+  "checkpoints": [],
+  "notes": [],
+  "observations": [
+    {
+      "label": "Pure imagination and exact bill",
+      "tick": 0,
+      "cost": {
+        "wood": 2,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 2,
+        "crystal": 0
+      },
+      "word": "musa",
+      "unchanged": true
+    }
+  ],
+  "initial": {
+    "tick": 0,
+    "body": {
+      "x": 0,
+      "z": 16,
+      "hp": 100,
+      "breath": 100,
+      "bank": "near"
+    },
+    "pack": {
+      "wood": 10,
+      "stone": 8,
+      "ore": 3,
+      "food": 4,
+      "herb": 2,
+      "crystal": 0
+    },
+    "market": {
+      "wood": 24,
+      "stone": 20,
+      "ore": 10,
+      "food": 15,
+      "herb": 6,
+      "crystal": 2
+    },
+    "reserve": {
+      "wood": 120,
+      "stone": 100,
+      "ore": 57,
+      "food": 60,
+      "herb": 38,
+      "crystal": 12
+    },
+    "spent": {
+      "wood": 0,
+      "stone": 0,
+      "ore": 0,
+      "food": 0,
+      "herb": 0,
+      "crystal": 0
+    },
+    "marks": {
+      "human": 20,
+      "agent": 0,
+      "keeper": 18,
+      "carrier": 0
+    },
+    "escrow": 12,
+    "instances": [],
+    "households": {
+      "schema": "anima-households-1",
+      "active": false,
+      "revision": 0,
+      "clock": 0,
+      "serial": 0,
+      "depot": {
+        "food": 0,
+        "harvest": false
+      },
+      "courier": {
+        "x": 0,
+        "z": 23,
+        "angle": 0,
+        "enabled": true,
+        "phase": "rest",
+        "cargo": null,
+        "target": null
+      },
+      "households": [
+        {
+          "id": "hearth",
+          "pantry": 0,
+          "hunger": 0,
+          "due": 3600,
+          "received": 0,
+          "consumed": 0,
+          "missed": 0
+        },
+        {
+          "id": "lantern",
+          "pantry": 0,
+          "hunger": 0,
+          "due": 4050,
+          "received": 0,
+          "consumed": 0,
+          "missed": 0
+        },
+        {
+          "id": "bough",
+          "pantry": 0,
+          "hunger": 0,
+          "due": 4500,
+          "received": 0,
+          "consumed": 0,
+          "missed": 0
+        },
+        {
+          "id": "reed",
+          "pantry": 0,
+          "hunger": 0,
+          "due": 4950,
+          "received": 0,
+          "consumed": 0,
+          "missed": 0
+        }
+      ],
+      "patches": {
+        "food": {
+          "enabled": true,
+          "progress": 0,
+          "cycles": 0,
+          "produced": 0
+        },
+        "herb": {
+          "enabled": true,
+          "progress": 0,
+          "cycles": 0,
+          "produced": 0
+        },
+        "wood": {
+          "enabled": true,
+          "progress": 0,
+          "cycles": 0,
+          "produced": 0
+        }
+      },
+      "soil": 12,
+      "compost": 0,
+      "compostClock": 0,
+      "fallowClock": 0,
+      "ledger": {
+        "produced": {
+          "food": 0,
+          "herb": 0,
+          "wood": 0
+        },
+        "water": {
+          "orchard": 0,
+          "habitat": 0
+        },
+        "soilUsed": 0,
+        "recovered": 0,
+        "compostCreated": 0,
+        "compostReturned": 0,
+        "compostDiscarded": 0,
+        "donated": {
+          "food": 0,
+          "herb": 0,
+          "wood": 0
+        },
+        "workerMeals": 0,
+        "funded": 0,
+        "withdrawn": 0,
+        "delivered": 0,
+        "consumed": 0
+      },
+      "trace": []
+    },
+    "ledger": {
+      "materials": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      },
+      "water": 0,
+      "money": 50,
+      "charge": {
+        "issued": 0,
+        "source": 0,
+        "flight": 0,
+        "receiver": 0,
+        "spent": 0,
+        "dissipated": 0
+      }
+    }
+  },
+  "error": {
+    "message": "You do not have enough Marks.",
+    "stack": "Error: You do not have enough Marks.\n    at Module.trade (file:///workspace/scratch/dd1db9da8150/Anima-Kingdoms/public/realm.js:55:507)\n    at file:///workspace/scratch/dd1db9da8150/Anima-Kingdoms/docs/audit/luma/local-journey.mjs:41:179\n    at action (file:///workspace/scratch/dd1db9da8150/Anima-Kingdoms/docs/audit/luma/local-journey.mjs:23:67)\n    at file:///workspace/scratch/dd1db9da8150/Anima-Kingdoms/docs/audit/luma/local-journey.mjs:41:48\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+  },
+  "final": {
+    "tick": 94,
+    "body": {
+      "x": 5.545615211761743,
+      "z": 19.697076807841167,
+      "hp": 100,
+      "breath": 100,
+      "bank": "near"
+    },
+    "pack": {
+      "wood": 10,
+      "stone": 8,
+      "ore": 3,
+      "food": 4,
+      "herb": 5,
+      "crystal": 1
+    },
+    "market": {
+      "wood": 24,
+      "stone": 20,
+      "ore": 10,
+      "food": 15,
+      "herb": 3,
+      "crystal": 1
+    },
+    "reserve": {
+      "wood": 120,
+      "stone": 100,
+      "ore": 57,
+      "food": 60,
+      "herb": 38,
+      "crystal": 12
+    },
+    "spent": {
+      "wood": 0,
+      "stone": 0,
+      "ore": 0,
+      "food": 0,
+      "herb": 0,
+      "crystal": 0
+    },
+    "marks": {
+      "human": 3,
+      "agent": 0,
+      "keeper": 35,
+      "carrier": 0
+    },
+    "escrow": 12,
+    "instances": [],
+    "households": {
+      "schema": "anima-households-1",
+      "active": false,
+      "revision": 0,
+      "clock": 0,
+      "serial": 0,
+      "depot": {
+        "food": 0,
+        "harvest": false
+      },
+      "courier": {
+        "x": 0,
+        "z": 23,
+        "angle": 0,
+        "enabled": true,
+        "phase": "rest",
+        "cargo": null,
+        "target": null
+      },
+      "households": [
+        {
+          "id": "hearth",
+          "pantry": 0,
+          "hunger": 0,
+          "due": 3600,
+          "received": 0,
+          "consumed": 0,
+          "missed": 0
+        },
+        {
+          "id": "lantern",
+          "pantry": 0,
+          "hunger": 0,
+          "due": 4050,
+          "received": 0,
+          "consumed": 0,
+          "missed": 0
+        },
+        {
+          "id": "bough",
+          "pantry": 0,
+          "hunger": 0,
+          "due": 4500,
+          "received": 0,
+          "consumed": 0,
+          "missed": 0
+        },
+        {
+          "id": "reed",
+          "pantry": 0,
+          "hunger": 0,
+          "due": 4950,
+          "received": 0,
+          "consumed": 0,
+          "missed": 0
+        }
+      ],
+      "patches": {
+        "food": {
+          "enabled": true,
+          "progress": 0,
+          "cycles": 0,
+          "produced": 0
+        },
+        "herb": {
+          "enabled": true,
+          "progress": 0,
+          "cycles": 0,
+          "produced": 0
+        },
+        "wood": {
+          "enabled": true,
+          "progress": 0,
+          "cycles": 0,
+          "produced": 0
+        }
+      },
+      "soil": 12,
+      "compost": 0,
+      "compostClock": 0,
+      "fallowClock": 0,
+      "ledger": {
+        "produced": {
+          "food": 0,
+          "herb": 0,
+          "wood": 0
+        },
+        "water": {
+          "orchard": 0,
+          "habitat": 0
+        },
+        "soilUsed": 0,
+        "recovered": 0,
+        "compostCreated": 0,
+        "compostReturned": 0,
+        "compostDiscarded": 0,
+        "donated": {
+          "food": 0,
+          "herb": 0,
+          "wood": 0
+        },
+        "workerMeals": 0,
+        "funded": 0,
+        "withdrawn": 0,
+        "delivered": 0,
+        "consumed": 0
+      },
+      "trace": []
+    },
+    "ledger": {
+      "materials": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      },
+      "water": 0,
+      "money": 50,
+      "charge": {
+        "issued": 0,
+        "source": 0,
+        "flight": 0,
+        "receiver": 0,
+        "spent": 0,
+        "dissipated": 0
+      }
+    }
+  }
+}
