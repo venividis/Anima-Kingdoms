@@ -1,0 +1,1341 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102b30"><title>AWE · The complete project audit</title><link rel="icon" href="./assets/mark.svg"><style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,sans-serif;background:#10282d;color:#dde5de;line-height:1.72}*{box-sizing:border-box}body{margin:0}a{color:#efd19b;text-underline-offset:4px}a:focus-visible,[tabindex]:focus-visible{outline:2px solid #efd19b;outline-offset:5px}.topbar{position:sticky;top:0;z-index:3;background:#10282df5;border-bottom:1px solid #8daea533;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;gap:20px;backdrop-filter:blur(12px)}.brand{font:24px Georgia;letter-spacing:5px;text-decoration:none}.topbar span{font-size:13px;color:#b6cbc4}.topbar .return{font-size:14px}.layout{display:grid;grid-template-columns:230px minmax(0,1000px);gap:55px;max-width:1420px;margin:0 auto;padding:55px 40px 100px}.nav{position:sticky;top:120px;align-self:start;font-size:14px}.nav p,.section-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#dbbb86}.nav a{display:block;margin:15px 0;text-decoration:none}.nav a:hover{text-decoration:underline}.nav .download{border-top:1px solid #97b5aa33;padding-top:20px;margin-top:25px}main{min-width:0}section{scroll-margin-top:105px;margin-bottom:95px;border-bottom:1px solid #adc5b02b;padding-bottom:55px}h1{font:clamp(32px,4vw,52px)/1.15 Georgia;color:#f1e4c9;margin:12px 0 28px;letter-spacing:-.5px}h2{font:29px/1.25 Georgia;color:#ecdcbb;margin:48px 0 18px}h3{font-size:19px;color:#ead3a6;margin:28px 0 12px}p{margin:0 0 18px}strong{color:#f2e5ca}ol,ul{padding-left:24px}li{margin-bottom:13px;padding-left:4px}code{font:13px/1.5 ui-monospace,SFMono-Regular,monospace;background:#7e9f8b19;padding:2px 4px;border-radius:3px;overflow-wrap:anywhere}pre{white-space:pre-wrap;background:#081e2480;padding:20px;overflow:auto}.table-scroll{overflow-x:auto;margin:26px 0;border:1px solid #9cbdad38;border-radius:5px}table{border-collapse:collapse;font-size:14px;line-height:1.6;width:100%;min-width:640px}th{text-align:left;background:#244038;color:#f0d6a3;font-size:13px}th,td{padding:14px 16px;border-bottom:1px solid #8baca42b;vertical-align:top}tr:nth-child(even){background:#a4c4b107}td:first-child{color:#efd5a7}blockquote{border-left:3px solid #b9a678;padding-left:20px;margin-left:0;color:#bfd1c7}hr{border:0;border-top:1px solid #97b5aa33;margin:35px 0}.footer{color:#a4bdb3;font-size:13px;padding-top:20px}@media(max-width:950px){.layout{grid-template-columns:1fr;padding:25px 24px;gap:20px}.nav{position:static;display:flex;flex-wrap:wrap;gap:8px 22px;border-bottom:1px solid #97b5aa33;padding-bottom:20px}.nav p{width:100%;margin:0}.nav a{margin:4px 0}.nav .download{padding:0;margin:4px 0;border:0}.topbar{padding:15px 24px}.topbar span{display:none}h1{font-size:37px}h2{font-size:26px}}@media print{.topbar,.nav{display:none}.layout{display:block;padding:0}:root{background:#fff;color:#222}h1,h2,h3,strong,td:first-child{color:#111}table{min-width:0;font-size:10px}.table-scroll{overflow:visible}a{color:#164e56}section{margin-bottom:30px}}
+</style></head><body><header class="topbar"><a class="brand" href="./index.html">A W E</a><span>THE LIVING CONCORD · ACCOUNTABILITY RECORD</span><a class="return" href="./index.html">Return to the game ↗</a></header><div class="layout"><nav class="nav" aria-label="Audit sections"><p>The complete record</p><a href="#accountability">Accountability & current build</a><a href="#dossier">Appendix A · full dossier</a><a href="#source">Appendix B · prior live website</a><a href="#intermediate">Appendix C · intermediate rebuild</a><a class="download" href="./audit.md" download="AWE_Complete_Audit.md">Download the full audit ↓</a></nav><main><section id="accountability"><p class="section-label">Accountability &amp; current build</p><h1>AWE: the accountability audit and rebuilt game</h1>
+<p>11 September 2026 · The Living Concord · v0.9</p>
+<h2>The direct answer</h2>
+<p>I repeatedly delivered a substantially smaller project than you asked for. I researched selected mechanics, wrote a large design dossier, and built bounded simulations. Those are real work, but they did not constitute exhaustive mastery of the named games or the entire inhabited, human-and-agent MMORPG you requested. The largest shortcut was allowing the scale of the documentation and the number of experiments to stand in for the breadth of the playable game.</p>
+<p>I cannot establish intentional deception from the recovered record, and I will not invent a confession of falsified tests. I can identify concrete omissions, substitutions, misleading implications, insufficient verification, and code defects. They are listed below and in the full version-specific appendices.</p>
+<h2>What “every word” can honestly mean here</h2>
+<p>The audit read every available user request in this conversation, all 59 chapters / 3,268 lines of the recovered v0.7 report, the four context documents, coverage and evidence records, implementation manifests, the existing v0.8 website source, and the current rebuild. It includes the requests for WoW, all Blizzard and Nintendo, strategy games, fighters and shooters, minigames, crypto and microeconomies, human nature, AI participation, an original genre, adversarial experiments, a complete ZIP, and a playable world.</p>
+<p>The recovered ZIP contains a conversation brief, not a raw word-for-word platform export of all prior assistant and tool turns. Some earlier turns are unavailable. Consequently, this is a comprehensive audit of the recovered project and visible conversation, not a claim that inaccessible messages were read. The external game corpus and all 257 linked pages were not freshly re-researched for this audit. Its evidence is the project&#39;s own recorded sources, scope declarations, code, and reproducible local checks.</p>
+<h2>Where I fell short</h2>
+<ol>
+<li><strong>I substituted representative research for exhaustive research.</strong> There is no complete Blizzard/Nintendo title-and-version denominator, every-attack database, every-pet index, every-raid reconstruction, or all-crypto survey. WoW, Civilization, AoE II, fighters and shooters received selected studies with uneven depth.</li>
+<li><strong>I substituted an implementation specification for an implemented game.</strong> Rust, Unreal, persistent services, agent adapters, raids, civilization populations and chain verification appeared in architecture and catalogs. They were not running together.</li>
+<li><strong>I repeatedly reduced the central playable scope.</strong> A large shared world became a twelve-pulse graph episode, then a small 3D water-routing scene with Raincatch. Combat, a functioning market, settlement production and objective matches were still absent from the website.</li>
+<li><strong>I weakened the core creative promise.</strong> Combat-derived force becoming construction was replaced by authored mappings and then a water-law surrogate. The water solver is real; it does not fulfill the original universal power-to-place mechanism or six complete disciplines.</li>
+<li><strong>I used scripted roles where you requested actual AI participants.</strong> Serein&#39;s small local planner does not establish a connected model service, autonomous agent economy, equal multiplayer rights, learned pet behavior or secure external agent access.</li>
+<li><strong>I left the civilization and microeconomy disconnected.</strong> Household needs, production chains, physical supply, auctions, treaties, warfare and realm ecology were separate specifications or small laboratories. Their existence in prose did not make them one inhabited world.</li>
+<li><strong>I left most games-inside-the-game unimplemented.</strong> Published objective and timing rules were not a rendered fighter, shooter or integrated battleground. Isolated boards and scripted matches did not supply a unified entry/play/return experience.</li>
+<li><strong>I let narrow tests carry broader implications than they supported.</strong> Exact arithmetic, geometry data, HTTP responses and syntax checks do not prove visible usability, camera comfort, actual input, competitive balance, player enjoyment, retention, performance or production safety. The tests were real; their evidentiary reach was small.</li>
+<li><strong>I failed to verify important positive journeys.</strong> Tests that rejected altered proposals missed a new wrapper that also rejected a legitimate proposal. Animation and production counters initially failed to guarantee actual cargo movement. Fixes needed successful complete paths as well as invalid-input checks.</li>
+<li><strong>I left concrete code defects in the live slice.</strong> Mutable/cross-world proposals, bridge-entry-bank persistence, terrain/collision disagreement, incomplete priority controls, stale tabs, keyboard interception, pet movement and audio behavior are individually documented in Appendix B.</li>
+<li><strong>I preserved too little provenance for an “all knowledge” claim.</strong> The complete ZIP preserved substantial deliverables and historical experiments, but not all chat turns, external source texts, videos or production assets. All 260 citation records sharing one access date did not mean all sources were freshly inspected then.</li>
+<li><strong>I did not establish “best ever,” globally novel, balanced or enjoyable.</strong> These remained creative ambitions and hypotheses. Synthetic queues and ecological models did not become observed humans, demand, network effects, or an economically sustainable crypto game.</li>
+</ol>
+<h2>What was rebuilt on the website</h2>
+<p>The new website connects the following systems to one local world state. This is a substantial browser-game rebuild. The original full MMORPG request remains incomplete.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>Original requirement</th>
+<th>Current website implementation</th>
+<th>Remaining gap</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Embodied fantasy exploration</td>
+<td>3D First Orchard, near/far banks, shared traversable water bridge, discovery, atlas and separate activity clearings</td>
+<td>One small authored place; no six-region world or city-beast travel</td>
+</tr>
+<tr>
+<td>Action combat</td>
+<td>Four timed attacks at 60 Hz, frontal guard, guard break, evade movement with ten protected frames, equipment, projectile/cover collision and enemies</td>
+<td>No full 24-ability roster, combo/cancel systems, production animation or multiplayer netcode</td>
+</tr>
+<tr>
+<td>Character</td>
+<td>Thread/Gale/Stone choices with actual bonuses, health/Breath, inventory, three equipment recipes, two consumables and milestone XP</td>
+<td>Small fixed character; no full avatar creator, skill tree, cultures or gait/voice library</td>
+</tr>
+<tr>
+<td>PvE and raids</td>
+<td>Four world enemies and Root Warden with three phases, warnings, adds, reset and a one-time finite cache</td>
+<td>Local boss; no cooperative raid, dungeon ecosystem or validated difficulty curve</td>
+</tr>
+<tr>
+<td>Fighting-game PvP</td>
+<td>Tension Duel against a bot or two people on one keyboard; normalized 100-health bodies and shared movement rules</td>
+<td>No online PvP, matchmaking, rollback or competitive fairness study</td>
+</tr>
+<tr>
+<td>Battleground/shooter</td>
+<td>Lanternwake 2v2: you + bot versus two bots; projectiles, cover, flags, drops, returns, respawns and four-minute/three-capture finish</td>
+<td>Bot exhibition; no human online teams or validated strategic balance</td>
+</tr>
+<tr>
+<td>Games inside the world</td>
+<td>Raincatch, shared-port Loom Table and eight-target Singing Range; real actions, outcomes and personal bests</td>
+<td>Simplified new board rules; Skyweave, BellThrow, Afterimage and larger portfolio unbuilt</td>
+</tr>
+<tr>
+<td>Civilization and building</td>
+<td>Six plots, five structure types, two assigned workers, collision, finite gathering, physical cargo and food consumption</td>
+<td>No twelve-household society, research ages, troops, diplomacy, housing, demolition or complete production chain</td>
+</tr>
+<tr>
+<td>Microeconomy</td>
+<td>Six resource classes, finite merchant stock, stock-sensitive exact quotes, conserved Marks/goods, funded wagon and crafting inputs</td>
+<td>One NPC counterparty; no player exchange, order book, logistics marketplace or measured demand</td>
+</tr>
+<tr>
+<td>Water/ecology</td>
+<td>Exact small-network solver, all six priorities, weather choices, bridge service, orchard/reed harvest gates and journal</td>
+<td>Stored-water gates rather than physiology, wildlife, pollination or general ecosystem</td>
+</tr>
+<tr>
+<td>Humans and AI</td>
+<td>Serein&#39;s inspectable invitation-bound proposal; Lumenling follows/waits and remembers distinct events; worker/combat bots</td>
+<td>Scripted rules. No connected LLM, public agent API, authenticated model identity or learning society</td>
+</tr>
+<tr>
+<td>Shared creative law</td>
+<td>Beacon converts the last rain distribution into twelve temporary units for bridge protection, harvest speed and companion ward</td>
+<td>Limited coupling; no general force-to-construction or six-material composition engine</td>
+</tr>
+<tr>
+<td>History and persistence</td>
+<td>Factual bounded journal, device autosave with Web Lock where supported, validated import/export and activity entrance checkpoints</td>
+<td>Editable local state; no shared authority, replay reconstruction, server or branch promotion</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td>Existing mathematical design remains in the historical dossier</td>
+<td>No wallets, deployed contracts, tokens, proving/dispute system, asset transfers or external settlement</td>
+</tr>
+<tr>
+<td>Art and accessibility</td>
+<td>Procedural structures, characters, enemies, weapon/guard/warning presentation, preserved panorama, HTML panels, focus handling, touch controls and reduced ambient motion</td>
+<td>No browser/device/user validation, full accessibility audit, art pipeline, adaptive score or frame-rate benchmark</td>
+</tr>
+<tr>
+<td>Exhaustive research</td>
+<td>Full recovered audit and versioned limitations visible</td>
+<td>Exhaustive commercial-game research remains open; no new claim of mastery</td>
+</tr>
+</tbody></table></div>
+<h2>Current repairs and their evidence</h2>
+<p>“Repaired” means the source change is present. Source checks and executable state tests support the listed mechanics. No entry below claims an observed browser interaction.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Current change</th>
+<th>Evidence / limit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Agent preview mutable or transferable between worlds</td>
+<td>Bind exact object, bytes, world, revision and permission epoch; consume once</td>
+<td>Core/realm rejection tests and positive approval test</td>
+</tr>
+<tr>
+<td>New wrapper rejected legitimate approval</td>
+<td>Retain original core proposal privately; pass it after wrapper verification</td>
+<td>Successful exact-plan and repeated-use test</td>
+</tr>
+<tr>
+<td>Bridge rescue forgot approach bank after reload</td>
+<td>Persist hero bank; rescue before checkpoint</td>
+<td>Far-bank round trip and rescue test</td>
+</tr>
+<tr>
+<td>Visible earth disagreed with walkability</td>
+<td>Identical polygon vertices for terrain triangles and collision</td>
+<td>Shared-data and geometry checks; not visual QA</td>
+</tr>
+<tr>
+<td>UI exposed only three water orders</td>
+<td>Expose all six permutations</td>
+<td>Source inspection; 252-case solver parity fixture</td>
+</tr>
+<tr>
+<td>Idle tab could overwrite newer save</td>
+<td>Acquire exclusive Web Lock and re-read inside its callback</td>
+<td>Source inspection; browser race not exercised</td>
+</tr>
+<tr>
+<td>Tabs could mutually lock after saving</td>
+<td>Single lock owner; unsupported browsers use export with autosave disabled</td>
+<td>Source inspection; real cross-tab behavior untested</td>
+</tr>
+<tr>
+<td>Welcome covered lock message</td>
+<td>Hide welcome before unavailable-lock dialog</td>
+<td>Source inspection; browser layer not observed</td>
+</tr>
+<tr>
+<td>Partial import accepted crash/markup states</td>
+<td>Full retained schema, enums, finite bounds, nested shape, conservation and escaped journal text</td>
+<td>Reproduced malformed saves rejected; evolved-world round trips</td>
+</tr>
+<tr>
+<td>Second duelist moved faster guarding and did not evade</td>
+<td>Shared input/movement function</td>
+<td>Guard and dodge parity test</td>
+</tr>
+<tr>
+<td>Double knockout could favor human</td>
+<td>Queue damage; decide winner after batch</td>
+<td>Simultaneous lethal strikes draw</td>
+</tr>
+<tr>
+<td>Advertised discipline bonuses missing</td>
+<td>Apply Thread melee/Gale projectile bonuses; normalize away in exhibitions</td>
+<td>Source and normalized-equipment checks; not full build balance</td>
+</tr>
+<tr>
+<td>Zero-radian aim lost as falsy</td>
+<td>Finite-number check</td>
+<td>Zero-angle input test</td>
+</tr>
+<tr>
+<td>Worker animation did not establish delivery</td>
+<td>Canonical positions, bridge waypoints, gathering, carried inventory and home arrival</td>
+<td>Complete journey with transit conservation; save while carrying</td>
+</tr>
+<tr>
+<td>Companion ward survived expiry</td>
+<td>Gate damage and clear at deadline</td>
+<td>Tick-301 expiry test</td>
+</tr>
+<tr>
+<td>Flag pickup lagged one tick</td>
+<td>Set carrier and coordinates together</td>
+<td>Every-tick invariant in full 14,400-tick match</td>
+</tr>
+<tr>
+<td>Quote integrity and solvency needed enforcement</td>
+<td>Exact state/object/bytes, finite quantities and atomic settlement</td>
+<td>Successful trade, alteration, repeat and insolvency cases</td>
+</tr>
+<tr>
+<td>Keyboard stole native button actions</td>
+<td>Preserve Space/Enter activation while retaining movement</td>
+<td>Source only; input/rollover untested</td>
+</tr>
+<tr>
+<td>Pet/camera ignored implemented obstacles</td>
+<td>Legal pet positions; camera boom shortened against specified cover/structures</td>
+<td>Source only; robust navigation and comfort open</td>
+</tr>
+<tr>
+<td>Initial sound doubled</td>
+<td>First activation plays once; subsequent requests play once</td>
+<td>Source inspection</td>
+</tr>
+</tbody></table></div>
+<h2>Verification, including failed experiments</h2>
+<p>The final automated suite contains <strong>61 test methods: 30 retained and 31 new</strong>. One retained method checks <strong>252 exact historical Python water fixtures</strong>. That is not 252 additional gameplay tests. The suite exercises state, geometry data, deterministic boards and references; it does not launch a browser. Exact output is saved with the source.</p>
+<p>Complete scenarios include a physical worker round trip with cargo, an evolved settlement save/restore, a full 14,400-tick CTF match with flag/ledger assertions each tick, a legal full Loom game, deterministic Raincatch completion, one-body activity checkpoints, malformed-save rejection and successful agent approval. An idle-bot CTF match proves bounded invariants and termination, not competitive playability.</p>
+<p>Two boss policies were tried through legal movement, attacks and consumables, without editing health or setting victory:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Observed result</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gale circles at radius 12, shoots every 110 ticks, targets nearest living enemy; limit 18,000 ticks</td>
+<td>Failed to defeat Warden in 300 simulated seconds; one death; phases 1 and 2 observed</td>
+<td>Failed path retained. Simple movement/policy can stall; does not prove ranged combat impossible.</td>
+</tr>
+<tr>
+<td>Thread approaches within two units, uses Palm, guards near sweep release, uses tonic below 40 health</td>
+<td>Won at tick 740 / 12.33 simulated seconds; all phases; no deaths; both initial tonics consumed; 24 health left</td>
+<td>Legal completion exists; a resource-heavy rush is short. Challenge, pacing, warning readability and enjoyment remain unvalidated.</td>
+</tr>
+</tbody></table></div>
+<p>These deterministic drivers have perfect local-state access. They are not human playtests or fair external agent observations. Their contrasting outcomes are evidence against calling this boss “balanced.”</p>
+<p>An intermediate full-match assertion caught the flag lag. Import and duel probes caught real defects. The legitimate-approval regression caught the wrapper mistake after rejection tests had passed. These failures remain in the development record.</p>
+<p><strong>Browser testing has not been performed.</strong> The Sites skill requires an explicit user request for browser, visual or end-to-end testing; the general rebuild request did not unlock that workflow. My opening promise to test in a browser was incorrect and was corrected during the turn. No screenshot, camera comfort, actual device, frame-rate or visual sign-off is claimed. That authorized check is needed before a stronger usability claim.</p>
+<h2>Remaining weaknesses in this rebuild</h2>
+<ul>
+<li>It remains a local browser simulation. Scripted actors do not implement massively multiplayer humans or language-model agents. The original exhaustive research, raids, protocols, societies and regions remain incomplete.</li>
+<li>Boss/PvP pacing is authored. The short rush and failed kiting policy expose unvalidated difficulty and navigation. Bots use simple heuristics; hardware keyboard rollover can affect local duels.</li>
+<li>Most decorative vegetation is not solid. Collision is horizontal and simplified; jumping does not establish vertical projectile avoidance. Visuals are procedural primitives, not a finished art pipeline.</li>
+<li>The companion can wait at an obstruction; it is not a robust pathfinder. Agent-owned channels can still occupy scarce public slots after revocation; revocation does not transfer removal authority.</li>
+<li>Finite resources can be exhausted or strand choices. There is no demolition, renewable biological production, recycling economy or comprehensive anti-softlock design. A world reset explicitly replaces state; it does not merge resources.</li>
+<li>The merchant can become insolvent. XP/personal bests do not create liquidity. No empirical demand or human market experiment supports this economy.</li>
+<li>Levels mostly recognize milestones; five structures are a small vocabulary. Neither is a full character or civilization system.</li>
+<li>Activity saves produce an entrance checkpoint, not exact mid-match resume. World equipment returns; crafted/consumed inventory remains changed. Exhibition victory creates no money.</li>
+<li>Loom Table uses unrestricted selection among three tile types, a 25-cell shared-port board and simultaneous-path draw. It does not conform to the earlier finite-piece/pie-swap/timeout protocol. Other activity constants also belong to this version.</li>
+<li>Old v0.8 saves remain under their old key, but <strong>no v0.8-to-v0.9 migration is implemented</strong>. The new profile starts fresh; incompatible imports are rejected.</li>
+<li>Local validation is a crash/invariant boundary, not authentication or cryptographic proof. Users can edit their browser. A local checksum does not establish external truth.</li>
+<li>Panels, pavilion play and hidden tabs pause the world. No shared server continues while you are away; there is no offline progress.</li>
+<li>No actual player, accessibility, retention, adversarial network, service-load or financial sustainability study supports the website.</li>
+</ul>
+<h2>Reading the full findings</h2>
+<p>Appendix A contains <strong>119 labeled dossier findings</strong>: 18 research gaps, 29 missing implementation families, 12 substitutions/editorial failures, 40 historical defects/corrections and 20 evidence limits. These are findings, not 119 independent current bugs. Historical entries distinguish already-corrected behavior from open integration work.</p>
+<p>Appendix B records the prior live website: 13 defects, 19 missing implementation families and 10 verification limits, with v0.8 source anchors. Findings overlap Appendix A; several are repaired in v0.9. Do not sum the counts into an inflated claim of unique defects.</p>
+<p>Appendix C preserves the intermediate v0.9 independent review. Its intermediate defects are addressed above. Original source snapshots and probe outputs remain with the project.</p>
+<p>This audit is accountability and a usable build record. It does not draw an arbitrary “complete” line across unfinished requirements.</p>
+</section><section id="dossier"><p class="section-label">Appendix A · full dossier</p><h1>AWE dossier audit: what was incomplete, substituted, insufficiently tested, or previously wrong</h1>
+<p>Audit date: 11 September 2026. Scope: the recovered complete project through v0.7. The later live v0.8 Site is being audited separately; findings below must not be automatically attributed to its implementation.</p>
+<p>The substantive failure was repeated delivery of a much smaller artifact than the requested scope: a representative research synthesis, extensive implementation specifications, and bounded local experiments in place of exhaustive game mastery and an integrated inhabited MMORPG. Much of this was disclosed inside the dossier. Disclosure makes the record more honest; it does not complete the missing work. The evidence does not establish intentional cheating, fabricated research, or falsified test results. The appropriate admission is incomplete delivery, overbroad completion framing where used, and specific defects later repaired.</p>
+<h2>What this audit actually read</h2>
+<p>Read all 3,268 lines of <code>PROJECT/v07/documentation/report-source.md</code>, covering all 59 chapters, in sequential prose chunks. Read all four <code>CONTEXT</code> files, <code>PROJECT/v07/research/evidence-gap-matrix.md</code>, v0.7 README and exact rain contract, implementation manifest and compatibility manifest, verification notes, selected source-check record, and specification changes. Inspected all source-ledger verification metadata; the 260 claim contexts are repetitions of the paragraphs in the full report already read. Did not re-fetch every external source, watch the unavailable videos, play every referenced commercial game, rerun every inherited test, or inspect the later Site implementation in this bounded audit.</p>
+<p>Useful source evidence:</p>
+<ul>
+<li>The v0.7 ledger contains <strong>260 claim records and 257 distinct URLs</strong>: 246 records explicitly inherited without fresh v0.7 retrieval; four marked independently checked by root; ten marked checked by a research lane. One inherited URL is reused in the new chapter.</li>
+<li>Every ledger record has <code>access_date: 2026-09-06</code>, including the 246 marked inherited. This is not evidence of 260 fresh source inspections that day. The verification-scope field must accompany any date claim.</li>
+<li>Ledger fields contain title, URL, chapter, claim paragraph, date and verification scope. They contain no dedicated source-content hash, retrieval timestamp, page, paragraph or quoted-excerpt field. The ledger is a citation map, not a complete reproducible retrieval archive.</li>
+<li>Approximate whitespace-delimited body lengths illustrate the mismatch: WoW chapter 06 has 1,338 tokens under this simple word-count method; Blizzard chapter 07 has 1,233; Nintendo chapter 08 has 903; AoE II chapter 03 has 1,310; Civilization chapter 04 has 1,187; fighter chapter 41 has 1,329; shooter chapter 42 has 974. These are useful essays, not all-mechanic encyclopedias. Word count alone is not a quality measure.</li>
+<li><code>PROJECT/implementation_v04/slice-manifest.json</code> explicitly says <code>build_specification_not_rendered</code>, <code>new_labs_are_wire_compatible: false</code> and selects six M1 discipline techniques. <code>compatibility-manifest.json</code> marks every listed adapter <code>conformance_passed: false</code>, with null implementation/dependency hashes.</li>
+<li>The recovered <code>PROJECT</code> tree has 35 Markdown, 180 JSON, 84 Python, eight text, 14 CSV and one HTML file. That inventory contains no Rust engine source, Unreal project, production animation assets or deployed smart-contract implementation. The later v0.8 Site is outside this inventory.</li>
+</ul>
+<h2>A. Missing research depth against the actual request</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Where depth was missing</th>
+<th>Evidence and precise limit</th>
+<th>Work needed to close it</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>R01</td>
+<td>No complete game corpus</td>
+<td>Ch02 says the exhaustive Blizzard/Nintendo/every-attack/all-crypto corpus is not completed and no agreed denominator of releases, patches, platforms or regional variants exists.</td>
+<td>Build the title/version inventory before claiming exhaustive coverage; record each examined mechanic and its evidence.</td>
+</tr>
+<tr>
+<td>R02</td>
+<td>WoW attack-level mechanics</td>
+<td>Ch06 uses one Legion Mage preview and selected dated tuning changes. No every-class/spec/attack database; threat, weapon skill, armor, coefficients, proc interactions and comprehensive rotations are absent.</td>
+<td>Pin branches/builds; collect spell/item data and interaction tests with event-level captures.</td>
+</tr>
+<tr>
+<td>R03</td>
+<td>WoW expansion breadth</td>
+<td>Ch06 explicitly marks Wrath/Cataclysm dedicated audits, BFA mechanics, full Shadowlands systems, full current Midnight content, Hardcore and SoD economies as open.</td>
+<td>Separate expansion/branch studies with complete system and encounter indexes.</td>
+</tr>
+<tr>
+<td>R04</td>
+<td>WoW PvE and raid depth</td>
+<td>Flex raid rationale, Delves and dungeon structure are examined; every boss phase, scaling rule, loot/reset behavior, raid composition and strategy are not reconstructed.</td>
+<td>Encounter state machines, logs, mechanics matrices and failure/reset reproductions.</td>
+</tr>
+<tr>
+<td>R05</td>
+<td>WoW marketplace depth</td>
+<td>Commodity regionalization, Dragonflight orders and historical Token FAQ are covered. Full order/auction rounding, fees, cancellation, cross-branch markets, commodity time series and economic causality are not.</td>
+<td>Versioned transaction rules and empirical market datasets with explicit units and time windows.</td>
+</tr>
+<tr>
+<td>R06</td>
+<td>Pets and animation</td>
+<td>Ch06 pet evidence is principally a three-pet event page; animation evidence is a 2017 developer account. No complete pet ability/breed/battle corpus or measured animation frames.</td>
+<td>Enumerate pets and interactions; capture cast/hit/recovery markers and movement variants.</td>
+</tr>
+<tr>
+<td>R07</td>
+<td>All Blizzard</td>
+<td>Ch07 provides selected Warcraft III, StarCraft, Diablo, Overwatch, Hearthstone, Heroes, Rumble and arcade cases. Warcraft I/II are light; Diablo I/Hellfire, all cards, rosters, matchups and patches are explicitly open.</td>
+<td>Family-by-family catalogs and mechanical reconstructions, not representative anecdotes alone.</td>
+</tr>
+<tr>
+<td>R08</td>
+<td>All Nintendo</td>
+<td>Ch08 explicitly leaves F-Zero, Star Fox, Yoshi, Luigi&#39;s Mansion, Kid Icarus, ARMS, Advance Wars, EarthBound, Golden Sun, Paper Mario, Mario RPG/sports, Rhythm Heaven and older/portable/mobile catalogs open.</td>
+<td>Track complete internal and partner-studio corpus, versions, mechanics and play evidence.</td>
+</tr>
+<tr>
+<td>R09</td>
+<td>Nintendo systemic depth</td>
+<td>Selected developer interviews explain affordances and assistance. Full BOTW chemistry, Pokémon damage rounding, Mario movement models, Zelda/Metroid generations, complete minigame catalogs and Smash frame data are not reconstructed.</td>
+<td>Concrete action/state/interaction models and sampled reproductions.</td>
+</tr>
+<tr>
+<td>R10</td>
+<td>AoE II</td>
+<td>Ch03 is materially more specific than a store description, but no full September 2026 unit/civilization/tech database or frame capture exists. June is the latest patch deeply examined, not an asserted latest patch overall.</td>
+<td>Pin DE build and DLC; enumerate all units, classes, bonuses, economy, pathing and AI exceptions.</td>
+</tr>
+<tr>
+<td>R11</td>
+<td>Civilization breadth versus depth</td>
+<td>Ch04 covers every numbered generation with unequal depth; manuals and diaries do not become every expansion coefficient. The broader comparison remains selected.</td>
+<td>Versioned rule catalogs, expansion deltas and empirical replay cases; define selection criteria for comparable games.</td>
+</tr>
+<tr>
+<td>R12</td>
+<td>Wider strategy</td>
+<td>Ch02/05 say AoE I/III, Rise of Nations, Supreme Commander, Total War, full Endless Space II, Songs of Syx and deeper expansions were located/considered, not deeply completed.</td>
+<td>Dedicated mechanical studies where they can change AWE decisions.</td>
+</tr>
+<tr>
+<td>R13</td>
+<td>Fighting games</td>
+<td>Ch41 covers selected mechanics. Blocked Capcom pages were not fully read; there is no verified current Ryu frame table or full MK/Smash/Tekken/Guilty Gear roster/interaction database.</td>
+<td>Obtain pinned build data and reproducible training captures; enumerate assist, cancel, collision and timing edge cases.</td>
+</tr>
+<tr>
+<td>R14</td>
+<td>Shooters</td>
+<td>Ch42 covers selected Quake, UT2004, Halo, CS:GO, VALORANT, TF2, Overwatch and Splatoon mechanisms. Every COD/Apex/Fortnite generation, weapon table and movement/network profile is not studied.</td>
+<td>Comparative weapon, geometry, information, netcode and objective datasets.</td>
+</tr>
+<tr>
+<td>R15</td>
+<td>Battlegrounds and small games</td>
+<td>Ch43 uses several WSG variants; unavailable legacy WSG guide leaves timing gaps. Lanternwake&#39;s timers are authored AWE proposals. The full Nintendo Land/WarioWare/FFXIV activity corpus is not covered.</td>
+<td>Complete rules and variant provenance; keep imported lessons separate from original constants.</td>
+</tr>
+<tr>
+<td>R16</td>
+<td>Human nature and network effects</td>
+<td>Ch09/34 synthesize selected studies in unrelated tasks and populations. Proposed useful-relationship models are not fitted laws. No AWE participant study, observed retention, voluntary social network or causally measured enjoyment exists.</td>
+<td>Formative playtests followed by appropriately designed studies, with null/adverse results and transfer measures.</td>
+</tr>
+<tr>
+<td>R17</td>
+<td>All crypto and microeconomic mathematics</td>
+<td>Ch10/25/31 provide relevant capabilities, accounting identities and selected standards. They do not survey every protocol, prove an equilibrium, estimate demand, solve Sybils, measure liquidity or implement the chosen verification architecture.</td>
+<td>Threat/workload-specific protocol comparisons and empirical or calibrated economic research, plus actual implementations.</td>
+</tr>
+<tr>
+<td>R18</td>
+<td>Source recency and completeness</td>
+<td>Ch02, selected-check files and the ledger disclose inherited references and blocked/full-video limits. Mutable <code>/latest</code>, repository <code>main</code>, evergreen pages and unpinned SDK revisions remain.</td>
+<td>Preserve actual retrieval dates, immutable revisions, excerpts/page locators and refreshed material claims; never equate citation count with completed mastery.</td>
+</tr>
+</tbody></table></div>
+<h2>B. Implementation missing from the recovered game, not merely missing prose</h2>
+<p>These are baseline-through-v0.7 findings. The rebuilding agent must mark any that v0.8 or the current work actually implements with new evidence.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Missing or reduced implementation</th>
+<th>Anchor</th>
+<th>Why the prior output did not satisfy the larger request</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>I01</td>
+<td>A continuous inhabited MMORPG</td>
+<td>Ch01/12/53/54/59</td>
+<td>The current executable was a twelve-manual-pulse, local single-session graph episode; it did not run a continuous world with other participants.</td>
+</tr>
+<tr>
+<td>I02</td>
+<td>Body/company/settlement/realm embodiment</td>
+<td>Ch12/32/59 R1</td>
+<td>Three schematic lenses did not implement four playable scales, one body, camera transitions, troop command or rights-aware strategic exploration.</td>
+</tr>
+<tr>
+<td>I03</td>
+<td>Production engine</td>
+<td>Ch26; implementation manifest</td>
+<td>Rust, Unreal, PostgreSQL, QUIC and content storage were selected architecture, not integrated runtime dependencies.</td>
+</tr>
+<tr>
+<td>I04</td>
+<td>First valley and geography</td>
+<td>Ch01/17/36</td>
+<td>1,024×1,024 m, sixteen avatars and ninety-six troops were workload targets. No measured engine, complete collision landscape or navigation workload existed.</td>
+</tr>
+<tr>
+<td>I05</td>
+<td>Original power-to-place mechanism</td>
+<td>Ch13/24/50/54/59</td>
+<td>Catch applied a radius-trigger root; Tension Arch used an authored recipe/load proxy. Neither derived a load-bearing bridge from the actual combat force relation.</td>
+</tr>
+<tr>
+<td>I06</td>
+<td>Full worldcraft vocabulary</td>
+<td>Ch13/59</td>
+<td>Weave/Shape/Pulse/Listen and Thread/Gale/Stone/Tide/Ember/Echo were not four complete interactive verbs and six implemented material families. Water allocation is one actual bounded law.</td>
+</tr>
+<tr>
+<td>I07</td>
+<td>Full combat</td>
+<td>Ch14/36/46</td>
+<td>Twenty-four abilities were a catalog; M1 selected six. Schema/timing/static-contact tests were not an action combat runtime with hitboxes, movement, animation and opponents.</td>
+</tr>
+<tr>
+<td>I08</td>
+<td>Character creation and equipment</td>
+<td>Ch11/14/23/32</td>
+<td>Body, voice, gait, culture, costume, progression and loadouts were design requirements, not completed character systems and assets.</td>
+</tr>
+<tr>
+<td>I09</td>
+<td>Pets and independent agents</td>
+<td>Ch23/30/56</td>
+<td>Lumenling behavior/memory/learning was largely specification. The invited helper was a deterministic script, not a live LLM participant, trained opponent or independent model society.</td>
+</tr>
+<tr>
+<td>I10</td>
+<td>Shared agent integration</td>
+<td>Ch29/30; compatibility manifest</td>
+<td>No production identity, real MCP/A2A adapter, model service, secure public agent interface, measured invocation cost or live human-agent study.</td>
+</tr>
+<tr>
+<td>I11</td>
+<td>Living civilization population</td>
+<td>Ch15/16/59 R2</td>
+<td>Twelve households, labor, needs, immigration and housing were catalog/isolated simulation work, not a single persistent population inhabiting the rendered world.</td>
+</tr>
+<tr>
+<td>I12</td>
+<td>Construction economy</td>
+<td>Ch15/16/18</td>
+<td>Twelve buildings and twelve technologies were authored data. The full legal in-world start-to-farm/mill/research/bridge chain was explicitly not executed by a game engine.</td>
+</tr>
+<tr>
+<td>I13</td>
+<td>Real delivery and consumption</td>
+<td>Ch54/59 R2</td>
+<td>v0.7 used two safe pulses to qualify an instantaneous origin→destination change; no physical wagon movement, loading, distribution or household eating.</td>
+</tr>
+<tr>
+<td>I14</td>
+<td>Ecology</td>
+<td>Ch11/16/54/57</td>
+<td>Orchard/habitat saturation did not mint fruit, consume water physiologically, move wildlife, carry pollen or create the described biome/market changes.</td>
+</tr>
+<tr>
+<td>I15</td>
+<td>NPC narrative</td>
+<td>Ch11/21/57</td>
+<td>Iria, Vey and Oru had authored identities, not general dialogue/behavior. At most three factual templates are not a quest/world social simulation.</td>
+</tr>
+<tr>
+<td>I16</td>
+<td>Six-region world</td>
+<td>Ch11</td>
+<td>Pelagic Choir, Glasswake, Hushed Canopy, Ember Archive and Wandering Citadels were places in text; no populated playable regions or migrating city-beast existed in this archive.</td>
+</tr>
+<tr>
+<td>I17</td>
+<td>Raids and expeditions</td>
+<td>Ch21/22</td>
+<td>Cathedral That Walks had phase designs and timing targets, but no enemy/encounter runtime, four/eight/twelve-player sessions, full loot tables or raid validation.</td>
+</tr>
+<tr>
+<td>I18</td>
+<td>Company warfare and diplomacy</td>
+<td>Ch19/20/27</td>
+<td>Eight troop archetypes, formations, relay campaign, seat budgets, treaty signing and supply rules were not one integrated campaign engine. The relay laboratory used supply eligibility, not physical ownership capture.</td>
+</tr>
+<tr>
+<td>I19</td>
+<td>Marketplace</td>
+<td>Ch16/17/25/39</td>
+<td>The isolated zero-fee one-resource/depot book did not provide the realm exchange, commissioned craft, physical delivery system or funded starter world market. The first-valley genesis had no Marks allocation.</td>
+</tr>
+<tr>
+<td>I20</td>
+<td>Homes and communities</td>
+<td>Ch20/23/25</td>
+<td>Functional player homes, workshops, companies, neighborhoods, institutions, creator discovery, social communication and community control were not delivered as a live shared world.</td>
+</tr>
+<tr>
+<td>I21</td>
+<td>Games inside the same world</td>
+<td>Ch40/44/52/59 R5</td>
+<td>Raincatch, LoomTable and Lanternwake had separate local references. Their shared world departure/one-body/return adapter was not integrated into the v0.7 graph episode.</td>
+</tr>
+<tr>
+<td>I22</td>
+<td>Complete game portfolio</td>
+<td>Ch40/45–47</td>
+<td>Lanternwake had objective state only, no integrated shooter; Tension Duel had static witnesses; Skyweave/BellThrow had no physics/runtime. Raincatch had no original rendered client; LoomTable/Afterimage lacked their proposed embodied venue.</td>
+</tr>
+<tr>
+<td>I23</td>
+<td>True creator runtime</td>
+<td>Ch24/31/44</td>
+<td>Typed grammar and WebAssembly direction did not implement a production compiler, instruction-metered sandbox, arbitrary creator module hosting or secure exports.</td>
+</tr>
+<tr>
+<td>I24</td>
+<td>Dream Foundry/Atlas continuity</td>
+<td>Ch22/24/38/51/55</td>
+<td>Local branches and board reachability witnesses did not provide the imagined 3D rehearsal, live material promotion, walking factual replay or social circulation of Playable Letters.</td>
+</tr>
+<tr>
+<td>I25</td>
+<td>Durable world ownership</td>
+<td>Ch26/28/35/54</td>
+<td>Local caller names and local replay are not authentication, distributed single-writer authority, crash-safe persistent settlement, concurrent service recovery or externally verifiable history.</td>
+</tr>
+<tr>
+<td>I26</td>
+<td>Onchain game</td>
+<td>Ch31/36/44/59 R7</td>
+<td>No deployed proof/dispute system, reconstruction/DA guarantee, finality UI, smart account, NFT transfer adapter, external settlement or correct world proving benchmark.</td>
+</tr>
+<tr>
+<td>I27</td>
+<td>Full artistic production</td>
+<td>Ch32/48/57</td>
+<td>Art direction, animation markers and dimension tables were specifications. The v0.7 interface was SVG presentation, and three data-driven tones were not the composed adaptive soundtrack or complete character/architecture art library.</td>
+</tr>
+<tr>
+<td>I28</td>
+<td>Browser and access verification</td>
+<td>Ch32/58; verification-notes.md</td>
+<td>JavaScript syntax and 12 HTTP checks did not exercise rendered layout, camera, keyboard/touch, actual interaction, visual cues, controller comfort or accessibility in a browser. The failed browser installation was disclosed.</td>
+</tr>
+<tr>
+<td>I29</td>
+<td>Production capacity and operations</td>
+<td>Ch26/29/35/44</td>
+<td>60 FPS, p95 tick/ack targets, capsule ceilings, recovery and moderation were targets or local models. No actual client/network/load/production security benchmark met them.</td>
+</tr>
+</tbody></table></div>
+<h2>C. Scope reductions, substitutions and presentation shortcomings</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Change</th>
+<th>Was it silent?</th>
+<th>Audit judgment</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S01</td>
+<td>“All games/every detail” became representative design research</td>
+<td>Explicit in ch02, but broad delivery framing can still obscure it</td>
+<td>A major unmet part of the instruction; not a completed exhaustive corpus.</td>
+</tr>
+<tr>
+<td>S02</td>
+<td>“Complete technical document” became an implementation baseline with unresolved gates</td>
+<td>Explicit definition in ch02</td>
+<td>Useful specification, but many crucial runtime choices remain unimplemented, not merely written down.</td>
+</tr>
+<tr>
+<td>S03</td>
+<td>Continuous civilization became a twelve-pulse rain episode</td>
+<td>Explicit in ch53/54</td>
+<td>A prototype is legitimate evidence; repeatedly substituting it for the requested whole game leaves the request unfulfilled.</td>
+</tr>
+<tr>
+<td>S04</td>
+<td>Combat-derived force construction became authored mapping, then water-flow surrogate</td>
+<td>Explicit correction in ch13/50/54</td>
+<td>The original central fantasy was not implemented. Water is a useful addition, not a completed replacement of the original force-based requirement.</td>
+</tr>
+<tr>
+<td>S05</td>
+<td>Six disciplines/twenty-four abilities became six selected M1 techniques, with M1 itself unrendered</td>
+<td>Explicit ch14/36 and manifest</td>
+<td>Scope reduction was documented, but cannot support a claim of complete action combat.</td>
+</tr>
+<tr>
+<td>S06</td>
+<td>Civilization doctrines reduced to one rooted settlement/mobile caravan</td>
+<td>Explicit ch12</td>
+<td>Avoiding shallow faction copies is sensible; it still leaves multiple civilizational forms unbuilt.</td>
+</tr>
+<tr>
+<td>S07</td>
+<td>PvP 3v3 deferred; pavilion first; then living crossing first</td>
+<td>Explicit ch22/36/50/52/53/59; ten changes recorded for v0.7</td>
+<td>Not silent deletion; repeated roadmap revision means user-facing delivery must enumerate what remains unavailable.</td>
+</tr>
+<tr>
+<td>S08</td>
+<td>Humans and AI agents became trusted local human/agent/keeper roles</td>
+<td>Explicit ch54/56</td>
+<td>Shared legal actions are real. They do not establish actual autonomous external agent participation, equal authority in all roles, or competitive fairness.</td>
+</tr>
+<tr>
+<td>S09</td>
+<td>Causally generated story became exact templates and bounded graphs</td>
+<td>Explicit ch57</td>
+<td>Truthful and useful, but not general emergent narrative, an expressive cast, or the proposed living history experience.</td>
+</tr>
+<tr>
+<td>S10</td>
+<td>“New genre/no one conceived it” became an original integration hypothesis</td>
+<td>Explicit ch05/24/31/37/51/53</td>
+<td>Correctly limited: replay takeover, worlds, ports, agent towns and artifact games have prior art. No historical priority or best-ever claim is established.</td>
+</tr>
+<tr>
+<td>S11</td>
+<td>Complete ZIP preserved deliverables, not every chat artifact</td>
+<td>CONTEXT/Conversation_Brief.md and Scope_and_Coverage.md</td>
+<td>The archive excludes unavailable assistant/tool turns, raw transcript, full external source texts/videos, every historical PDF and final art. “All knowledge in the chat” cannot be claimed byte-for-byte.</td>
+</tr>
+<tr>
+<td>S12</td>
+<td>Older chapter voice remains inside new edition</td>
+<td>Ch40 says “This document is edition 0.5” inside the v0.7 dossier; protocol examples in ch54–58 contain typesetting spaces such as <code>0.7. 0</code></td>
+<td>Historic semantics are preserved, but editorial ambiguity remains. Keep version-indexed profiles authoritative and clean executable identifiers in current prose.</td>
+</tr>
+</tbody></table></div>
+<h2>D. Previously wrong behavior or assumptions that the project itself records</h2>
+<p>These are <strong>historical findings</strong>, not a claim that every delivered version remains broken. The audit record should show the fix and distinguish algorithm repair, schema repair, proposal clarification and remaining implementation work.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Earlier defect or inadequate assumption</th>
+<th>Recorded correction / remaining limit</th>
+<th>Anchor</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>H01</td>
+<td>Equal-tick interrupt/attack result depended on iteration</td>
+<td>Freeze due releases; full engine integration still missing</td>
+<td>Ch37/39/50; semantics lab</td>
+</tr>
+<tr>
+<td>H02</td>
+<td>Shared shields and same-tick healing insufficiently defined</td>
+<td>Proportional allocation, exact remainders, bounded healing and batched deaths tested locally</td>
+<td>Ch27/37/39</td>
+</tr>
+<tr>
+<td>H03</td>
+<td>Work intent omitted physical sources/hauling/rehearsal detail</td>
+<td>Typed variants added; production scheduler remains a build task</td>
+<td>Ch29/37</td>
+</tr>
+<tr>
+<td>H04</td>
+<td>Escrow implicitly freed physical space</td>
+<td>Keep input occupancy and reserve output headroom; reproduced mill deadlock</td>
+<td>Ch16/37/39</td>
+</tr>
+<tr>
+<td>H05</td>
+<td>Global-minute job completion altered throughput</td>
+<td>Exact due ticks replace global accounting rounding; integrated workload can expose other races</td>
+<td>Ch16/37/39</td>
+</tr>
+<tr>
+<td>H06</td>
+<td>Minimum-fill changes left executable orders unmatched</td>
+<td>Drain activation queue to closure; multi-party aggregate fills remain a different contract</td>
+<td>Ch17/37/39</td>
+</tr>
+<tr>
+<td>H07</td>
+<td>Timed movement effect could expire before use</td>
+<td>Phase-aware start and exclusive end; local tests</td>
+<td>Ch27/37/39</td>
+</tr>
+<tr>
+<td>H08</td>
+<td>Cross-region same-tick authority unspecified</td>
+<td>One coordinator for first valley; truly distributed causality remains unbuilt</td>
+<td>Ch26/37</td>
+</tr>
+<tr>
+<td>H09</td>
+<td>“Sorted JSON” insufficient for unambiguous hashing</td>
+<td>Strict custom Unicode/integer serialization, vectors and malformed-input rejection</td>
+<td>Ch27/37</td>
+</tr>
+<tr>
+<td>H10</td>
+<td>Whole-actor revision could invalidate ordinary moving casts</td>
+<td>Admission revision plus relevant execution predicates; actual moving-cast integration still untested</td>
+<td>Ch27/37</td>
+</tr>
+<tr>
+<td>H11</td>
+<td>Catalog validator admitted negative/contradictory values</td>
+<td>Meaningful bounds and regression mutations added</td>
+<td>Ch37</td>
+</tr>
+<tr>
+<td>H12</td>
+<td>Relay funding and revoked standing orders lacked exact boundaries</td>
+<td>Exclusive supply intervals and phase-1 cancellation; physical campaign absent</td>
+<td>Ch20/37/39</td>
+</tr>
+<tr>
+<td>H13</td>
+<td>Ecology robustness was partly tautological</td>
+<td>Exact observed growth cancels algebraically; lag/bias/overshoot sweep added</td>
+<td>Ch33/39</td>
+</tr>
+<tr>
+<td>H14</td>
+<td>Raw recurring fees might be called money sinks</td>
+<td>Transfers distinguished from actual destruction in accounting tests</td>
+<td>Ch25/33</td>
+</tr>
+<tr>
+<td>H15</td>
+<td>Concave per-account reward treated as resistance to replicas</td>
+<td>Square-root splitting and pool-capture counterexamples retained</td>
+<td>Ch25/33</td>
+</tr>
+<tr>
+<td>H16</td>
+<td>Native fighter windows rounded into 30-Hz world clock</td>
+<td>Fifteen false punish positives among 900 pairs; retain native 60 Hz</td>
+<td>Ch41/49</td>
+</tr>
+<tr>
+<td>H17</td>
+<td>Global respawn wave could revive immediately</td>
+<td>Minimum 90-tick absence; near-ten-second cutoff discontinuity remains</td>
+<td>Ch45/49</td>
+</tr>
+<tr>
+<td>H18</td>
+<td>Dropped objectives could stop pressure</td>
+<td>Clock follows both lights away, including dropped state</td>
+<td>Ch45/49</td>
+</tr>
+<tr>
+<td>H19</td>
+<td>Ordinary resource cap could prevent refunds</td>
+<td>Separate bounded recovery fuel; disappeared authority still unresolved</td>
+<td>Ch44/49/50/52</td>
+</tr>
+<tr>
+<td>H20</td>
+<td>Endpoint collision missed fast shots/thin cover</td>
+<td>Swept intersection added for supplied frozen rectangles; circle-corner/moving-target limits retained</td>
+<td>Ch49</td>
+</tr>
+<tr>
+<td>H21</td>
+<td>Queue reports crashed on no/fully censored arrivals</td>
+<td>Null means and censoring retained instead of fabricated zero wait</td>
+<td>Ch49</td>
+</tr>
+<tr>
+<td>H22</td>
+<td>Participant A&#39;s reused token blocked participant B</td>
+<td>Scope request identity to principal/actor plus token</td>
+<td>Ch50/52</td>
+</tr>
+<tr>
+<td>H23</td>
+<td>Cached retries padded history without revision progress</td>
+<td>Require actual revision progress and bounded record counts</td>
+<td>Ch50/52</td>
+</tr>
+<tr>
+<td>H24</td>
+<td>Fighter verifier accepted unsupported semantics but helper used hardcoded rules</td>
+<td>Reject incompatible profile contracts; still not full fighter runtime</td>
+<td>Ch50/52</td>
+</tr>
+<tr>
+<td>H25</td>
+<td>Teams could differ after accepted terms</td>
+<td>Freeze four-seat roster and carry through replay-derived settlement</td>
+<td>Ch50/52</td>
+</tr>
+<tr>
+<td>H26</td>
+<td>Publication rights did not bind all source parties and branch maker</td>
+<td>Bind full consent registry and actual authorship; local trust remains</td>
+<td>Ch50/51/52</td>
+</tr>
+<tr>
+<td>H27</td>
+<td>Boolean equaled integer at evidence boundary</td>
+<td>Compare canonical typed bytes</td>
+<td>Ch50/52</td>
+</tr>
+<tr>
+<td>H28</td>
+<td>Tutorial introduced Catch outside selected M1 kit</td>
+<td>Teach telegraph/evade/selected defense; Catch deferred</td>
+<td>Ch21/50</td>
+</tr>
+<tr>
+<td>H29</td>
+<td>Supply proxy could be mistaken for physical capture</td>
+<td>Explicitly separate relay supply eligibility and actual ownership-capture</td>
+<td>Ch20/39/50</td>
+</tr>
+<tr>
+<td>H30</td>
+<td>Zero-startup admission timing was not fully specified</td>
+<td>Clarified T release/T+1 locomotion; this is a spec clarification, not executed engine fix</td>
+<td>Ch27/50</td>
+</tr>
+<tr>
+<td>H31</td>
+<td>Bridge need 5 appeared solved while caravan needed 6</td>
+<td>Bridge shortage target corrected to 6; ecology remains 5</td>
+<td>Ch54/58</td>
+</tr>
+<tr>
+<td>H32</td>
+<td>Search grammar manufactured an unavoidable tradeoff</td>
+<td>Permit legal second bridge input; Mercy Braid exposes grammar exclusion</td>
+<td>Ch55/58</td>
+</tr>
+<tr>
+<td>H33</td>
+<td>One completed quest hid later failed bridge service</td>
+<td>Added ongoing/late safe-pulse diagnostics after seeing result</td>
+<td>Ch55/58</td>
+</tr>
+<tr>
+<td>H34</td>
+<td>Repair assumed 18 fiber when only 15 available after salvage</td>
+<td>Preserve failed attempt; implement partner repair and different solo route</td>
+<td>Ch57/58</td>
+</tr>
+<tr>
+<td>H35</td>
+<td>Literal reserved edge did not preserve desired contribution</td>
+<td>Helper avoids other incoming routes; raw API can still bypass the semantic intent</td>
+<td>Ch56/58</td>
+</tr>
+<tr>
+<td>H36</td>
+<td>Execution could use a different helper plan than preview</td>
+<td>Bind exact world/revision/epoch and accept only the viewed first action</td>
+<td>Ch56/58</td>
+</tr>
+<tr>
+<td>H37</td>
+<td>Authorized absent builder can occupy all scarce public slots with weak channels</td>
+<td>Revocation does not grant removal; prospective lease/easement recovery is still missing</td>
+<td>Ch56/58/59</td>
+</tr>
+<tr>
+<td>H38</td>
+<td>Cart appeared partly across while its whole cargo remained at origin</td>
+<td>Keep cart at origin during qualification; physical movement remains missing</td>
+<td>Ch54/58</td>
+</tr>
+<tr>
+<td>H39</td>
+<td>Genesis/final narration implied nonexistent past/future pulses</td>
+<td>Explicit genesis and read-only terminal episode; no next-step prompt after completion</td>
+<td>Ch57/58</td>
+</tr>
+<tr>
+<td>H40</td>
+<td>Delivery narrative could imply eating/gratitude without those systems</td>
+<td>Restrict factual templates to actual delivery/ownership/payment/events</td>
+<td>Ch54/57/58</td>
+</tr>
+</tbody></table></div>
+<h2>E. Why impressive experiment totals did not prove the game</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Actual evidence</th>
+<th>What cannot be inferred</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>E01</td>
+<td>65 v0.7 test methods; 252 graph/priority oracle cases; 6,312 finite search cases; 61 selected fresh world validations; 12 HTTP checks</td>
+<td>These units cannot be added together as independent tests or players. They do not measure enjoyment, player skill, a full MMO, browser usability or economic sustainability.</td>
+</tr>
+<tr>
+<td>E02</td>
+<td>280 v0.6 tests include 98 retained/import-adapted and 182 additional</td>
+<td>Adding the historical 187 again inflates the distinct test claim. Older unchanged files can retain known historical defects.</td>
+</tr>
+<tr>
+<td>E03</td>
+<td>v0.7 graph oracle compares 42 graphs × six priorities to an independent cut method</td>
+<td>Strong evidence for this bounded transport evaluator, not all possible material laws or a physical fluid model.</td>
+</tr>
+<tr>
+<td>E04</td>
+<td>Mercy Braid beats all 408 equal-cost candidates in a restricted balanced-weather grammar</td>
+<td>Search excludes dual-parent sinks initially, odd capacities, changed feeders, adaptive edits, temporary channels and partners. It does not establish global optimality.</td>
+</tr>
+<tr>
+<td>E05</td>
+<td>Braid wins original storm/reversal delivery/ecology objectives</td>
+<td>A one-shot delivery objective missed later bridge failure. New service diagnostics were added after observation; they were not preregistered.</td>
+</tr>
+<tr>
+<td>E06</td>
+<td>61 World validations reproduce selected finite cases</td>
+<td>Selected cases are not an independent exhaustive validation of every candidate or real-user preference.</td>
+</tr>
+<tr>
+<td>E07</td>
+<td>The invited helper supplies useful legal one-junction plans</td>
+<td>It cannot discover Mercy Braid by design; limited search failure is not proof that no solution exists. No LLM was tested.</td>
+</tr>
+<tr>
+<td>E08</td>
+<td>200 seeds and later 3,600 ecological runs</td>
+<td>All use assumed growth/demand/noise/compliance. They omit prices, player adaptation, substitutes and many disturbances. Percentiles are simulation variation, not player confidence intervals.</td>
+</tr>
+<tr>
+<td>E09</td>
+<td>Queue study uses 287,462 synthetic arrivals per split across seeds</td>
+<td>Fixed demand, FIFO batching and unlimited concurrent match capacity do not predict AWE population, retention, actual waits, geography, MMR or abandonment.</td>
+</tr>
+<tr>
+<td>E10</td>
+<td>Lanternwake completes legal captures against idle/noncontesting scripts</td>
+<td>Reachability and settlement integration are real; challenge, competitive balance, actual shooter geometry and fun are not established. Symmetric stress scripts had zero captures.</td>
+</tr>
+<tr>
+<td>E11</td>
+<td>Raincatch scripts score public cues; holding shelter passes</td>
+<td>Appropriate tutorial state machine, no competitive depth or human-equivalent agent behavior proved.</td>
+</tr>
+<tr>
+<td>E12</td>
+<td>Fighter graph has 12 paths, three edges, 32-health maximum contact arithmetic</td>
+<td>Assumes legal contacts land. No full fighter simulation, usable spacing, actual combos, opponent choice or balance.</td>
+</tr>
+<tr>
+<td>E13</td>
+<td>Projectile sweep exact for square against frozen axis-aligned rectangles</td>
+<td>Conservative for circle corners; no moving-target sweep, rotated cover, full candidate query or measured networking.</td>
+</tr>
+<tr>
+<td>E14</td>
+<td>LoomTable 2,000 geometric boards agree across connectivity implementations</td>
+<td>These boards need not be legal match states. The 32 scripted games did not optimize to win; their 31 draws do not establish balanced strategic play.</td>
+</tr>
+<tr>
+<td>E15</td>
+<td>Playable Letter enumerates roots plus one opponent reply</td>
+<td>Two-ply completeness is not full-game solving or guaranteed safety after later replies. A late eligible position and selected contrast can bias apparent interest.</td>
+</tr>
+<tr>
+<td>E16</td>
+<td>Afterimage alternate wins versus historical actions but often draws versus one reactive policy</td>
+<td>Useful causal counterexample, not prediction of the original person or optimal opposition. Its short fixture starts at a constructed checkpoint.</td>
+</tr>
+<tr>
+<td>E17</td>
+<td>Hashes, local replay, canonical serialization and finite payment pools verify bounded invariants</td>
+<td>No external authenticity, independent onchain transition proof, live authentication, Sybil fairness or market demand follows.</td>
+</tr>
+<tr>
+<td>E18</td>
+<td>No new defect in the final 16-method adversarial suite</td>
+<td>Means none found within that suite and source revision; not proof of no defects. Two harness representation fixes were correctly not claimed as kernel repairs.</td>
+</tr>
+<tr>
+<td>E19</td>
+<td>HTTP API and JavaScript syntax checks passed; browser installation timed out</td>
+<td>Neither tests actual visible interaction. New live build should not repeat this evidence substitution.</td>
+</tr>
+<tr>
+<td>E20</td>
+<td>Formative/confirmatory human protocols and future scenario banks are detailed</td>
+<td>They are planned studies, not observed participant results. “No human study” remains true through this archived baseline.</td>
+</tr>
+</tbody></table></div>
+<h2>F. What genuinely deserves preservation</h2>
+<p>The archive is not empty theater. It contains executable algorithms, exact rules, conservation tests, finite search outputs, failed scenarios, multiple versions and explicit corrections. Important work includes the independent small-network oracle, output-space deadlock witness, order reactivation closure, exact phase/timing corrections, one-shot funded settlement, request-scope repairs, recorded-versus-reactive alternatives, and the legal counterexample to a restricted design grammar. Do not discard these and replace them with buttons that merely increment counters or decorative menus.</p>
+<p>The most valuable creative thread is one stable entity acquiring new functions and history through real action. Rebuild around that, while preserving the larger action, settlement, society and games portfolio. The user can reasonably reject another narrow rain puzzle as the entire answer. More written names alone will not close the gap either: each claimed implemented system needs a visible state change, a player-controllable action, failure/return behavior, and evidence from the actual rendered application.</p>
+<h2>G. Required honesty for the current rebuild</h2>
+<ol>
+<li>Lead with the concrete missing work, not an invented confession of intentional deception.</li>
+<li>Distinguish baseline defects, fixes already made, current missing systems and new verified repairs.</li>
+<li>Review the v0.8 Site before repeating any v0.7 missing-feature claim against it.</li>
+<li>Preserve full prior requirements in a visible coverage matrix: implemented, partial, designed, and not started. Do not relabel an isolated laboratory as a website feature.</li>
+<li>The live website must be an actual game to explore and play. Cards describing raids or agent societies do not implement them.</li>
+<li>If the delivered website remains single-player with scripted actors, say that plainly even while adding substantially richer action, construction, economy, places and nested games.</li>
+<li>No “entire MMORPG complete,” “all research mastered,” “fully onchain,” “live AI society,” “best game,” or “visual QA passed” claim without the corresponding evidence.</li>
+<li>A new factual archive should preserve this audit, current source, latest design changes, exact commands/results, and the distinction between visible chat and a raw platform export.</li>
+</ol>
+<h2>H. Highest-value corrective play scenarios</h2>
+<ul>
+<li>Start empty, acquire materials through actual actions, create a traversable bridge, cross it, move a conserved cargo lot, fulfill one funded agreement, and consume/distribute that cargo through a real world process.</li>
+<li>Use one material relation in traversal and combat, then in a structure; show actual shared events and counterexamples. Keep water routing as its own law if force remains unimplemented.</li>
+<li>Enter a nested game from the world, freeze the same body, finish/leave/reconnect, and return with exact inventory and one factual record. No duplicated world actions while seated.</li>
+<li>Let a scripted agent propose work from observed state, reserve a human contribution, stale the preview, revoke authority, and verify that no stale or unwanted work completes. Add real model integration only through actual supported infrastructure.</li>
+<li>Build an installation under a prospective public maintenance agreement; simulate absent builder and resolve access/salvage under those already accepted terms.</li>
+<li>Finish the delivery by favoring the bridge, observe independent ecological consequences, then recover through genuinely different solo and partnered routes without free materials or repeat payouts.</li>
+<li>Play a readable defensive combat exchange, a complete objective match against a responsive opponent, a table game, and a short festival game; verify controls and full terminal/return behavior in the actual browser.</li>
+<li>Save, reload, branch history, return to current state, export a record, and ensure no branch duplications or historical payout replay. Keep local persistence clearly distinct from shared durable authority.</li>
+</ul>
+<p>This audit is exhaustive over the enumerated material findings extracted from the recovered 59-chapter prose and named metadata, not an assertion that every source, every code path, every inaccessible chat turn or the entire game corpus has now been audited.</p>
+</section><section id="source"><p class="section-label">Appendix B · prior live website</p><h1>AWE First Orchard v0.8: independent source audit</h1>
+<p>Audit date: 2026-09-11. Read-only baseline: Git commit <code>7f913b352fbc3ccfbe069fb518951b256cce0b61</code> of <code>/workspace/sites/awe-first-orchard</code>. The root builder is responsible for subsequent edits. This report audits the available browser implementation, documentation and tests; it does not claim access to unseen messages or prove intentional deception. Most large omissions were explicitly disclosed in README and UPGRADE-v08; that disclosure makes them honest scope cuts, but they still fail to fulfill the user&#39;s larger request.</p>
+<h2>The central delivery shortfall</h2>
+<p>The shipped artifact is a small single-player water-network puzzle in an authored 3D scene, plus one 45-second 2D catching activity. It is a real functioning prototype. It is not an implemented MMORPG, civilization simulator, fighting game, shooter, agent civilization, marketplace or crypto game. The prior final reply itself called it a prototype and disclosed lack of browser playtesting. The issue is the distance between the requested whole-game experience and the delivered slice, not evidence that the finite water arithmetic was fabricated.</p>
+<h2>Reproduced correctness findings</h2>
+<p>Severity here concerns this local prototype&#39;s behavior, not financial security. Saved worlds are explicitly editable local state.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Severity</th>
+<th>Finding and evidence</th>
+<th>Required repair</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>D01</td>
+<td>High</td>
+<td><code>world.js:propose/acceptProposal</code> returns a mutable plan and acceptance checks only numeric revision and grant epoch. A probe changed the displayed west→bridge plan to east→habitat at larger capacity; acceptance executed the altered plan.</td>
+<td>Bind an immutable plan to a particular world/session and issue ID. Acceptance must resolve the stored plan and reject changed data.</td>
+</tr>
+<tr>
+<td>D02</td>
+<td>Medium</td>
+<td>The same acceptance function accepts a proposal generated for another world with matching revision/epoch. A probe generated a proposal in world B and accepted it in independent world C.</td>
+<td>Include world identity or use a world-scoped proposal registry, not matching counters alone.</td>
+</tr>
+<tr>
+<td>D03</td>
+<td>Medium</td>
+<td><code>game.js:save</code> exports only player x/z/angle; the load expression sets <code>bank</code> to far only when z &lt; −19. A player who entered the bridge from the far bank and reloads while z=−13 now has <code>bank=&#39;near&#39;</code>. On closure, <code>rescuePlayer</code> returns them to the wrong side. The exact saved/restored expressions were reproduced.</td>
+<td>Persist and validate the entry bank along with physical pose; rescue and save should be one coherent transition.</td>
+</tr>
+<tr>
+<td>D04</td>
+<td>Medium</td>
+<td><code>scene.js:makeScene</code> selects whole 2.4-unit terrain quads by midpoint, while <code>world.js:land</code> checks analytic ellipse/cleft boundaries. Geometry probe: (10, −6.8) is walkable with no rendered earth at y=0; (10, −18.8) has rendered earth but is not walkable.</td>
+<td>Derive visible traversable ground and collision from the same clipped mesh or exact shared polygonal domain.</td>
+</tr>
+<tr>
+<td>D05</td>
+<td>Medium</td>
+<td><code>world.js:setPriority(first)</code> exposes only three of the water solver&#39;s six permutations. It cannot produce orchard→habitat→bridge, habitat→orchard→bridge or bridge→habitat→orchard. This narrows the economic choices used in the retained research.</td>
+<td>Expose and validate the full order, with readable reorder controls or six named permutations.</td>
+</tr>
+</tbody></table></div>
+<p>Executed evidence is in <code>audit-probes.mjs</code> and <code>audit-probe-results.json</code>. These contain six probe records (including the two terrain witnesses); they are not six browser playtests. Baseline source needed to reproduce the probes is preserved outside the Site in <code>source-audit-baseline</code>.</p>
+<h2>Additional source-established defects and weak interfaces</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Severity</th>
+<th>Finding and evidence</th>
+<th>Classification</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>D06</td>
+<td>High</td>
+<td><code>game.js</code> storage listener reacts only when <code>started</code> is true. A second tab opened on the arrival screen keeps an old in-memory world while the first tab progresses. On entering later, <code>enter()</code> immediately saves that old world, overwriting the newer snapshot.</td>
+<td>Persistence race established by event conditions; not exercised in a browser in this audit.</td>
+</tr>
+<tr>
+<td>D07</td>
+<td>Medium</td>
+<td>Two active tabs save every three simulation seconds, each treating the other&#39;s ordinary save as a lock event. Closely timed saves can lock both; there is no lease, compare-and-swap version or ownership election.</td>
+<td>Coordination design flaw; precise browser scheduling remains untested.</td>
+</tr>
+<tr>
+<td>D08</td>
+<td>Medium</td>
+<td><code>game.js:doPulse</code> calls <code>mutate</code> (which saves) before <code>rescuePlayer</code>, so a closing pulse first persists an invalid player location. Reload before the periodic save falls back to default spawn, rather than persisting the actual safety rescue.</td>
+<td>Save transaction does not include the player consequence.</td>
+</tr>
+<tr>
+<td>D09</td>
+<td>Medium</td>
+<td>Global <code>keydown</code> prevents Space&#39;s default action whenever no panel is open, even before entering. A focused native button cannot use its normal Space activation; in-game Space instead jumps. Enter remains available.</td>
+<td>Keyboard accessibility defect; guard native interactive targets.</td>
+</tr>
+<tr>
+<td>D10</td>
+<td>Medium</td>
+<td><code>canMove</code> tests a point against terrain plus four circular hut obstacles. Most visible trees, stones, posts, NPCs, node bowls and pavilion supports have no collision. Camera goals have no collision/occlusion check.</td>
+<td>Simplified spatial simulation, capable of visibly walking/camera-clipping through objects. Exact visual failures need browser observation.</td>
+</tr>
+<tr>
+<td>D11</td>
+<td>Low</td>
+<td>Pet fallback sets <code>(player.x+1, player.z+1)</code> without checking that destination. At a rim or bridge side it can place the follower outside walkable ground. Pet movement also ignores hut obstacles that the player respects.</td>
+<td>Cosmetic companion pathing defect.</td>
+</tr>
+<tr>
+<td>D12</td>
+<td>Low</td>
+<td>The About close button says “Close and enter the world” before play, but calls only <code>closePanel</code>; the separate Enter button is still required.</td>
+<td>Inaccurate action label.</td>
+</tr>
+<tr>
+<td>D13</td>
+<td>Low</td>
+<td>Oru/node sound actions call <code>toggleSound</code> when muted (which already plays <code>townScore</code>) and then call <code>townScore</code> again, doubling the first score.</td>
+<td>Audio polish defect.</td>
+</tr>
+</tbody></table></div>
+<h2>Missing depth, mapped to the request</h2>
+<p>These are implementation omissions, not all bugs. The documentation candidly lists many of them.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Detailed findings table"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requested area</th>
+<th>What the v0.8 source actually implements</th>
+<th>Missing depth</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O01</td>
+<td>MMO / people</td>
+<td>One browser-local world and one body; no application server, sockets or presence transport.</td>
+<td>Real players, shared authority, persistent shared world, parties, guilds, chat, trading between players, scale/load evidence.</td>
+</tr>
+<tr>
+<td>O02</td>
+<td>Combat, every attack and balance</td>
+<td>No attack state machine, targets, health, damage, guard, dodge, aim or projectile authority. Jump only changes vertical pose.</td>
+<td>Any playable combat discipline, frame windows, hit confirmation, counterplay, progression balance or meaningful combat tests.</td>
+</tr>
+<tr>
+<td>O03</td>
+<td>PvE quests and raids</td>
+<td>One fixed crossing task and dynamic text based on water/cargo; no enemy encounters.</td>
+<td>Quest chains, dungeon structure, boss mechanics, roles, failure/recovery, loot and raid coordination.</td>
+</tr>
+<tr>
+<td>O04</td>
+<td>PvP / Warsong-like play</td>
+<td>No opponents or networked matches.</td>
+<td>Capture-the-flag, team identity, respawn, objective carrying, tie/timeout logic, ranking and anti-cheat.</td>
+</tr>
+<tr>
+<td>O05</td>
+<td>Fighting games and shooters</td>
+<td>No fighting or shooting mode.</td>
+<td>Their requested distinct mechanics rather than a generic activity selector.</td>
+</tr>
+<tr>
+<td>O06</td>
+<td>Games within the world</td>
+<td>One solo 45-second Raincatch overlay. It is real input and scoring, but is not the prior Raincatch protocol.</td>
+<td>More than one activity, reusable capsule boundaries, tournament/social context, the designed Lanternwake/Loom/Table/duel modes.</td>
+</tr>
+<tr>
+<td>O07</td>
+<td>Civilization / AoE / strategy</td>
+<td>Same-world overhead camera, eight fixed water links and scarce construction stock.</td>
+<td>Citizens, work scheduling, production chains, armies, formations, research, culture, diplomacy, settlement planning, war.</td>
+</tr>
+<tr>
+<td>O08</td>
+<td>Marketplace / microeconomy</td>
+<td>Five conserved ledgers; one fixed four-food lot; one reserved 12-Mark payout. No buy/sell action exists.</td>
+<td>Orders, offers, price discovery, production/consumption, regional supply, demand, taxes, arbitrage, sinks, participant behavior.</td>
+</tr>
+<tr>
+<td>O09</td>
+<td>Crypto</td>
+<td>No wallet, chain, token, ownership contract, settlement or proof.</td>
+<td>The requested crypto layer and an explicit technically tested integration boundary. Omission is disclosed and prevents false financial claims, but the requested feature was not implemented.</td>
+</tr>
+<tr>
+<td>O10</td>
+<td>AI agents</td>
+<td>Serein is an invited scripted repair proposer. It checks up to one feeder/sink path per junction and always chooses the first candidate, with capacity four.</td>
+<td>Actual language-model/runtime integration, tool authentication, observation/action protocol, strategy learning, independent agent personas, human-agent ecology.</td>
+</tr>
+<tr>
+<td>O11</td>
+<td>Companions and characters</td>
+<td>A small follower mesh and four authored people, all humans drawn from the same body mesh with different tint. Three stationary NPCs plus Vey&#39;s scripted wagon offset.</td>
+<td>Pet bond/progression/abilities, independent needs/schedules, character creation, equipment, distinctive rigging, behavior animation.</td>
+</tr>
+<tr>
+<td>O12</td>
+<td>Worldcraft / magic</td>
+<td>“Weave” and “Shape” create the same channel geometry in the same eight slots; they differ in resource and lifetime. “Pulse” performs water allocation; “Listen” opens text/state panels.</td>
+<td>Geometry shaping, physics manipulation, combat-worldcraft transfer, elemental interaction, material discovery and creative construction beyond fixed links.</td>
+</tr>
+<tr>
+<td>O13</td>
+<td>Living ecology</td>
+<td>Orchard/reeds use storage thresholds to tint immutable meshes. Fruit is visibly present in the fixed mesh; harvesting is explicitly disabled.</td>
+<td>Growth, consumption, harvest, reproduction, population and trophic systems.</td>
+</tr>
+<tr>
+<td>O14</td>
+<td>Animation / art</td>
+<td>Flat triangle meshes, one directional light, fog, sinusoidal sway, translated limb animation and a sky image. Bridge open/closed geometry swaps immediately.</td>
+<td>Production character art/rigging, attack/casting animation, growth/folding interpolation, shadow maps, camera collision, level dressing, performance adaptation. This is source-established simplicity, not a claim to have visually judged the site.</td>
+</tr>
+<tr>
+<td>O15</td>
+<td>Long-term play</td>
+<td>No new fiber or Focus is produced. Removing installed fiber loses half. No new quest delivery appears after the sole lot arrives.</td>
+<td>A repeatable, balanced daily/long-session progression loop. Irreversible experimentation can exhaust useful stock and force a full reset.</td>
+</tr>
+<tr>
+<td>O16</td>
+<td>Coauthor recovery</td>
+<td>Agent-installed channels cannot be removed by the human even after revocation; the agent has no removal UI/action.</td>
+<td>Prospectively agreed lease or repair/relinquish protocol. The prior documentation explicitly acknowledges this unresolved worksite problem.</td>
+</tr>
+<tr>
+<td>O17</td>
+<td>History and portability</td>
+<td>Latest 160 events plus editable local snapshot; JSON export but no import.</td>
+<td>Complete action replay, trustworthy shared history, cloud/account saves and restoration of exported worlds.</td>
+</tr>
+<tr>
+<td>O18</td>
+<td>Physical transport</td>
+<td>Wagon travels along x=0 at constant speed until z=−28; support is threshold and longitudinal footprint.</td>
+<td>Route finding, vehicle steering, physical cargo interaction, loading/unloading choices, multi-route logistics. The movement and one-shot custody change are real, but not a general transport engine.</td>
+</tr>
+<tr>
+<td>O19</td>
+<td>World breadth</td>
+<td>Two clipped ellipses, four discoverable places, four small huts and a cleft. Distant scenery has no explorable continuation.</td>
+<td>The requested whole civilization and broad unknown world. The city-beast is an animated visual suggestion, not a living terrain system.</td>
+</tr>
+</tbody></table></div>
+<h2>Testing shortcuts and what existing tests actually prove</h2>
+<ol>
+<li><code>tests/world.test.mjs</code> contains 30 Node tests. This count is genuine. One contains 252 inherited Python fixtures. The fixtures should not be advertised as 252 independent gameplay tests.</li>
+<li>The test named <strong>“bridge visual selection and walkability share the six-water predicate”</strong> only calls <code>bridgeOpen</code> and <code>walkable</code>. It never exercises the renderer or rendered deck. Shared source usage is helpful, but this test does not prove visual correctness.</li>
+<li>The finite-geometry test uses a fake renderer, checks finite values/nonempty arrays, and counts fewer than one million vertices. It does not compile the shaders, render images, measure FPS or verify surfaces agree with collision. D04 passes those existing tests.</li>
+<li>The proposal test verifies no immediate mutation and the resulting actor&#39;s fiber, but never changes a plan, uses another world, checks a registered identity or asserts a stored plan fingerprint. D01 and D02 pass it.</li>
+<li>World-save tests validate cargo snapshots and malformed account totals, but never load/save the separate player state or multiple tabs. D03, D06 and D08 are outside their coverage.</li>
+<li>No tests exercise <code>game.js</code> keyboard/pointer handlers, panel focus transitions, physical player movement, complete Raincatch rounds, character interaction prompts or the browser UI. The 30-test number is not evidence of playability on an actual device.</li>
+<li>The asset-reference test mainly scans quoted local <code>src</code>/<code>href</code> and checks a short explicit file list. It is not a full dependency, runtime import, GPU capability or deployed-route test.</li>
+<li>A single camera-target projection assertion verifies basic matrix consistency. It does not establish an unobstructed, comfortable third-person camera across the world.</li>
+<li>No measured player study establishes fun, clarity, willingness to return, multiplayer fairness, willingness to pay, macroeconomic stability or novelty. The earlier large finite search supports a narrow water-topology result; it cannot prove “best MMORPG” quality.</li>
+<li>The README and final response explicitly disclose that browser visual QA and human playtesting were not performed. Keep that distinction: it was an important incomplete verification step, not a falsely reported browser test.</li>
+</ol>
+<h2>Recommended rebuild acceptance gates</h2>
+<ul>
+<li>Preserve and explain the material water kernel; expose its full choice space.</li>
+<li>Implement a complete small adventure loop: meaningful combat, encounter completion, reward, equipment/crafting decision and a second objective, with consequences visible in the scene.</li>
+<li>Implement actual finite stock trading and production/consumption; do not label a displayed number an economy.</li>
+<li>Add a genuinely different game within the world with its own legal actions, start, end and return contract; label local AI opponents truthfully.</li>
+<li>Give construction visible placement and a shared collision/navigation representation.</li>
+<li>Fix proposal identity, atomic player/cargo persistence and cross-tab ownership before promising faithful continuation.</li>
+<li>Provide character/avatar accessibility controls and readable HUD; do not globally steal native button activation.</li>
+<li>Run the real browser journey on the actual application when authorized: start, movement, camera, interact, battle, build, trade, activity, save/reload. Record failures and fixes rather than substituting Node checks.</li>
+<li>Publish a feature status ledger that separates implemented, simulated locally, documented-only and not started. The whole MMO cannot honestly be declared complete merely by adding menu entries.</li>
+</ul>
+</section><section id="intermediate"><p class="section-label">Appendix C · intermediate rebuild</p><h1>v0.9 in-progress source review</h1>
+<p>Read-only review of root-authored realm.js, pavilions.js, visual.js and the relevant app.js integration, before the root&#39;s announced worker, simultaneous-hit, input, and equipment-normalization patches. Findings below refer to this intermediate source, not the final release. No Site files were edited.</p>
+<h2>Urgent independent findings</h2>
+<ol>
+<li><strong>Partial import validation can crash or inject markup.</strong> <code>restore</code> accepts missing enemies/workers (next tick throws), nonnumeric hero.y (camera arithmetic becomes invalid), arbitrary discipline text (character panel interpolates it into innerHTML), plus unchecked pet, items, equipment, options, cooldowns, bests and combat fields. Validate every retained schema field or normalize from an allowlisted schema. Escape user/import-originating strings in HTML even after validation.</li>
+<li><strong>Web Lock still permits stale overwrite after waiting at welcome.</strong> The snapshot is loaded once at module initialization. Successful lock acquisition calls <code>startNow</code>, which saves that stale state. Re-read and validate current saved bytes inside the successful lock callback before starting. Reproduce: tab B waits at welcome, tab A progresses and closes, B enters and acquires the now-free lock.</li>
+<li><strong>Two-player duel locomotion differs.</strong> The p2 branch omits guard slowdown, recovery slowdown and actual dodge movement. Guarded motion measured at 0.03225 units/tick for hero versus 0.0716667 for p2. Over 24 follow-up ticks after simultaneous dodge, hero moved 3.45 units and p2 moved zero. Share one actor-input locomotion function.</li>
+<li><strong>Companion ward outlives the five-second chord.</strong> <code>damage</code> consumes pet.ward without checking resonance.expires. A legal sequence (buy crystal, build beacon, install braid, pulse, sound chord) produced ward 8 at tick 0 and still ward 8 at tick 301, although expiry is tick 300. Clear expired ward or gate its damage reduction by the same expiry.</li>
+<li><strong>Ensure advertised discipline bonuses are implemented.</strong> Current welcome copy promises Thread +2 melee and Gale +2 projectile, while the sampled <code>stepAction</code> only adds equipment bonuses. Root&#39;s planned combat patch may already address this.</li>
+<li><strong>Queued double KO needs explicit result resolution.</strong> Once simultaneous hits are queued, resolve duel victory after the entire batch. Current <code>die</code> immediately gives human victory when the opponent dies and postpones hero loss for 150 ticks, so merely queuing hits would mis-score a double KO.</li>
+</ol>
+<h2>Areas that held up in focused probes</h2>
+<ul>
+<li>Modified quote totals were rejected.</li>
+<li>Another world&#39;s quote was rejected.</li>
+<li>A full 14,400-tick unattended CTF simulation terminated at the expected four-minute limit. No carried flag referenced a dead/missing actor at any checked tick; exactly two flags remained; all material residuals stayed zero and money stayed 50. This is one scripted simulation, not broad CTF balance evidence.</li>
+<li>The Loom Table&#39;s traversable-port adjacency uses both outgoing and reciprocal incoming ports. Shared ownership is intentionally allowed. Simultaneous completed routes are explicitly resolved as a draw. This is a new simplified local ruleset without the inherited finite piece inventory/pie-swap protocol; describe that version boundary.</li>
+</ul>
+<p>Probe source and captured intermediate modules are in <code>new-source-probes/</code>; <code>results.json</code> records the malformed-import and duel/quote probes. These are executable Node probes, not browser observations. Root&#39;s known worker/production, hit-queue, zero-angle input and equipment-normalization fixes were not duplicated or edited by this reviewer.</p>
+</section><p class="footer">Prepared from the recovered project, visible conversation and versioned source. Historical findings are not automatically current defects. No inaccessible chat transcript or completed production MMORPG is claimed.</p></main></div></body></html>

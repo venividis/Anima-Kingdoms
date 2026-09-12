@@ -1,18 +1,17 @@
 import {Geometry,transform,V} from './engine.js';
-import {land,NODES,BRIDGE,GROUND,bridgeOpen} from './world.js';
+import {land,NODES,BRIDGE,bridgeOpen} from './world.js';
 export const C={stone:[.22,.31,.30],dark:[.12,.21,.22],pale:[.79,.80,.65],light:[.92,.88,.69],grass:[.23,.43,.34],teal:[.33,.67,.57],gold:[.98,.68,.28],water:[.33,.70,.67],pink:[.78,.64,.58]};
 export const PEOPLE=[{id:'iria',name:'Iria',role:'BRIDGEWRIGHT',x:-6,z:-3,color:C.gold},{id:'vey',name:'Vey',role:'CARAVAN KEEPER',x:4,z:5,color:[.66,.36,.25]},{id:'oru',name:'Oru',role:'KEEPER OF SMALL THINGS',x:-22,z:8,color:C.teal},{id:'serein',name:'Serein',role:'INVITABLE SCRIPTED PARTNER',x:-11,z:15,color:C.pale}];
 export const PLACES=[{id:'pavilion',name:'The Bell Pavilion',x:24,z:15,icon:'♧',description:'A little game inside a much larger world.'},{id:'overlook',name:'The Sleeper’s Ear',x:-34,z:22,icon:'✧',description:'The hill beneath you takes a breath.'},{id:'archive',name:'The Unwritten Archive',x: -12,z:-38,icon:'⌑',description:'Here, history belongs to what actually happened.'},{id:'orchard',name:'The First Orchard',x:14,z:-30,icon:'❧',description:'Every living branch keeps its own account of the rain.'}];
 export const OBSTACLES=[{x:11,z:21,r:3.4},{x:21,z:28,r:3.2},{x:-21,z:23,r:3.1},{x:-6,z:28,r:2.6}];
 function random(seed){return()=>{seed=(1664525*seed+1013904223)>>>0;return seed/4294967296;};}
-let rng=random(47307);const rr=(a,b)=>a+rng()*(b-a);
+const rng=random(47307),rr=(a,b)=>a+rng()*(b-a);
 function tree(g,x,z,size=1){const y=0;g.cone([x,y,z],[x+.3*size,y+4*size,z],.37*size,.18*size,C.pale,7);for(let i=0;i<4;i++){let a=i*2.2+rr(0,.7),end=[x+Math.cos(a)*2.1*size,y+rr(4,6)*size,z+Math.sin(a)*2.1*size];g.cone([x,y+2.5*size,z],end,.15*size,.04*size,C.pale,6);g.sphere(...end,1.7*size,.7*size,1.5*size,[.35+rr(0,.1),.52+rr(0,.1),.40],7,4);g.sphere(end[0],end[1]-.25*size,end[2],.13*size,.22*size,.13*size,C.gold,6,4);}}
 function arch(g,x,z,width=4,height=5,angle=0){const p=(a,y)=>[x+Math.cos(angle)*a,y,z+Math.sin(angle)*a];for(const side of[-1,1]){g.cone(p(side*width*.5,0),p(side*width*.4,height*.6),.24,.2,C.pale);g.cone(p(side*width*.4,height*.6),p(0,height),.2,.08,C.pale);}g.sphere(x,height-.45,z,.13,.35,.13,C.gold,6,5);}
 function hut(g,x,z,size=1,rot=0){g.cone([x,0,z],[x,2.7*size,z],2.9*size,2.65*size,C.stone,10);g.cone([x,2.7*size,z],[x,4.6*size,z],3.6*size,.5*size,[.49,.58,.46],10);g.cone([x,4.6*size,z],[x+.2,5.8*size,z],.5*size,0,C.pale,7);g.box(x,1.2*size,z+2.6*size,1.35*size,2.4*size,.12,C.dark);g.box(x+1.4*size,1.8*size,z+2.25*size,.6*size,.75*size,.18,C.gold);for(let i=0;i<5;i++){let a=(i/5)*6.28;g.cone([x+Math.cos(a)*2.6*size,0,z+Math.sin(a)*2.6*size],[x+Math.cos(a)*2.7*size,2.8*size,z+Math.sin(a)*2.7*size],.09,.13,C.pale,5);}}
 export function makeScene(r){
- rng=random(47307);
  const earth=new Geometry(),architecture=new Geometry(),green=new Geometry(),distant=new Geometry();
- for(const region of GROUND){for(let i=0;i<region.poly.length;i++){const a=region.poly[i],b=region.poly[(i+1)%region.poly.length];earth.tri([region.x,0,region.z],[b[0],0,b[1]],[a[0],0,a[1]],[.27+rr(0,.025),.38+rr(0,.025),.31]);}}
+ const step=2.4;for(let x=-53;x<53;x+=step)for(let z=-57;z<49;z+=step){if(!land(x+step*.5,z+step*.5))continue;let path=Math.abs(x)<3.5||((z>8&&z<15)&&(x>-30&&x<30));const col=path?[.40+rr(0,.07),.46+rr(0,.04),.37]:[.26+rr(0,.06),.37+rr(0,.04),.29+rr(0,.04)];earth.quad([x,0,z],[x,0,z+step],[x+step,0,z+step],[x+step,0,z],col);}
  // Deep island sides are separate geology below the walkable material surface.
  for(const n of[{x:0,z:14,rx:51,rz:34},{x:0,z:-33,rx:37,rz:23}])for(let i=0;i<64;i++){let a=i/64*6.283,b=(i+1)/64*6.283;let p=[n.x+Math.cos(a)*n.rx,-.03,n.z+Math.sin(a)*n.rz],q=[n.x+Math.cos(b)*n.rx,-.03,n.z+Math.sin(b)*n.rz];if((n.z===14&&(p[2]<-6||q[2]<-6))||(n.z<0&&(p[2]>-19||q[2]>-19)))continue;const depth=rr(10,22);earth.quad(p,[p[0]*.85,-depth,n.z+(p[2]-n.z)*.85],[q[0]*.85,-depth,n.z+(q[2]-n.z)*.85],q,[.17+rr(0,.07),.27,.27]);}
  // Actual cleft: no terrain spans the gap. Both cliff faces end on its banks.

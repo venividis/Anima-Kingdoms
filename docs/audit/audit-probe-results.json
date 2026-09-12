@@ -1,0 +1,72 @@
+{
+  "baselineCommit": "7f913b352fbc3ccfbe069fb518951b256cce0b61",
+  "probes": [
+    {
+      "id": "mutable-plan",
+      "viewed": [
+        [
+          "spring",
+          "west",
+          4
+        ],
+        [
+          "west",
+          "bridge",
+          4
+        ]
+      ],
+      "executed": [
+        [
+          "spring",
+          "east",
+          6
+        ],
+        [
+          "east",
+          "habitat",
+          6
+        ]
+      ],
+      "acceptedUnviewedPlan": true
+    },
+    {
+      "id": "cross-world-plan",
+      "acceptedFromOtherWorld": true,
+      "channelCount": 2
+    },
+    {
+      "id": "entry-bank-save",
+      "before": "far",
+      "after": "near",
+      "serialized": {
+        "x": 0,
+        "z": -13,
+        "angle": 0
+      }
+    },
+    {
+      "id": "terrain-vs-collision",
+      "x": 10,
+      "z": -6.8,
+      "walkableAtGenesis": true,
+      "renderedEarthAtY0": false
+    },
+    {
+      "id": "terrain-vs-collision",
+      "x": 10,
+      "z": -18.8,
+      "walkableAtGenesis": false,
+      "renderedEarthAtY0": true
+    },
+    {
+      "id": "priority-order-ui",
+      "reachableOrders": [
+        "bridge,orchard,habitat",
+        "orchard,bridge,habitat",
+        "habitat,bridge,orchard"
+      ],
+      "reachableCount": 3,
+      "solverSupports": 6
+    }
+  ]
+}

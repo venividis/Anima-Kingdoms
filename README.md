@@ -1,48 +1,62 @@
-# AWE — The First Orchard
+# AWE — The Living Concord
 
-An embodied, explorable browser slice of the AWE / The Unwritten project. This continues the 59-chapter v0.7 design; it is a new rules profile, not a claim that the full MMO, fighting game, civilization engine or crypto network has been implemented.
+A rebuilt, interconnected local fantasy browser game. Open the website and choose **Enter the living world**. Its complete accountability audit is at `audit.html`.
 
-Open the live Site and choose **Enter the world**. This static application has no external JavaScript dependencies, accounts, API keys or wallet requirement. It uses a small WebGL 2 renderer, authored geometry and one generated panorama.
+The current application runs from `dist/index.html` → `app.js`. It has no external JavaScript runtime dependency, account, API key or wallet requirement. WebGL 2 is required. This is an implemented local game; the production MMORPG, connected LLM service and crypto network remain unbuilt.
 
-## First journey
+## Begin exploring
 
-1. Walk with WASD / arrows; drag the scene to look; scroll to zoom. Space jumps; Shift runs. Touch devices have directional controls and drag camera movement.
-2. Open **Shape (B)**. Preview the Mercy Braid, accept its six lasting connections, then choose **Pulse**. The first balanced rain delivers four water to each destination and raises the crossing.
-3. Close the panel and walk north across the bridge. Vey's wagon makes its own physical journey and pays the reserved commission only on arrival at the far depot.
-4. Walk through the orchard and archive. Listen to Oru, Iria and Vey. The Lumenling follows your footsteps.
-5. Return to the Bell Pavilion east of the village. Approach its center, press E and play the 45-second Raincatch activity.
-6. Start a fresh experiment from Settings to try temporary weaving, drought, different priorities or Serein's invited proposals. A reset explicitly replaces this browser's world; it never merges resources.
+1. Choose Thread, Gale or Stone. Walk with WASD, drag to turn the camera, and jump with Space. The Atlas locates places and resources.
+2. Press Q, preview the Mercy Braid, accept its six lasting connections, then pulse rain twice. The first balanced pulse stores four at each destination; the second accumulates enough for the six-water crossing. Close the panel to resume the world.
+3. Follow Vey's physical wagon across the crossing. Gather wood, stone or watered plants with E beside resource nodes. Trade at Vey's Exchange in the village.
+4. Press B to build a workshop or workplace on an empty marked plot. Assign Mira and Fen to carry resources. Each gathered worker bundle consumes one food. Cargo is counted during transit.
+5. Craft gear through Character. Fight with 1/2, shoot with 3, guard with C and evade with R. Explore the far orchard and enter the Root Warden's gate.
+6. Visit the Bell Pavilion for Raincatch or Loom Table. Try the Singing Range, Tension Court and Lanternwake Gate. E or Escape opens the return option from an arena.
+7. Open World Journal from Settings to inspect accounting, see events, and export/import a world snapshot.
+
+These are suggested actions, not a measured playtest itinerary. Materials and merchant money are finite.
 
 ## Controls
 
-| Input | Result |
+| Input | Action |
 |---|---|
-| WASD / arrows | Move the one player body |
-| Drag scene / mouse wheel | Orbit / zoom |
+| WASD; arrows outside a local duel | Camera-relative movement |
+| Drag / right-drag / scroll | Orbit / zoom |
 | Space / Shift | Jump / run |
-| Q / B | Temporary Weave / lasting Shape |
-| F | One manual rain evaluation |
-| E | Listen / interact with a nearby person or place |
-| M / J / Escape | Same-world overhead lens / journal / close or settings |
+| Click or 1 / 2 / 3 / 4 | Palm / Reach / Glass Note / Gale Break |
+| C / R | Frontal guard / evade |
+| E | Nearby interaction; return panel in activities |
+| Q / F | Water loom / manual rain |
+| I / J / B | Character / quests / settlement |
+| M / Escape | Overhead lens / close or menu |
+| Player two: arrows, K/L/O, P, Enter | World-axis movement; Palm/Reach/Note; guard; evade |
+| Raincatch: A/D, arrows or drag | Move bowl |
 
-Rain is manual. Panels, the pavilion and hidden browser tabs pause physical travel. There is no offline catch-up, automatic resource regeneration or absence penalty. Animation is presentation, not a separate source of outcomes.
+Touch movement, guard, jump and ability buttons are included. Actual devices and keyboard rollover have not been tested. Sound starts after choosing it.
 
-## Architecture
+## Source and version boundaries
 
-- `dist/world.js`: conserved water solver, channel authority and costs, bridge entity, physical cargo, finite commission, permission epochs, proposals, validation.
-- `dist/engine.js`: matrices, procedural triangle meshes, WebGL shaders and drawing.
-- `dist/scene.js`: terrain, architecture, plants, characters, Lumenling, wagon and shared bridge geometry.
-- `dist/game.js`: fixed simulation steps, controls, camera, interaction, snapshots, journal, sound and pavilion.
-- `dist/style.css` / `dist/index.html`: game interface, touch controls and accessible HTML panels.
-- `tests/world.test.mjs`: 30 tests, including 252 exact inherited Python water fixtures in one parity test.
-- `docs/UPGRADE-v08.md`: version boundary, design decisions and unimplemented production systems.
+- `world.js`: inherited exact rain solver, authority, finite funded cargo, shared terrain polygon and bridge.
+- `realm.js`: 60 Hz combat, enemies, boss, CTF, local duel, finite resources, quotes, building, physical workers, crafting, quests, pet memory and snapshots.
+- `pavilions.js`: Raincatch and the v0.9 shared-port Loom Table variant.
+- `engine.js`, `scene.js`, `visual.js`: custom WebGL, geometry, actors, camera, map and state presentation.
+- `app.js`, `index.html`, `interface.css`: input, panels, local save lock and activities.
+- `audit.html`, `audit.md`: complete audit and all version-specific findings.
+- `docs/audit/`: baseline source, reviews and probe results.
+- `tests/`: retained water checks and new state/scenario checks.
 
-Run the meaningful kernel and geometry checks with `node --test tests/world.test.mjs`. The deployment is buildless; authored static output is in `dist`. For a separate local copy, serve `dist` over HTTP; browser modules do not run reliably from `file://`.
+The archived v0.7 research remains historical. Its architecture and activity protocols are not automatically implemented or wire-compatible here. Old v0.8 sources remain in Git history; unused old entry scripts were removed from served output.
 
-The included checks are mathematical, state, geometry-data and source-reference checks. Browser visual QA, actual device performance and human playtesting were not performed in this build. No visual or latency benchmark is claimed.
+## Saving and simulation
 
-## Scope
+Autosave uses local storage `awe-concord-v09`, guarded by an exclusive Web Lock where supported. The latest snapshot is read after acquiring the lock. Another active tab shows a reload message. Without Web Locks, play/export work but autosave is disabled.
 
-This is a local single-player simulator with a disclosed scripted companion planner. It contains real input, state transitions and conservation, but does not provide multiplayer synchronization, a production AI/LLM service, cryptographic execution proofs, blockchain assets or financial returns. Browser snapshots are editable local state, not authoritative accounts.
+Import replaces one validated snapshot and never merges inventories. It accepts only the new profile. Old v0.8 saves are not migrated or deleted. Activity snapshots return to the original world entrance and discard exhibition bodies/projectiles. Worker cargo and the original wagon lot remain conserved. Panels, pavilion games and hidden tabs pause the world; no offline catch-up.
 
-All source is preserved with the Site. The previous complete project remains a separate historical artifact; this source does not silently replace its v0.7 laboratory or research evidence.
+## Verification
+
+Run `node --test tests/*.test.mjs`. The recorded final run contains 61 methods: 30 retained and 31 new. One retained method includes 252 historical water fixtures; these are not additional gameplay tests. `docs/verification-v09.tap` preserves the output. `docs/boss-scenarios.json` records a failed ranged policy and successful legal melee policy; `tests/boss-scenarios.mjs` reproduces them.
+
+No browser visual QA, actual device check, human playtest, frame-rate measurement, network test, balance proof or economic sustainability evidence is claimed. See the complete audit for unresolved requirements and known limitations.
+
+The deployment is static in `dist`. Serve a separate source copy over HTTP; browser ES modules do not reliably run from `file://`. Source and audit are preserved with the existing Site.

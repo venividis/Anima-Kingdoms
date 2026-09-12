@@ -1,0 +1,46 @@
+{
+  "method": "Node state tests, syntax checks, HTML parsing and local source-reference checks; no browser rendering or browser interaction",
+  "tests": 61,
+  "passed": 61,
+  "legacyWaterFixturesWithinOneTest": 252,
+  "jsSyntax": [
+    "app.js",
+    "engine.js",
+    "pavilions.js",
+    "realm.js",
+    "scene.js",
+    "visual.js",
+    "world.js"
+  ],
+  "htmlReferences": [
+    [
+      "audit.html",
+      "./assets/mark.svg"
+    ],
+    [
+      "audit.html",
+      "./index.html"
+    ],
+    [
+      "audit.html",
+      "./index.html"
+    ],
+    [
+      "audit.html",
+      "./audit.md"
+    ],
+    [
+      "index.html",
+      "./assets/mark.svg"
+    ],
+    [
+      "index.html",
+      "./interface.css"
+    ],
+    [
+      "index.html",
+      "./app.js"
+    ]
+  ],
+  "browserTested": false
+}

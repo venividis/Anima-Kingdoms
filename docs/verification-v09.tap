@@ -1,0 +1,376 @@
+TAP version 13
+# Subtest: all new genesis profiles round-trip with conserved stocks
+ok 1 - all new genesis profiles round-trip with conserved stocks
+  ---
+  duration_ms: 7.91246
+  type: 'test'
+  ...
+# Subtest: saved crossing remembers far entry bank and rescue commits before snapshot
+ok 2 - saved crossing remembers far entry bank and rescue commits before snapshot
+  ---
+  duration_ms: 3.745403
+  type: 'test'
+  ...
+# Subtest: mutated agent plan and cross-world plan reject without spending
+ok 3 - mutated agent plan and cross-world plan reject without spending
+  ---
+  duration_ms: 1.95107
+  type: 'test'
+  ...
+# Subtest: rain core independently rejects altered and cross-world proposals
+ok 4 - rain core independently rejects altered and cross-world proposals
+  ---
+  duration_ms: 0.661827
+  type: 'test'
+  ...
+# Subtest: one swing damages one opponent once across active frames
+ok 5 - one swing damages one opponent once across active frames
+  ---
+  duration_ms: 1.969738
+  type: 'test'
+  ...
+# Subtest: startup precedes contact and recovery blocks a second attack
+ok 6 - startup precedes contact and recovery blocks a second attack
+  ---
+  duration_ms: 0.771623
+  type: 'test'
+  ...
+# Subtest: simultaneous local duel lethal strikes produce a draw
+ok 7 - simultaneous local duel lethal strikes produce a draw
+  ---
+  duration_ms: 0.47785
+  type: 'test'
+  ...
+# Subtest: local two-player guard and dodge locomotion are symmetric
+ok 8 - local two-player guard and dodge locomotion are symmetric
+  ---
+  duration_ms: 0.62349
+  type: 'test'
+  ...
+# Subtest: zero-radian aim is an actual direction, not a falsy missing input
+ok 9 - zero-radian aim is an actual direction, not a falsy missing input
+  ---
+  duration_ms: 0.622197
+  type: 'test'
+  ...
+# Subtest: nearest segment collision hits cover before a farther target
+ok 10 - nearest segment collision hits cover before a farther target
+  ---
+  duration_ms: 0.307022
+  type: 'test'
+  ...
+# Subtest: actual projectile sweep stops at first cover
+ok 11 - actual projectile sweep stops at first cover
+  ---
+  duration_ms: 1.02207
+  type: 'test'
+  ...
+# Subtest: normalized exhibitions remove world equipment and do not consume items
+ok 12 - normalized exhibitions remove world equipment and do not consume items
+  ---
+  duration_ms: 0.372502
+  type: 'test'
+  ...
+# Subtest: trade transfers real goods and finite money, rejecting stale quotes
+ok 13 - trade transfers real goods and finite money, rejecting stale quotes
+  ---
+  duration_ms: 0.532782
+  type: 'test'
+  ...
+# Subtest: merchant insolvency rejects atomically without a faucet
+ok 14 - merchant insolvency rejects atomically without a faucet
+  ---
+  duration_ms: 0.32478
+  type: 'test'
+  ...
+# Subtest: invalid, fractional and negative quantities reject
+ok 15 - invalid, fractional and negative quantities reject
+  ---
+  duration_ms: 0.265059
+  type: 'test'
+  ...
+# Subtest: building consumes materials and creates actual collision
+ok 16 - building consumes materials and creates actual collision
+  ---
+  duration_ms: 0.461445
+  type: 'test'
+  ...
+# Subtest: crafting is atomic, transforms finite inputs and equips once
+ok 17 - crafting is atomic, transforms finite inputs and equips once
+  ---
+  duration_ms: 0.420563
+  type: 'test'
+  ...
+# Subtest: worker cargo is counted while physically traveling and on delivery
+ok 18 - worker cargo is counted while physically traveling and on delivery
+  ---
+  duration_ms: 81.806155
+  type: 'test'
+  ...
+# Subtest: closed crossing halts a gardener without creating harvest
+ok 19 - closed crossing halts a gardener without creating harvest
+  ---
+  duration_ms: 5.498884
+  type: 'test'
+  ...
+# Subtest: Warden thresholds spawn adds once; cache cannot be duplicated
+ok 20 - Warden thresholds spawn adds once; cache cannot be duplicated
+  ---
+  duration_ms: 0.928969
+  type: 'test'
+  ...
+# Subtest: rain chord conserves twelve units and ward expires at its deadline
+ok 21 - rain chord conserves twelve units and ward expires at its deadline
+  ---
+  duration_ms: 7.929917
+  type: 'test'
+  ...
+# Subtest: CTF flags are unique and carried by live actors during a full match
+ok 22 - CTF flags are unique and carried by live actors during a full match
+  ---
+  duration_ms: 86.648565
+  type: 'test'
+  ...
+# Subtest: activity snapshots return to one world body without importing arena entities
+ok 23 - activity snapshots return to one world body without importing arena entities
+  ---
+  duration_ms: 1.497256
+  type: 'test'
+  ...
+# Subtest: complete import shape rejects all reproduced malformed-state cases
+ok 24 - complete import shape rejects all reproduced malformed-state cases
+  ---
+  duration_ms: 2.623473
+  type: 'test'
+  ...
+# Subtest: live evolved world snapshots restore without missing properties
+ok 25 - live evolved world snapshots restore without missing properties
+  ---
+  duration_ms: 16.612579
+  type: 'test'
+  ...
+# Subtest: Loom connections require reciprocal ports and a real border path
+ok 26 - Loom connections require reciprocal ports and a real border path
+  ---
+  duration_ms: 0.483448
+  type: 'test'
+  ...
+# Subtest: Loom bot makes legal finite moves; full board terminates
+ok 27 - Loom bot makes legal finite moves; full board terminates
+  ---
+  duration_ms: 8.92113
+  type: 'test'
+  ...
+# Subtest: Raincatch deterministic replay reaches a bounded result without rewards
+ok 28 - Raincatch deterministic replay reaches a bounded result without rewards
+  ---
+  duration_ms: 3.415997
+  type: 'test'
+  ...
+# Subtest: corrected renderer ground uses exactly the collision polygons
+ok 29 - corrected renderer ground uses exactly the collision polygons
+  ---
+  duration_ms: 0.668147
+  type: 'test'
+  ...
+# Subtest: every new static module passes import and all file references exist
+ok 30 - every new static module passes import and all file references exist
+  ---
+  duration_ms: 0.153942
+  type: 'test'
+  ...
+# Subtest: an unchanged approved realm proposal builds exactly its plan once
+ok 31 - an unchanged approved realm proposal builds exactly its plan once
+  ---
+  duration_ms: 0.476969
+  type: 'test'
+  ...
+# Subtest: genesis preserves all five inherited ledgers
+ok 32 - genesis preserves all five inherited ledgers
+  ---
+  duration_ms: 2.420807
+  type: 'test'
+  ...
+# Subtest: Mercy Braid distributes four to all three living places
+ok 33 - Mercy Braid distributes four to all three living places
+  ---
+  duration_ms: 5.826728
+  type: 'test'
+  ...
+# Subtest: drought remains a real tradeoff; no fabricated abundance
+ok 34 - drought remains a real tradeoff; no fabricated abundance
+  ---
+  duration_ms: 1.119216
+  type: 'test'
+  ...
+# Subtest: bridge predicate and walkability share the six-water threshold
+ok 35 - bridge predicate and walkability share the six-water threshold
+  ---
+  duration_ms: 0.324198
+  type: 'test'
+  ...
+# Subtest: bridge joins both banks without an equality crack
+ok 36 - bridge joins both banks without an equality crack
+  ---
+  duration_ms: 1.585639
+  type: 'test'
+  ...
+# Subtest: cargo is physical and cannot settle just because a rain is safe
+ok 37 - cargo is physical and cannot settle just because a rain is safe
+  ---
+  duration_ms: 2.44959
+  type: 'test'
+  ...
+# Subtest: closed crossing prevents wagon travel and oversized time steps reject
+ok 38 - closed crossing prevents wagon travel and oversized time steps reject
+  ---
+  duration_ms: 0.791243
+  type: 'test'
+  ...
+# Subtest: physical arrival transfers one lot and one finite commission exactly once
+ok 39 - physical arrival transfers one lot and one finite commission exactly once
+  ---
+  duration_ms: 3.380253
+  type: 'test'
+  ...
+# Subtest: closure rescues the full wagon footprint, never pays prematurely
+ok 40 - closure rescues the full wagon footprint, never pays prematurely
+  ---
+  duration_ms: 1.305217
+  type: 'test'
+  ...
+# Subtest: wagon fully clear of bridge continues after closure
+ok 41 - wagon fully clear of bridge continues after closure
+  ---
+  duration_ms: 0.779685
+  type: 'test'
+  ...
+# Subtest: rescued wagon resumes with the same food and reserve
+ok 42 - rescued wagon resumes with the same food and reserve
+  ---
+  duration_ms: 1.204695
+  type: 'test'
+  ...
+# Subtest: saved snapshot immediately before and after arrival preserves settlement
+ok 43 - saved snapshot immediately before and after arrival preserves settlement
+  ---
+  duration_ms: 1.701043
+  type: 'test'
+  ...
+# Subtest: exhausted build and weave attempts are atomic
+ok 44 - exhausted build and weave attempts are atomic
+  ---
+  duration_ms: 0.374975
+  type: 'test'
+  ...
+# Subtest: multi-channel blueprint failure rolls back all costs and changes
+ok 45 - multi-channel blueprint failure rolls back all costs and changes
+  ---
+  duration_ms: 0.273693
+  type: 'test'
+  ...
+# Subtest: odd capacity salvage returns floor half and tracks scrap
+ok 46 - odd capacity salvage returns floor half and tracks scrap
+  ---
+  duration_ms: 0.26556
+  type: 'test'
+  ...
+# Subtest: temporary and installed channels share water law, expiry retains water
+ok 47 - temporary and installed channels share water law, expiry retains water
+  ---
+  duration_ms: 0.521986
+  type: 'test'
+  ...
+# Subtest: same slot, reverse edges, fractional values and invalid priorities reject
+ok 48 - same slot, reverse edges, fractional values and invalid priorities reject
+  ---
+  duration_ms: 0.3321
+  type: 'test'
+  ...
+# Subtest: agent needs invitation and cannot take a reserved bridge inlet
+ok 49 - agent needs invitation and cannot take a reserved bridge inlet
+  ---
+  duration_ms: 0.780886
+  type: 'test'
+  ...
+# Subtest: agent preview has no live mutation and exact acceptance uses agent fiber
+ok 50 - agent preview has no live mutation and exact acceptance uses agent fiber
+  ---
+  duration_ms: 0.726955
+  type: 'test'
+  ...
+# Subtest: pulse invalidates a viewed proposal without spending
+ok 51 - pulse invalidates a viewed proposal without spending
+  ---
+  duration_ms: 0.580074
+  type: 'test'
+  ...
+# Subtest: revocation and regrant do not revive old permission epoch
+ok 52 - revocation and regrant do not revive old permission epoch
+  ---
+  duration_ms: 0.494575
+  type: 'test'
+  ...
+# Subtest: Serein ownership remains after revocation; no player confiscation
+ok 53 - Serein ownership remains after revocation; no player confiscation
+  ---
+  duration_ms: 0.202686
+  type: 'test'
+  ...
+# Subtest: helper exhaustion is reported without a hidden transfer
+ok 54 - helper exhaustion is reported without a hidden transfer
+  ---
+  duration_ms: 0.20578
+  type: 'test'
+  ...
+# Subtest: long-running world survives old pulse and journal caps
+ok 55 - long-running world survives old pulse and journal caps
+  ---
+  duration_ms: 239.059552
+  type: 'test'
+  ...
+# Subtest: save validation rejects malformed, missing and inconsistent accounts
+ok 56 - save validation rejects malformed, missing and inconsistent accounts
+  ---
+  duration_ms: 0.640075
+  type: 'test'
+  ...
+# Subtest: new world is independent; no merging conserved assets
+ok 57 - new world is independent; no merging conserved assets
+  ---
+  duration_ms: 0.428846
+  type: 'test'
+  ...
+# Subtest: camera matrix projects its target to the viewport center
+ok 58 - camera matrix projects its target to the viewport center
+  ---
+  duration_ms: 0.360132
+  type: 'test'
+  ...
+# Subtest: all generated scene vertices, normals and colors are finite
+ok 59 - all generated scene vertices, normals and colors are finite
+  ---
+  duration_ms: 93.617364
+  type: 'test'
+  ...
+# Subtest: all authored static asset references resolve
+ok 60 - all authored static asset references resolve
+  ---
+  duration_ms: 1.520301
+  type: 'test'
+  ...
+# Subtest: browser water solver matches 252 exact inherited Python fixtures
+ok 61 - browser water solver matches 252 exact inherited Python fixtures
+  ---
+  duration_ms: 31.588542
+  type: 'test'
+  ...
+1..61
+# tests 61
+# suites 0
+# pass 61
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 505.247547

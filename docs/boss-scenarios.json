@@ -1,0 +1,51 @@
+{
+  "profile": "awe-living-concord-0.9.0",
+  "evidence": "Two deterministic legal-input policies with full local state; no browser or human playtest.",
+  "results": [
+    {
+      "policy": "gale-circle",
+      "defeated": false,
+      "ticks": 18000,
+      "seconds": 300,
+      "deaths": 1,
+      "hp": 100,
+      "tonicsRemaining": 2,
+      "phases": [
+        1,
+        2
+      ],
+      "bossHp": 163,
+      "materialResidual": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    },
+    {
+      "policy": "thread-rush",
+      "defeated": true,
+      "ticks": 740,
+      "seconds": 12.333333333333334,
+      "deaths": 0,
+      "hp": 24,
+      "tonicsRemaining": 0,
+      "phases": [
+        1,
+        2,
+        3
+      ],
+      "bossHp": 0,
+      "materialResidual": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      }
+    }
+  ]
+}

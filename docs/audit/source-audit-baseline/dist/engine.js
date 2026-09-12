@@ -19,7 +19,7 @@ precision highp float;
 layout(location=0) in vec3 position;layout(location=1) in vec3 normal;layout(location=2) in vec3 color;
 uniform mat4 vp;uniform mat4 model;uniform float time;uniform float sway;
 out vec3 world;out vec3 n;out vec3 c;
-void main(){vec3 p=position;p.x+=sin(time*1.2+p.x*.7+p.z*.3)*max(0.,p.y)*sway;vec4 w=model*vec4(p,1.);world=w.xyz;n=normalize(transpose(inverse(mat3(model)))*normal);c=color;gl_Position=vp*w;}`;
+void main(){vec3 p=position;p.x+=sin(time*1.2+p.x*.7+p.z*.3)*max(0.,p.y)*sway;vec4 w=model*vec4(p,1.);world=w.xyz;n=normalize(mat3(model)*normal);c=color;gl_Position=vp*w;}`;
 const FS=`#version 300 es
 precision highp float;in vec3 world;in vec3 n;in vec3 c;uniform vec3 eye;uniform vec3 tint;uniform float glow;uniform float alpha;out vec4 frag;
 void main(){vec3 N=normalize(n);float sun=max(0.,dot(N,normalize(vec3(-.35,.8,.45))));float sky=.4+.17*max(0.,N.y);float rim=pow(1.-max(0.,dot(N,normalize(eye-world))),3.)*.15;vec3 col=c*tint*(sky+sun*.55+glow)+vec3(.15,.33,.31)*rim;float fog=1.-exp(-length(eye-world)*.0055);col=mix(col,vec3(.13,.28,.29),fog);col=pow(max(col,vec3(0.)),vec3(.88));frag=vec4(col,alpha);}`;

@@ -1,0 +1,40 @@
+[
+  {
+    "id": "missing-enemies",
+    "accepted": true,
+    "followupError": "s.enemies is not iterable"
+  },
+  {
+    "id": "nonnumeric-y",
+    "accepted": true,
+    "followupError": null
+  },
+  {
+    "id": "markup-discipline",
+    "accepted": true,
+    "followupError": null
+  },
+  {
+    "id": "missing-workers",
+    "accepted": true,
+    "followupError": "s.workers is not iterable"
+  },
+  {
+    "id": "modified-quote",
+    "accepted": false
+  },
+  {
+    "id": "cross-world-quote",
+    "accepted": false
+  },
+  {
+    "id": "p2-guard-speed",
+    "heroDX": 0.032250000000004775,
+    "p2DX": 0.07166666666667254
+  },
+  {
+    "id": "p2-dodge-displacement",
+    "heroDZ": 3.4499999999999673,
+    "p2DZ": 0
+  }
+]
