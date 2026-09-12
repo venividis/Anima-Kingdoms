@@ -1,0 +1,73 @@
+{
+  "basedOn": "7f74d3ee7007e1afdc546274aa0ea476d2f0bcf9",
+  "files": [
+    {
+      "path": "server/authority.mjs",
+      "sha256": "5e4233e4c0b53c08503dbad7dfca2b38fa7a35b35dd1e9c269367fe66c69c856"
+    },
+    {
+      "path": "server/hosted-rules.mjs",
+      "sha256": "f25c5be6a6ab63ff98c60fbf8e45343ecd7502f3116c8d5e1d914381c4ce2c81"
+    },
+    {
+      "path": "server/hosted-authority.mjs",
+      "sha256": "499f905b59d5b20f437cd68f5d73b693d2780c8c5ff94917a5582457111d3b1b"
+    },
+    {
+      "path": "server/hosted-http.mjs",
+      "sha256": "3f0fc9faf0e938fd5457bbdd60b8e8e8d210b2723042713d56f4800186139f4b"
+    },
+    {
+      "path": "scripts/build-hosted-rules.mjs",
+      "sha256": "ce8b2c57e71bb94d0e27de3df6832fe8dfc8a18ddf1acc732f440b05e98dccb2"
+    },
+    {
+      "path": "scripts/check-hosted-build.mjs",
+      "sha256": "4883584445edb5870c6e7cf94539ee7e36bfcad54853152a3dc6db77bbeb4753"
+    },
+    {
+      "path": "app/api/[...path]/route.ts",
+      "sha256": "349cf3e181523ff316bf13453e848a99a78e6f2df0b7974c03421d9ebe249a44"
+    },
+    {
+      "path": "db/commons.ts",
+      "sha256": "978e05ae28bd312834f5c739bc51cade87cae2240bd6c9a42a411dd777170fc5"
+    },
+    {
+      "path": "db/schema.ts",
+      "sha256": "56ccf4a0d721e33ab9ab44bdd28a0340086962574d1e736b4e60fa805c5a95dd"
+    },
+    {
+      "path": "drizzle/0000_flippant_ego.sql",
+      "sha256": "7dcc3ad5ba3e6cc60b057335d4235ad75726be584ce4493c01eb0526760cb107"
+    },
+    {
+      "path": "public/app.js",
+      "sha256": "7a6299b4238864a47e913f375493e5d172c12b7475726a132a51a240a99348ba"
+    },
+    {
+      "path": "public/luma-view.js",
+      "sha256": "10a68b28f99f84cfcb4b84033bdfecc8c9a32858b7bcd0827785cd250af76c21"
+    },
+    {
+      "path": "public/luma-world.js",
+      "sha256": "fa2950b5994dea511713adc8d316d362d8253a0fbc94d733d4034c7166099771"
+    },
+    {
+      "path": "public/play.html",
+      "sha256": "999b3690bda9054fd14b9bb670d9e11860c097803463cd633bac6dcdfdbfb4a1"
+    },
+    {
+      "path": "public/shared.html",
+      "sha256": "fbff0a0a36d77d13c5ef581034e9038dfb9e0d24ca57e57fe41baafee686293d"
+    },
+    {
+      "path": "public/shared-client.js",
+      "sha256": "1c02a896c8a062bd9c08e8453d74421ac30c8e542a100867ef14f8d4a3227c8b"
+    },
+    {
+      "path": "public/vision.html",
+      "sha256": "dfcc510d5ff116ecca66e64862a29bf06e54f09215b79fdce0871c7288656239"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import {fileURLToPath} from 'node:url';
 const {marked}=await import(process.argv[2]||'marked');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const sections=[
+ ['website','Play Luma · website guide','docs/HOSTED-LUMA.md'],
  ['luma','Luma Origin · current game guide','docs/LUMA-GAME.md'],
  ['commons','Living Commons · current foundation','docs/BROADER-FOUNDATION.md'],
  ['shared','Shared realm · authoritative contract','docs/SHARED-REALM.md'],

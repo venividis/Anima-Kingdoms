@@ -1,5 +1,7 @@
 # Anima Kingdoms
 
+The website includes the Luma workshop and a persistent Living Commons. Open the game and select **Luma** or press **G**. See [the hosted Luma guide](docs/HOSTED-LUMA.md) for the website's storage adapter and deployment checks.
+
 **A word becomes a world · Luma 0.13**
 
 Open **Luma (G)** to compose with the uploaded language’s twenty original sounds and native characters. Its 180 roots and 900 dictionary forms remain intact. A noun’s sixteen feature coordinates shape a playable creation; the letters supply its exact two-note musical code.

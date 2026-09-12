@@ -1,5 +1,7 @@
 # The shared commons
 
+The published Sites version also provides this commons through a D1 adapter. See [Luma on the game website](HOSTED-LUMA.md) for its storage and verification boundaries. The SQLite service and its operational instructions below remain the standalone Node implementation.
+
 This release adds a running, durable multiplayer commons to Anima Kingdoms. Two independent clients can move through the same valley, gather finite materials, exchange escrowed goods, contribute to shared construction, speak, share Foundry designs and authorize external command agents. SQLite determines identities, positions, inventory and settlement. Browser state cannot award items.
 
 The shared commons is a separate authoritative place linked from the First Orchard. The existing local combat, crafted instances, couriers, civilization and saves remain the local game. They are not silently uploaded into this economy. A published Foundry blueprint is a reusable design, not an instantiated shared creature or a minted asset.
