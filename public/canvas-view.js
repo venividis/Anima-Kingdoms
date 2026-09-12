@@ -1,7 +1,18 @@
 /* A hardware-independent cartographic renderer of the actual simulation. */
 import * as R from './realm.js';
+import {inscriptionCurves} from './luma/geometry.js';
+import {toNative} from './luma/language.js';
 const tau=Math.PI*2;
-export function paintBlueprint(c,b,project,x=0,z=0,yaw=0,alpha=1,cameraYaw=0){c.save();c.globalAlpha=alpha;const root={x,z,yaw:0};root.yaw=yaw*180/Math.PI;for(const p of b.parts){const o=R.Creation.point(root,p),v=project(o.x,p.y,o.z),unit=project(1,0,0),zero=project(0,0,0),scale=Math.hypot(unit.x-zero.x,(unit.y-zero.y)/.68);c.save();c.translate(v.x,v.y);c.rotate(-o.yaw-cameraYaw);c.fillStyle=p.color;c.strokeStyle='#d1f9ea55';c.lineWidth=1;const w=Math.max(2,p.w*scale),h=Math.max(2,(p.d*.68+p.h*.4)*scale);if(p.role==='light'){c.shadowColor=p.color;c.shadowBlur=10;}if(p.shape==='box'){c.fillRect(-w/2,-h/2,w,h);c.strokeRect(-w/2,-h/2,w,h);}else if(p.shape==='spire'){c.beginPath();c.moveTo(0,-h/2);c.lineTo(w/2,h/2);c.lineTo(-w/2,h/2);c.closePath();c.fill();}else{c.beginPath();c.ellipse(0,0,w/2,h/2,0,0,tau);if(p.shape==='ring'){c.lineWidth=2;c.strokeStyle=p.color;c.stroke();}else c.fill();}c.restore();}c.restore();}
+export function paintBlueprint(c,b,project,x=0,z=0,yaw=0,alpha=1,cameraYaw=0){
+ c.save();c.globalAlpha=alpha;const root={x,z,yaw:yaw*180/Math.PI};
+ for(const p of b.parts){const o=R.Creation.point(root,p),v=project(o.x,p.y,o.z),unit=project(1,0,0),zero=project(0,0,0),scale=Math.hypot(unit.x-zero.x,(unit.y-zero.y)/.68);c.save();c.translate(v.x,v.y);c.rotate(-o.yaw-cameraYaw);c.fillStyle=p.color;c.strokeStyle='#d1f9ea55';c.lineWidth=1;const w=Math.max(2,p.w*scale),h=Math.max(2,(p.d*.68+p.h*.4)*scale);if(p.role==='light'){c.shadowColor=p.color;c.shadowBlur=10;}if(p.shape==='box'){c.fillRect(-w/2,-h/2,w,h);c.strokeRect(-w/2,-h/2,w,h);}else if(p.shape==='spire'){c.beginPath();c.moveTo(0,-h/2);c.lineTo(w/2,h/2);c.lineTo(-w/2,h/2);c.closePath();c.fill();}else{c.beginPath();c.ellipse(0,0,w/2,h/2,0,0,tau);if(p.shape==='ring'){c.lineWidth=2;c.strokeStyle=p.color;c.stroke();}else c.fill();}c.restore();}
+ if(b.luma){
+  const co=Math.cos(yaw),si=Math.sin(yaw);c.lineWidth=.8;
+  for(const curve of inscriptionCurves(b.luma)){c.strokeStyle='aeiou'.includes(curve.letter)?'#9cd7d499':'#e7c58c99';c.beginPath();curve.points.forEach(([px,py,pz],i)=>{const q=project(x+px*co+pz*si,py,z-px*si+pz*co);i?c.lineTo(q.x,q.y):c.moveTo(q.x,q.y);});c.stroke();}
+  const q=project(x,3.2,z);c.fillStyle='#f3dca8';c.font='22px "Luma Origin Prefinal", serif';c.textAlign='center';c.fillText(toNative(b.luma.word),q.x,q.y);
+ }
+ c.restore();
+}
 export class CanvasWorldView{
  constructor(canvas){this.canvas=canvas;this.c=canvas.getContext('2d');this.yaw=0;this.pitch=.5;this.distance=22;this.atlas=false;this.reduced=false;this.placement=null;this.cx=0;this.cz=0;this.scale=15;this.fallback=true;}
  rebuild(){}setPreview(p){this.preview=p;}
