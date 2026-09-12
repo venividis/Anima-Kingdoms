@@ -1,3 +1,4 @@
+import {mountLumaAtelier} from './luma-view.js';
 import {compile} from './creation.js';
 import {paintBlueprint} from './canvas-view.js';
 import {RealmConnection} from './shared-transport.js';
@@ -11,7 +12,7 @@ const distance=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
 const view=new SharedView($('commons-world'));
 let state=null,tab='works',journey=null,keys={},touch=[0,0],active=false,noticeTimer,
   polling=false,walking=false,lastPoll=0,lastFrame=0,lastDock='',lastDockPlayer=null,lastStep=null,stalled=0,
-  agentCredential=null,disconnected=false,uploadDraft=null;
+  agentCredential=null,disconnected=false,uploadDraft=null,lumaAtelier=null,sessionIntent=0;
 const routeActor={x:0,z:16};
 let savedToken='';
 try {savedToken=sessionStorage.getItem('anima-commons-token')||'';} catch { /* The entry form will explain unavailable storage. */ }
@@ -35,7 +36,7 @@ function progressHTML(project) {
 }
 function acceptState(next) {
   if(state&&(state.you.id!==next.you.id||state.realmId!==next.realmId)) {
-    agentCredential=null;uploadDraft=null;journey=null;keys={};touch=[0,0];lastDock='';
+    agentCredential=null;uploadDraft=null;journey=null;keys={};touch=[0,0];lastDock='';lumaAtelier?.dispose();lumaAtelier=null;
   }
   state=next;
   active=true;
@@ -53,7 +54,7 @@ function acceptState(next) {
   $('gather-near').disabled=!nearest||connection.busy||!!connection.pending;
   $('gather-near').textContent=nearest?'Gather '+nearest.item+' · E':'Approach a resource';
   const currentFocus=document.activeElement;
-  if(!currentFocus?.matches('input,select,textarea')||!currentFocus.closest('#dock-content'))renderDock();
+  if(tab==='luma'||!currentFocus?.matches('input,select,textarea')||!currentFocus.closest('#dock-content'))renderDock();
 }
 function inventoryOptions(selected='wood',marks=true) {
   return (marks?ITEMS:MATERIALS).map(item=>`<option value="${item}"${item===selected?' selected':''}>${item[0].toUpperCase()+item.slice(1)}</option>`).join('');
@@ -85,6 +86,18 @@ function collapseDock(collapsed) {
 }
 function renderDock(force=false) {
   if(!state)return;
+  if(tab==='luma'){
+    if(!lumaAtelier){
+      $('dock-content').innerHTML='<div id="luma-commons"></div>';
+      lumaAtelier=mountLumaAtelier($('luma-commons'),{
+        shared:true,state:()=>state,events:()=>state.luma?.utterances||[],
+        enact:async(text,bindings)=>{const response=await connection.command('luma.speak',{text,bindings});return response.receipt.result;},
+        gift:async(kind,giftId)=>{const response=await connection.command('gift.'+kind,{giftId});notice(kind==='accept'?'The gift is yours.':kind==='decline'?'The gift returned to its giver.':'Your gift returned to you.');return response.receipt.result;}
+      });
+    }else lumaAtelier.refresh();
+    lastDock='';lastDockPlayer=state.you.id;return;
+  }
+  lumaAtelier?.dispose();lumaAtelier=null;
   const signature=JSON.stringify({tab,player:state.you.id,inventory:state.you.inventory,offers:state.offers,projects:state.projects,nodes:state.nodes.map(n=>[n.id,n.remaining]),chat:state.chat,agents:state.agents,players:state.players.map(p=>[p.id,p.name,p.online]),ledger:state.ledger,treasury:state.treasury,blueprints:state.blueprints});
   if(!force&&signature===lastDock)return;
   // A background update may refresh offers or arrivals after focus leaves a
@@ -109,7 +122,7 @@ function renderDock(force=false) {
     html='<p class="dock-intro">Share the designs you make in the Dream Foundry. Other wayfarers can download a blueprint, explore it in rehearsal, and build it with their own materials.</p><article class="commons-card"><h3>Leave an invention</h3><label class="field" for="blueprint-file">Choose an exported Foundry blueprint</label><input id="blueprint-file" type="file" accept=".json,application/json"><p id="blueprint-review" class="form-caption"></p><button id="publish-blueprint" class="gold-button" disabled>Share this blueprint</button><p class="form-caption">This publishes your design with your player name. Your inventory and placed creations stay in their original world.</p><a href="./play.html" class="quiet-button">Open your Dream Foundry ↗</a></article>';
     html+='<h3 class="eyebrow">OUR BLUEPRINT SHELF</h3>'+((state.blueprints||[]).length?(state.blueprints||[]).map(p=>`<article class="commons-card"><span class="card-tag">${esc(p.blueprint.kind)} · by ${esc(p.authorName)}</span><h3>${esc(p.blueprint.name)}</h3><canvas class="shelf-preview" data-blueprint-preview="${esc(p.id)}" width="270" height="150" aria-label="${esc(p.blueprint.name)} blueprint preview"></canvas><p>Revision ${p.blueprint.revision} · ${p.blueprint.parts.length} authored parts</p><button class="quiet-button" data-blueprint-download="${esc(p.id)}">Download & create your own ↗</button>${p.authorId===state.you.id?`<button class="danger-button" data-blueprint-remove="${esc(p.id)}">Remove from shared shelf</button>`:''}</article>`).join(''):'<p class="dock-intro">The shelf is waiting for its first invention.</p>');
   } else if(tab==='agents') {
-    html=`<p class="dock-intro">Invite an external agent to act through your own body and inventory. You choose its abilities, command budget, and duration. Revoke it here whenever you choose.</p><article class="commons-card"><h3>A bounded invitation</h3><form id="agent-form"><div class="field"><label for="agent-name">Agent name</label><input id="agent-name" value="My pathfinder" maxlength="24" required></div><label class="scope-choice"><input type="checkbox" name="scope" value="move" checked>Walk</label><label class="scope-choice"><input type="checkbox" name="scope" value="gather" checked>Gather</label><label class="scope-choice"><input type="checkbox" name="scope" value="project.contribute">Contribute my materials</label><label class="scope-choice"><input type="checkbox" name="scope" value="offer.create">Place offers using my goods</label><div class="row"><div class="field"><label for="agent-budget">Command budget</label><input id="agent-budget" type="number" min="1" max="1000" value="100" required></div><div class="field"><label for="agent-duration">Duration</label><select id="agent-duration"><option value="600">10 minutes</option><option value="3600">1 hour</option><option value="86400">1 day</option></select></div></div><button class="gold-button" type="submit">Create this invitation</button></form><p class="form-caption">This connects your external agent through the API. No language model runs inside this page.</p><div id="agent-key-wrap"${agentCredential?'':' hidden'}><p class="form-caption">Give this key only to your chosen agent. It can spend resources only through the scopes you selected.</p><pre id="agent-key"></pre></div></article>`;
+    html=`<p class="dock-intro">Invite an external agent to act through your own body and inventory. You choose its abilities, command budget, and duration. Revoke it here whenever you choose.</p><article class="commons-card"><h3>A bounded invitation</h3><form id="agent-form"><div class="field"><label for="agent-name">Agent name</label><input id="agent-name" value="My pathfinder" maxlength="24" required></div><label class="scope-choice"><input type="checkbox" name="scope" value="move" checked>Walk</label><label class="scope-choice"><input type="checkbox" name="scope" value="gather" checked>Gather</label><label class="scope-choice"><input type="checkbox" name="scope" value="project.contribute">Contribute my materials</label><label class="scope-choice"><input type="checkbox" name="scope" value="offer.create">Place offers using my goods</label><label class="scope-choice"><input type="checkbox" name="scope" value="luma.speak">Speak in Luma</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.offer">Offer my goods as gifts</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.accept">Welcome gifts to me</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.decline">Decline gifts to me</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.cancel">Withdraw my pending gifts</label><label class="scope-choice"><input type="checkbox" name="scope" value="blueprint.publish">Publish a blueprint</label><div class="row"><div class="field"><label for="agent-budget">Command budget</label><input id="agent-budget" type="number" min="1" max="1000" value="100" required></div><div class="field"><label for="agent-duration">Duration</label><select id="agent-duration"><option value="600">10 minutes</option><option value="3600">1 hour</option><option value="86400">1 day</option></select></div></div><button class="gold-button" type="submit">Create this invitation</button></form><p class="form-caption">This connects your external agent through the API. No language model runs inside this page.</p><div id="agent-key-wrap"${agentCredential?'':' hidden'}><p class="form-caption">Give this key only to your chosen agent. It can spend resources only through the scopes you selected.</p><pre id="agent-key"></pre></div></article>`;
     html+=state.agents.map(a=>`<article class="commons-card"><h3>${esc(a.name)}</h3><p>${esc(a.scopes.join(' · '))}</p><p>${a.revoked?'Revoked':a.expiresAt<state.serverTime?'Expired':a.remaining+' commands left'}</p>${a.revoked?'':`<button class="danger-button" data-revoke-agent="${esc(a.id)}">Revoke ${esc(a.name)}</button>`}</article>`).join('');
   } else {
     html='<p class="dock-intro">Your possessions have one custodian. The realm checks its material and money totals after each committed change.</p><article class="commons-card"><h3>A conserved world</h3>'+ITEMS.map(item=>`<div class="ledger-line"><span>${esc(item)}</span><b>${state.ledger.residual[item]===0?'Balanced ✓':esc(state.ledger.residual[item])}</b></div>`).join('')+'</article><article class="commons-card"><h3>Return to this body</h3><p>This tab remembers your player. Keep a recovery key to return from another tab or browser before the session expires. Whoever has this key can use this player’s possessions.</p><button id="show-recovery" class="quiet-button">Reveal my recovery key</button><p id="my-recovery" class="recovery-copy" hidden></p><p class="form-caption">Your goods belong to this realm’s service. The First Orchard’s local save is a different world and cannot fund shared trades.</p></article><article class="commons-card"><h3>Continue the wider world</h3><a class="quiet-button" href="./play.html">Creation, combat & living settlement ↗</a><br><a class="quiet-button" href="./audit.html">Read the retained accountability audit ↗</a></article>';
@@ -150,28 +163,40 @@ function renderDock(force=false) {
   }
   if($('show-recovery'))$('show-recovery').onclick=()=>{$('my-recovery').textContent=connection.token;$('my-recovery').hidden=false;};
 }
+function pendingArrival(){
+ const raw=sessionStorage.getItem('anima-commons-entry');if(!raw)return null;
+ const p=JSON.parse(raw);if(!p||typeof p.name!=='string'||typeof p.key!=='string')throw Error('The saved arrival request is unreadable.');return p;
+}
 async function enter(name) {
-  $('join-button').disabled=true;
-  try {
-    // Do not discard an existing or uncertain player to create a replacement.
-    if(connection.pending)throw Error('Recover your pending action before changing players.');
-    sessionStorage.setItem('anima-storage-check','1');sessionStorage.removeItem('anima-storage-check');
-    const result=await connection.request('/api/session',{name});
-    sessionStorage.setItem('anima-commons-token',result.token);connection.token=result.token;
-    connection.accept(result.state);$('commons-world').focus();
-  } catch(error) {$('entry-status').textContent=error.message;} finally {$('join-button').disabled=false;}
+ const intent=++sessionIntent;$('join-button').disabled=true;let pending=null;
+ try {
+  if(connection.pending)throw Error('Recover your pending action before changing players.');
+  sessionStorage.setItem('anima-storage-check','1');sessionStorage.removeItem('anima-storage-check');
+  pending=pendingArrival()||{name,key:crypto.randomUUID()};
+  sessionStorage.setItem('anima-commons-entry',JSON.stringify(pending));
+  $('wayfarer-name').value=pending.name;
+  const result=await connection.request('/api/session',pending);
+  if(intent!==sessionIntent)return;
+  sessionStorage.setItem('anima-commons-token',result.token);connection.token=result.token;
+  sessionStorage.removeItem('anima-commons-entry');connection.accept(result.state);$('commons-world').focus();
+ }catch(error){
+  if(intent!==sessionIntent)return;
+  if(error.status===400&&['INVALID_TEXT','INVALID_SHAPE','INVALID_SESSION_KEY'].includes(error.code)&&pending){try{if(pendingArrival()?.key===pending.key)sessionStorage.removeItem('anima-commons-entry');}catch{}}
+  $('entry-status').textContent=error.message;
+ }finally{if(intent===sessionIntent)$('join-button').disabled=false;}
 }
 async function connect() {
-  $('entry-status').textContent='Finding the realm…';
-  try {
-    await connection.request('/api/health');
-    $('service-unavailable').hidden=true;
-    if(connection.token) {
-      try {await connection.refresh();if(connection.pending)await connection.recover();return;}
-      catch(error){if(error.status!==401){setStatus(connection.pending?'uncertain':'offline');$('entry-status').textContent=error.message;return;}connection.token='';}
-    }
-    $('commons-entry').hidden=false;$('entry-status').textContent='The realm is ready. Begin with empty hands; gather what you need.';setStatus('connected');
-  } catch {$('commons-entry').hidden=true;$('service-unavailable').hidden=false;setStatus('offline');}
+ const intent=sessionIntent;$('entry-status').textContent='Finding the realm…';
+ try {
+  await connection.request('/api/health');if(intent!==sessionIntent)return;
+  $('service-unavailable').hidden=true;
+  if(connection.token){
+   try{await connection.refresh();if(connection.pending)await connection.recover();return;}
+   catch(error){if(intent!==sessionIntent)return;if(error.status!==401){setStatus(connection.pending?'uncertain':'offline');$('entry-status').textContent=error.message;return;}connection.token='';}
+  }
+  const pending=pendingArrival();if(pending){await enter(pending.name);return;}
+  $('commons-entry').hidden=false;$('entry-status').textContent='The realm is ready. Begin with empty hands; gather what you need.';setStatus('connected');
+ }catch{if(intent!==sessionIntent)return;$('commons-entry').hidden=true;$('service-unavailable').hidden=false;setStatus('offline');}
 }
 async function movementStep() {
   if(!active||!state||walking||connection.busy||connection.pending||document.hidden)return;
@@ -203,10 +228,11 @@ async function movementStep() {
 $('join-realm').onsubmit=e=>{e.preventDefault();enter($('wayfarer-name').value.trim());};
 $('retry-service').onclick=connect;
 $('restore-session').onclick=async()=>{
-  if(connection.pending){notice('Recover your existing pending action first.');return;}
-  const token=$('recovery-key').value.trim();if(!token)return;
-  const previous=connection.token;connection.token=token;
-  try{await connection.refresh();sessionStorage.setItem('anima-commons-token',token);$('recovery-key').value='';}catch(error){connection.token=previous;$('entry-status').textContent=error.message;}
+ if(connection.pending){notice('Recover your existing pending action first.');return;}
+ const token=$('recovery-key').value.trim();if(!token)return;
+ const intent=++sessionIntent,previous=connection.token;connection.token=token;$('join-button').disabled=false;
+ try{await connection.refresh();if(intent!==sessionIntent)return;sessionStorage.setItem('anima-commons-token',token);sessionStorage.removeItem('anima-commons-entry');$('recovery-key').value='';}
+ catch(error){if(intent!==sessionIntent)return;connection.token=previous;$('entry-status').textContent=error.message;}
 };
 $('recover-action').onclick=async()=>{try{const result=await connection.recover();if(result){$('pending-action').hidden=true;notice('Your original action is confirmed.');}}catch(error){notice(error.message);}};
 $('connection-status').onclick=()=>connection.pending?$('recover-action').click():connect();

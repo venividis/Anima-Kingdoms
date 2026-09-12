@@ -25,7 +25,7 @@ export const PROJECT_DEFINITIONS = Object.freeze([
 export const MARKET = Object.freeze({x:6,z:20,name:'The Commons Exchange',
   bid:Object.freeze({wood:1,stone:1,ore:3,food:1,herb:2,crystal:5}),
   ask:Object.freeze({wood:2,stone:2,ore:4,food:2,herb:3,crystal:7})});
-export const COMMAND_SCOPES = Object.freeze(['move','gather','offer.create','offer.fill','offer.cancel','project.contribute','market.buy','market.sell','chat.send','blueprint.publish','blueprint.remove']);
+export const COMMAND_SCOPES = Object.freeze(['move','gather','offer.create','offer.fill','offer.cancel','project.contribute','market.buy','market.sell','chat.send','blueprint.publish','blueprint.remove','luma.speak','gift.offer','gift.accept','gift.decline','gift.cancel']);
 export const SPEED = 7;
 export const emptyBag = () => Object.fromEntries(ITEMS.map(item=>[item,0]));
 export function traversable(bridgeOpen,x,z) {

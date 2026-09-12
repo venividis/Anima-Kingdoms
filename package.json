@@ -1,6 +1,6 @@
 {
   "name": "anima-kingdoms",
-  "version": "0.1.0",
+  "version": "0.13.0",
   "private": true,
   "engines": {
     "node": ">=24.0.0"

@@ -1,6 +1,12 @@
 # Anima Kingdoms
 
-**The Living Commons** — the first broader Anima Kingdoms foundation.
+**A word becomes a world · Luma 0.13**
+
+Open **Luma (G)** to compose with the uploaded language’s twenty original sounds and native characters. Its 180 roots and 900 dictionary forms remain intact. A noun’s sixteen feature coordinates shape a playable creation; the letters supply its exact two-note musical code.
+
+**i** previews a possibility. **u** keeps an intention. **pe** undertakes an act using actual materials and the existing reach, placement and custody rules. **e** makes observations inspectable; **a** expresses the speaker’s own experience. Build a musical instrument, connect it to a powered span, care for a creature or send real food to household doorsteps. The notebook preserves the difference between an accepted undertaking and a completed result.
+
+The shared **Luma** panel supports public-work contributions, gifts that the recipient can welcome or decline, and attributed personal experience. Arrival and command retries recover the same player or receipt after a lost response. The source language and its philosophical distinctions guide the mechanics; they do not grant free resources or numerical power bonuses.
 
 Invite four households into the First Orchard. Grow food using water and soil, let workers bring the harvest home, and watch Tavi carry supper to actual doorsteps. In the new shared Commons, independent players gather, barter, build a crossing together, speak, publish Foundry designs and invite external command agents.
 
@@ -8,7 +14,7 @@ The shared Commons has a Node/SQLite authority and its own economy. The First Or
 
 Select **Life (K)** in the local world for households, **Connect (N)** for the musical crossing and courier journey, or **Create (V)** for the five-kind blueprint workshop. Exploration, timed combat, the Root Warden, physical workers, water routing, bot CTF, local two-player duels, the range, Raincatch, Loom Table and authored sigil trials remain playable.
 
-The [previously published First Concord](https://awe-first-orchard.edwincardenas.chatgpt.site) remains the earlier deployment. This repository update has not deployed the new Commons service. See the [release contract and audit status](docs/BROADER-FOUNDATION.md).
+The [previously published First Concord](https://awe-first-orchard.edwincardenas.chatgpt.site) remains the earlier deployment. This repository update has not deployed the new Commons service. See the [Luma game guide](docs/LUMA-GAME.md) and [recovery and verification record](docs/audit/luma/recovery.md).
 
 ## Run and verify
 
@@ -35,6 +41,12 @@ The standard framework uses Vinext and a Workers-compatible production build. Th
 
 ## Documentation and evidence
 
+- [Luma game guide: language, shapes, music and accountable acts](docs/LUMA-GAME.md)
+- [Original uploaded Living Artwork, preserved byte for byte](public/luma/origin.html)
+- [Source extraction and language contracts](public/luma/README.md)
+- [Luma recovery record and fresh verification](docs/audit/luma/recovery.md)
+- [Release verification](docs/audit/luma/release-verification.md)
+
 - [Living Commons release, journeys and exact remaining scope](docs/BROADER-FOUNDATION.md)
 - [Shared service, agent API and recovery contract](docs/SHARED-REALM.md)
 - [Current audit registry and repaired failures](docs/audit/broader-review.md)
@@ -51,7 +63,7 @@ The standard framework uses Vinext and a Workers-compatible production build. Th
 
 ## Controls
 
-K Life · N Connect · V Create · T attuned relic · WASD / arrows move · right-drag look · wheel / pinch zoom · Space jump · Shift run · C guard · R evade · E interact · 1–4 combat moves (hold 1 for Palm) · Tab target · X release · Z center camera · H controls and safe practice · Q worldcraft · F rain · B settlement · I character · J quests · M atlas · Escape menu/close.
+G Luma · K Life · N Connect · V Create · T attuned relic · WASD / arrows move · right-drag look · wheel / pinch zoom · Space jump · Shift run · C guard · R evade · E interact · 1–4 combat moves (hold 1 for Palm) · Tab target · X release · Z center camera · H controls and safe practice · Q worldcraft · F rain · B settlement · I character · J quests · M atlas · Escape menu/close.
 
 Touch uses an analog movement stick, world-drag camera control, and visible attack / guard / run controls. The Controls panel can also show these controls on desktop.
 

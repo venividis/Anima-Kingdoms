@@ -1,8 +1,448 @@
 ---
 
+## Luma Origin · current game guide
+
+# Luma Origin in Anima Kingdoms
+
+Open **Luma** in the world to make a word into an object, hear its letters, keep an intention, and return to the consequences of an action. The workshop uses the uploaded Luma Origin alphabet, native signs, dictionary, musical code and feature curves. The [original living artwork](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/public/luma/origin.html) remains available in full from the workshop.
+
+The game adds an authored connection between that language and the existing world: making uses materials, care uses food or crystal, a played score can power a crossing, and a gift enters actual custody. The meanings of the source words remain available outside those game actions.
+
+## Make a first word
+
+1. Open **Luma**, choose **Music**, and read `i mi me peli ta musa.` The workshop shows the native spelling, the word's projected form and its construction cost. This mode is imagination; it spends nothing.
+2. Select **Intend** to keep `u mi me peli ta musa.` in Memory. The intention waits without reserving or spending materials.
+3. Select **Undertake**. The sentence becomes `pe mi me peli ta musa.` Place the preview on clear supported ground within reach. The accepted action creates an instrument using its displayed bill.
+4. Choose that instance under **This creation**, then choose **Play the music**: `pe mi me musi ta musa.` Playing spends 40 Breath and schedules the complete word score. The original four-letter word produces eight notes.
+5. Revisit **Memory**. The saved undertaking and matching intention show what was accepted. The world still determines whether the resulting object, sound or delivery was useful.
+
+The **Write in native script** control changes unquoted Luma writing while preserving borrowed names inside quotes. **20 letters** shows each original sign, IPA label, feature values and two-note code. **900 words** searches all 180 roots and their five grammatical forms. **Hear the letters** plays the complete written phrase's letter code; it is a musical rendering, not recorded speech.
+
+## What a sentence does
+
+| Form | Source role | Local workshop behavior |
+|---|---|---|
+| `i` | Imagination | Preview a supported action or form; no world mutation. |
+| `u` | Intention | Save a plan; no goods are reserved or spent. |
+| `pe` | Speaker's undertaking | Validate and execute one supported action with current reach, supplies and world conditions. |
+| `e` | Inference | Read a model or observation of current state. |
+| `a` | Experiential access | Present the speaker's own experience; it cannot report someone else's inner state. |
+| `he` | Expressive remainder | Preserve the statement that the expression leaves something unsaid. It adds no numerical power. |
+
+`mi` is the speaker; `me` introduces the predicate; `ta` introduces its theme. `melu` means “with care.” An undertaking belongs to its speaker. This local action register does not execute an undertaking on behalf of another person.
+
+A sentence can be valid Luma without naming a game operation. The game rejects unsupported extra roles, time, aspect, conditions and negation rather than silently dropping them. The reconstructed parser preserves the 41 supplied composition witnesses; it is a bounded register, not a claim that the original language's entire grammar has been implemented.
+
+## Words with world consequences
+
+The following routes are new Anima design. Their noun meanings remain the existing Luma dictionary meanings.
+
+| Theme word | Dictionary meaning | Created family or form |
+|---|---|---|
+| `musa` | music | Instrument |
+| `sona` | sound | Instrument |
+| `wuna` | living being | Creature |
+| `yuna` | joining | Walking span made of five contiguous decks |
+| `tula` | shelter | Shelter with solid walls and an ornamental roof |
+| `liha` | light | Relic |
+| `tapa` | beginning | Trial gate |
+| Other existing nouns | Their own dictionary meanings | Bounded structure with a word-derived inscription |
+
+Use `pe mi me peli ta WORD.` to make or `pe mi me bani ta WORD.` to build. The preview derives the same recipe and bill that normal creation uses. No letter value issues free goods or increases the power budget. For the default forms, `musa` costs two wood and two herb, `yuna` five stone, and `wuna` four wood and one herb. The preview remains authoritative if the recipe changes in a later edition.
+
+Instances retain their word, full creation sentence, retained-coordinate count, recipe and investment. Editing a draft does not mutate an earlier instance. Reclamation uses the existing rules for reachable objects, active performances, cargo, wires and occupied walking surfaces. Repairing a Luma creation with `pe mi me remi melu ta pela.` reclaims and rebuilds it atomically with recorded parent lineage; it must pass those same conditions.
+
+## Let a score carry a crossing
+
+Make an instrument near the near-bank bridgehead and a `yuna` span across the river. A practical layout is an instrument at `(-3, -4)` and span centered at `(0, -13)`, with the player standing near `(0, -4)`. Placement and interaction checks still apply.
+
+Choose the instrument under **This creation** and the span under **Join to**. `pe mi me yuni ta pesa.` converts the unoccupied deck into a powered receiver and connects the two endpoints. Accepted pitches come from the instrument's complete source-word code.
+
+Buy one existing crystal at Vey's Exchange. Then `pe mi me meli ta musa.` with the instrument selected consumes that crystal and supplies 24 units of charge. `pe mi me musi ta musa.` plays the eight timed notes of `musa`. Each matching note sends one existing charge along the wire. Travel takes time; the span becomes active when a packet arrives, and each received charge supplies 180 ticks of support.
+
+Walk across while the receiver is active. The receiver retains a clearing state if its last power expires while a body still depends on it. That safety hold is not renewable charge. A quiet instrument still sounds without fuel, but it cannot issue charge that does not exist. The separate original rain-powered bridge and its water commission retain their own conditions.
+
+Both `musa` and `sona` have complete eight-note world scores. The phrase-listening control can play longer passages. Helper-level checks of longer noun codes do not imply that every noun is an instrument or that a longer score was played in the world.
+
+## Care and delivery
+
+A created `wuna` runs the bounded first-match creature rules from the creation system. With the creature selected, `pe mi me meli ta wuna.` consumes one food and gives it 80 energy when eligible. Care does not create food or confer a model-driven mind.
+
+At the council, `pe mi me temi ta mena.` invites four households into the existing settlement simulation. `pe mi me doni ta #u bama li "households".` offers four food to their depot: `#u` is the exact base-twenty quantity four, and `bama` is food. Tavi still must carry that food to household pantries, where meals are consumed over time. An accepted supply undertaking records the transfer into the depot, not a claim that all residents have already eaten.
+
+A matching `u` sentence can be recorded first. Memory marks the intention when its corresponding undertaking is accepted; that label is narrower than completing every downstream consequence. Release an obsolete local intention from Memory when you choose to let it go.
+
+## The same language in the shared commons
+
+The shared realm has a separate authoritative state and material ledger. Its Luma composer binds a sentence to a named public work or recipient and to an explicit item and quantity. It records Latin and native writing with the actual result. A local pack or created instance is not silently uploaded into that realm.
+
+- `i`, `u` and `e` can record a possibility, intention or model check without enacting the bound transfer. An own-experience sentence such as `a mi me honi ta loma he.` records its speaker's experience.
+- `pe mi me bani ta bana.` with a public-work binding contributes only the chosen quantity the authenticated participant holds and the project still needs.
+- `pe mi me doni ta dona li ti.` with a recipient binding puts an offered gift into escrow. The recipient can welcome or decline it, and the sender can withdraw it while open. Welcoming transfers the escrow once; declining or withdrawing returns it to the sender.
+- An invited agent needs the Luma scope and the underlying action scope. It uses one command allowance for the accepted undertaking. Replaying the exact accepted command does not spend a second allowance or transfer a second gift.
+
+The shared UI offers only the operations it can bind clearly. The authority also has a bounded blueprint-publication route. Publishing a recipe does not instantiate its geometry in the shared world. See [the shared realm contract](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/SHARED-REALM.md) for identity, permissions, escrow, history and persistence limits.
+
+## Letter, number, sound and form
+
+The source alphabet is:
+
+```text
+a e i o u p b m f w t d n s l k g h r y
+```
+
+Each letter has an ordinal `q` from 0 to 19 and a positive additive value `G = q + 1`. Positional quantities use base twenty. Gematria sums positive letter values; it does not preserve a spelling uniquely. The full Unicode transport code and the celestial two-digit bins are separate encodings.
+
+For the two-note letter code, write `q = 5f + u`. The ratio sequence is `[1, 9/8, 5/4, 3/2, 5/3]`; play ratio `f` followed by ratio `u`, using 220 Hz as the source's reference convention. For `mela`, the source values are `7, 1, 14, 0`; its eight ratios are `9/8, 5/4, 1, 9/8, 5/4, 5/3, 1, 1`, and its positive sum is 26. A shared sum does not make `mela` and `lema` the same word.
+
+The visible form uses the source's 16 declared letter-feature coordinates, 193 samples per curve, first-`d` mask and original sequence of planar rotations. Retaining more coordinates exposes more source data but does not guarantee a visibly different projected curve at each slider step. The projection can overlap and lose information. These coordinates describe an authored representation; they are distinct from the original artwork's eight celestial angles embedded in sixteen cosine/sine coordinates.
+
+The source astronomical engine, cultural studies, seasonal tables, naming witnesses and musical performance models remain in the original artwork. The game does not claim that its new object routing, material costs or action effects are ancient correspondences, astronomical measurements or a test of astrology.
+
+## Review and evidence
+
+The [recovery record](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/luma/recovery.md) explains exactly which original artifacts were recovered and distinguishes earlier lost test reports from fresh checks. The [structural source report](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/luma/source-structure.json) records the artwork hash and layer counts, including all 20 letters, 900 forms, 41 register witnesses, 15 membrane grids and 16 audio records. The reproducible extraction is [scripts/extract-luma.py](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/scripts/extract-luma.py).
+
+The [fresh local play review](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/luma/local-play-review.md) and [complete trace](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/luma/local-journey.json) follow real movement, actual purchases and transfers, timed scores, current-state persistence checkpoints and conserved material/charge accounts. Scripted agent play establishes those observed journeys. Learner comprehension, pronunciation, accessibility across devices and whether someone wants to play again require separate human observation.
+
+
+---
+
+## Living Commons · current foundation
+
+# Anima Kingdoms — The Living Commons
+
+12 September 2026 · broader-project foundation, development build 0.12
+
+The broader project now has two new working foundations: an inhabited local food economy and a persistent place where independent players can cooperate. These extend the actual First Orchard and First Concord code. The historical honest audit has been reviewed and mapped into a [36-family obligation registry](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/broader-review.md); the larger game and research obligations remain visible.
+
+This release implements the bounded gates below. It does not complete the entire original MMORPG, every research corpus, a language-model society or an onchain economy.
+
+## Play the inhabited First Orchard
+
+Run `pnpm realm` with Node 24 or newer and open `http://127.0.0.1:8787/play.html`. The existing framework command, `pnpm dev`, also runs this local game.
+
+1. Enter the world and open **Life (K)**. Walk to the council and depot, then invite four households. Twelve residents occupy the four existing homes. Invitation supplies no food or money.
+2. Transfer food from your pack to the depot and return to the world. Tavi physically picks it up, visits a household doorstep, transfers it into that pantry and returns. The pack, depot, cargo and pantries are separate custodians.
+3. Each household eats one shared food lot per 60 active seconds. An empty pantry causes recoverable hunger. The Life panel reports actual meals, shortages, cargo, stock and growth.
+4. Weave a Mercy Braid or your own water channels, release two rains and enable automatic rain in Settings. Build a rain garden using four wood and two stone, assign Mira and Fen to food, and enable harvest sharing. Workers bring real food home before it enters the depot; the policy keeps three food in your pack for worker meals.
+5. Close the panel to let the simulation run. Renewable wood, food and herb require capacity, routed water, soil fertility and active time. Household and worker meals return compost; slow fallow recovery supplies a declared route back from soil exhaustion. No timer directly awards goods to an inventory.
+
+The material ledger explicitly includes new biological production, delivered food, consumption and cargo. Water has its existing conserved routing and consumption ledger. Growth, compost and fallow rates are bounded game rules, not claims about real ecology. Saving and loading preserves the complete food cycle. Older valid saves receive an inactive civilization schema; the player deliberately opts in.
+
+There are **four households, twelve residents, one food need and one courier**. This is a small working society loop. Immigration, family relationships, housing markets, multiple dietary needs and autonomous social goals are not implemented. Local panels and hidden tabs pause this simulation, and activities do not consume household time.
+
+## Play the shared Commons
+
+Run `pnpm realm` and open `http://127.0.0.1:8787/shared.html`. A second browser profile can join as another principal. The entry page, shared world, work ledger, exchange, people/chat, studio, agents and journal are part of the running browser client.
+
+Start with an empty pack. Walk to a deposit and gather finite material. Offer owned goods for another material, fill another player's funded offer, or contribute to the Joined Span. Eight wood and eight stone open a crossing for everyone. Cross to the far-bank deposits and fund the Concord Beacon. Project rewards move existing Marks from the treasury. The nearby NPC exchange has actual stock, funded buy/sell transactions and explicit prices.
+
+The authority owns positions, items, public construction and trade outcomes. Players send movement direction and specific commands; they cannot submit a replacement world, award themselves inventory or name another acting principal. The browser interpolates presentation while SQLite records accepted state. Human and delegated credentials share the same body's server-timed movement and gathering budget.
+
+The server commits both sides of a trade, the resulting realm, transfer journal, command receipt and agent allowance in one transaction. An offer cannot settle twice. Stable command keys recover an accepted command after a lost response. The browser records a pending envelope before sending it and blocks unrelated commands while the outcome is uncertain. Stale revision rejections permit a refreshed retry; an ambiguous response first retries the original envelope.
+
+Chat contains actual principal-authored text. The Studio publishes a validated immutable Foundry blueprint to a shared shelf, records its publishing principal and lets another player download it for the local Foundry. This circulates designs; it does not turn local creations or balances into shared inventory.
+
+The Agents panel issues explicit scopes, a limited number of accepted actions and an expiry. A real external program can use that bearer credential through the documented HTTP API. Revocation removes its authority. No language model is bundled or represented by a scripted character. See [the service contract](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/SHARED-REALM.md) for all commands and actual limits.
+
+The shared realm is a separate persistent world linked from the local game. Its valley geometry comes from the First Orchard, but it does not synchronize local combat, authored creature instances, water, household society, quests or local saves. Shared deposits are finite. They do not use the new local renewal rules.
+
+## Repairs earned by the audit
+
+- **Guided movement:** guarding, held attacks, committed actions, evasion and airborne movement now interrupt guided travel. The guide no longer bypasses the ordinary combat movement restrictions. Revoking the local connection grant stops the body's queued journey, and that cancellation survives reload.
+- **Water stewardship:** newly installed agent channels declare the human as maintainer when created. The human can clear them after revocation, returning salvage only to the agent's fiber account. This repairs future capture of all eight public slots. Unmarked historical channels retain their historical ownership rights; old stranded saves are not silently rewritten.
+- **Input integration:** Life opens only in the local world. The K shortcut retains player two's Palm behavior in local duels, and household controls cannot modify a rehearsal or an activity.
+- **Courier occupancy:** solid creations cannot be placed through Tavi; a supporting surface cannot be reclaimed beneath the courier, and a powered gate holds open until the courier leaves its footprint.
+- **Recovery and custody:** the shared authority checks storage integrity, reconstructs asset custody from its journal, preserves accepted receipts across restart and refuses corrupt storage. The online backup command copies committed WAL state and validates the result before reporting success.
+
+## Current acceptance status
+
+Each row reports an implemented gate within a larger audit family. None means that the whole family is complete.
+
+| Audit families | Gate implemented in this release | Larger requirement retained |
+|---|---|---|
+| C09, C11, C12 | Funded household food, physical doorstep delivery, actual consumption, bounded renewal and shortage recovery | Broader society, general logistics and ecological interactions |
+| C01, C16 | Independent principals, shared movement and projects, finite gathering, atomic player barter and treasury trading | One fully shared game, economic institutions and measured player markets |
+| C08, C26 | Authenticated external-agent grants, shared action budgets, expiry, scope and revocation | Live model integration, review workflows and measured human/agent fairness |
+| C17, C21 | Prospective public-channel maintenance, shared chat and retrievable Foundry publications | Guilds, shared homes, accepted governance, licensing and factual replay |
+| C05, C26 | Combat/guided-travel parity and immediate local journey cancellation | Full combat repertoire and remote competitive combat |
+| C25, C26 | SQLite transactions, crash/restart recovery, durable replay and verified online backup | Production deployment, measured capacity, moderation and live operations |
+| C27 | Reproducible current tests, pinned scenario evidence and retained unresolved registry | Continued evidence for each subsequent release |
+
+## Verification and its limits
+
+Run `pnpm test` for the complete regression suite and `pnpm build` for the framework build. The final command output and source manifest are retained in `docs/audit/broader/`; the verification report there records exact results.
+
+The household test suite has 20 methods. Its legal 1,000-second journey starts from the ordinary world, uses actual walking, construction and policies, and includes ten successful save/reload checkpoints. It grows **132 new food**, funds **89 food** into the depot, delivers **75 food units**, serves **64 household meals** and **46 worker meals**, and returns **110 compost**. All four households end without hunger or missed meals. All six material residuals and the water residual are zero; total money remains 50. Seventy-five delivered food units is not a claim of 75 courier trips. [Pinned scenario evidence](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/broader/civilization-scenario.json).
+
+The 17 shared-authority tests include two real HTTP clients racing to fill one escrowed offer, full cooperative construction/crossing, agent revocation and budgets, blueprint reuse, service restart and online backup. A child process is actually killed inside an uncommitted trade; reopening retains the pre-trade owners and a retry settles once. Corruption and inconsistent custody histories are rejected. These are executable API and persistence observations.
+
+Nine [DOM and real-HTTP integration journeys](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/broader/shared-ui-review.md) exercise joining, legal gathering, player and NPC exchange, recovery, agent grants and blueprint publication/export. They reproduced and repaired draft loss during polling, hidden uncertain-command recovery and stale responses overwriting a recovered identity. Six transport methods separately cover exact retry behavior and storage failures.
+
+Local invited-agent probes complete the existing connected score–crossing–courier journey through nine authorized commands and six custody checkpoints, with two delivered stone, one funded reward and balanced ledgers. Separate regressions preserve the repaired travel and water-maintenance behavior. Counts from targeted runs overlap the full suite and must not be added to its total.
+
+The available remote browser could not reach the local preview (`ERR_BLOCKED_BY_CLIENT`). No successful new browser playthrough, rendered screenshot inspection, touch-device observation or human enjoyment test is claimed. DOM/event tests emulate the interface and replace the renderer; they establish control and request behavior, not WebGL correctness, layout quality or accessibility conformance. The historical published release's browser evidence does not verify these new screens. C24 remains open.
+
+## Run, preserve and extend this foundation
+
+The service defaults to loopback port 8787 and `data/shared-realm.sqlite`. Keep its database and recovery keys. A lost or expired owner token currently has no account recovery route; creating another name creates another empty principal. The service has explicit finite limits and unpruned durable history. These bounds are not a measured concurrency or capacity claim.
+
+`node server/backup.mjs ./data/shared-realm.sqlite ./backups/realm.sqlite` creates and validates a new backup. Public hosting requires the Node authority behind the configured HTTPS origin, operational storage and the responsibilities documented in the service guide. A static framework deployment alone does not provide the API. This change does not publish a new website.
+
+The next architectural gate is to put one existing authored creation and one gameplay outcome under this same authority, with reconnect and ownership preserved. Remote combat needs its own latency and match-lifecycle design. Broader regions, warfare, additional games, complete worldcraft disciplines, richer art and sound, observed human usability, all nine research families and wallet/onchain integration remain separate open obligations in the registry.
+
+Source additions: `public/civilization.js` and `civilization-view.js` implement the local cycle; `server/authority.mjs` and `index.mjs` implement shared rules and HTTP; `public/shared-rules.js`, `shared-transport.js`, `shared-client.js` and `shared-view.js` connect the rendered client to accepted server state. The existing canvas and 3D local renderers display the household and courier state. Historical source, artwork, archives and audits are preserved in the repository.
+
+
+---
+
+## Shared realm · authoritative contract
+
+# The shared commons
+
+This release adds a running, durable multiplayer commons to Anima Kingdoms. Two independent clients can move through the same valley, gather finite materials, exchange escrowed goods, contribute to shared construction, speak, share Foundry designs and authorize external command agents. SQLite determines identities, positions, inventory and settlement. Browser state cannot award items.
+
+The shared commons is a separate authoritative place linked from the First Orchard. The existing local combat, crafted instances, couriers, civilization and saves remain the local game. They are not silently uploaded into this economy. A published Foundry blueprint is a reusable design, not an instantiated shared creature or a minted asset.
+
+## Run
+
+Node 24 is the validated runtime. The service and tests use built-in Node modules; no third-party server package is required.
+
+```sh
+PORT=8787 REALM_DB=./data/shared-realm.sqlite node server/index.mjs
+```
+
+Open `http://127.0.0.1:8787/shared.html`. A second browser profile can create another principal. The default interface listens on loopback only. `/play.html` serves the original local game; `/` opens the commons.
+
+The database directory is created with private permissions, and the database is mode `0600`. Keep that directory outside the served `public/` tree and outside source control. Preserve the database and its backup: it contains the realm, session credentials, grant-secret material, replay receipts and transfer history. Changing `REALM_DB` selects another realm; it does not migrate the old one.
+
+A non-loopback bind requires `PUBLIC_ORIGIN`. For a public service, configure `PUBLIC_ORIGIN` to the actual HTTPS origin and serve the Node process through that origin. `HOST` may explicitly select another bind address. The service checks browser Origin, Fetch Metadata and Host and does not expose cross-origin API permissions. HTTPS termination, uptime, capacity, abuse operations and secure operator access remain deployment responsibilities. Static-only hosting does not run this Node authority.
+
+## What players can actually complete
+
+1. Arrive with an empty inventory and walk to the nearby wood or stone deposit. Each successful gather transfers one existing unit from that deposit to the authenticated principal.
+2. Offer owned goods for another material or Marks. The offered goods immediately leave the seller's pack and enter escrow. Another funded principal can fill the offer, or the seller can cancel an open offer.
+3. Carry eight wood and eight stone to **The Joined Span** at `(0, -3)`. Contributions from different principals accumulate in the same project. Completion opens the original valley crossing for everyone. Contributions pay two Marks per material while the treasury can fund the reward.
+4. Cross the river and gather ore and crystal on the far bank. The second shared project, **The Concord Beacon**, accepts six wood, four stone, two ore and two crystal at `(0, -28)`. Its completion is shared project progress; it does not claim to simulate local beacon combat effects.
+5. Use the finite commons exchange near `(6, 20)`. Its bid/ask prices, material stock and remaining treasury Marks are visible. Players also set their own barter terms independently of that exchange.
+6. Publish a valid exported Foundry blueprint to the shared shelf. Other principals can retrieve the same immutable design and import it into their local Foundry. Removal is restricted to its publishing principal or an explicitly scoped delegate.
+
+Names are pseudonymous display labels. They are not verified people, unique usernames or wallet identities. Multiple newly created sessions receive no goods or Marks, so repeated signup is not a funding faucet.
+
+## HTTP contract
+
+Every write accepts `application/json`; request bodies are limited to 16 KiB. Browser API calls use the same origin. Except for health and session creation, use `Authorization: Bearer TOKEN`.
+
+| Endpoint | Input | Result |
+|---|---|---|
+| `GET /api/health` | None | Readiness, rules version and revision |
+| `POST /api/session` | `{ "name": "Ash", "key": "a-random-arrival-key" }` | `{ token, playerId, expiresAt, replayed, state }` |
+| `GET /api/state` | Bearer credential | Authorized current state view |
+| `POST /api/command` | Exact envelope below | `{ receipt, state }` |
+
+```json
+{
+  "key": "client-unique-command-0001",
+  "expectedRevision": 42,
+  "op": "gather",
+  "payload": { "nodeId": "grove" }
+}
+```
+
+The server derives the acting principal from the bearer credential. A payload cannot select another player, claim an inventory, supply movement time or replace the world. Unknown envelope or operation fields are rejected.
+
+The receipt contains `{key, op, revision, result, replayed}`. Errors contain `{error:{code,message}, revision}` where the revision is readable. `REVISION_CONFLICT` is HTTP 409 and commits nothing. A client refreshes and submits an intentional command against the new revision. If a response was lost, retry the **exact original envelope first**: changing its revision or payload is not a retry of its accepted bytes. Accepted keys are retained in durable storage, scoped to the authenticated credential; a different command under the same key fails with `KEY_COLLISION`.
+
+| Operation | Exact payload | Rule |
+|---|---|---|
+| `move` | `{dx,dz}` | Each axis in `[-1,1]`; normalized speed, server time and terrain |
+| `gather` | `{nodeId}` | Within 3 units; one unit per 900 ms; finite stock |
+| `offer.create` | `{give:{item,quantity},want:{item,quantity}}` | Distinct existing assets; seller escrow funded immediately |
+| `offer.fill` | `{offerId}` | Funded other principal; atomic bilateral settlement |
+| `offer.cancel` | `{offerId}` | Open offer belonging to acting principal; escrow returned once |
+| `project.contribute` | `{projectId,item,quantity}` | Within 6 units; owned material; no overfunding |
+| `market.buy` | `{item,quantity}` | Within 6 units; both parties funded |
+| `market.sell` | `{item,quantity}` | Within 6 units; both parties funded |
+| `chat.send` | `{text}` | 1–280 plain-text characters; principal-wide 1-second cooldown |
+| `blueprint.publish` | `{blueprint}` | Existing `Creation.compile` must accept the complete design |
+| `blueprint.remove` | `{publicationId}` | Publishing principal only, including explicitly scoped delegates |
+| `agent.create` | `{name,scopes,allowance,expiresInSeconds}` | Owner credential; 1–1000 accepted actions; 60–86400 seconds |
+| `agent.revoke` | `{agentId}` | Grant owner's credential only |
+| `session.renew` | `{}` | Valid owner credential; extends that same credential another 30 days |
+
+Items are `wood`, `stone`, `ore`, `food`, `herb`, `crystal`, and `marks`. Offer quantities are whole units from 1 to 10,000; market/project commands accept 1 to 100 units and still require real stock and unmet requirements.
+
+The state view contains `rulesVersion`, `realmId`, `revision`, `serverTime`, `you`, `world`, `players`, `nodes`, `offers`, `projects`, `treasury`, `market`, `totals`, `ledger`, `chat`, `events`, `agents`, `blueprints`, `gifts` and `luma`. `you.inventory` is the principal's actual holdings. Other player entries expose display name, position and approximate recent online presence; they do not expose the other player's private inventory or bearer secrets. Owners see their own grants. Agent views identify their scope and remaining allowance.
+
+Shelf entries are `{id,authorId,authorName,blueprint,publishedAt}`. The server generates publication IDs and copies the compiled design. Publication does not import local resource balances or create shared material instances. There are at most eight active designs per principal and 64 in the realm.
+
+## Custody, movement and recovery
+
+The genesis supply is **160 wood, 140 stone, 50 ore, 100 food, 60 herb, 30 crystal and 500 Marks**. Materials begin in resource deposits; Marks begin in the shared treasury. Creating a principal issues nothing.
+
+For every asset:
+
+```text
+genesis = deposits + player packs + treasury + open escrow + public construction
+```
+
+The exact residual is exposed in `state.ledger.residual`. Every successful command executes inside one SQLite `BEGIN IMMEDIATE` transaction. Both legs of an exchange, the new state, its command receipt, grant allowance and transfer journal commit together. A failed command rolls all of those changes back. Concurrent fillers cannot both acquire the same escrow. The SQLite WAL uses `synchronous=FULL`.
+
+The append-only command journal hashes each entry and records every material/Marks custody transfer. Startup verifies SQLite integrity, realm checksum, state bounds, the complete journal chain, replay-receipt checksums and receipt/journal references. It reconstructs all account balances from genesis and requires them to match the current asset owners. Corruption is refused; no fresh treasury or empty replacement realm is silently created. The hash chain detects inconsistent storage, not a malicious operator who can rewrite the complete database and code.
+
+Movement uses the authoritative timestamp stored per principal, normalized intent, speed 7 units/second, at most 250 ms of elapsed movement per request, and small collision substeps. All credentials of one principal share this movement and gathering budget. Client coordinates, client clocks, delayed bursts, diagonal input and extra agent tokens cannot create additional movement time. Terrain uses the existing orchard land geometry; the shared span has its own funded completion state. This is HTTP movement authority with client presentation, not rollback combat netcode.
+
+A saved owner token reconnects to the same principal after connection loss or service restart. Owner credentials last 30 days and can be renewed while valid. A saved random arrival key and its original name can replay a keyed arrival while that owner credential remains valid. There is no email/password recovery route for an expired credential or a lost token and lost arrival key. Possession of a token grants its authority; protect it as a credential. Display names cannot recover someone else's pack. Assets are retained when a player disconnects; they are not transferred to a new signup.
+
+The service retains at most 500 principals, 12 simultaneously open offers per principal, 10,000 lifetime offers, 32 lifetime agent grants per principal, 80 chat messages and 100 recent display events. Durable receipts and the journal are not pruned; monitor disk growth. The shared resource deposits are deliberately finite. The new local civilization system does not regenerate the shared economy.
+
+## Invited external agents
+
+An owner creates a grant with an explicit command-scope list, accepted-action allowance and expiry. Its returned bearer token authenticates as a delegate of that principal; it cannot choose another owner. An accepted action decrements the allowance once. Failed commands and exact accepted-command retries do not spend another action. Revocation prevents further reads and commands, including old-receipt access. Agents cannot create or revoke grants or renew owner credentials.
+
+Available delegated scopes are movement, gathering, player offers, project contributions, market trading, chat, blueprint publication/removal, `luma.speak`, and the four `gift.*` operations. These scopes permit real changes to the owner's holdings; grant only the intended ones. Agent tokens are deterministically recoverable by replaying the owner's exact successful creation command and do not appear in public state views. Owner session credentials are stored as hashes. The operator-held database also contains the server secret used to derive agent tokens and keyed owner-arrival tokens.
+
+This is an authenticated external-agent command interface. A caller may connect its own planner or model. The service does not contain an autonomous LLM, claim model identity verification, or label the game's scripted actors as language-model participants.
+
+## Luma composition and consentful gifts
+
+The Luma extension adds structured statements to the same authoritative command transaction. Local objects and balances remain separate. The [Luma guide](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/LUMA-GAME.md) explains the source language and its local creation routes.
+
+| Operation | Exact payload | Custody or interpretation |
+|---|---|---|
+| `luma.speak` | `{text,bindings}` | One explicit `i`, `u`, `e`, `a` or `pe` clause, with its full supported binding. |
+| `gift.offer` | `{recipientId,give:{item,quantity}}` | Sender's actual asset enters gift escrow; self-gifts reject. |
+| `gift.accept` | `{giftId}` | Only the named recipient; escrow transfers once into that recipient's holdings. |
+| `gift.decline` | `{giftId}` | Only the named recipient; escrow returns once to its sender. |
+| `gift.cancel` | `{giftId}` | Only the sender; withdraw an open gift and recover its escrow. |
+
+A project binding is `{kind:"project",projectId,item,quantity}`. `bani ta bana`, `bani ta pela` or the project's exact quoted name identifies the action. An optional `la` role must match that project name; an optional `ki` role must match the chosen material and any spoken quantity. Project quantities are whole units from 1 to 100, with ordinary reach, stock and remaining-need checks.
+
+A gift binding is `{kind:"gift",recipientId,item,quantity}`. Its verb is `doni` or `mari`; the theme is `dona`, a matching material name, `bama` for food, or `bema` for stone. The `li` recipient is the pronoun `ti` or the recipient's exact quoted name. A spoken quantity must match the binding. Gift quantities are whole units from 1 to 10,000.
+
+A blueprint binding is `{kind:"blueprint",blueprint}` with `peli ta pela`. It publishes the compiler-validated recipe; its calculated build bill is descriptive and no instance is created. The own-experience binding `{kind:"experience"}` accepts `a mi me honi ta loma he.` The speaker's literal `mi` is required throughout. Unsupported extra roles, negation, aspect, time, qualified participants and mixed modes reject rather than disappear.
+
+`pe` enacts the resolved operation in the same transaction. Other supported modes record their statement and readiness against a cloned state: they do not reserve or spend its material bill. Readiness can contain a real reach, stock or capacity blocker. The source text, Latin text, native text, mode, binding and observed result are retained in the latest 80 Luma records. Recording an intention is not accepting a gift on another person's behalf.
+
+Open gift escrow is included in the complete custody journal and its genesis reconstruction. Each sender and each recipient can have at most 12 open gifts. Every open gift is retained; the state also retains the latest 200 closed gifts in settlement order. Closing a previously old open gift makes that new settlement part of the current closed history. Replay receipts and custody journal entries remain durable outside the recent display window.
+
+An invited agent needs `luma.speak` to submit a statement and, for an undertaking, the resolved operation scope as well. A successful undertaking spends one grant allowance, including its nested operation. Failure and exact accepted-command replay spend no additional allowance.
+
+## Arrival and service boundary
+
+The current client saves a random arrival key before requesting a session. Replaying the same key and name after a lost response returns the same still-valid owner credential and principal, with no new goods or new account. Reusing the key for a different name fails with HTTP 409. The authority accepts a random 16–128-character key using letters, digits, period, underscore, colon or hyphen. Older callers can still use the one-field `{name}` contract, which does not provide this replay recovery.
+
+Authenticated requests share a 1,200-per-minute quota per principal across owner and delegated credentials. Unauthenticated arrival requests have a 12-per-minute quota keyed to the socket address. An untrusted forwarded-address header does not change that identity. These are bounded service controls, not a measured concurrency or load capacity claim.
+
+The original `/luma/origin.html` has a source-specific content-security policy allowing its five exact executable script hashes and embedded font/audio data. This does not authorize arbitrary inline scripts elsewhere. The original HTML itself is preserved byte for byte.
+
+## Back up a running realm
+
+```sh
+node server/backup.mjs ./data/shared-realm.sqlite ./backups/realm-2026-09-12.sqlite
+```
+
+The CLI uses SQLite's online backup API, including committed WAL data. It refuses to overwrite the destination, then verifies the copied realm, its full custody history and receipts before reporting success. This supports backing up while the service is running. A raw copy of just the main database file while WAL writes are active is not the same operation.
+
+To restore, stop the realm process, retain the previous database, and start with `REALM_DB` pointing to the verified backup. The backup contains credentials as well as holdings; protect it accordingly. Restoring an older backup deliberately restores its earlier world and credential state. Test recovery using a copy before replacing a live service path.
+
+## Earlier baseline evidence and remaining scope
+
+Run:
+
+```sh
+node --test tests/shared-authority.test.mjs
+```
+
+The retained baseline record reports 17 tests covering complete cooperative gathering/construction/crossing, finite deposit exhaustion, funded barter, treasury buy/sell, forged identity and movement, stale revisions, durable key collisions and replay, agent allowance/scope/revocation/expiry, bounded chat, actual Foundry design reuse and shelf limits, online backup, and corruption refusal. Two actual HTTP clients race for one offer: one settles it and the other receives a revision conflict. A child process is actually killed after mutating the fill inside its transaction and before `COMMIT`; reopening preserves the pre-fill owners, and retry settles exactly once. Restart tests also preserve open escrow and committed fills.
+
+Those tests are reproducible server/API evidence, not browser playtests, human enjoyment studies, load tests or production security certification. They do not establish a complete shared MMORPG. Shared combat, live shared crafted-creature simulation, household society in this authority, matchmaking, production operations, wallet binding and on-chain settlement remain outside this service. The current release's integrated browser and full-project evidence is recorded separately by the main implementation task.
+
+Fresh Luma, gift-custody, arrival-replay and integrated UI evidence is recorded in [the reconstruction audit](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/luma/recovery.md) and its final release verification. The earlier baseline counts above are not the reconstruction total.
+
+
+---
+
+## Combat and movement · controls
+
+# Combat and movement — September 2026
+
+This release addresses controls that were difficult to aim, combine and understand. It changes the existing playable simulation, its two renderers and the actual keyboard, pointer and touch handlers. It does not introduce a second demonstration combat system.
+
+## Start playing
+
+Open **Controls & practice (H)**, then **Enter combat practice**. The harmless wisp records real hits, damage and which attacks have landed. Practice restores the supplies, health, Breath and combat statistics you brought from the world when you return. It gives no rewards. Breath regenerates faster in practice, explicitly disclosed in the guide.
+
+| Action | Keyboard and mouse | Touch / visible control |
+| --- | --- | --- |
+| Move | WASD or arrows, relative to the camera | Drag the movement stick; partial deflection walks slowly |
+| Run | Hold Shift | Hold Run; keyboard activation of the button toggles it |
+| Aim | Point into the world | Tap a visible opponent, or use Target |
+| Lock / release target | Tab while the world has focus / X | Target / Release |
+| Look | Right-drag | Drag the open world |
+| Zoom / center | Wheel / Z | Pinch the open world / Center camera |
+| Palm | Press or hold 1; left-click or hold in the world | Press or hold Palm |
+| Reach / Note / Gale | 2 / 3 / 4 | Corresponding attack button |
+| Evade | R, toward movement or aim when stationary | Evade |
+| Guard | Hold C, facing your aim | Hold Guard; keyboard activation of the button toggles it |
+| Jump / interact | Space / E | Jump / interaction prompt |
+| Attuned relic | T | The existing attuned-power control |
+
+Tab still navigates interface buttons normally. Attack buttons return keyboard focus to the world. Opening a panel, losing focus, changing activity or hiding the tab clears held inputs and pending follow-ups. Numbered attacks use physical digit identity so Shift does not turn them into unrelated punctuation keys.
+
+## Four attacks with different jobs
+
+The table is the normalized base specification, at 60 simulation ticks per second. Outside normalized exhibitions, existing equipment and discipline modifiers still apply.
+
+| Attack | Job | Damage | Breath | Reach | Startup / active / recovery ticks |
+| --- | --- | ---: | ---: | ---: | --- |
+| Needle Palm | Free, quick close strike; hold to repeat | 6 | 0 | 2.6 m, 1.75 rad arc | 5 / 2 / 11 |
+| Tension Reach | Narrow, longer thrust | 14 | 10 | 3.8 m, 1.3 rad arc | 13 / 3 / 19 |
+| Glass Note | Aimed projectile stopped by cover | 9 | 12 | 32 m | 11 / 1 / 25 |
+| Gale Break | Circular crowd control; radial push on contact | 12 | 30 | 6 m circle | 20 / 3 / 32 |
+
+Base damage, cost and attack timing remain unchanged. Glass Note now travels at 24 m/s, previously 18 m/s, and its final step stops at its declared maximum travel. This makes the projectile faster without silently extending its reach. Palm's free follow-ups no longer postpone Breath regeneration.
+
+An attack commits its aim when accepted. Moving or aiming during its windup cannot rotate an already committed hit into a different direction. Palm has alternating visual strikes; Reach thrusts; Note charges an orb and projects a line; Gale expands into a circular sweep. These cues follow the real attack phases. The visual Palm chain grants no extra damage.
+
+## Input and defensive rules
+
+- A single 12-tick (0.2-second) buffer retains the latest deliberate next action. A press near the end of recovery can begin when legal; an early press expires instead of firing unexpectedly much later.
+- Held Palm is a fallback request. It cannot overwrite an explicitly queued special attack. Releasing it removes its uncommitted repeat, while the already committed strike completes.
+- Costs are charged once when an action starts, never merely because its button was pressed. Insufficient Breath, queued actions and recovery have visible feedback.
+- Evade costs 24 Breath and lasts 36 ticks. Movement is committed for 24 ticks at 9 m/s: 3.6 m of travel before collision constraints. Its existing ten-tick invulnerability window remains limited to the middle of the action.
+- Evade may cancel the latter half of attack recovery. It cannot erase startup or an active strike. Direction follows movement even when the character is aiming elsewhere.
+- Guard is directional. Blocked or invulnerable contacts do not apply knockback. Gale pushes each successfully struck opponent away from the caster.
+- Analog movement preserves magnitude, includes a dead zone and caps diagonal speed. Normal speed is 4.3 m/s, running 6.8 m/s; existing guard, attack and flag-carrier multipliers still apply.
+- Target assistance only considers opponents with a visible line of sight. Locking uses the same visibility rule, and the target card reports distance and selected move reach. It does not bypass cover or guarantee a hit.
+
+## Rendering and input architecture
+
+`realm.js` owns action acceptance, movement, contact, cost, guard, immunity and practice isolation. `combat.js` supplies shared input transforms and geometric descriptions. `combat-view.js` renders those descriptions through either camera and updates the visible combat state. Both human handlers and deterministic agent scenarios feed the same simulation input path; local duelists use the same rules.
+
+`visual.js` adds distinct 3D attack poses. `canvas-view.js` supports rotated camera projection, its inverse for aiming, visible arena cover and activity-specific minimaps. `combat-view.js` displays committed attack geometry, guard, evade and damage in both renderers. Boss ring warnings now appear at their real targeted coordinates and radius; phase-three shot warnings show the real spread.
+
+Touch uses pointer capture, cancellation and explicit cleanup. A second world pointer switches to pinch measurement. The movement stick, world look and attack controls remain separate input surfaces. The implementation was informed by the [W3C Pointer Events specification](https://www.w3.org/TR/pointerevents3/) and [MDN's multi-pointer pinch example](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events/Pinch_zoom_gestures).
+
+## Verification and limits
+
+The release adds 34 deterministic combat scenarios and three regressions executing the actual registered keyboard handlers. These cover aim commitment, buffer expiry and priority, Shift release order, fractional movement, camera transforms, cover collision, Breath accounting, guard and immunity, radial push, projectile travel, created-relic costs, practice restoration and truthful boss warnings. The full existing suite is retained.
+
+An independent agent used browser buttons and keyboard shortcuts to land all four attacks, cycle and release targets, evade, move, operate the displayed joystick, guard and run, and return to the world with supplies intact. A further compact-layout pass inspected 390 × 844, 320 × 740 and 844 × 390 CSS viewports, found overlaps and corrected them. See [the observed playtest](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/combat/human-control-playtest.md) and [release verification](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/audit/combat/release-verification.md).
+
+These are local simulation and browser checks, not evidence of network PvP latency behavior. The browser available for this review used the canvas fallback. 3D code and shared geometry were checked, but the new WebGL poses were not visually verified on a GPU in this environment. Physical multitouch, pinch on a phone and sustained finger combinations still need device testing; mouse manipulation of a displayed touch control is recorded as such.
+
+
+---
+
+## First Concord · v0.11 background
+
 # Anima Kingdoms — The First Concord
 
 12 September 2026 · connected-creation release, development build 0.11
+
+This document retains the First Concord contract. The subsequent [Living Commons release](https://github.com/venividis/Anima-Kingdoms/blob/codex/anima-living-commons/docs/BROADER-FOUNDATION.md) adds local households and a separate authenticated shared realm; its current scope and evidence supersede the corresponding future gates below.
 
 The central promise is **imagination that has consequences**. A player can author a score, connect it to a structure, give a creature an actual delivery, and see that delivery change a place. The world already contained expressive parts and bounded behaviors. This release makes several of those creations cooperate through one inspectable, conserved system.
 
@@ -107,6 +547,8 @@ The GitHub connector in this session can read and edit accessible repositories b
 
 ---
 
+## First Concord · v0.11 evidence
+
 # Anima Kingdoms verification — 12 September 2026
 
 This record separates executable simulation scenarios, actual browser interactions, and unverified product claims. An automated browser agent is an agent operating human controls, not an independent human participant.
@@ -162,6 +604,8 @@ The release provides testable working pieces and preserves their boundaries. The
 
 
 ---
+
+## Dream Foundry · v0.10 guide
 
 # AWE — the Dream Foundry
 
@@ -238,6 +682,8 @@ The next design iteration should connect one authored route to a generalized civ
 
 
 ---
+
+## Whole-game plan · v0.10 review
 
 # AWE v0.10 — whole-game release review and next gates
 
@@ -422,6 +868,8 @@ That statement should be paired with the independently established final test/ob
 
 
 ---
+
+## Creation contract · v0.10 baseline
 
 # Creation implementation contract
 
