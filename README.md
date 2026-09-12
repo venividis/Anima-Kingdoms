@@ -39,6 +39,10 @@ N Connect · V Create · T attuned relic · WASD move · drag look · wheel zoom
 
 Panels and hidden tabs pause simulation. Connected destinations also have genuine walk buttons that use the same movement and collision rules. Manual movement cancels their journey.
 
-## Repository delivery
+## Repository and source history
 
-Project name: **Anima Kingdoms**. Proposed GitHub repository: `Anima-Kingdoms` (private unless the owner chooses otherwise). Repository creation was unavailable through the session’s GitHub connector; no GitHub repository URL is invented. The source package is ready to import into an empty repository. The existing Site source retains prior history; no unrelated project was overwritten.
+Source: [venividis/Anima-Kingdoms](https://github.com/venividis/Anima-Kingdoms).
+
+The four development stages are preserved as byte-identical source snapshots in GitHub history. GitHub import commits have new identities; the exact original commit objects are retained in [`archive/Anima-Kingdoms-history.bundle`](archive/Anima-Kingdoms-history.bundle). See [import provenance](docs/SOURCE-IMPORT.md) and [independent import verification](docs/audit/github-import-verification.md).
+
+The repository is private. Importing source does not deploy a new Site or configure automatic deployment. Historical audits describing unavailable repository creation record the earlier release; the owner subsequently supplied this repository.
