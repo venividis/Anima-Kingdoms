@@ -1,0 +1,80 @@
+#combat-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#crosshair{display:none}
+.combat-tools{position:absolute;bottom:126px;left:50%;transform:translateX(-50%);display:flex;justify-content:center;gap:5px;flex-wrap:wrap;width:580px;max-width:calc(100vw - 32px)}
+.combat-tools>button{background:#0c2736e8;border:1px solid #b8d6c540;border-radius:5px;min-height:38px;padding:7px 10px;font-size:14px;white-space:nowrap}
+.combat-tools kbd{color:#dfc58e}
+.combat-readout-wrap{width:100%;text-align:center;min-height:37px;pointer-events:none}
+#combat-readout{display:block;font-size:14px;line-height:1.4;color:#e7ecd8;text-shadow:0 2px 5px #081926}
+.combat-readout-wrap>div{width:160px;max-width:80%;height:3px;margin:5px auto;background:#f1e3c122;border-radius:3px;overflow:hidden}
+#combat-progress{display:block;height:100%;background:#8cd9cd}
+#combat-readout[data-phase=windup]{color:#e8c690}#combat-readout[data-phase=strike]{color:#fff3d0}
+.abilities button{height:96px;position:relative;touch-action:none;gap:3px;min-width:60px}
+.abilities button.selected-move{background:#d2c59415}.abilities button.active-move{background:#eac58929;box-shadow:inset 0 -3px #eac589}
+.abilities button.queued-move{outline:2px solid #8de0c6;outline-offset:-2px}
+.abilities button.low-breath .move-state{color:#ffad95}
+.abilities .move-state{font-size:12px;line-height:1.35;color:#acdad4;white-space:nowrap}
+.abilities b{font-size:13px}.abilities button>span{height:27px;font-size:26px}
+#target-card{position:absolute;top:176px;left:50%;transform:translateX(-50%);text-align:center;width:290px;padding:9px 15px;border:1px solid #dfc38450;border-radius:6px;background:#102b36df;display:grid;gap:4px;pointer-events:none}
+#target-name{font:20px Georgia;color:#f5dcaa}#target-detail{font-size:13px;line-height:1.5;color:#d0ddd2}
+#target-health{width:100%;height:5px;accent-color:#f0a282}
+#practice-live{position:absolute;top:174px;right:24px;width:265px;padding:17px;background:#0c2935ed;border:1px solid #e7c88a55;border-radius:7px}
+#practice-live>strong{display:block;font-size:16px;margin:8px 0 12px;line-height:1.5}
+#practice-live p{font-size:14px;line-height:1.5;color:#c9d7cc;margin:12px 0}
+#practice-live button{font-size:13px;margin:3px 0;padding:9px;width:100%}
+.practice-checks{display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:14px;color:#aec5c0}
+.practice-checks span{padding:6px 7px;background:#bfd4be0d;border:1px solid #abcdb329;border-radius:4px}
+.practice-checks .complete{color:#bcf1da;border-color:#9adcbb80;background:#91d9b316}.practice-checks .complete::after{content:' ✓'}
+body[data-combat-mode=practice] .objective,body[data-combat-mode=practice] .materials{display:none}
+body[data-combat-mode=practice] #mode-score{display:none!important}
+.move-guide{display:grid;gap:10px}.move-guide article{border:1px solid #c6dcc730;border-left:3px solid var(--move-color);border-radius:5px;padding:13px 15px;background:#abcdb408}
+.move-guide h3{margin:0 0 6px!important;font:22px Georgia!important}.move-guide p{font-size:14px!important;margin:6px 0!important}.move-guide .timing{color:#aacdca!important;font-size:13px!important}
+.controls-facts{display:grid;grid-template-columns:auto 1fr;gap:9px 18px;font-size:15px;line-height:1.55}.controls-facts dt{color:#e4c389}.controls-facts dd{margin:0;color:#d0ded5}
+#touch-controls .pad{display:none}#move-stick{display:grid;place-items:center;position:relative;width:122px;height:122px;flex:none;border:1px solid #e1d8ac60;border-radius:50%;background:radial-gradient(circle,#90c9b916,#092935dc);touch-action:none;pointer-events:auto}
+#stick-knob{width:48px;height:48px;border:1px solid #efd7a5aa;background:#d5c99b4a;border-radius:50%;pointer-events:none}
+#move-stick small{position:absolute;bottom:10px;color:#d2dfcf;font-size:12px;letter-spacing:1.2px;pointer-events:none}
+#touch-controls .touch-right{display:grid;grid-template-columns:repeat(2,54px);gap:8px}#touch-controls .touch-right button{width:54px;height:54px;font-size:14px}
+#touch-controls .touch-right button[aria-pressed=true]{background:#c6cfa950;color:#fff0c4}
+#touch-controls .touch-right #touch-jump{grid-column:2}#interact-wrap{bottom:244px}
+@media(max-width:1100px){.combat-tools{bottom:126px;width:460px}.abilities button{min-width:56px}.abilities b{font-size:12px}.combat-tools>button{font-size:13px;padding:7px 8px}#practice-live{right:15px;width:225px}.minimap{width:110px}.minimap canvas{width:110px;height:110px}}
+@media(pointer:coarse){#touch-controls{bottom:222px}.combat-tools{bottom:130px}.objective{max-height:190px;overflow:hidden}}
+@media(max-width:650px){
+ .top{gap:5px}.navigation button:not(.connect-nav):not(.create-nav):not([aria-label=Settings]){display:none}.navigation .create-nav{display:block!important}.brand{font-size:20px;letter-spacing:2px}
+ .abilities{width:100%;justify-content:space-between}.abilities button{width:calc((100vw - 34px)/6);min-width:0;max-width:none;height:90px}.abilities .move-state{font-size:12px}.abilities b{font-size:12px}.abilities kbd{font-size:12px}
+ .combat-tools{bottom:110px;width:100%;max-width:calc(100vw - 20px);gap:4px}.combat-tools>button{font-size:12px;min-height:34px;padding:5px 7px}.combat-tools kbd{display:none}.combat-readout-wrap{min-height:31px}#combat-readout{font-size:13px}
+ .vitals{bottom:195px;width:158px;left:10px}.vitals>div:first-child{display:none}.vital label{font-size:12px}.vital progress{width:65px}.minimap{display:none}
+ #touch-controls{bottom:214px;left:17px;right:17px}#move-stick{width:110px;height:110px}#stick-knob{width:44px;height:44px}
+ .objective{top:115px;max-width:180px}.objective p:not(.eyebrow){display:none}.objective h2{font-size:20px}.objective .eyebrow{display:none}.objective .text-action{font-size:12px}
+ #target-card{top:177px;left:50%;width:245px;padding:7px 10px}#target-name{font-size:18px}#target-detail{font-size:12px}
+ #practice-live{top:116px;left:14px;right:14px;width:auto;padding:9px 12px;display:grid;grid-template-columns:1fr 1fr;gap:6px 10px}#practice-live .eyebrow,#practice-live p{display:none}#practice-live>strong{font-size:13px;margin:0;grid-column:1/-1}.practice-checks{font-size:12px;gap:4px;grid-column:1/-1;grid-template-columns:repeat(4,1fr)}.practice-checks span{padding:4px}#practice-live button{font-size:12px;margin:0;padding:7px}body[data-combat-mode=practice] #target-card{top:238px}
+ #interact-wrap{bottom:355px}#notice{top:39%;font-size:13px}#discovery{top:42%}
+}
+@media(max-height:550px){
+ .objective{display:none}.materials{display:none}#touch-controls{bottom:123px;left:16px;right:16px}#move-stick{width:100px;height:100px}.combat-tools{bottom:118px;width:440px;max-width:60vw}.combat-tools>button{min-height:30px;font-size:12px;padding:4px 6px}.combat-tools kbd{display:none}#target-card{top:97px;width:245px}#practice-live{top:115px;right:13px;width:215px;padding:10px}#practice-live p,#practice-live .eyebrow{display:none}#practice-live>strong{font-size:13px;margin:0 0 7px}#practice-live button{padding:6px}.practice-checks{font-size:12px;gap:3px}#interact-wrap{bottom:196px}.vitals{width:170px}.vitals>div:first-child{display:none}
+}
+
+body.show-touch #touch-controls{display:flex;position:absolute;left:17px;right:17px;bottom:222px;justify-content:space-between;align-items:flex-end;pointer-events:none}body.show-touch #touch-controls button{pointer-events:auto;background:#12313bdd;border:1px solid #d9e3c34b;border-radius:50%;touch-action:none}
+@media(max-width:650px){body.show-touch #touch-controls{bottom:214px}}
+@media(max-height:550px){body.show-touch #touch-controls{bottom:123px}}
+
+body[data-combat-mode=practice] #interact-wrap{display:none!important}
+
+/* Compact labels retain full accessible names and the Controls guide. */
+.move-short{display:none}
+@media(max-width:650px){
+ .move-full{display:none}.move-short{display:inline}.abilities b{line-height:1.3}.abilities button{padding:5px 1px}
+ .abilities .move-state::after{content:' Breath';font-size:10px}.abilities .active-move .move-state::after,.abilities .queued-move .move-state::after,.abilities .low-breath .move-state::after{content:''}
+ .vitals{bottom:226px}body.show-touch .vitals{bottom:336px}
+ body[data-combat-mode=practice] #target-card{top:257px}
+}
+@media(max-width:650px) and (pointer:coarse){.vitals{bottom:336px}}
+@media(max-height:550px) and (min-width:651px){
+ .minimap{display:none}.vitals{width:180px}#combat-state{display:none}
+ .abilities{position:absolute;left:50%;bottom:0;transform:translateX(-50%)}
+ #target-card{top:75px;left:16px;transform:none;width:225px}
+ #practice-live{display:grid;grid-template-columns:1fr 1fr;gap:4px;top:68px;right:14px;width:225px;padding:8px}
+ #practice-live>strong{grid-column:1/-1;font-size:12px;line-height:1.4;margin:0}.practice-checks{display:none}
+ #practice-live button{font-size:12px;line-height:1.3;margin:0;padding:5px}
+ body[data-combat-mode=practice] .area{display:none}
+ #touch-controls,body.show-touch #touch-controls{bottom:104px}
+ .combat-tools{width:410px;max-width:55vw}.combat-tools>button{font-size:12px;padding:4px 5px}
+}

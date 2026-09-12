@@ -25,6 +25,9 @@ The standard framework uses Vinext and a Workers-compatible production build. Th
 
 ## Documentation and evidence
 
+- [Current combat, movement and practice guide](docs/COMBAT-MOVEMENT.md)
+- [Combat release verification](docs/audit/combat/release-verification.md)
+
 - [Current game, whole-game plan and technical contracts](docs/ANIMA-KINGDOMS.md)
 - [Observed verification and limitations](docs/VERIFICATION-v11.md)
 - [Historical creation contract](docs/CREATION-CONTRACT.md)
@@ -35,7 +38,9 @@ The standard framework uses Vinext and a Workers-compatible production build. Th
 
 ## Controls
 
-N Connect · V Create · T attuned relic · WASD move · drag look · wheel zoom · Space jump · Shift run · C guard · R evade · E interact · 1–4 combat moves · Q worldcraft · F rain · B settlement · I character · J quests · M atlas · Escape menu/close.
+N Connect · V Create · T attuned relic · WASD / arrows move · right-drag look · wheel / pinch zoom · Space jump · Shift run · C guard · R evade · E interact · 1–4 combat moves (hold 1 for Palm) · Tab target · X release · Z center camera · H controls and safe practice · Q worldcraft · F rain · B settlement · I character · J quests · M atlas · Escape menu/close.
+
+Touch uses an analog movement stick, world-drag camera control, and visible attack / guard / run controls. The Controls panel can also show these controls on desktop.
 
 Panels and hidden tabs pause simulation. Connected destinations also have genuine walk buttons that use the same movement and collision rules. Manual movement cancels their journey.
 
