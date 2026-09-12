@@ -1,7 +1,7 @@
 // Deliberately narrow, reproducible experiments; not balance or human-play evidence.
 import fs from 'node:fs';
-import * as C from '../dist/creation.js';
-import {measure} from '../dist/rehearsal.js';
+import * as C from '../public/creation.js';
+import {measure} from '../public/rehearsal.js';
 const stamp='2026-09-11';
 const families=C.KINDS.map(k=>measure(C.seed(k)));
 const carrier=C.seed('creature');carrier.name='A patient gatherer';carrier.rules=[{when:'always',do:'harvest'}];

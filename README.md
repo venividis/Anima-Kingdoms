@@ -1,47 +1,44 @@
-# AWE — the Dream Foundry
+# Anima Kingdoms
 
-A local fantasy browser game with working creation. Play from the existing website and press **V** or choose **Create**. The complete guide, whole-game plan and evidence are at `vision.html`; the retained accountability record is at `audit.html`.
+**The First Concord** — a playable fantasy world where authored creations cooperate.
 
-## What you can make
+Compose a score. Wire it to a powered crossing. Give a creature a real delivery. Follow the actual material and charge that make the promise possible.
 
-Compose up to 32 parts into a creature, relic, structure, instrument or trial gate. Author its bounded rules, move, score or sigil course. Rehearse in a disposable world, compare actual outcomes, save/branch/share the recipe, and instantiate it with real materials. Reclaim its invested matter safely once. Five individually affordable starter recipes are supplied in a fresh world.
+Play: https://awe-first-orchard.edwincardenas.chatgpt.site
 
-The existing world contains exploration, exact water allocation, finite trading/crafting, original settlement plots and physical workers, timed combat, a Root Warden encounter, bot CTF, local two-player duels, a shooting range, Raincatch and Loom Table. This is not yet an online MMORPG, connected LLM society, renewable civilization or crypto network.
+Select **Connect (N)** for the connected-creation journey. **Create (V)** opens the five-kind blueprint workshop. The game includes exploration, timed combat, a PvE boss, physical workers and trading, water routing, bot CTF, local two-player duels, a shooting range, Raincatch, Loom Table and authored sigil trials. Local browser world; no online MMO, connected language model, wallet or token network is claimed.
+
+## Run and verify
+
+Requires Node22.13+ and pnpm. The supported framework starter and exact pnpm lockfile are included.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev
+pnpm test
+pnpm build
+```
+
+Open the local development URL, or `/play.html` for the standalone game. HTTPS or localhost with Web Locks enables automatic single-tab local saving. In contexts without Web Locks, export/import through the World Journal; automatic saving is explicitly disabled. WebGL2 is preferred; a live canvas rendering of the same simulation provides a hardware-independent fallback.
+
+The standard framework uses Vinext and a Workers-compatible production build. The gameplay modules in `public/` are framework-independent ES modules. They can also be served over an appropriate local HTTP server. Source belongs in `public/`; `dist/` is generated build output.
+
+## Documentation and evidence
+
+- [Current game, whole-game plan and technical contracts](docs/ANIMA-KINGDOMS.md)
+- [Observed verification and limitations](docs/VERIFICATION-v11.md)
+- [Historical creation contract](docs/CREATION-CONTRACT.md)
+- [Historical accountability audit](docs/ACCOUNTABILITY-AUDIT.md)
+- [Retained whole-game review](docs/WHOLE-GAME-PLAN.md)
+
+`public/vision.html` is the readable in-game design guide. `tests/` contains executable regression and scenario coverage. `docs/audit/` retains discovered failures and independent reviews. Do not interpret headless scenarios as human testing or local grants as multiplayer security.
 
 ## Controls
 
-| Input | Action |
-|---|---|
-| V / T | Creation workshop / attuned relic |
-| WASD / drag / wheel | Move / orbit / zoom |
-| Space / Left Shift | Jump / run |
-| 1 or click / 2 / 3 / 4 | Palm / Reach / Note / Gale |
-| C / R / E | Guard / evade / nearby interaction |
-| Q / F / B / I / J | Water loom / rain / settlement / character / quests |
-| M / Escape | Atlas lens / close or menu |
-| Placement: E / R / Escape | Commit current ghost / rotate / cancel |
-| Player two: arrows, K/L/O/U, P, Enter, Right Shift | Move; Palm/Reach/Note/Gale; guard; evade; run |
+N Connect · V Create · T attuned relic · WASD move · drag look · wheel zoom · Space jump · Shift run · C guard · R evade · E interact · 1–4 combat moves · Q worldcraft · F rain · B settlement · I character · J quests · M atlas · Escape menu/close.
 
-Touch buttons are included; devices, visual fidelity and keyboard rollover are not verified. Panels and hidden tabs pause simulation. No offline catch-up.
+Panels and hidden tabs pause simulation. Connected destinations also have genuine walk buttons that use the same movement and collision rules. Manual movement cancels their journey.
 
-## Implementation and evidence
+## Repository delivery
 
-- `docs/UPGRADE-v10.md`: guide, repairs, measurements and limits.
-- `docs/CREATION-CONTRACT.md`: exact schema, mechanics, custody, activities and persistence.
-- `docs/WHOLE-GAME-PLAN.md`: all major original ambitions, two critical passes and next acceptance gates.
-- `dist/creation.js`, `navigation.js`, `rehearsal.js`: bounded data/runtime modules.
-- `dist/creation-view.js`, `studio.js`, `studio.css`: shared procedural geometry and editing interface.
-- `dist/realm.js`, `world.js`, `pavilions.js`: connected original world solvers.
-- `tests/creation.test.mjs`: meaningful lifecycle, regression and selected application-function tests.
-- `tests/creation-scenarios.mjs`: six family experiments plus 46 full-budget bolt allocations.
-- `docs/verification-v10.txt`, `docs/creation-scenarios-v10.json`: exact recorded evidence.
-
-Run `npm test`. Reproduce the bounded experiments with `node tests/creation-scenarios.mjs`. Documentation builders accept an installed `marked` ES-module path; generated pages have no runtime dependency on it. Plain static output is `dist`; WebGL 2 and HTTP module serving are required. There is no external runtime dependency, wallet or API key.
-
-The release records 91 automated methods (61 retained plus 30 new). One retained method contains 252 historical water fixtures; those are not extra gameplay tests. Tests do not establish browser usability, fun, balance, frame rate, online capacity or economic sustainability.
-
-## Persistence
-
-The v0.10 profile accepts its own snapshots and migrates valid v0.9 snapshots. Rehearsal autosave always serializes the separately retained original world; lab supplies never merge. World import replaces a validated snapshot. Web Locks serialize active local saving where available; without them, play/export remain available and autosave is disabled. No shared-server or external ownership authority is implied. Earlier v0.8 worlds are not migrated.
-
-The old README is preserved at `docs/README-v09.md`. Current and historical source/reviews remain versioned with this Site.
+Project name: **Anima Kingdoms**. Proposed GitHub repository: `Anima-Kingdoms` (private unless the owner chooses otherwise). Repository creation was unavailable through the session’s GitHub connector; no GitHub repository URL is invented. The source package is ready to import into an empty repository. The existing Site source retains prior history; no unrelated project was overwritten.

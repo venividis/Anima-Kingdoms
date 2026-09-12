@@ -2,11 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
-import * as R from '../dist/realm.js';
-import * as C from '../dist/creation.js';
-import {measure,makeRehearsal} from '../dist/rehearsal.js';
-import {waypoint} from '../dist/navigation.js';
-import {CreationMeshes} from '../dist/creation-view.js';
+import * as R from '../public/realm.js';
+import * as C from '../public/creation.js';
+import {measure,makeRehearsal} from '../public/rehearsal.js';
+import {waypoint} from '../public/navigation.js';
+import {CreationMeshes} from '../public/creation-view.js';
 const advance=(s,n,input={})=>{for(let i=0;i<n;i++)R.tick(s,typeof input==='function'?input(s):input);};
 const conserved=s=>{assert.deepEqual(R.materialLedger(s),C.emptyBag());assert.deepEqual(R.Rain.ledger(s.rain),{water:0,money:50,fiber:48,focus:24,food:4});};
 const fund=(s,b)=>{for(const[k,n]of Object.entries(C.compile(b).cost)){assert.ok(s.reserve[k]>=n);s.reserve[k]-=n;s.pack[k]+=n;}};
@@ -38,11 +38,11 @@ test('failed path searches are cached and topology changes invalidate the failur
 test('controlled experiments reproduce actual family behaviors with zero material delta and replayable recipes',()=>{const rows=C.KINDS.map(k=>measure(C.seed(k)));for(const r of rows){assert.deepEqual(r.ledgerDelta,C.emptyBag());C.compile(r.blueprint);}assert.equal(rows[0].damage,34);assert.equal(rows[1].damage,34);assert.equal(rows[2].farBank,true);assert.equal(rows[3].notes,8);assert.equal(rows[3].healing,24);assert.equal(rows[4].trialResult,'completed');assert.equal(rows[4].farBank,false);const recipe=C.seed('relic'),a=measure(recipe),b=measure(recipe);assert.deepEqual(a,b);recipe.tempo=7;recipe.power=1;const c=measure(recipe);assert.notEqual(c.firstImpactTick,a.firstImpactTick);});
 test('rehearsal issuance never mutates its source recipe and cannot be imported as a real world',()=>{const b=C.seed(),before=JSON.stringify(b),lab=makeRehearsal(b);assert.equal(JSON.stringify(b),before);assert.throws(()=>R.restore(R.snapshot(lab.world)),/ledger/);});
 test('shared creation geometry and transforms stay finite for every starter and role',()=>{let draws=0;const r={mesh:g=>{assert.ok(g.data.length>0&&g.data.every(Number.isFinite));return g;},draw:(mesh,m,opts)=>{draws++;assert.ok([...m].every(Number.isFinite));assert.ok(opts.tint.every(Number.isFinite));}};const meshes=new CreationMeshes(r);for(const kind of C.KINDS)meshes.draw(C.seed(kind),3,0,5,Math.PI/4,10,{selected:0});assert.ok(draws>20);});
-const app=fs.readFileSync(new URL('../dist/app.js',import.meta.url),'utf8');
+const app=fs.readFileSync(new URL('../public/app.js',import.meta.url),'utf8');
 const sourceFunction=name=>app.split('\n').find(line=>line.startsWith('function '+name+'('));
 test('actual landmark dispatch reaches every named interface including Serein without ReferenceError',()=>{const calls=[],ctx={state:{mode:'world'},near:null,notice:()=>{},creationDetails:()=>{},change:fn=>fn(),R:{gather:()=>{}},Math};for(const n of['loom','market','settlement','games','companion','quests','journal','rangePanel','activityPanel'])ctx[n]=()=>calls.push(n);vm.createContext(ctx);vm.runInContext(sourceFunction('interact'),ctx);for(const place of R.LANDMARKS){ctx.near=place;vm.runInContext('interact()',ctx);}assert.equal(calls.length,R.LANDMARKS.length);assert.ok(calls.includes('companion'));});
 test('actual Create button bindings discard click events before opening the blueprint editor',()=>{for(const id of['open-creator','settings-create']){const pattern=new RegExp("bind\\('"+id+"',\\(\\)=>openFoundry\\(\\)\\)");const line=app.match(pattern)?.[0];assert.ok(line,id);let callback,argument='unset';vm.runInNewContext(line,{bind:(id,fn)=>callback=fn,openFoundry:b=>argument=b});callback({type:'click',target:{}});assert.equal(argument,undefined);}});
-test('actual autosave path serializes the original world during a disposable rehearsal',()=>{const original=R.newRealm(),lab=makeRehearsal(C.seed());let saved;const ctx={started:true,saveLock:true,pausedByTab:false,rehearsal:{original},state:lab.world,SAVE:'test',R,localStorage:{setItem:(key,value)=>saved=JSON.parse(value)},saveFailure:false,notice:()=>{}};vm.createContext(ctx);vm.runInContext(sourceFunction('save')+';save();',ctx);assert.equal(saved.id,original.id);assert.notEqual(saved.id,lab.world.id);conserved(R.restore(saved));});
+test('actual autosave path serializes the original world during a disposable rehearsal',()=>{const original=R.newRealm(),lab=makeRehearsal(C.seed());let saved;const ctx={started:true,saveLock:true,pausedByTab:false,recoveryRaw:null,rehearsal:{original},state:lab.world,SAVE:'test',R,localStorage:{setItem:(key,value)=>saved=JSON.parse(value)},saveFailure:false,notice:()=>{}};vm.createContext(ctx);vm.runInContext(sourceFunction('save')+';save();',ctx);assert.equal(saved.id,original.id);assert.notEqual(saved.id,lab.world.id);conserved(R.restore(saved));});
 
 test('a stranded authored carrier returns to its entry bank with the same cargo',()=>{const {s,e}=make();e.x=0;e.z=-13;e.bank='far';e.cargo={item:'wood',count:1};s.reserve.wood--;R.rescue(s);assert.equal(e.z,-21);assert.equal(e.cargo.count,1);conserved(s);R.restore(R.snapshot(s));});
 

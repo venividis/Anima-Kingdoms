@@ -1,0 +1,1 @@
+export default function Kingdoms(){return <main style={{position:"fixed",inset:0,background:"#0c2533"}}><iframe title="Anima Kingdoms game" src="/play.html" style={{border:0,width:"100%",height:"100%"}} allow="autoplay; fullscreen" /></main>;}

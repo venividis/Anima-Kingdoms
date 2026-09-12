@@ -1,0 +1,842 @@
+{
+  "label": "Independent Kingdoms ready2 adversarial execution",
+  "method": "state-informed typed commands plus real simulation ticks; bridgehead fixture begins at merchant, not browser clicking",
+  "passed": 25,
+  "failed": 0,
+  "results": [
+    {
+      "id": "A01",
+      "label": "Rejected command envelope and payload operations are atomic",
+      "status": "passed",
+      "evidence": [
+        {
+          "case": {
+            "world": "another"
+          },
+          "error": "Command belongs to another world or rules version."
+        },
+        {
+          "case": {
+            "rules": "another"
+          },
+          "error": "Command belongs to another world or rules version."
+        },
+        {
+          "case": {
+            "revision": 0
+          },
+          "error": "World connections changed. Inspect again before acting."
+        },
+        {
+          "case": {
+            "op": "unknown",
+            "payload": {}
+          },
+          "error": "Use the exact typed payload for this operation."
+        },
+        {
+          "case": {
+            "op": "walk",
+            "payload": {
+              "x": null,
+              "z": 0
+            }
+          },
+          "error": "Choose a destination inside the valley."
+        },
+        {
+          "case": {
+            "op": "walk",
+            "payload": {
+              "x": 0,
+              "z": 0,
+              "teleport": true
+            }
+          },
+          "error": "Use the exact typed payload for this operation."
+        },
+        {
+          "case": {
+            "op": "link",
+            "payload": {
+              "source": "c0b552ef-3a78-4775-86ac-017a6e4e5e24",
+              "target": "8b2d4c71-5ca6-4680-9324-90f6aa0df30a",
+              "pitches": [
+                1,
+                1
+              ]
+            }
+          },
+          "error": "Choose distinct accepted pitches from zero to twelve."
+        },
+        {
+          "case": {
+            "controller": "agent"
+          },
+          "error": "The human has not granted this agent authority, or revoked its grant."
+        }
+      ]
+    },
+    {
+      "id": "A02",
+      "label": "Exact accepted command replays without duplicate resource consumption",
+      "status": "passed",
+      "evidence": {
+        "receipt": {
+          "key": "audit-7",
+          "bytes": "{\"world\":\"00bfab26-1536-4438-ab3d-6b2e07a13ebf\",\"rules\":\"anima-concord-1\",\"controller\":\"human\",\"epoch\":0,\"revision\":2,\"key\":\"audit-7\",\"op\":\"fuel\",\"payload\":{\"id\":\"9ef1f9fa-5a38-4e12-a6a3-36dcfb02f323\"}}",
+          "revision": 3,
+          "op": "fuel",
+          "result": null
+        },
+        "charge": {
+          "issued": 24,
+          "source": 24,
+          "flight": 0,
+          "receiver": 0,
+          "spent": 0,
+          "dissipated": 0
+        }
+      }
+    },
+    {
+      "id": "A02b",
+      "label": "Guide receipt replay retains only three creations and no second spending",
+      "status": "passed",
+      "evidence": {
+        "count": 3,
+        "receipt": {
+          "key": "audit-9",
+          "bytes": "{\"world\":\"29f96075-8c43-4795-a9c7-f993d4d25aa4\",\"rules\":\"anima-concord-1\",\"controller\":\"human\",\"epoch\":0,\"revision\":0,\"key\":\"audit-9\",\"op\":\"guide\",\"payload\":{}}",
+          "revision": 1,
+          "op": "guide",
+          "result": {
+            "source": "42716782-9236-4b08-bd28-7568ed38e580",
+            "receiver": "06ce7288-9766-4b73-a205-1128d2eedb0b",
+            "carrier": "6dc7d4bb-23b2-452e-8f22-c2614e0566ee"
+          }
+        }
+      }
+    },
+    {
+      "id": "A03",
+      "label": "Changed payload with accepted key is rejected atomically",
+      "status": "passed",
+      "evidence": "This idempotency key was already used for a different command."
+    },
+    {
+      "id": "A04",
+      "label": "Agent grant budget and revocation are enforced",
+      "status": "passed",
+      "evidence": {
+        "exhausted": "The agent command budget is exhausted.",
+        "revoked": "The human has not granted this agent authority, or revoked its grant."
+      }
+    },
+    {
+      "id": "C01",
+      "label": "Physical two-stone delivery pays four Marks exactly once",
+      "status": "passed",
+      "evidence": {
+        "ticks": 2980,
+        "balances": {
+          "human": 16,
+          "agent": 0,
+          "keeper": 22,
+          "carrier": 0
+        },
+        "order": {
+          "id": "orchard-hearth",
+          "item": "stone",
+          "need": 2,
+          "delivered": 2,
+          "reward": 4,
+          "reserved": 0,
+          "paid": true,
+          "x": 8,
+          "z": -27
+        },
+        "job": [
+          {
+            "id": "0e904d16-7850-4047-88b4-1167282f8c1e",
+            "carrier": "29f6cc88-3fc5-4afd-86a5-a2e770c15a39",
+            "order": "orchard-hearth",
+            "pickup": {
+              "x": 0.1423604293307999,
+              "z": -3.430558282676797
+            },
+            "phase": "return",
+            "wait": "No passable route. Power a span, supply rain, or build a permanent crossing.",
+            "cause": 33
+          }
+        ],
+        "carrier": {
+          "x": 7.205658756956727,
+          "z": -26.02675754145312
+        },
+        "invariants": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "charge": {
+            "issued": 24,
+            "source": 16,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 8,
+            "dissipated": 0
+          },
+          "money": 50,
+          "order": {
+            "id": "orchard-hearth",
+            "item": "stone",
+            "need": 2,
+            "delivered": 2,
+            "reward": 4,
+            "reserved": 0,
+            "paid": true,
+            "x": 8,
+            "z": -27
+          }
+        }
+      }
+    },
+    {
+      "id": "C02",
+      "label": "Cancellation before pickup spends no stone",
+      "status": "passed",
+      "evidence": {
+        "materials": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "charge": {
+          "issued": 24,
+          "source": 21,
+          "flight": 3,
+          "receiver": 0,
+          "spent": 0,
+          "dissipated": 0
+        },
+        "money": 50,
+        "order": {
+          "id": "orchard-hearth",
+          "item": "stone",
+          "need": 2,
+          "delivered": 0,
+          "reward": 4,
+          "reserved": 4,
+          "paid": false,
+          "x": 8,
+          "z": -27
+        }
+      }
+    },
+    {
+      "id": "C03",
+      "label": "Cancellation during outbound cargo returns the actual unit",
+      "status": "passed",
+      "evidence": {
+        "materials": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "charge": {
+          "issued": 24,
+          "source": 17,
+          "flight": 2,
+          "receiver": 4,
+          "spent": 1,
+          "dissipated": 0
+        },
+        "money": 50,
+        "order": {
+          "id": "orchard-hearth",
+          "item": "stone",
+          "need": 2,
+          "delivered": 0,
+          "reward": 4,
+          "reserved": 4,
+          "paid": false,
+          "x": 8,
+          "z": -27
+        }
+      }
+    },
+    {
+      "id": "C04",
+      "label": "Cancel after partial delivery preserves consumed first stone",
+      "status": "passed",
+      "evidence": {
+        "materials": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "charge": {
+          "issued": 24,
+          "source": 16,
+          "flight": 0,
+          "receiver": 5,
+          "spent": 3,
+          "dissipated": 0
+        },
+        "money": 50,
+        "order": {
+          "id": "orchard-hearth",
+          "item": "stone",
+          "need": 2,
+          "delivered": 1,
+          "reward": 4,
+          "reserved": 4,
+          "paid": false,
+          "x": 8,
+          "z": -27
+        }
+      }
+    },
+    {
+      "id": "C06",
+      "label": "Reclaim connected source and active courier is atomic",
+      "status": "passed",
+      "evidence": {
+        "first": "Disconnect this creation’s wires before reclaiming it.",
+        "second": "Finish or cancel the civic consignment before reclaiming this courier."
+      }
+    },
+    {
+      "id": "S01",
+      "label": "Checkpoint preserves in-flight connection packets and future arrival",
+      "status": "passed",
+      "evidence": {
+        "materials": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "charge": {
+          "issued": 24,
+          "source": 21,
+          "flight": 2,
+          "receiver": 0,
+          "spent": 1,
+          "dissipated": 0
+        },
+        "money": 50,
+        "order": {
+          "id": "orchard-hearth",
+          "item": "stone",
+          "need": 2,
+          "delivered": 0,
+          "reward": 4,
+          "reserved": 4,
+          "paid": false,
+          "x": 8,
+          "z": -27
+        }
+      }
+    },
+    {
+      "id": "S03",
+      "label": "Checkpoint at every cargo transition retains exactly-once completion",
+      "status": "passed",
+      "evidence": {
+        "checkpoints": [
+          {
+            "key": "0:pickup",
+            "tick": 339
+          },
+          {
+            "key": "0:out",
+            "tick": 353
+          },
+          {
+            "key": "1:return",
+            "tick": 920
+          },
+          {
+            "key": "1:pickup",
+            "tick": 1464
+          },
+          {
+            "key": "1:out",
+            "tick": 1465
+          },
+          {
+            "key": "2:return",
+            "tick": 1980
+          }
+        ],
+        "order": {
+          "id": "orchard-hearth",
+          "item": "stone",
+          "need": 2,
+          "delivered": 2,
+          "reward": 4,
+          "reserved": 0,
+          "paid": true,
+          "x": 8,
+          "z": -27
+        }
+      }
+    },
+    {
+      "id": "S04a",
+      "label": "Unknown endpoint and impossible charge corruption are rejected",
+      "status": "passed",
+      "evidence": [
+        "Malformed Anima Kingdoms connection state.",
+        "Malformed Anima Kingdoms connection state.",
+        "Malformed Anima Kingdoms connection state."
+      ]
+    },
+    {
+      "id": "S04b",
+      "label": "Lease far beyond maximum charge duration is rejected",
+      "status": "passed",
+      "evidence": "Malformed Anima Kingdoms connection state."
+    },
+    {
+      "id": "S04c",
+      "label": "Receipt operation must agree with its original typed command",
+      "status": "passed",
+      "evidence": "Malformed Anima Kingdoms connection state."
+    },
+    {
+      "id": "S05",
+      "label": "Known legal far-east footprint is now rejected before material spending",
+      "status": "passed",
+      "evidence": "Keep every rotated physical corner inside the valley bounds."
+    },
+    {
+      "id": "S06",
+      "label": "Prior v0.10 creation world migrates without property loss",
+      "status": "passed",
+      "evidence": {
+        "oldProfile": "awe-dream-foundry-0.10.0",
+        "newProfile": "awe-dream-foundry-0.10.0",
+        "kingdoms": true
+      }
+    },
+    {
+      "id": "S06b",
+      "label": "Accepted legacy overhanging structure cannot create a new unloadable save",
+      "status": "passed",
+      "evidence": {
+        "hero": 54.96833333333313,
+        "creature": 52.50000000000004
+      }
+    },
+    {
+      "id": "C03b",
+      "label": "Cancelled cargo waits for its owner at the fixed pickup",
+      "status": "passed",
+      "evidence": {
+        "materials": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "charge": {
+          "issued": 24,
+          "source": 16,
+          "flight": 0,
+          "receiver": 4,
+          "spent": 4,
+          "dissipated": 0
+        },
+        "money": 50,
+        "order": {
+          "id": "orchard-hearth",
+          "item": "stone",
+          "need": 2,
+          "delivered": 0,
+          "reward": 4,
+          "reserved": 4,
+          "paid": false,
+          "x": 8,
+          "z": -27
+        }
+      }
+    },
+    {
+      "id": "P01",
+      "label": "Invited agent completes connected delivery and courier return through typed commands",
+      "status": "passed",
+      "evidence": {
+        "setup": "Human merchant fixture buys one existing crystal and grants24 typed commands; every subsequent action uses controller agent.",
+        "ticks": 2582,
+        "commands": [
+          {
+            "request": {
+              "world": "230cae1a-63e0-47ba-8b1e-16b55564afda",
+              "rules": "anima-concord-1",
+              "controller": "agent",
+              "epoch": 1,
+              "revision": 1,
+              "key": "audit-82",
+              "op": "walk",
+              "payload": {
+                "x": 0,
+                "z": -4
+              }
+            },
+            "receipt": {
+              "key": "audit-82",
+              "bytes": "{\"world\":\"230cae1a-63e0-47ba-8b1e-16b55564afda\",\"rules\":\"anima-concord-1\",\"controller\":\"agent\",\"epoch\":1,\"revision\":1,\"key\":\"audit-82\",\"op\":\"walk\",\"payload\":{\"x\":0,\"z\":-4}}",
+              "revision": 2,
+              "op": "walk",
+              "result": null
+            }
+          },
+          {
+            "request": {
+              "world": "230cae1a-63e0-47ba-8b1e-16b55564afda",
+              "rules": "anima-concord-1",
+              "controller": "agent",
+              "epoch": 1,
+              "revision": 2,
+              "key": "audit-83",
+              "op": "guide",
+              "payload": {}
+            },
+            "receipt": {
+              "key": "audit-83",
+              "bytes": "{\"world\":\"230cae1a-63e0-47ba-8b1e-16b55564afda\",\"rules\":\"anima-concord-1\",\"controller\":\"agent\",\"epoch\":1,\"revision\":2,\"key\":\"audit-83\",\"op\":\"guide\",\"payload\":{}}",
+              "revision": 3,
+              "op": "guide",
+              "result": {
+                "source": "99135532-09a4-43ee-9462-7ce7409f596c",
+                "receiver": "a7692dde-ba90-4551-a7ae-5cc1296e15f5",
+                "carrier": "bb21e6f1-8186-45c2-9939-08f32b31664e"
+              }
+            }
+          },
+          {
+            "request": {
+              "world": "230cae1a-63e0-47ba-8b1e-16b55564afda",
+              "rules": "anima-concord-1",
+              "controller": "agent",
+              "epoch": 1,
+              "revision": 3,
+              "key": "audit-84",
+              "op": "fuel",
+              "payload": {
+                "id": "99135532-09a4-43ee-9462-7ce7409f596c"
+              }
+            },
+            "receipt": {
+              "key": "audit-84",
+              "bytes": "{\"world\":\"230cae1a-63e0-47ba-8b1e-16b55564afda\",\"rules\":\"anima-concord-1\",\"controller\":\"agent\",\"epoch\":1,\"revision\":3,\"key\":\"audit-84\",\"op\":\"fuel\",\"payload\":{\"id\":\"99135532-09a4-43ee-9462-7ce7409f596c\"}}",
+              "revision": 4,
+              "op": "fuel",
+              "result": null
+            }
+          },
+          {
+            "request": {
+              "world": "230cae1a-63e0-47ba-8b1e-16b55564afda",
+              "rules": "anima-concord-1",
+              "controller": "agent",
+              "epoch": 1,
+              "revision": 4,
+              "key": "audit-85",
+              "op": "feed",
+              "payload": {
+                "id": "bb21e6f1-8186-45c2-9939-08f32b31664e"
+              }
+            },
+            "receipt": {
+              "key": "audit-85",
+              "bytes": "{\"world\":\"230cae1a-63e0-47ba-8b1e-16b55564afda\",\"rules\":\"anima-concord-1\",\"controller\":\"agent\",\"epoch\":1,\"revision\":4,\"key\":\"audit-85\",\"op\":\"feed\",\"payload\":{\"id\":\"bb21e6f1-8186-45c2-9939-08f32b31664e\"}}",
+              "revision": 5,
+              "op": "feed",
+              "result": null
+            }
+          },
+          {
+            "request": {
+              "world": "230cae1a-63e0-47ba-8b1e-16b55564afda",
+              "rules": "anima-concord-1",
+              "controller": "agent",
+              "epoch": 1,
+              "revision": 5,
+              "key": "audit-86",
+              "op": "perform",
+              "payload": {
+                "id": "99135532-09a4-43ee-9462-7ce7409f596c"
+              }
+            },
+            "receipt": {
+              "key": "audit-86",
+              "bytes": "{\"world\":\"230cae1a-63e0-47ba-8b1e-16b55564afda\",\"rules\":\"anima-concord-1\",\"controller\":\"agent\",\"epoch\":1,\"revision\":5,\"key\":\"audit-86\",\"op\":\"perform\",\"payload\":{\"id\":\"99135532-09a4-43ee-9462-7ce7409f596c\"}}",
+              "revision": 6,
+              "op": "perform",
+              "result": null
+            }
+          },
+          {
+            "request": {
+              "world": "230cae1a-63e0-47ba-8b1e-16b55564afda",
+              "rules": "anima-concord-1",
+              "controller": "agent",
+              "epoch": 1,
+              "revision": 6,
+              "key": "audit-87",
+              "op": "assign",
+              "payload": {
+                "carrier": "bb21e6f1-8186-45c2-9939-08f32b31664e"
+              }
+            },
+            "receipt": {
+              "key": "audit-87",
+              "bytes": "{\"world\":\"230cae1a-63e0-47ba-8b1e-16b55564afda\",\"rules\":\"anima-concord-1\",\"controller\":\"agent\",\"epoch\":1,\"revision\":6,\"key\":\"audit-87\",\"op\":\"assign\",\"payload\":{\"carrier\":\"bb21e6f1-8186-45c2-9939-08f32b31664e\"}}",
+              "revision": 7,
+              "op": "assign",
+              "result": null
+            }
+          },
+          {
+            "request": {
+              "world": "230cae1a-63e0-47ba-8b1e-16b55564afda",
+              "rules": "anima-concord-1",
+              "controller": "agent",
+              "epoch": 1,
+              "revision": 11,
+              "key": "audit-88",
+              "op": "perform",
+              "payload": {
+                "id": "99135532-09a4-43ee-9462-7ce7409f596c"
+              }
+            },
+            "receipt": {
+              "key": "audit-88",
+              "bytes": "{\"world\":\"230cae1a-63e0-47ba-8b1e-16b55564afda\",\"rules\":\"anima-concord-1\",\"controller\":\"agent\",\"epoch\":1,\"revision\":11,\"key\":\"audit-88\",\"op\":\"perform\",\"payload\":{\"id\":\"99135532-09a4-43ee-9462-7ce7409f596c\"}}",
+              "revision": 12,
+              "op": "perform",
+              "result": null
+            }
+          }
+        ],
+        "remaining": 17,
+        "carrier": {
+          "x": 0.2498826803997337,
+          "z": -4.699126231095529
+        },
+        "balances": {
+          "human": 16,
+          "agent": 0,
+          "keeper": 22,
+          "carrier": 0
+        },
+        "invariants": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "charge": {
+            "issued": 24,
+            "source": 8,
+            "flight": 0,
+            "receiver": 4,
+            "spent": 12,
+            "dissipated": 0
+          },
+          "money": 50,
+          "order": {
+            "id": "orchard-hearth",
+            "item": "stone",
+            "need": 2,
+            "delivered": 2,
+            "reward": 4,
+            "reserved": 0,
+            "paid": true,
+            "x": 8,
+            "z": -27
+          }
+        }
+      }
+    },
+    {
+      "id": "E03",
+      "label": "Activity pause preserves connection clock and pending packet deadlines",
+      "status": "passed",
+      "evidence": {
+        "before": 339,
+        "after": 340
+      }
+    },
+    {
+      "id": "E01",
+      "label": "Pitch filter rejects every unaccepted score note without spending charge",
+      "status": "passed",
+      "evidence": {
+        "materials": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "charge": {
+          "issued": 24,
+          "source": 24,
+          "flight": 0,
+          "receiver": 0,
+          "spent": 0,
+          "dissipated": 0
+        },
+        "money": 50,
+        "order": {
+          "id": "orchard-hearth",
+          "item": "stone",
+          "need": 2,
+          "delivered": 0,
+          "reward": 4,
+          "reserved": 4,
+          "paid": false,
+          "x": 8,
+          "z": -27
+        }
+      }
+    },
+    {
+      "id": "E02",
+      "label": "Powered gate shares collision state and waits safely for an occupying body",
+      "status": "passed",
+      "evidence": {
+        "receiver": {
+          "id": "e53483e7-bebf-401e-92be-48a754818f10",
+          "revision": 1,
+          "kind": "gate",
+          "charge": 0,
+          "until": 391,
+          "status": "dormant",
+          "cause": 19
+        },
+        "invariants": {
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          },
+          "charge": {
+            "issued": 24,
+            "source": 22,
+            "flight": 0,
+            "receiver": 0,
+            "spent": 2,
+            "dissipated": 0
+          },
+          "money": 50,
+          "order": {
+            "id": "orchard-hearth",
+            "item": "stone",
+            "need": 2,
+            "delivered": 0,
+            "reward": 4,
+            "reserved": 4,
+            "paid": false,
+            "x": 8,
+            "z": -27
+          }
+        }
+      }
+    },
+    {
+      "id": "E05",
+      "label": "Fanout debits one charge per actual receiver packet",
+      "status": "passed",
+      "evidence": {
+        "materials": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0
+        },
+        "charge": {
+          "issued": 24,
+          "source": 20,
+          "flight": 0,
+          "receiver": 0,
+          "spent": 4,
+          "dissipated": 0
+        },
+        "money": 50,
+        "order": {
+          "id": "orchard-hearth",
+          "item": "stone",
+          "need": 2,
+          "delivered": 0,
+          "reward": 4,
+          "reserved": 4,
+          "paid": false,
+          "x": 8,
+          "z": -27
+        }
+      }
+    },
+    {
+      "id": "S08",
+      "label": "Saving during each arena restores pending world work at its entrance",
+      "status": "passed",
+      "evidence": {
+        "fixtures": "Trial case transfers needed seed materials from existing reserve to pack for entrance setup; this is explicitly test-only, not agent gameplay.",
+        "result": [
+          {
+            "mode": "duel",
+            "clock": 439,
+            "status": "active"
+          },
+          {
+            "mode": "ctf",
+            "clock": 439,
+            "status": "active"
+          },
+          {
+            "mode": "boss",
+            "clock": 439,
+            "status": "active"
+          },
+          {
+            "mode": "trial",
+            "clock": 439,
+            "status": "active"
+          }
+        ]
+      }
+    }
+  ]
+}

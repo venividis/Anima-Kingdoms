@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as W from '../dist/world.js';
-import {Geometry,lookAt,perspective,multiply,project,transform} from '../dist/engine.js';
-import {makeScene,channelGeometry} from '../dist/scene.js';
+import * as W from '../public/world.js';
+import {Geometry,lookAt,perspective,multiply,project,transform} from '../public/engine.js';
+import {makeScene,channelGeometry} from '../public/scene.js';
 import fs from 'node:fs';
 const check=w=>assert.deepEqual(W.ledger(w),{water:0,money:50,fiber:48,focus:24,food:4});
 const braid=()=>{const w=W.genesis();W.installBraid(w);return w;};
@@ -34,5 +34,5 @@ test('save validation rejects malformed, missing and inconsistent accounts',()=>
 test('new world is independent; no merging conserved assets',()=>{const a=braid(),b=W.genesis();W.pulse(a);assert.equal(b.fiber.human,24);assert.equal(b.pulse,0);check(a);check(b);});
 test('camera matrix projects its target to the viewport center',()=>{const m=multiply(perspective(1,16/9,.1,400),lookAt([10,10,10],[0,0,0]));const p=project([0,0,0],m,1600,900);assert.ok(Math.abs(p.x-800)<.001&&Math.abs(p.y-450)<.001&&p.visible);assert.ok(!project([20,20,20],m,1600,900).visible);});
 test('all generated scene vertices, normals and colors are finite',()=>{let total=0;const renderer={mesh:g=>{assert.ok(g.data.length>0);assert.equal(g.data.length%9,0);for(const n of g.data)assert.ok(Number.isFinite(n));total+=g.data.length/9;return{count:g.data.length/9};}};const m=makeScene(renderer);assert.ok(m.bridge.count>0&&m.closed.count>0);assert.ok(total<1000000);const paths=channelGeometry(Object.fromEntries(W.BRAID.map(([from,to,capacity])=>[from+'>'+to,{from,to,capacity}])));for(const n of paths.data)assert.ok(Number.isFinite(n));});
-test('all authored static asset references resolve',()=>{for(const file of['index.html','app.js','scene.js','audit.html']){const text=fs.readFileSync(new URL('../dist/'+file,import.meta.url),'utf8');for(const m of text.matchAll(/(?:src=|href=)["'](\.\/[^"']+)["']/g))assert.ok(fs.existsSync(new URL('../dist/'+m[1],import.meta.url)));}for(const file of['assets/first-orchard-panorama.png','assets/mark.svg','interface.css','engine.js','world.js'])assert.ok(fs.existsSync(new URL('../dist/'+file,import.meta.url)));});
+test('all authored static asset references resolve',()=>{for(const file of['play.html','app.js','scene.js','audit.html']){const text=fs.readFileSync(new URL('../public/'+file,import.meta.url),'utf8');for(const m of text.matchAll(/(?:src=|href=)["'](\.\/[^"']+)["']/g))assert.ok(fs.existsSync(new URL('../public/'+m[1],import.meta.url)));}for(const file of['assets/first-orchard-panorama.png','assets/mark.svg','interface.css','engine.js','world.js'])assert.ok(fs.existsSync(new URL('../public/'+file,import.meta.url)));});
 test('browser water solver matches 252 exact inherited Python fixtures',()=>{const cases=JSON.parse(fs.readFileSync(new URL('./inherited-water-fixtures.json',import.meta.url),'utf8'));assert.equal(cases.length,252);for(const c of cases)assert.deepEqual(W.routeWater(c.supply,c.edges,c.priority),c.expected);});

@@ -1,5 +1,5 @@
 // Reproducible legal-input policy experiments. Not a browser or human playtest.
-import * as R from '../dist/realm.js';
+import * as R from '../public/realm.js';
 import fs from 'node:fs';
 const results=[];
 for(const policy of ['gale-circle','thread-rush']){

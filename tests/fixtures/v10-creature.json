@@ -1,0 +1,521 @@
+{
+  "profile": "awe-dream-foundry-0.10.0",
+  "creation": {
+    "schema": "awe-blueprint-1",
+    "drafts": [],
+    "instances": [
+      {
+        "id": "e852ef7b-fbee-4920-8bf7-95794eeffefa",
+        "blueprint": {
+          "schema": "awe-blueprint-1",
+          "id": "8b4d3c9a-4efa-4ce1-95b7-978956bd8886",
+          "revision": 1,
+          "parent": null,
+          "name": "Lanternwing",
+          "kind": "creature",
+          "material": "wood",
+          "power": 4,
+          "reach": 4,
+          "tempo": 4,
+          "verb": "bolt",
+          "rules": [
+            {
+              "when": "threat",
+              "do": "guard"
+            },
+            {
+              "when": "always",
+              "do": "follow"
+            }
+          ],
+          "resource": "wood",
+          "score": [
+            0,
+            4,
+            7,
+            12,
+            7,
+            4,
+            2,
+            0
+          ],
+          "beat": 24,
+          "voice": "mend",
+          "course": [
+            {
+              "x": -8,
+              "z": 6
+            },
+            {
+              "x": -8,
+              "z": -6
+            },
+            {
+              "x": 0,
+              "z": -10
+            },
+            {
+              "x": 8,
+              "z": -6
+            },
+            {
+              "x": 8,
+              "z": 6
+            }
+          ],
+          "seconds": 60,
+          "order": "sequence",
+          "parts": [
+            {
+              "shape": "orb",
+              "x": 0,
+              "y": 1,
+              "z": 0,
+              "w": 1,
+              "h": 1.1,
+              "d": 1.3,
+              "color": "#61e1d2",
+              "role": "ornament",
+              "yaw": 0
+            },
+            {
+              "shape": "orb",
+              "x": 0,
+              "y": 1.6,
+              "z": 0.5,
+              "w": 0.7,
+              "h": 0.6,
+              "d": 0.7,
+              "color": "#f5ce83",
+              "role": "ornament",
+              "yaw": 0
+            },
+            {
+              "shape": "box",
+              "x": -0.95,
+              "y": 1.3,
+              "z": 0,
+              "w": 1.7,
+              "h": 0.08,
+              "d": 0.8,
+              "color": "#58baf5",
+              "role": "ornament",
+              "yaw": -18
+            },
+            {
+              "shape": "box",
+              "x": 0.95,
+              "y": 1.3,
+              "z": 0,
+              "w": 1.7,
+              "h": 0.08,
+              "d": 0.8,
+              "color": "#58baf5",
+              "role": "ornament",
+              "yaw": 18
+            },
+            {
+              "shape": "spire",
+              "x": 0,
+              "y": 2,
+              "z": 0.55,
+              "w": 0.25,
+              "h": 0.7,
+              "d": 0.25,
+              "color": "#f5ce83",
+              "role": "light",
+              "yaw": 0
+            },
+            {
+              "shape": "orb",
+              "x": -0.18,
+              "y": 1.7,
+              "z": 0.8,
+              "w": 0.12,
+              "h": 0.12,
+              "d": 0.12,
+              "color": "#ffffff",
+              "role": "light",
+              "yaw": 0
+            },
+            {
+              "shape": "orb",
+              "x": 0.18,
+              "y": 1.7,
+              "z": 0.8,
+              "w": 0.12,
+              "h": 0.12,
+              "d": 0.12,
+              "color": "#ffffff",
+              "role": "light",
+              "yaw": 0
+            }
+          ]
+        },
+        "investment": {
+          "wood": 4,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 1,
+          "crystal": 0
+        },
+        "x": 2,
+        "z": 12,
+        "yaw": 0,
+        "home": {
+          "x": 2,
+          "z": 12
+        },
+        "bank": "near",
+        "energy": 0,
+        "cargo": null,
+        "task": "arrived",
+        "cooldown": 0,
+        "cycle": 0,
+        "performance": null,
+        "age": 0
+      }
+    ],
+    "equipped": null,
+    "ward": 0,
+    "wardUntil": 0,
+    "waves": [],
+    "notes": [],
+    "serial": 1,
+    "memories": [
+      {
+        "id": 1,
+        "tick": 0,
+        "text": "Brought Lanternwing into the world."
+      }
+    ],
+    "grants": {
+      "agent": false
+    },
+    "proposals": [],
+    "trials": []
+  },
+  "id": "4da0c109-b565-40ef-809c-e2ae01aa85e9",
+  "revision": 3,
+  "tick": 0,
+  "rain": {
+    "profile": "awe-first-orchard-0.8.0",
+    "revision": 0,
+    "pulse": 0,
+    "weather": "balanced",
+    "priority": [
+      "bridge",
+      "orchard",
+      "habitat"
+    ],
+    "channels": {},
+    "storage": {
+      "bridge": 4,
+      "orchard": 4,
+      "habitat": 4
+    },
+    "flows": {
+      "east>bridge": 0,
+      "east>habitat": 0,
+      "east>orchard": 0,
+      "spring>east": 0,
+      "spring>west": 0,
+      "west>bridge": 0,
+      "west>habitat": 0,
+      "west>orchard": 0
+    },
+    "deliveries": {
+      "bridge": 0,
+      "orchard": 0,
+      "habitat": 0
+    },
+    "fiber": {
+      "human": 24,
+      "agent": 12,
+      "keeper": 12
+    },
+    "focus": {
+      "human": 12,
+      "agent": 12
+    },
+    "focusSpent": 0,
+    "scrap": 0,
+    "supplied": 0,
+    "overflow": 0,
+    "losses": 0,
+    "balances": {
+      "human": 20,
+      "agent": 0,
+      "keeper": 18,
+      "carrier": 0
+    },
+    "escrow": 12,
+    "cargo": {
+      "x": 0,
+      "z": 5,
+      "food": 4,
+      "owner": "carrier",
+      "status": "waiting"
+    },
+    "grant": {
+      "enabled": false,
+      "epoch": 0
+    },
+    "reserveBridge": false,
+    "events": [
+      {
+        "id": 0,
+        "pulse": 0,
+        "text": "You woke in the First Orchard. The rain has not yet moved."
+      }
+    ],
+    "discovered": [],
+    "pavilionBest": 0
+  },
+  "hero": {
+    "id": "human",
+    "x": 0,
+    "z": 16,
+    "y": 0,
+    "vy": 0,
+    "angle": 3.141592653589793,
+    "bank": "near",
+    "hp": 100,
+    "maxHp": 100,
+    "breath": 100,
+    "discipline": "thread",
+    "xp": 25,
+    "level": 1,
+    "equipment": {},
+    "items": {
+      "tonic": 2,
+      "meal": 1
+    },
+    "action": null,
+    "dodge": 0,
+    "invuln": 0,
+    "guard": false,
+    "dead": 0,
+    "lastSpend": -1000
+  },
+  "pack": {
+    "wood": 6,
+    "stone": 8,
+    "ore": 3,
+    "food": 4,
+    "herb": 1,
+    "crystal": 0
+  },
+  "market": {
+    "wood": 24,
+    "stone": 20,
+    "ore": 10,
+    "food": 15,
+    "herb": 6,
+    "crystal": 2
+  },
+  "reserve": {
+    "wood": 120,
+    "stone": 100,
+    "ore": 57,
+    "food": 60,
+    "herb": 38,
+    "crystal": 12
+  },
+  "spent": {
+    "wood": 0,
+    "stone": 0,
+    "ore": 0,
+    "food": 0,
+    "herb": 0,
+    "crystal": 0
+  },
+  "structures": [],
+  "workers": [
+    {
+      "id": "mira",
+      "name": "Mira",
+      "job": "rest",
+      "cycle": 0,
+      "x": 2,
+      "z": 23,
+      "bank": "near",
+      "phase": "rest",
+      "cargo": null
+    },
+    {
+      "id": "fen",
+      "name": "Fen",
+      "job": "rest",
+      "cycle": 0,
+      "x": 4,
+      "z": 23,
+      "bank": "near",
+      "phase": "rest",
+      "cargo": null
+    }
+  ],
+  "history": [
+    {
+      "id": 1,
+      "tick": 0,
+      "kind": "world",
+      "text": "You arrived in the First Orchard. The living world is yours to change."
+    },
+    {
+      "id": 2,
+      "tick": 0,
+      "kind": "creation",
+      "text": "Created Lanternwing from actual materials."
+    },
+    {
+      "id": 3,
+      "tick": 0,
+      "kind": "quest",
+      "text": "Milestone remembered: creation. +25 experience."
+    }
+  ],
+  "stats": {
+    "gathered": 0,
+    "kills": 0,
+    "shots": 0,
+    "blocked": 0,
+    "captures": 0
+  },
+  "completed": [
+    "creation"
+  ],
+  "claimed": [],
+  "discoveries": [],
+  "pet": {
+    "x": 1,
+    "z": 17,
+    "angle": 0,
+    "mode": "follow",
+    "bond": 0,
+    "memory": [
+      "creation"
+    ],
+    "ward": 0
+  },
+  "enemies": [
+    {
+      "id": "gloom1",
+      "x": -22,
+      "z": -26,
+      "homeX": -22,
+      "homeZ": -26,
+      "angle": 0,
+      "hp": 34,
+      "maxHp": 34,
+      "team": "wild",
+      "boss": false,
+      "action": null,
+      "guard": false,
+      "breath": 100,
+      "dead": 0,
+      "invuln": 0,
+      "dodge": 0,
+      "nextAI": 0,
+      "phase": 1,
+      "adds": false,
+      "telegraph": null,
+      "role": "attack"
+    },
+    {
+      "id": "gloom2",
+      "x": -16,
+      "z": -31,
+      "homeX": -16,
+      "homeZ": -31,
+      "angle": 0,
+      "hp": 34,
+      "maxHp": 34,
+      "team": "wild",
+      "boss": false,
+      "action": null,
+      "guard": false,
+      "breath": 100,
+      "dead": 0,
+      "invuln": 0,
+      "dodge": 0,
+      "nextAI": 0,
+      "phase": 1,
+      "adds": false,
+      "telegraph": null,
+      "role": "attack"
+    },
+    {
+      "id": "gloom3",
+      "x": -25,
+      "z": -39,
+      "homeX": -25,
+      "homeZ": -39,
+      "angle": 0,
+      "hp": 34,
+      "maxHp": 34,
+      "team": "wild",
+      "boss": false,
+      "action": null,
+      "guard": false,
+      "breath": 100,
+      "dead": 0,
+      "invuln": 0,
+      "dodge": 0,
+      "nextAI": 0,
+      "phase": 1,
+      "adds": false,
+      "telegraph": null,
+      "role": "attack"
+    },
+    {
+      "id": "gloom4",
+      "x": 23,
+      "z": -43,
+      "homeX": 23,
+      "homeZ": -43,
+      "angle": 0,
+      "hp": 34,
+      "maxHp": 34,
+      "team": "wild",
+      "boss": false,
+      "action": null,
+      "guard": false,
+      "breath": 100,
+      "dead": 0,
+      "invuln": 0,
+      "dodge": 0,
+      "nextAI": 0,
+      "phase": 1,
+      "adds": false,
+      "telegraph": null,
+      "role": "attack"
+    }
+  ],
+  "bolts": [],
+  "effects": [],
+  "mode": "world",
+  "activity": null,
+  "range": null,
+  "bossDefeated": false,
+  "cacheClaimed": false,
+  "bests": {
+    "range": 0,
+    "raincatch": 0,
+    "loom": 0,
+    "ctf": 0,
+    "duel": 0
+  },
+  "cooldowns": {},
+  "resonance": {
+    "bridge": 0,
+    "orchard": 0,
+    "habitat": 0,
+    "expires": 0
+  },
+  "options": {
+    "autoRain": false
+  },
+  "versionClock": 0
+}
