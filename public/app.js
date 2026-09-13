@@ -1,3 +1,5 @@
+import {departurePose} from './astral-departure.js';
+import {mountAstral} from './astral-view.js';
 import {CosmicSky,mountCosmos} from './cosmos-view.js';
 import * as Cosmos from './cosmos.js';
 import {mountLumaAtelier} from './luma-view.js';
@@ -13,11 +15,11 @@ import {WorldView} from './visual.js';
 import * as P from './pavilions.js';
 const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const SAVE='awe-concord-v10',PREVIOUS='awe-concord-v09',OLD='awe-first-orchard-v08';
-let cosmicAtelier=null,lastCosmicBeat=-1;
+let cosmicAtelier=null,astralJourney=null,lastCosmicBeat=-1;
 let studio=null,rehearsal=null,placing=null,recoveryRaw=null,lumaAtelier=null;
 let state=R.newRealm(),loaded=false,started=false,modal=null,keys={},near=null,view,selectedPath='thread',activity=null,pausedByTab=false,saveLock=false,releaseLock=null,saveFailure=false,pending={},sound=false,audio=null,previousFocus=null,lastHUD=0,toastTimer,discoveryTimer;
 try{const raw=(readSavedRaw());if(raw){if(raw.length>=700000)throw Error('Saved world exceeds the import limit.');state=R.restore(JSON.parse(raw));loaded=true;}}catch{saveFailure=true;recoveryRaw=readSavedRaw();}
-try{view=new WorldView($('world'));view.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){view=new CanvasWorldView($('world'));}
+try{view=new WorldView($('world'));}catch(e){view=new CanvasWorldView($('world'));}view.reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const cosmicSky=new CosmicSky($('cosmos-sky'));
 const overlay=new CombatOverlay($('combat-overlay'));
 let touchMove=[0,0],heldPalm=false,selectedMove='palm',targetId=null,aimPoint=null,stickPointer=null,worldPointers=new Map(),drag=null;
@@ -37,7 +39,7 @@ async function begin(){if(started)return;if(!loaded)state=R.newRealm(selectedPat
 function startNow(){started=true;$('welcome').hidden=true;clearInput();$('world').focus();if(saveFailure)notice('The previous snapshot was preserved. Automatic saving is paused; export the recovery file from Settings.');else notice('WASD or arrows move. H opens controls & a safe combat practice. V opens Create.');hud();save();}
 function bind(id,fn){$(id)?.addEventListener('click',fn);}
 function openPanel(title,kicker,content,type='other'){cosmicAtelier?.dispose();cosmicAtelier=null;$('panel').classList.remove('cosmos-panel');lumaAtelier?.dispose();lumaAtelier=null;$('panel').classList.remove('luma-panel');$('hud').inert=true;previousFocus=document.activeElement;modal=type;clearInput();$('panel-title').textContent=title;$('panel-kicker').textContent=kicker;$('panel-content').innerHTML=content;$('panel').hidden=false;$('scrim').hidden=false;$('interact-wrap').hidden=true;$('close').focus();}
-function closePanel(){cosmicAtelier?.dispose();cosmicAtelier=null;$('panel').classList.remove('cosmos-panel');lumaAtelier?.dispose();lumaAtelier=null;$('panel').classList.remove('connections-panel','luma-panel');if(modal==='lock')return;if(modal==='foundry'){studio?.close();return;}$('hud').inert=false;modal=null;clearInput();$('panel').hidden=true;$('scrim').hidden=true;view.setPreview(null);if(started)$('world').focus();else if(previousFocus instanceof HTMLElement)previousFocus.focus();}
+function closePanel(){astralJourney?.dispose();astralJourney=null;$('panel').classList.remove('astral-panel');cosmicAtelier?.dispose();cosmicAtelier=null;$('panel').classList.remove('cosmos-panel');lumaAtelier?.dispose();lumaAtelier=null;$('panel').classList.remove('connections-panel','luma-panel');if(modal==='lock')return;if(modal==='foundry'){studio?.close();return;}$('hud').inert=false;modal=null;clearInput();$('panel').hidden=true;$('scrim').hidden=true;view.setPreview(null);if(started)$('world').focus();else if(previousFocus instanceof HTMLElement)previousFocus.focus();}
 function facts(rows){return '<table class="facts">'+rows.map(([a,b])=>`<tr><td>${a}</td><td>${b}</td></tr>`).join('')+'</table>';}
 function costs(c){return Object.entries(c).map(([k,n])=>`${n} ${k}`).join(' · ');}
 function waterTable(s=state.rain.storage){return facts([['Crossing · needs 6',s.bridge],['Orchard · needs 5',s.orchard],['Reeds · needs 5',s.habitat]]);}
@@ -90,7 +92,7 @@ const toInput=()=>{
 };
 let pendingP2={};
 let last=performance.now()/1000,acc=0,saveAt=0,lastHistory=state.revision,lastDiscovered=state.discoveries.length,lastResult=null;
-function frame(ms){const t=ms/1000,dt=Math.min(.1,Math.max(0,t-last));last=t;if(!document.hidden){if(activity){if(activity.kind==='raincatch')rainFrame(dt);}else{if(started&&(!modal||modal==='cosmos')&&!pausedByTab){acc+=dt;for(let count=0;acc>=1/60&&count<6;count++){const input=toInput();const oldx=state.hero.x,oldz=state.hero.z;R.tick(state,input);for(const tone of state.creation.notes)note(tone.code==='luma'?tone.frequency:220*Math.pow(2,tone.pitch/12),.35,.025);if(rehearsal){observeRehearsal(rehearsal.session);}state.hero.walk=Math.hypot(state.hero.x-oldx,state.hero.z-oldz)>.001?1:0;acc-=1/60;}if(state.discoveries.length>lastDiscovered){const id=state.discoveries.at(-1),l=R.LANDMARKS.find(l=>l.id===id);if(l){$('discovery').hidden=false;$('discovery').querySelector('h2').textContent=l.name;clearTimeout(discoveryTimer);discoveryTimer=setTimeout(()=>$('discovery').hidden=true,3200);note(660,.4);}lastDiscovered=state.discoveries.length;}if(state.activity?.winner&&lastResult!==state.activity.winner){lastResult=state.activity.winner;notice('Activity complete: '+state.activity.winner+'. Press E to return.');}if(!state.activity)lastResult=null;if(state.tick-saveAt>=180){save();saveAt=state.tick;}if(state.revision!==lastHistory){const e=state.history.at(-1);if(['quest','boss','ctf','production'].includes(e?.kind))notice(e.text);lastHistory=state.revision;}}else acc=0;cosmicSky.draw(R.CosmosWorld.elapsed(state),view.yaw,view.reduced);cosmicAtelier?.tick();cosmicMusic();view.render(state,t,dt,!!modal||!started);overlay.draw(state,view,currentTarget(),selectedMove,started&&!modal&&!activity);labels();if(t-lastHUD>.12){hud();view.map($('map'),state);lastHUD=t;}}}requestAnimationFrame(frame);}
+function frame(ms){const t=ms/1000,dt=Math.min(.1,Math.max(0,t-last));last=t;if(modal==='astral'){requestAnimationFrame(frame);return;}if(!document.hidden){if(activity){if(activity.kind==='raincatch')rainFrame(dt);}else{if(started&&(!modal||modal==='cosmos')&&!pausedByTab){acc+=dt;for(let count=0;acc>=1/60&&count<6;count++){const input=toInput();const oldx=state.hero.x,oldz=state.hero.z;R.tick(state,input);for(const tone of state.creation.notes)note(tone.code==='luma'?tone.frequency:220*Math.pow(2,tone.pitch/12),.35,.025);if(rehearsal){observeRehearsal(rehearsal.session);}state.hero.walk=Math.hypot(state.hero.x-oldx,state.hero.z-oldz)>.001?1:0;acc-=1/60;}if(state.discoveries.length>lastDiscovered){const id=state.discoveries.at(-1),l=R.LANDMARKS.find(l=>l.id===id);if(l){$('discovery').hidden=false;$('discovery').querySelector('h2').textContent=l.name;clearTimeout(discoveryTimer);discoveryTimer=setTimeout(()=>$('discovery').hidden=true,3200);note(660,.4);}lastDiscovered=state.discoveries.length;}if(state.activity?.winner&&lastResult!==state.activity.winner){lastResult=state.activity.winner;notice('Activity complete: '+state.activity.winner+'. Press E to return.');}if(!state.activity)lastResult=null;if(state.tick-saveAt>=180){save();saveAt=state.tick;}if(state.revision!==lastHistory){const e=state.history.at(-1);if(['quest','boss','ctf','production'].includes(e?.kind))notice(e.text);lastHistory=state.revision;}}else acc=0;cosmicSky.draw(R.CosmosWorld.elapsed(state),view.yaw,view.reduced);cosmicAtelier?.tick();cosmicMusic();view.render(state,t,dt,!!modal||!started);overlay.draw(state,view,currentTarget(),selectedMove,started&&!modal&&!activity);labels();if(t-lastHUD>.12){hud();view.map($('map'),state);lastHUD=t;}}}requestAnimationFrame(frame);}
 function fire(kind){if(!started||modal||activity||pausedByTab||placing)return;selectedMove=kind;pending.attack=kind;$('world').focus();}
 function jump(){if(started&&!modal&&!activity)pending.jump=true;}
 function pulse(){if(started&&!modal&&!activity&&state.mode==='world'){if(change(()=>R.rainPulse(state))){townMusic();notice('Rain moved through the accepted channels.');}}}
@@ -274,9 +276,24 @@ function openCosmos(){
  if(rehearsal||state.mode!=='world'){notice('Return to your orchard body to work with the sky.');return;}
  if(placing)cancelCreation();if(modal)closePanel();
  openPanel('The sky within your hands','LUMA · STARS · ALCHEMY · METALLURGY','<div id="cosmos-atelier"></div>','cosmos');$('panel').classList.add('cosmos-panel');
- cosmicAtelier=mountCosmos($('cosmos-atelier'),{state:()=>({...state.cosmos,pack:state.pack}),now:()=>R.CosmosWorld.elapsed(state),sound:toggleSound,soundEnabled:()=>sound,reduced:()=>view.reduced,
+ cosmicAtelier=mountCosmos($('cosmos-atelier'),{state:()=>({...state.cosmos,pack:state.pack}),now:()=>R.CosmosWorld.elapsed(state),sound:toggleSound,soundEnabled:()=>sound,reduced:()=>view.reduced,astral:openAstral,
   action:(op,payload)=>{let result;if(!change(()=>{result=R.cosmosCommand(state,op,payload);}))throw Error($('notice').textContent);return result;},
   walk:point=>{closePanel();concordCommand('walk',{x:point.x,z:point.z});notice('Walking to '+point.name+'. Open Cosmos when you arrive.');}
  });
 }
 bind('open-cosmos',openCosmos);bind('cosmos-live',openCosmos);
+
+function openAstral(){
+ if(!started||pausedByTab||rehearsal||state.mode!=='world'||state.hero.hp<=0){notice('Return to your living orchard body to begin astral travel.');return;}
+ if(placing)cancelCreation();if(modal)closePanel();
+ openPanel('Astral travel','LUMA · THE SOLAR SYSTEM','<div id="astral-root"></div>','astral');$('panel').classList.add('astral-panel');
+ const camera={eye:[...(view.eye||[state.hero.x+10,12,state.hero.z+18])],target:[...(view.target||[state.hero.x,1,state.hero.z])],yaw:view.yaw};
+ document.body.classList.add('astral-active');
+ astralJourney=mountAstral($('astral-root'),{state:()=>state.cosmos.astral,reduced:()=>view.reduced,close:closePanel,
+ sky:()=>Cosmos.skyAt(R.CosmosWorld.elapsed(state)),
+ departure:(progress,dt)=>{view.astralPose=departurePose(progress,state.hero,camera);view.render(state,state.tick/60,dt,true);},
+ restore:()=>{view.astralPose=null;view.eye=camera.eye;view.target=camera.target;document.body.classList.remove('astral-active');$('panel').classList.remove('astral-departing');},
+ remember:(world,site,note)=>{if(!change(()=>R.cosmosCommand(state,'astral-remember',{world,site,note})))throw Error($('notice').textContent);}
+ });
+}
+bind('open-astral',openAstral);

@@ -1,7 +1,8 @@
+import {restingTransform} from './astral-departure.js';
 import {CosmicMeshes} from './cosmos-view.js';
 import {skyAt} from './cosmos.js';
 import {CreationMeshes} from './creation-view.js';
-import {Renderer,Geometry,transform,project,V} from './engine.js';
+import {Renderer,Geometry,transform,project,V,multiply} from './engine.js';
 import {makeScene,channelGeometry,channelPoint,drawPerson,C,PEOPLE} from './scene.js';
 import {Creation,Civilization,Rain,ARENAS,PLOTS,RESOURCES,LANDMARKS,MOVES,obstacles,segmentCircle,segmentObstacle} from './realm.js';
 export class WorldView {
@@ -20,12 +21,12 @@ export class WorldView {
  }
  rebuild(s){const key=JSON.stringify(s.rain.channels);if(key!==this.channelKey){this.channelKey=key;if(this.channels)this.r.dispose(this.channels);this.channels=this.r.mesh(channelGeometry(s.rain.channels));}}
  setPreview(plan){if(this.preview)this.r.dispose(this.preview);this.preview=plan?this.r.mesh(channelGeometry(Object.fromEntries(plan.map(([from,to,capacity])=>[from+'>'+to,{from,to,capacity}])) ,true)):null;}
- drawActor(s,a,t,human=false){const r=this.r,m=this.base,y=(a.y||0)+(s.mode==='world'&&(Rain.onBridge(a.x,a.z)&&Rain.bridgeOpen(s.rain)||Creation.surface(s,a.x,a.z))?.16:0),act=a.action,move=act&&(act.move||MOVES[act.kind]);if(a.hp<=0||a.dead)return;
+ drawActor(s,a,t,human=false){const r=this.r,m=this.base,y=(a.y||0)+(s.mode==='world'&&(Rain.onBridge(a.x,a.z)&&Rain.bridgeOpen(s.rain)||Creation.surface(s,a.x,a.z))?.16:0),act=a.action,move=act&&(act.move||MOVES[act.kind]);if(a.hp<=0||a.dead)return;if(human&&this.astralPose){this.drawAstralBody(a,y);return;}
  if(human||a.team==='amber'||a.team==='teal'){let tint=human?(s.hero.discipline==='stone'?[1.05,.95,.82]:s.hero.discipline==='gale'?[.82,1.04,1.2]:[1,1,1]):a.team==='amber'?[1.3,1.1,.65]:[.8,1.1,1.35];drawPerson(r,m,a.x,y,a.z,a.angle,t,(a.walk||0),tint);if(human||s.mode!=='world'){const phase=move?act.frame/(move.startup+move.active+move.recovery):0,active=move&&act.frame>=move.startup&&act.frame<move.startup+move.active,cast=move&&(act.kind==='note'||move.projectile||move.verb==='mend'||move.verb==='ward');
  if(cast){const wind=act.frame<move.startup?act.frame/move.startup:Math.max(0,1-phase),forward=.8+wind*.4;r.draw(this.base.orb,transform(a.x+Math.sin(a.angle)*forward,y+1.35,a.z+Math.cos(a.angle)*forward,.6+wind,.6+wind,.6+wind),{tint:move.verb==='mend'?[.5,1,.7]:move.verb==='ward'?[.7,.7,1]:[.5,.9,1],glow:1});}
  else {const thrust=move&&act.kind==='reach',gale=move&&act.kind==='gale',swing=move?Math.sin(phase*Math.PI)*(act.chain===2?-1.4:1.4):0,angle=a.angle+(thrust?0:gale?phase*Math.PI*2:swing-.5),reach=thrust?(active?1.75:1+Math.sin(phase*Math.PI)*.45):active?1.35:1;r.draw(this.sword,transform(a.x+Math.cos(a.angle)*.42,y+1.1,a.z-Math.sin(a.angle)*.42,1,1,reach,angle),{glow:active?.65:move?.15:0});}}if(a.guard)r.draw(this.ring,transform(a.x+Math.sin(a.angle)*.7,y+.11,a.z+Math.cos(a.angle)*.7,1.1,1,1.1),{tint:C.gold,glow:.9});}else if(a.boss){r.draw(this.boss,transform(a.x,0,a.z,1,1+Math.sin(t*1.8)*.012,1,a.angle));}else{r.draw(this.foe,transform(a.x,.03+Math.abs(Math.sin(t*6))*.05,a.z,1,1,1,a.angle));}
  r.draw(m.shadow,transform(a.x,.025,a.z,a.boss?2:.65,1,a.boss?2:.5),{alpha:.3});if(a.invuln>0||a.dodge>21&&a.dodge<=31)r.draw(this.ring,transform(a.x,.15,a.z,1,1,1),{tint:C.teal,glow:.9});}
- render(s,t,dt,paused=false){this.rebuild(s);const r=this.r,h=s.hero,at=this.reduced?0:t;let target=[h.x,1.4+h.y,h.z],eye;if(this.atlas){eye=[h.x+8,63,h.z+28];target=[h.x,0,h.z-6];}else{let len=this.distance;const ex=h.x+Math.sin(this.yaw)*len*Math.cos(this.pitch),ez=h.z+Math.cos(this.yaw)*len*Math.cos(this.pitch);for(const o of obstacles(s)){let hit=segmentObstacle(h.x,h.z,ex,ez,o);if(hit!==null)len=Math.max(2.5,Math.min(len,len*hit-.3));}eye=[h.x+Math.sin(this.yaw)*len*Math.cos(this.pitch),Math.max(3,2+Math.sin(this.pitch)*len+h.y),h.z+Math.cos(this.yaw)*len*Math.cos(this.pitch)];}const blend=1-Math.exp(-dt*9);this.eye=this.eye.map((v,i)=>v+(eye[i]-v)*blend);this.target=this.target.map((v,i)=>v+(target[i]-v)*blend);const daylight=skyAt((s.cosmos?.clock||0)*1000/60).daylight;r.atmosphere=[.04+daylight*.12,.08+daylight*.2,.16+daylight*.16];r.ambientTint=[.54+daylight*.46,.65+daylight*.35,.91+daylight*.09];r.begin(this.eye,this.target,at,this.atlas);
+ render(s,t,dt,paused=false){this.rebuild(s);const r=this.r,h=s.hero,at=this.reduced?0:t;let target=[h.x,1.4+h.y,h.z],eye;if(this.atlas){eye=[h.x+8,63,h.z+28];target=[h.x,0,h.z-6];}else{let len=this.distance;const ex=h.x+Math.sin(this.yaw)*len*Math.cos(this.pitch),ez=h.z+Math.cos(this.yaw)*len*Math.cos(this.pitch);for(const o of obstacles(s)){let hit=segmentObstacle(h.x,h.z,ex,ez,o);if(hit!==null)len=Math.max(2.5,Math.min(len,len*hit-.3));}eye=[h.x+Math.sin(this.yaw)*len*Math.cos(this.pitch),Math.max(3,2+Math.sin(this.pitch)*len+h.y),h.z+Math.cos(this.yaw)*len*Math.cos(this.pitch)];}if(this.astralPose){eye=this.astralPose.eye;target=this.astralPose.target;}const blend=this.astralPose?1:1-Math.exp(-dt*9);this.eye=this.eye.map((v,i)=>v+(eye[i]-v)*blend);this.target=this.target.map((v,i)=>v+(target[i]-v)*blend);const daylight=skyAt((s.cosmos?.clock||0)*1000/60).daylight*(this.astralPose?1-this.astralPose.rise*.8:1);r.atmosphere=[.04+daylight*.12,.08+daylight*.2,.16+daylight*.16];r.ambientTint=[.54+daylight*.46,.65+daylight*.35,.91+daylight*.09];r.begin(this.eye,this.target,at,this.astralPose?false:this.atlas);
  r.draw(this.base.distant,transform(0,Math.sin(at*.24)*.14,0));r.draw(this.base.earth);r.draw(this.base.architecture);r.draw(this.marketStall);r.draw(this.base.green,transform(),{sway:this.reduced?0:.006});r.draw(this.base.orchard,transform(),{tint:s.rain.storage.orchard>=5?[1,1.17,.95]:[.68,.71,.56],sway:this.reduced?0:.005});r.draw(this.base.reeds,transform(),{tint:s.rain.storage.habitat>=5?[1,1.15,1]:[.7,.68,.46],sway:this.reduced?0:.01});r.draw(Rain.bridgeOpen(s.rain)?this.base.bridge:this.base.closed);r.draw(this.arenas);
  for(const b of s.structures){const p=PLOTS[b.plot];if(b.type==='farm')r.draw(this.farm,transform(p.x,0,p.z));else if(b.type==='beacon'){r.draw(this.crystal,transform(p.x,.6,p.z,1.4,1.5,1.4),{glow:.25});r.draw(this.ring,transform(p.x,.1,p.z,2,1,2),{tint:C.gold,glow:.8});}else r.draw(this.house,transform(p.x,0,p.z),{tint:b.type==='workshop'?[1.1,1,.83]:b.type==='quarry'?[.88,.95,1]:[1,1,1]});}
  for(const p of PLOTS)if(!s.structures.some(b=>b.plot===p.id))r.draw(this.ring,transform(p.x,.06,p.z,2.2,1,2.2),{tint:[.5,.65,.55],alpha:.4});
@@ -44,6 +45,16 @@ export class WorldView {
  for(const b of s.bolts){r.draw(this.base.orb,transform(b.x,b.y,b.z,1,1,1),{tint:b.team==='human'||b.team==='amber'?[.9,1,1]:[1,.3,.2],glow:1.3});r.draw(this.sword,transform(b.x,b.y,b.z,.35,.35,.45,Math.atan2(b.dx,b.dz)+Math.PI),{glow:1,tint:C.teal});}
  if(s.range)for(const n of s.range.targets)if(!n.hit){r.draw(this.crystal,transform(n.x,.4,n.z,.55,.65,.55),{tint:C.gold,glow:.5});r.draw(this.ring,transform(n.x,.08,n.z,.8,1,.8),{tint:C.gold,glow:.5});}
  for(let i=0;i<(this.reduced?0:24);i++){let x=Math.sin(i*47.1)*39,z=Math.cos(i*31.7)*29+8,y=1.3+Math.sin(at*.5+i)*.5;r.draw(this.base.orb,transform(x,y,z,.16,.16,.16),{glow:1.1,alpha:.65});}
+ }
+ drawAstralBody(hero,ground){
+  const r=this.r,m=this.base,pose=this.astralPose,body=restingTransform(hero,ground,pose.settle);
+  const resting={draw:(mesh,matrix,opts={})=>r.draw(mesh,mesh===m.shadow?matrix:multiply(body,matrix),opts)};
+  drawPerson(resting,m,hero.x,ground,hero.z,hero.angle,0,0,[.85,.92,1]);
+  if(pose.rise<=0)return;
+  const soul=restingTransform(hero,pose.spiritY,1-pose.rise);
+  const spirit={draw:(mesh,matrix)=>{if(mesh!==m.shadow)r.draw(mesh,multiply(soul,matrix),{tint:[.65,1.55,2.2],glow:1.15,alpha:.38+pose.rise*.22});}};
+  drawPerson(spirit,m,hero.x,pose.spiritY,hero.z,hero.angle,0,0);
+  for(let i=0;i<36;i++){const f=i/35,y=ground+.7+(pose.spiritY-ground+.3)*f,curve=Math.sin(f*Math.PI)*.22; r.draw(m.orb,transform(hero.x+curve,y,hero.z+.5*(1-f),.08,.2,.08),{tint:[.75,1.3,1.8],glow:1.3,alpha:.65});}
  }
  drawCivilization(s,t,paused){
   const r=this.r,c=s.civilization,courier=c.courier;

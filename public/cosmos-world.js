@@ -1,12 +1,15 @@
+import {astralState,validateAstral,rememberEncounter} from './astral-model.js';
 import * as C from './cosmos.js';
-export const state=()=>({schema:1,clock:0,workshop:C.workshopState(),town:C.townState(),blade:null,dewUntil:0});
+export const state=()=>({schema:1,clock:0,astral:astralState(),workshop:C.workshopState(),town:C.townState(),blade:null,dewUntil:0});
 const fail=m=>{throw Error(m);};
 const exact=(p,keys)=>p&&typeof p==='object'&&!Array.isArray(p)&&Object.keys(p).sort().join()===keys.slice().sort().join();
 export const elapsed=s=>(s.cosmos?.clock||0)*1000/60;
 export const held=(s,item)=>s.cosmos?C.investment(s.cosmos.workshop,item):0;
 export function validate(s){
   const c=s.cosmos;
-  if(!exact(c,['schema','clock','workshop','town','blade','dewUntil'])||c.schema!==1||!Number.isSafeInteger(c.clock)||c.clock<0||c.clock>s.tick||!Number.isSafeInteger(c.dewUntil)||c.dewUntil<0||!exact(c.town,['bell','garden']))fail('The celestial world record is malformed.');
+  if(!exact(c,['schema','clock','astral','workshop','town','blade','dewUntil'])||c.schema!==1||!Number.isSafeInteger(c.clock)||c.clock<0||c.clock>s.tick||!Number.isSafeInteger(c.dewUntil)||c.dewUntil<0||!exact(c.town,['bell','garden']))fail('The celestial world record is malformed.');
+  validateAstral(c.astral);
+  if(c.astral.encounters.some(e=>e.clock>c.clock))fail('An encounter cannot precede its world clock.');
   C.validateWorkshop(c.workshop,elapsed(s));
   for(const [value,id] of [[c.blade,'iron'],[c.town.bell,'alloy'],[c.town.garden,'earth']])if(value){
     C.validateWorkshop({schema:1,serial:c.workshop.serial,job:null,products:[value],records:[]},elapsed(s));
@@ -21,7 +24,10 @@ export function command(s,op,payload={},ctx={}){
   const spend=(cost)=>{for(const [item,n] of Object.entries(cost))if(draft.pack[item]<n)fail(`You need ${n} ${item}. Gather or trade for it first.`);for(const [item,n] of Object.entries(cost))draft.pack[item]-=n;};
   const consumed=r=>{for(const [item,n] of Object.entries(r.cost))draft.spent[item]+=n;};
   let result;
-  if(op==='observe'){
+  if(op==='astral-remember'){
+    if(!exact(payload,['world','site','note']))fail('Choose a world, landmark and reflection.');
+    result={encounter:rememberEncounter(c.astral,payload.world,payload.site,c.clock,payload.note),message:'Your astral encounter is remembered.'};
+  }else if(op==='observe'){
     if(!exact(payload,['practice']))fail('Choose a practice for the current town sky.');
     result=C.observeSky(w,now,payload.practice);
   }else if(op==='reflect'){

@@ -1,5 +1,7 @@
 # Anima Kingdoms
 
+**Astral travel:** your soul leaves its resting body, rises on a silver thread, and looks into the complete Luma sky. Select a planet light, its moon paths, or the asteroid gate to explore 38 Solar System destinations and 91 authored landmarks. Orbit worlds, fly through landscapes, listen to native Luma resonances and save encounters. Open **Astral travel** in the toolbar or **Cosmos → Begin astral travel**. [Play](https://awe-first-orchard.edwincardenas.chatgpt.site/play.html) · [World guide](docs/ASTRAL-TRAVEL.md) · [Verification](docs/ASTRAL-VERIFICATION.md).
+
 
 **Whole Sky edition 2:** open **Cosmos (O)** to explore 9,096 catalogue stars, ten Solar System objects, both hemispheres, the native sixteen-digit sky seal and its music, celestial events, and a persistent intention/reflection notebook. [Read the complete sky & Luma guide](docs/WHOLE-SKY-LUMA.md).
 
