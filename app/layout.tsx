@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Anima Kingdoms",
-  description: "An inhabited creative world: connect music, architecture, companions and settlement life.",
+  description: "Speak Luma, shape living creations, compose music, and build a shared world.",
   other: {
     "codex-preview": "development",
   },

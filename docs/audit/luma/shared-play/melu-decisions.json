@@ -1,0 +1,442 @@
+{
+  "actor": "Melu",
+  "startedAt": "2026-09-12T22:24:55.819Z",
+  "scope": "One independently operated player using the actual HTTP API.",
+  "stages": [
+    {
+      "stage": "gather",
+      "startedAt": "2026-09-12T22:24:55.862Z",
+      "earlyImagination": {
+        "status": "imagined",
+        "blocker": {
+          "code": "OUT_OF_REACH",
+          "message": "Walk closer to this place first."
+        },
+        "inventoryUnchanged": true
+      },
+      "walkToGrove": {
+        "target": {
+          "x": -9,
+          "z": 17
+        },
+        "arrived": {
+          "x": -8.696482678394158,
+          "z": 16.96627585315492
+        },
+        "commands": 5,
+        "elapsedMs": 1704
+      },
+      "gathered": {
+        "wood": 8,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0,
+        "marks": 0
+      },
+      "walkToProject": {
+        "target": {
+          "x": 0,
+          "z": 0
+        },
+        "arrived": {
+          "x": -1.3877787807814457e-17,
+          "z": -2.7755575615628914e-17
+        },
+        "commands": 11,
+        "elapsedMs": 3855
+      },
+      "finishedAt": "2026-09-12T22:25:08.850Z"
+    },
+    {
+      "stage": "project",
+      "startedAt": "2026-09-12T22:25:18.485Z",
+      "modes": [
+        {
+          "mode": "i",
+          "receipt": {
+            "key": "play-Melu-0f09ead5-0fd0-42f1-9ae9-0a472f3c99fc",
+            "op": "luma.speak",
+            "revision": 55,
+            "result": {
+              "mode": "i",
+              "status": "imagined",
+              "operation": "project.contribute",
+              "ready": true,
+              "preview": {
+                "context": {
+                  "projectId": "crossing",
+                  "projectName": "The Joined Span",
+                  "item": "wood",
+                  "quantity": 8
+                },
+                "cost": {
+                  "wood": 8
+                },
+                "complete": false,
+                "reward": 16
+              },
+              "utteranceId": 55,
+              "latin": "i mi me bani ta bana ki #f \"wood\".",
+              "native": "       # \"wood\"."
+            },
+            "replayed": false
+          },
+          "inventoryUnchanged": true,
+          "deliveredWoodUnchanged": true
+        },
+        {
+          "mode": "u",
+          "receipt": {
+            "key": "play-Melu-11e8dc55-8e00-4f44-b972-9327652cdd44",
+            "op": "luma.speak",
+            "revision": 56,
+            "result": {
+              "mode": "u",
+              "status": "intended",
+              "operation": "project.contribute",
+              "ready": true,
+              "preview": {
+                "context": {
+                  "projectId": "crossing",
+                  "projectName": "The Joined Span",
+                  "item": "wood",
+                  "quantity": 8
+                },
+                "cost": {
+                  "wood": 8
+                },
+                "complete": false,
+                "reward": 16
+              },
+              "utteranceId": 56,
+              "latin": "u mi me bani ta bana ki #f \"wood\".",
+              "native": "       # \"wood\"."
+            },
+            "replayed": false
+          },
+          "inventoryUnchanged": true,
+          "deliveredWoodUnchanged": true
+        }
+      ],
+      "undertaking": {
+        "key": "play-Melu-c9c6403a-bc3f-4dd1-b6a1-27b8bd5b3247",
+        "op": "luma.speak",
+        "revision": 57,
+        "result": {
+          "mode": "pe",
+          "status": "enacted",
+          "operation": "project.contribute",
+          "ready": true,
+          "preview": {
+            "context": {
+              "projectId": "crossing",
+              "projectName": "The Joined Span",
+              "item": "wood",
+              "quantity": 8
+            },
+            "cost": {
+              "wood": 8
+            }
+          },
+          "utteranceId": 57,
+          "latin": "pe mi me bani ta bana ki #f \"wood\".",
+          "native": "       # \"wood\".",
+          "effect": {
+            "projectId": "crossing",
+            "complete": false,
+            "reward": 16
+          }
+        },
+        "replayed": false
+      },
+      "exactReplay": {
+        "envelope": {
+          "key": "play-Melu-c9c6403a-bc3f-4dd1-b6a1-27b8bd5b3247",
+          "expectedRevision": 56,
+          "op": "luma.speak",
+          "payload": {
+            "text": "       # \"wood\".",
+            "bindings": {
+              "kind": "project",
+              "projectId": "crossing",
+              "item": "wood",
+              "quantity": 8
+            }
+          }
+        },
+        "receipt": {
+          "key": "play-Melu-c9c6403a-bc3f-4dd1-b6a1-27b8bd5b3247",
+          "op": "luma.speak",
+          "revision": 57,
+          "result": {
+            "mode": "pe",
+            "status": "enacted",
+            "operation": "project.contribute",
+            "ready": true,
+            "preview": {
+              "context": {
+                "projectId": "crossing",
+                "projectName": "The Joined Span",
+                "item": "wood",
+                "quantity": 8
+              },
+              "cost": {
+                "wood": 8
+              }
+            },
+            "utteranceId": 57,
+            "latin": "pe mi me bani ta bana ki #f \"wood\".",
+            "native": "       # \"wood\".",
+            "effect": {
+              "projectId": "crossing",
+              "complete": false,
+              "reward": 16
+            }
+          },
+          "replayed": true
+        },
+        "noAdditionalAssetsTransferred": true
+      },
+      "finishedAt": "2026-09-12T22:25:18.829Z"
+    },
+    {
+      "stage": "cross",
+      "startedAt": "2026-09-12T22:25:51.977Z",
+      "crossing": {
+        "target": {
+          "x": 0,
+          "z": -22
+        },
+        "arrived": {
+          "x": 2.407412430484045e-35,
+          "z": -22.000000000000004
+        },
+        "commands": 13,
+        "elapsedMs": 4416
+      },
+      "finishedAt": "2026-09-12T22:25:56.505Z"
+    },
+    {
+      "stage": "accept-incoming",
+      "startedAt": "2026-09-12T22:26:36.792Z",
+      "acceptance": {
+        "key": "play-Melu-b0c57b70-07e8-4890-b637-a96440339aae",
+        "op": "gift.accept",
+        "revision": 88,
+        "result": {
+          "giftId": "9dff3c79-3069-408b-a23d-c99065fc4c49",
+          "status": "accepted"
+        },
+        "replayed": false
+      },
+      "finishedAt": "2026-09-12T22:26:36.943Z"
+    },
+    {
+      "stage": "offer-decline",
+      "startedAt": "2026-09-12T22:26:37.275Z",
+      "offer": {
+        "key": "play-Melu-3314a129-b368-4053-aa77-959e344a9420",
+        "op": "luma.speak",
+        "revision": 89,
+        "result": {
+          "mode": "pe",
+          "status": "enacted",
+          "operation": "gift.offer",
+          "ready": true,
+          "preview": {
+            "context": {
+              "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+              "recipientName": "Rema",
+              "item": "marks",
+              "quantity": 1
+            },
+            "cost": {
+              "marks": 1
+            }
+          },
+          "utteranceId": 89,
+          "latin": "pe mi me doni ta dona li \"Rema\".",
+          "native": "       \"Rema\".",
+          "effect": {
+            "giftId": "0f4506ca-a878-4dcc-be6e-3b4307b7390a",
+            "status": "open",
+            "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3"
+          }
+        },
+        "replayed": false
+      },
+      "finishedAt": "2026-09-12T22:26:37.426Z"
+    },
+    {
+      "stage": "offer-accept",
+      "startedAt": "2026-09-12T22:27:04.902Z",
+      "offer": {
+        "key": "play-Melu-0c45f306-f6ad-4ddb-b809-cce7d24d8023",
+        "op": "luma.speak",
+        "revision": 91,
+        "result": {
+          "mode": "pe",
+          "status": "enacted",
+          "operation": "gift.offer",
+          "ready": true,
+          "preview": {
+            "context": {
+              "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+              "recipientName": "Rema",
+              "item": "marks",
+              "quantity": 1
+            },
+            "cost": {
+              "marks": 1
+            }
+          },
+          "utteranceId": 91,
+          "latin": "pe mi me doni ta dona li \"Rema\".",
+          "native": "       \"Rema\".",
+          "effect": {
+            "giftId": "985fa146-624d-421c-b3ee-f19b4f816c13",
+            "status": "open",
+            "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3"
+          }
+        },
+        "replayed": false
+      },
+      "finishedAt": "2026-09-12T22:27:05.069Z"
+    },
+    {
+      "stage": "experience",
+      "startedAt": "2026-09-12T22:28:12.773Z",
+      "experience": {
+        "key": "play-Melu-fb1a24c9-28b3-4197-975d-c3265eec4036",
+        "op": "luma.speak",
+        "revision": 94,
+        "result": {
+          "mode": "a",
+          "status": "experienced",
+          "operation": "experience.record",
+          "ready": true,
+          "preview": {
+            "context": {
+              "playerId": "baa58a25-0796-401f-a2d3-6519affd45a0"
+            },
+            "cost": {}
+          },
+          "utteranceId": 94,
+          "latin": "a mi me honi ta loma he.",
+          "native": "      .",
+          "effect": {
+            "recorded": true
+          }
+        },
+        "replayed": false
+      },
+      "finishedAt": "2026-09-12T22:28:12.890Z"
+    },
+    {
+      "stage": "final",
+      "startedAt": "2026-09-12T22:28:13.264Z",
+      "final": {
+        "revision": 94,
+        "position": {
+          "x": 2.407412430484045e-35,
+          "z": -22.000000000000004
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0,
+          "marks": 16
+        },
+        "project": {
+          "id": "crossing",
+          "name": "The Joined Span",
+          "x": 0,
+          "z": -3,
+          "required": {
+            "wood": 8,
+            "stone": 8
+          },
+          "delivered": {
+            "wood": 8,
+            "stone": 8
+          },
+          "complete": true,
+          "contributors": {
+            "baa58a25-0796-401f-a2d3-6519affd45a0": 8,
+            "7e94bfbe-d62a-4cb8-a475-34685d62cdf3": 8
+          }
+        },
+        "treasury": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0,
+          "marks": 468
+        },
+        "gifts": [
+          {
+            "id": "9dff3c79-3069-408b-a23d-c99065fc4c49",
+            "senderId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+            "recipientId": "baa58a25-0796-401f-a2d3-6519affd45a0",
+            "give": {
+              "item": "marks",
+              "quantity": 1
+            },
+            "status": "accepted",
+            "createdAt": 1789251979934,
+            "closedAt": 1789251996881,
+            "senderName": "Rema",
+            "recipientName": "Melu"
+          },
+          {
+            "id": "0f4506ca-a878-4dcc-be6e-3b4307b7390a",
+            "senderId": "baa58a25-0796-401f-a2d3-6519affd45a0",
+            "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+            "give": {
+              "item": "marks",
+              "quantity": 1
+            },
+            "status": "declined",
+            "createdAt": 1789251997369,
+            "closedAt": 1789252015359,
+            "senderName": "Melu",
+            "recipientName": "Rema"
+          },
+          {
+            "id": "985fa146-624d-421c-b3ee-f19b4f816c13",
+            "senderId": "baa58a25-0796-401f-a2d3-6519affd45a0",
+            "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+            "give": {
+              "item": "marks",
+              "quantity": 1
+            },
+            "status": "accepted",
+            "createdAt": 1789252025001,
+            "closedAt": 1789252049122,
+            "senderName": "Melu",
+            "recipientName": "Rema"
+          }
+        ],
+        "conservation": {
+          "residual": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0,
+            "marks": 0
+          }
+        }
+      },
+      "finishedAt": "2026-09-12T22:28:13.302Z"
+    }
+  ]
+}

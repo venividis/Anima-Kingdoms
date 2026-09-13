@@ -1,0 +1,245 @@
+{
+  "source": "/tmp/anima-broader-baseline/public",
+  "hashes": {
+    "realm.js": "a141fc480830449c9bd1eb55a172066a3a550b855fc54aa8cacf2f86e31e8df1",
+    "kingdoms.js": "e9f9150abe7b3068cb36e331c43f3581e6295b472ede301fc48e5a009f485ba1",
+    "world.js": "4c357b71d007f993bc383f659c1a76423c86e0596bc4b7530c619bea1763191f",
+    "creation.js": "ba580311ad87078f592209a3874e19a44549ee7f364308e964d92bcab6779ee9",
+    "navigation.js": "46e32a3b7ba4fe02a4e90ed0f3017d23af55b7081134945bb14fbe575c85c6f3"
+  },
+  "evidence": "Deterministic agent and legal core-function probes; no browser or human testing.",
+  "cases": [
+    {
+      "id": "guided-guard",
+      "invariant": "A queued route must not bypass combat movement limits.",
+      "manualTravel": 0.32249999999999446,
+      "guidedTravel": 0.7166666666666721,
+      "ratio": 2.2222222222222774,
+      "activeJourney": {
+        "x": 0,
+        "z": 0
+      },
+      "status": "defect reproduced"
+    },
+    {
+      "id": "guided-held-palm",
+      "invariant": "A queued route must not bypass combat movement limits.",
+      "manualTravel": 0.3941666666666599,
+      "guidedTravel": 0.7166666666666721,
+      "ratio": 1.8181818181818632,
+      "activeJourney": {
+        "x": 0,
+        "z": 0
+      },
+      "status": "defect reproduced"
+    },
+    {
+      "id": "revoked-journey",
+      "invariant": "The strengthened revoke control cancels accepted single-body queued walking.",
+      "atRevocation": {
+        "x": 8.776635393889365e-18,
+        "z": 15.928333333333333
+      },
+      "after": {
+        "x": 8.776635393889365e-18,
+        "z": 11.6283333333333
+      },
+      "movementAfterRevocation": 4.300000000000033,
+      "journey": {
+        "x": 0,
+        "z": 0
+      },
+      "status": "prior cancellation contract gap reproduced"
+    },
+    {
+      "id": "H37-public-channel-lock",
+      "invariant": "Prospectively accepted stewardship must permit recovery of scarce public infrastructure after its builder leaves.",
+      "agentOwnedSlots": 8,
+      "removalErrors": [
+        "Only your own channels can be salvaged."
+      ],
+      "braidError": "That channel slot is unavailable.",
+      "storage": {
+        "bridge": 4,
+        "orchard": 0,
+        "habitat": 0
+      },
+      "deliveries": {
+        "bridge": 2,
+        "orchard": 0,
+        "habitat": 0
+      },
+      "ledger": {
+        "water": 0,
+        "money": 50,
+        "fiber": 48,
+        "focus": 24,
+        "food": 4
+      },
+      "reloads": true,
+      "status": "known current unresolved requirement reproduced"
+    },
+    {
+      "id": "legal-agent-connected-creation",
+      "invariant": "An invited command policy completes real purchase, construction, cargo, consumption, payment and physical return without fixture mutation.",
+      "status": "passed",
+      "finalTick": 2666,
+      "agentCommands": 9,
+      "remainingGrant": 11,
+      "actions": [
+        {
+          "op": "walk",
+          "tick": 0,
+          "result": null
+        },
+        {
+          "op": "buy_crystal",
+          "tick": 94,
+          "result": null
+        },
+        {
+          "op": "walk",
+          "tick": 94,
+          "result": null
+        },
+        {
+          "op": "guide",
+          "tick": 427,
+          "result": {
+            "source": "8fda6fb0-e55f-4d6c-b6b6-4c7d650d145e",
+            "receiver": "32fdf63d-43ee-4dd7-b586-5f1190991017",
+            "carrier": "4222ccfa-0c22-427e-b40f-c7bba866f60d"
+          }
+        },
+        {
+          "op": "fuel",
+          "tick": 427,
+          "result": null
+        },
+        {
+          "op": "feed",
+          "tick": 427,
+          "result": null
+        },
+        {
+          "op": "perform",
+          "tick": 427,
+          "result": null
+        },
+        {
+          "op": "assign",
+          "tick": 427,
+          "result": null
+        },
+        {
+          "op": "perform",
+          "tick": 2066,
+          "result": null
+        }
+      ],
+      "checkpoints": [
+        {
+          "phase": "0:pickup",
+          "tick": 428,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "0:out",
+          "tick": 442,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "1:return",
+          "tick": 1009,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "1:pickup",
+          "tick": 1552,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "1:out",
+          "tick": 1553,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "2:return",
+          "tick": 2066,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        }
+      ],
+      "order": {
+        "id": "orchard-hearth",
+        "item": "stone",
+        "need": 2,
+        "delivered": 2,
+        "reward": 4,
+        "reserved": 0,
+        "paid": true,
+        "x": 8,
+        "z": -27
+      },
+      "money": 50,
+      "materialResidual": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      },
+      "charge": {
+        "issued": 24,
+        "source": 8,
+        "flight": 0,
+        "receiver": 4,
+        "spent": 12,
+        "dissipated": 0
+      },
+      "limitation": "This is a scripted policy with complete local-state access. It is not an installed model service, browser interaction or a human study."
+    }
+  ]
+}

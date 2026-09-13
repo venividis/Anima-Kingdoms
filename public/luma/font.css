@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Luma Origin Prefinal";
+  src: url("./Luma-Origin-Prefinal.woff2") format("woff2"),
+       url("./Luma-Origin-Prefinal.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+.luma-native, .native-luma {
+  font-family: "Luma Origin Prefinal", system-ui, sans-serif;
+  font-weight: 400;
+  font-variant-ligatures: none;
+}

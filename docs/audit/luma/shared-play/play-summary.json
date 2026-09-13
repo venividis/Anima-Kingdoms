@@ -1,0 +1,422 @@
+{
+  "recordedAt": "2026-09-12T22:31:51.464Z",
+  "startedAt": "2026-09-12T22:24:06.945Z",
+  "finishedAt": "2026-09-12T22:30:51.835Z",
+  "method": "Two independently controlled agents, separate owner sessions, actual HTTP API and isolated SQLite authority. File relay only forwards HTTP requests across execution namespaces. Date.now and game resource rules were unchanged.",
+  "redactions": "Authorization headers and session token response fields only. Runtime credentials and the SQLite database are outside delivered evidence.",
+  "recordingGap": "Two original Melu HTTP entries for movement revisions53 and54 were absent when the final trace was inspected; the cause remains unknown. Their exact envelopes and acceptance receipts were recovered read-only from the authority, checksum verified, and replayed through HTTP without changing current state. They are labeled separately; missing historical response states are not fabricated.",
+  "scope": "Core/API play evidence; this does not establish visual browser quality, pronunciation intelligibility, or human learning outcomes.",
+  "loadedSourceNote": "The running authority was loaded before a later gift-history correction that retains the latest 200 closed gifts by settlement order. This journey uses only three gifts and does not test that boundary; dedicated authority tests cover it separately.",
+  "actors": [
+    {
+      "name": "Melu",
+      "playerId": "baa58a25-0796-401f-a2d3-6519affd45a0",
+      "httpRecords": 117,
+      "acceptedCommands": 45,
+      "acceptedCommandsInOriginalHTTPRecords": 43,
+      "commands": {
+        "luma.speak": 7,
+        "move": 29,
+        "gather": 8,
+        "gift.accept": 1
+      },
+      "commandsInOriginalHTTPRecords": {
+        "luma.speak": 7,
+        "move": 27,
+        "gather": 8,
+        "gift.accept": 1
+      },
+      "recoveredServerReceipts": {
+        "file": "melu-recovered-server-receipts.json",
+        "revisions": [
+          53,
+          54
+        ],
+        "checksumVerified": true,
+        "freshExactHTTPReplaysVerified": true
+      },
+      "replays": [
+        {
+          "revision": 57,
+          "key": "play-Melu-c9c6403a-bc3f-4dd1-b6a1-27b8bd5b3247",
+          "op": "luma.speak"
+        },
+        {
+          "revision": 53,
+          "key": "play-Melu-1331484f-bbff-409d-940c-f1fa28e94dcd",
+          "op": "move"
+        },
+        {
+          "revision": 54,
+          "key": "play-Melu-2e28c9d1-ceec-496b-927a-62f89ad5fac3",
+          "op": "move"
+        }
+      ],
+      "httpErrors": [],
+      "speech": [
+        {
+          "revision": 27,
+          "mode": "i",
+          "latin": "i mi me bani ta bana ki #f \"wood\".",
+          "native": "       # \"wood\".",
+          "status": "imagined",
+          "ready": false,
+          "effect": null,
+          "blocker": {
+            "code": "OUT_OF_REACH",
+            "message": "Walk closer to this place first."
+          }
+        },
+        {
+          "revision": 55,
+          "mode": "i",
+          "latin": "i mi me bani ta bana ki #f \"wood\".",
+          "native": "       # \"wood\".",
+          "status": "imagined",
+          "ready": true,
+          "effect": null,
+          "blocker": null
+        },
+        {
+          "revision": 56,
+          "mode": "u",
+          "latin": "u mi me bani ta bana ki #f \"wood\".",
+          "native": "       # \"wood\".",
+          "status": "intended",
+          "ready": true,
+          "effect": null,
+          "blocker": null
+        },
+        {
+          "revision": 57,
+          "mode": "pe",
+          "latin": "pe mi me bani ta bana ki #f \"wood\".",
+          "native": "       # \"wood\".",
+          "status": "enacted",
+          "ready": true,
+          "effect": {
+            "projectId": "crossing",
+            "complete": false,
+            "reward": 16
+          },
+          "blocker": null
+        },
+        {
+          "revision": 89,
+          "mode": "pe",
+          "latin": "pe mi me doni ta dona li \"Rema\".",
+          "native": "       \"Rema\".",
+          "status": "enacted",
+          "ready": true,
+          "effect": {
+            "giftId": "0f4506ca-a878-4dcc-be6e-3b4307b7390a",
+            "status": "open",
+            "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3"
+          },
+          "blocker": null
+        },
+        {
+          "revision": 91,
+          "mode": "pe",
+          "latin": "pe mi me doni ta dona li \"Rema\".",
+          "native": "       \"Rema\".",
+          "status": "enacted",
+          "ready": true,
+          "effect": {
+            "giftId": "985fa146-624d-421c-b3ee-f19b4f816c13",
+            "status": "open",
+            "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3"
+          },
+          "blocker": null
+        },
+        {
+          "revision": 94,
+          "mode": "a",
+          "latin": "a mi me honi ta loma he.",
+          "native": "      .",
+          "status": "experienced",
+          "ready": true,
+          "effect": {
+            "recorded": true
+          },
+          "blocker": null
+        }
+      ],
+      "final": {
+        "revision": 94,
+        "position": {
+          "x": 2.407412430484045e-35,
+          "z": -22.000000000000004
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0,
+          "marks": 16
+        },
+        "custody": {
+          "residual": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0,
+            "marks": 0
+          }
+        }
+      },
+      "traceSha256": "af31988c8432e5d3c06e3fb492818198c43fa5fe5a244d13b98bef19f29ab46e"
+    },
+    {
+      "name": "Rema",
+      "playerId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+      "httpRecords": 117,
+      "acceptedCommands": 47,
+      "acceptedCommandsInOriginalHTTPRecords": 47,
+      "commands": {
+        "move": 29,
+        "gather": 8,
+        "luma.speak": 8,
+        "gift.decline": 1,
+        "gift.accept": 1
+      },
+      "commandsInOriginalHTTPRecords": {
+        "move": 29,
+        "gather": 8,
+        "luma.speak": 8,
+        "gift.decline": 1,
+        "gift.accept": 1
+      },
+      "recoveredServerReceipts": null,
+      "replays": [
+        {
+          "revision": 58,
+          "key": "play-Rema-baa62214-4ffa-458b-923d-ac4e8741a279",
+          "op": "luma.speak"
+        }
+      ],
+      "httpErrors": [],
+      "speech": [
+        {
+          "revision": 34,
+          "mode": "i",
+          "latin": "i mi me bani ta bana ki #f bema.",
+          "native": "       # .",
+          "status": "imagined",
+          "ready": true,
+          "effect": null,
+          "blocker": null
+        },
+        {
+          "revision": 35,
+          "mode": "u",
+          "latin": "u mi me bani ta bana ki #f bema.",
+          "native": "       # .",
+          "status": "intended",
+          "ready": true,
+          "effect": null,
+          "blocker": null
+        },
+        {
+          "revision": 36,
+          "mode": "e",
+          "latin": "e mi me bani ta bana ki #f bema.",
+          "native": "       # .",
+          "status": "inspected",
+          "ready": true,
+          "effect": null,
+          "blocker": null
+        },
+        {
+          "revision": 58,
+          "mode": "pe",
+          "latin": "pe mi me bani ta bana ki #f bema.",
+          "native": "       # .",
+          "status": "enacted",
+          "ready": true,
+          "effect": {
+            "projectId": "crossing",
+            "complete": true,
+            "reward": 16
+          },
+          "blocker": null
+        },
+        {
+          "revision": 85,
+          "mode": "i",
+          "latin": "i mi me doni ta dona li \"Melu\".",
+          "native": "       \"Melu\".",
+          "status": "imagined",
+          "ready": true,
+          "effect": null,
+          "blocker": null
+        },
+        {
+          "revision": 86,
+          "mode": "u",
+          "latin": "u mi me doni ta dona li \"Melu\".",
+          "native": "       \"Melu\".",
+          "status": "intended",
+          "ready": true,
+          "effect": null,
+          "blocker": null
+        },
+        {
+          "revision": 87,
+          "mode": "pe",
+          "latin": "pe mi me doni ta dona li \"Melu\".",
+          "native": "       \"Melu\".",
+          "status": "enacted",
+          "ready": true,
+          "effect": {
+            "giftId": "9dff3c79-3069-408b-a23d-c99065fc4c49",
+            "status": "open",
+            "recipientId": "baa58a25-0796-401f-a2d3-6519affd45a0"
+          },
+          "blocker": null
+        },
+        {
+          "revision": 93,
+          "mode": "a",
+          "latin": "a mi me honi ta loma he.",
+          "native": "      .",
+          "status": "experienced",
+          "ready": true,
+          "effect": {
+            "recorded": true
+          },
+          "blocker": null
+        }
+      ],
+      "final": {
+        "revision": 94,
+        "position": {
+          "x": -2.407412430484045e-35,
+          "z": -22.000000000000004
+        },
+        "inventory": {
+          "wood": 0,
+          "stone": 0,
+          "ore": 0,
+          "food": 0,
+          "herb": 0,
+          "crystal": 0,
+          "marks": 16
+        },
+        "custody": {
+          "residual": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0,
+            "marks": 0
+          }
+        }
+      },
+      "traceSha256": "011f24dd326a994a8f6537480bf1a6bbceb79157d08e987cfd6bf265bc9e8bc7"
+    }
+  ],
+  "final": {
+    "revision": 94,
+    "project": {
+      "id": "crossing",
+      "name": "The Joined Span",
+      "x": 0,
+      "z": -3,
+      "required": {
+        "wood": 8,
+        "stone": 8
+      },
+      "delivered": {
+        "wood": 8,
+        "stone": 8
+      },
+      "complete": true,
+      "contributors": {
+        "baa58a25-0796-401f-a2d3-6519affd45a0": 8,
+        "7e94bfbe-d62a-4cb8-a475-34685d62cdf3": 8
+      }
+    },
+    "treasury": {
+      "wood": 0,
+      "stone": 0,
+      "ore": 0,
+      "food": 0,
+      "herb": 0,
+      "crystal": 0,
+      "marks": 468
+    },
+    "gifts": [
+      {
+        "id": "9dff3c79-3069-408b-a23d-c99065fc4c49",
+        "senderId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+        "recipientId": "baa58a25-0796-401f-a2d3-6519affd45a0",
+        "give": {
+          "item": "marks",
+          "quantity": 1
+        },
+        "status": "accepted",
+        "createdAt": 1789251979934,
+        "closedAt": 1789251996881,
+        "senderName": "Rema",
+        "recipientName": "Melu"
+      },
+      {
+        "id": "0f4506ca-a878-4dcc-be6e-3b4307b7390a",
+        "senderId": "baa58a25-0796-401f-a2d3-6519affd45a0",
+        "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+        "give": {
+          "item": "marks",
+          "quantity": 1
+        },
+        "status": "declined",
+        "createdAt": 1789251997369,
+        "closedAt": 1789252015359,
+        "senderName": "Melu",
+        "recipientName": "Rema"
+      },
+      {
+        "id": "985fa146-624d-421c-b3ee-f19b4f816c13",
+        "senderId": "baa58a25-0796-401f-a2d3-6519affd45a0",
+        "recipientId": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+        "give": {
+          "item": "marks",
+          "quantity": 1
+        },
+        "status": "accepted",
+        "createdAt": 1789252025001,
+        "closedAt": 1789252049122,
+        "senderName": "Melu",
+        "recipientName": "Rema"
+      }
+    ],
+    "custody": {
+      "residual": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0,
+        "marks": 0
+      }
+    }
+  },
+  "checks": {
+    "all94AcceptedRevisionsCoveredByResponsesOrRecoveredReceipts": true,
+    "allRecordedStateCustodyResidualsZero": true,
+    "exactUndertakingReplays": 2,
+    "additionalRecoveredMovementReplays": 2,
+    "bothBodiesCrossed": true,
+    "materialsPaidOnce": true,
+    "recipientAcceptedTwiceDeclinedOnce": true,
+    "bothFinalMarks16": true,
+    "allGiftEscrowsClosed": true
+  }
+}

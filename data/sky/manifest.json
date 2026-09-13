@@ -1,0 +1,47 @@
+{
+  "id": "yale-bsc5-cds-v50-20260913",
+  "title": "Yale Bright Star Catalogue, 5th Revised Edition (Hoffleit & Warren)",
+  "source": "https://cdsarc.cds.unistra.fr/ftp/V/50/",
+  "accessed": "2026-09-13",
+  "frame": "FK5 J2000, epoch 2000.0",
+  "count": 9096,
+  "omittedHR": [
+    92,
+    95,
+    182,
+    1057,
+    1841,
+    2472,
+    2496,
+    3515,
+    3671,
+    6309,
+    6515,
+    7189,
+    7539,
+    8296
+  ],
+  "fields": [
+    "HR",
+    "designation",
+    "raDegrees",
+    "decDegrees",
+    "Vmag",
+    "BminusV",
+    "pmRAcosDecArcsecYr",
+    "pmDecArcsecYr",
+    "spectralType",
+    "IAUnames"
+  ],
+  "names": {
+    "source": "https://www.pas.rochester.edu/~emamajek/WGSN/IAU-CSN.txt",
+    "edition": "2022-04-04",
+    "license": "Creative Commons Attribution, per source header",
+    "note": "Pinned historical naming table; newer IAU adoptions exist. Names can identify a component of a BSC multiple system."
+  },
+  "sha256": {
+    "bsc5.dat": "69797549cc1605aad7ff94e9325e29a1661f2a253917faaa056d9bf20b809afd",
+    "iau-csn-2022.txt": "84fac0c90f1b19abc491c2793469e0caa7b003ad1bc93a790ca41147010d0eb0"
+  },
+  "model": "First-order tangent proper motion; precession and nutation. No stellar parallax, annual aberration, radial perspective acceleration, binary or variability model. B-V colors are illustrative."
+}

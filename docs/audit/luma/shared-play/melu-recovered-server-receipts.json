@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-09-12T22:30:18.908Z",
+  "method": "Read-only access to the existing authority receipt table. These are the exact retained command envelopes and acceptance receipts for a gap in the client JSONL; missing HTTP response state is not reconstructed.",
+  "records": [
+    {
+      "envelope": {
+        "expectedRevision": 52,
+        "key": "play-Melu-1331484f-bbff-409d-940c-f1fa28e94dcd",
+        "op": "move",
+        "payload": {
+          "dx": 0.456143393109539,
+          "dz": -0.8899062899668237
+        }
+      },
+      "receipt": {
+        "key": "play-Melu-1331484f-bbff-409d-940c-f1fa28e94dcd",
+        "op": "move",
+        "revision": 53,
+        "result": {
+          "x": -0.7139732989772547,
+          "z": 1.3929157787354938
+        }
+      }
+    },
+    {
+      "envelope": {
+        "expectedRevision": 53,
+        "key": "play-Melu-2e28c9d1-ceec-496b-927a-62f89ad5fac3",
+        "op": "move",
+        "payload": {
+          "dx": 0.4079847422727169,
+          "dz": -0.7959518735631392
+        }
+      },
+      "receipt": {
+        "key": "play-Melu-2e28c9d1-ceec-496b-927a-62f89ad5fac3",
+        "op": "move",
+        "revision": 54,
+        "result": {
+          "x": -1.3877787807814457e-17,
+          "z": -2.7755575615628914e-17
+        }
+      }
+    }
+  ],
+  "checksumVerified": true,
+  "httpReplayVerification": [
+    {
+      "recordedAt": "2026-09-12T22:30:51.794Z",
+      "receipt": {
+        "key": "play-Melu-1331484f-bbff-409d-940c-f1fa28e94dcd",
+        "op": "move",
+        "revision": 53,
+        "result": {
+          "x": -0.7139732989772547,
+          "z": 1.3929157787354938
+        },
+        "replayed": true
+      },
+      "currentRevision": 94,
+      "currentPosition": {
+        "x": 2.407412430484045e-35,
+        "z": -22.000000000000004
+      }
+    },
+    {
+      "recordedAt": "2026-09-12T22:30:51.835Z",
+      "receipt": {
+        "key": "play-Melu-2e28c9d1-ceec-496b-927a-62f89ad5fac3",
+        "op": "move",
+        "revision": 54,
+        "result": {
+          "x": -1.3877787807814457e-17,
+          "z": -2.7755575615628914e-17
+        },
+        "replayed": true
+      },
+      "currentRevision": 94,
+      "currentPosition": {
+        "x": 2.407412430484045e-35,
+        "z": -22.000000000000004
+      }
+    }
+  ]
+}

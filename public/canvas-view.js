@@ -1,13 +1,24 @@
 /* A hardware-independent cartographic renderer of the actual simulation. */
 import * as R from './realm.js';
+import {inscriptionCurves} from './luma/geometry.js';
+import {toNative} from './luma/language.js';
 const tau=Math.PI*2;
-export function paintBlueprint(c,b,project,x=0,z=0,yaw=0,alpha=1,cameraYaw=0){c.save();c.globalAlpha=alpha;const root={x,z,yaw:0};root.yaw=yaw*180/Math.PI;for(const p of b.parts){const o=R.Creation.point(root,p),v=project(o.x,p.y,o.z),unit=project(1,0,0),zero=project(0,0,0),scale=Math.hypot(unit.x-zero.x,(unit.y-zero.y)/.68);c.save();c.translate(v.x,v.y);c.rotate(-o.yaw-cameraYaw);c.fillStyle=p.color;c.strokeStyle='#d1f9ea55';c.lineWidth=1;const w=Math.max(2,p.w*scale),h=Math.max(2,(p.d*.68+p.h*.4)*scale);if(p.role==='light'){c.shadowColor=p.color;c.shadowBlur=10;}if(p.shape==='box'){c.fillRect(-w/2,-h/2,w,h);c.strokeRect(-w/2,-h/2,w,h);}else if(p.shape==='spire'){c.beginPath();c.moveTo(0,-h/2);c.lineTo(w/2,h/2);c.lineTo(-w/2,h/2);c.closePath();c.fill();}else{c.beginPath();c.ellipse(0,0,w/2,h/2,0,0,tau);if(p.shape==='ring'){c.lineWidth=2;c.strokeStyle=p.color;c.stroke();}else c.fill();}c.restore();}c.restore();}
+export function paintBlueprint(c,b,project,x=0,z=0,yaw=0,alpha=1,cameraYaw=0){
+ c.save();c.globalAlpha=alpha;const root={x,z,yaw:yaw*180/Math.PI};
+ for(const p of b.parts){const o=R.Creation.point(root,p),v=project(o.x,p.y,o.z),unit=project(1,0,0),zero=project(0,0,0),scale=Math.hypot(unit.x-zero.x,(unit.y-zero.y)/.68);c.save();c.translate(v.x,v.y);c.rotate(-o.yaw-cameraYaw);c.fillStyle=p.color;c.strokeStyle='#d1f9ea55';c.lineWidth=1;const w=Math.max(2,p.w*scale),h=Math.max(2,(p.d*.68+p.h*.4)*scale);if(p.role==='light'){c.shadowColor=p.color;c.shadowBlur=10;}if(p.shape==='box'){c.fillRect(-w/2,-h/2,w,h);c.strokeRect(-w/2,-h/2,w,h);}else if(p.shape==='spire'){c.beginPath();c.moveTo(0,-h/2);c.lineTo(w/2,h/2);c.lineTo(-w/2,h/2);c.closePath();c.fill();}else{c.beginPath();c.ellipse(0,0,w/2,h/2,0,0,tau);if(p.shape==='ring'){c.lineWidth=2;c.strokeStyle=p.color;c.stroke();}else c.fill();}c.restore();}
+ if(b.luma){
+  const co=Math.cos(yaw),si=Math.sin(yaw);c.lineWidth=.8;
+  for(const curve of inscriptionCurves(b.luma)){c.strokeStyle='aeiou'.includes(curve.letter)?'#9cd7d499':'#e7c58c99';c.beginPath();curve.points.forEach(([px,py,pz],i)=>{const q=project(x+px*co+pz*si,py,z-px*si+pz*co);i?c.lineTo(q.x,q.y):c.moveTo(q.x,q.y);});c.stroke();}
+  const q=project(x,3.2,z);c.fillStyle='#f3dca8';c.font='22px "Luma Origin Prefinal", serif';c.textAlign='center';c.fillText(toNative(b.luma.word),q.x,q.y);
+ }
+ c.restore();
+}
 export class CanvasWorldView{
  constructor(canvas){this.canvas=canvas;this.c=canvas.getContext('2d');this.yaw=0;this.pitch=.5;this.distance=22;this.atlas=false;this.reduced=false;this.placement=null;this.cx=0;this.cz=0;this.scale=15;this.fallback=true;}
  rebuild(){}setPreview(p){this.preview=p;}
  project(x,y,z){const dx=x-this.cx,dz=z-this.cz,co=Math.cos(this.yaw),si=Math.sin(this.yaw),px=this.canvas.width/2+(dx*co-dz*si)*this.scale,py=this.canvas.height*.5+(dx*si+dz*co)*this.scale*.68-y*this.scale*.65;return{x:px,y:py,visible:px>-100&&py>-100&&px<this.canvas.width+100&&py<this.canvas.height+100};}
  groundPoint(x,y){const dx=(x-this.canvas.width/2)/this.scale,dz=(y-this.canvas.height*.5)/(this.scale*.68),co=Math.cos(this.yaw),si=Math.sin(this.yaw);return{x:this.cx+dx*co+dz*si,z:this.cz-dx*si+dz*co};}
- render(s,t){const canvas=this.canvas,c=this.c;if(canvas.width!==innerWidth)canvas.width=innerWidth;if(canvas.height!==innerHeight)canvas.height=innerHeight;this.scale=this.atlas?Math.min(innerWidth/118,innerHeight/95):Math.max(9,Math.min(22,360/this.distance));this.cx=this.atlas?0:s.hero.x;this.cz=this.atlas?-4:s.hero.z;const bg=c.createLinearGradient(0,0,0,canvas.height);bg.addColorStop(0,'#081d2b');bg.addColorStop(1,'#123a40');c.fillStyle=bg;c.fillRect(0,0,canvas.width,canvas.height);
+ render(s,t){const canvas=this.canvas,c=this.c;if(canvas.width!==innerWidth)canvas.width=innerWidth;if(canvas.height!==innerHeight)canvas.height=innerHeight;this.scale=this.atlas?Math.min(innerWidth/118,innerHeight/95):Math.max(9,Math.min(22,360/this.distance));this.cx=this.atlas?0:s.hero.x;this.cz=this.atlas?-4:s.hero.z;c.clearRect(0,0,canvas.width,canvas.height);
  const poly=(points,color)=>{c.beginPath();points.forEach(([x,z],i)=>{const p=this.project(x,0,z);i?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y);});c.closePath();c.fillStyle=color;c.fill();c.strokeStyle='#9fd5b43b';c.lineWidth=2;c.stroke();};
  if(s.mode==='world')for(const g of R.Rain.GROUND)poly(g.poly,'#284b44');else{const a=R.ARENAS[s.mode];poly(Array.from({length:64},(_,i)=>[a.x+Math.cos(i/64*tau)*a.r,a.z+Math.sin(i/64*tau)*a.r]),'#324d50');}
  const dot=(x,y,z,r,color)=>{const p=this.project(x,y,z);c.fillStyle=color;c.beginPath();c.arc(p.x,p.y,r*this.scale,0,tau);c.fill();};
@@ -21,6 +32,14 @@ export class CanvasWorldView{
   for(const p of s.kingdoms.packets){const a=s.creation.instances.find(e=>e.id===p.source),b=s.creation.instances.find(e=>e.id===p.target),f=Math.max(0,Math.min(1,(s.kingdoms.clock-p.start)/(p.due-p.start)));dot(a.x+(b.x-a.x)*f,.8,a.z+(b.z-a.z)*f,.2,'#d5ffe4');}
   const o=s.kingdoms.order;dot(o.x,0,o.z,o.paid?1.7:.9,o.paid?'#e1ac64':'#829f9c');if(o.paid){dot(o.x,1+Math.sin(t*3)*.1,o.z,.4,'#ffdf94');}
   for(const w of s.workers)dot(w.x,.7,w.z,.45,'#b5ceab');dot(s.pet.x,.7,s.pet.z,.32,'#b6a6e4');
+  if(s.civilization.active){const cv=s.civilization,carrier=cv.courier;
+   const label=(x,z,text,color='#e6d5ad')=>{const p=this.project(x,1.7,z);c.font='11px system-ui';c.textAlign='center';c.fillStyle=color;c.fillText(text,p.x,p.y);c.textAlign='start';};
+   dot(R.Civilization.DEPOT.x,.1,R.Civilization.DEPOT.z,1,'#bb9963');label(0,23,`Depot ${cv.depot.food}/32`);
+   for(const h of cv.households){const home=R.Civilization.HOMES.find(a=>a.id===h.id),color=h.hunger>=3?'#de8874':h.hunger?'#d4b06a':'#8cc7a0';dot(home.x,.1,home.z,.85,color);label(home.x,home.z,`${home.name.split(' ')[0]} · ${h.pantry} food`,color);for(const[dx,dz]of[[-1.1,.75],[1.1,.75],[0,1.65]])dot(home.x+dx,.7,home.z+dz,.3,'#e8d9b9');for(let i=0;i<h.pantry;i++)dot(home.x-.45+i*.45,.4,home.z,.12,'#f4d28b');}
+   dot(carrier.x,.8,carrier.z,.43,'#f4ca99');if(carrier.cargo)dot(carrier.x,1.4,carrier.z,.22,'#edbd65');label(carrier.x,carrier.z,carrier.cargo?`Tavi · ${carrier.cargo.count} food`:'Tavi');
+   if(carrier.cargo){const destination=R.Civilization.HOMES.find(h=>h.id===carrier.cargo.household),p=this.project(carrier.x,.1,carrier.z),q=this.project(destination.x,.1,destination.z);c.strokeStyle='#e4c68865';c.setLineDash([3,7]);c.beginPath();c.moveTo(p.x,p.y);c.lineTo(q.x,q.y);c.stroke();c.setLineDash([]);}
+   for(const[item,rule]of Object.entries(R.Civilization.PATCHES))label(rule.x,rule.z,`${s.reserve[item]}/${rule.capacity} ${item}`,'#b9d3ae');
+  }
  }
  if(s.mode!=='world')for(const o of R.obstacles(s)){const p=this.project(o.x,0,o.z);c.fillStyle='#172f36';c.strokeStyle='#bed8c166';c.lineWidth=2;c.beginPath();c.ellipse(p.x,p.y,o.r*this.scale,o.r*this.scale*.68,0,0,tau);c.fill();c.stroke();const top=this.project(o.x,1.2,o.z);c.fillStyle='#56716e';c.beginPath();c.ellipse(top.x,top.y,o.r*this.scale,o.r*this.scale*.68,0,0,tau);c.fill();c.stroke();}
  for(const e of s.enemies)if(e.hp>0&&!e.dead){dot(e.x,.6,e.z,e.boss?1.8:.65,e.team==='amber'?'#f0c675':'#cc7973');const p=this.project(e.x,.6,e.z);c.strokeStyle='#f4ddd0';c.lineWidth=2;c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x+Math.sin(e.angle-this.yaw)*14,p.y+Math.cos(e.angle-this.yaw)*10);c.stroke();}

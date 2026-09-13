@@ -1,4 +1,5 @@
 import * as K from './kingdoms.js';
+import {blueprintForWord,lumaScoreNotes,validateInscription} from './luma/geometry.js';
 /* The Dream Foundry. Pure-data blueprints; no eval, remote code, or asset minting.
    A published instance owns an immutable blueprint copy and its actual materials. */
 export const SCHEMA = 'awe-blueprint-1';
@@ -31,6 +32,7 @@ export function seed(kind='creature') {
 
 export function compile(raw) {
   const keys=['schema','id','revision','parent','name','kind','material','power','reach','tempo','verb','rules','resource','score','beat','voice','course','seconds','order','parts'];
+  if(raw&&Object.hasOwn(raw,'luma'))keys.push('luma');
   if(!exact(raw,keys)||raw.schema!==SCHEMA) fail('This is not a complete Dream Foundry blueprint.');
   if(typeof raw.id!=='string'||!raw.id.length||raw.id.length>100||!integer(raw.revision,1,10000)||!(raw.parent===null||typeof raw.parent==='string'&&raw.parent.length<=120))fail('Invalid blueprint lineage.');
   if(typeof raw.name!=='string'||raw.name.trim().length<1||raw.name.length>64||/[<>\x00-\x1f]/.test(raw.name))fail('Use a name of 1–64 plain-text characters.');
@@ -47,6 +49,10 @@ export function compile(raw) {
     if(p.role!=='ornament'&&p.role!=='light'&&raw.kind!=='structure')fail('Only structures have solid walls and walking surfaces.');
     if(['solid','walkway'].includes(p.role)&&p.shape!=='box')fail('Collision parts use boxes so geometry and boundaries agree.');
     if(p.role==='walkway'&&(Math.abs(p.y+p.h/2-.16)>.001||p.h>.32))fail('Walking decks have a top at 0.16; keep their center/height aligned.');
+  }
+  if(Object.hasOwn(raw,'luma')){
+    const l=validateInscription(raw.luma),source=blueprintForWord(l.word,l.sentence,l.dimension);
+    if(raw.kind!==source.kind||JSON.stringify(raw.parts)!==JSON.stringify(source.parts)||JSON.stringify(raw.score)!==JSON.stringify(source.score)||raw.power!==4||raw.reach!==4||raw.tempo!==4)fail('This inscribed form must retain its word-derived shape, score and balanced qualities. Make an independent design to edit those fields.');
   }
   const b=clone(raw);b.name=b.name.trim();
   const volume=b.parts.reduce((n,p)=>n+p.w*p.h*p.d*(p.shape==='orb'?.53:p.shape==='ring'?.1:p.shape==='spire'?.33:1),0);
@@ -80,7 +86,7 @@ export function placement(s,raw,x,z,yaw,ctx){
   else {
     const decks=def.blueprint.parts.filter(p=>p.role==='walkway').map(p=>point(e,p));
     if(!ctx.baseGround(x,z)&&!decks.some(p=>[-1,0,1].some(a=>[-1,0,1].some(b=>ctx.baseGround(p.x+a*p.hx,p.z+b*p.hz)))))fail('Anchor the structure to the original island ground.');
-    const bodies=[s.hero,...s.workers,s.pet,...s.creation.instances.filter(e=>e.blueprint.kind==='creature')];
+    const bodies=[s.hero,...s.workers,s.pet,...(s.civilization?.active?[s.civilization.courier]:[]),...s.creation.instances.filter(e=>e.blueprint.kind==='creature')];
     for(const p of def.blueprint.parts.filter(p=>p.role==='solid')){const o=point(e,p);if((ctx.protectedPlaces||[]).some(a=>inside(a.x,a.z,o,2)))fail('Keep clear access around resources, landmarks and safety landings.');if(bodies.some(a=>inside(a.x,a.z,o,.8)))fail('A person or companion occupies a solid part. Move or redesign it.');if(ctx.obstacles(s).some(a=>inside(a.x,a.z,o,a.r||.8)))fail('A solid part overlaps existing construction.');}
   }
   return def;
@@ -95,20 +101,22 @@ export function reclaim(s,id,ctx){
   if(s.mode!=='world')fail('Return to the world to reclaim a creation.');const e=s.creation.instances.find(e=>e.id===id);if(!e)fail('That instance no longer exists.');
   const distance=e.blueprint.kind==='structure'?Math.min(...e.blueprint.parts.map(p=>{const o=point(e,p);return Math.max(0,Math.hypot(s.hero.x-o.x,s.hero.z-o.z)-Math.hypot(o.hx,o.hz));})):Math.hypot(e.x-s.hero.x,e.z-s.hero.z);if(distance>8)fail('Stand within eight steps of a visible part to reclaim it.');
   if(e.cargo||e.performance)fail('Finish this delivery or performance before reclaiming it.');
-  if(e.blueprint.kind==='structure')for(const a of[s.hero,...s.workers,s.pet,...s.creation.instances.filter(a=>a.id!==id)])if(surfaces(s).some(p=>p.owner===id&&inside(a.x,a.z,p))&&!ctx.originalWalkable(s,a.x,a.z)&&!surface(s,a.x,a.z,id))fail('Another body or creation depends on this surface. Move it to an island first.');
+  if(e.blueprint.kind==='structure')for(const a of[s.hero,...s.workers,s.pet,...(s.civilization?.active?[s.civilization.courier]:[]),...s.creation.instances.filter(a=>a.id!==id)])if(surfaces(s).some(p=>p.owner===id&&inside(a.x,a.z,p))&&!ctx.originalWalkable(s,a.x,a.z)&&!surface(s,a.x,a.z,id))fail('Another body or creation depends on this surface. Move it to an island first.');
   for(const k of GOODS)s.pack[k]+=e.investment[k];s.creation.instances=s.creation.instances.filter(a=>a!==e);if(s.creation.equipped===id)s.creation.equipped=null;remember(s,`Reclaimed the actual materials of ${e.blueprint.name}.`);
 }
 export function feed(s,id){const e=s.creation.instances.find(e=>e.id===id&&e.blueprint.kind==='creature');if(s.mode!=='world'||s.hero.dead||s.hero.hp<=0||!e||Math.hypot(e.x-s.hero.x,e.z-s.hero.z)>8)fail('Stand near your creature in the world.');if(e.energy>20)fail('This creature has enough energy; food will not be wasted.');if(s.pack.food<1)fail('One food is needed.');s.pack.food--;s.spent.food++;e.energy=Math.min(100,e.energy+80);remember(s,`Fed ${e.blueprint.name}; one food became eighty energy.`);}
 export function equip(s,id){const e=s.creation.instances.find(e=>e.id===id&&e.blueprint.kind==='relic');if(s.mode!=='world'||s.hero.dead||s.hero.hp<=0||!e||Math.hypot(e.x-s.hero.x,e.z-s.hero.z)>8)fail('Stand beside this relic in the world.');s.creation.equipped=id;e.x=s.hero.x;e.z=s.hero.z;remember(s,`Attuned to ${e.blueprint.name}.`);}
 export function activeMove(s){if(!['world','boss'].includes(s.mode))return null;const e=s.creation.instances.find(e=>e.id===s.creation.equipped);return e?compile(e.blueprint).move:null;}
 export function perform(s,id){const e=s.creation.instances.find(e=>e.id===id&&e.blueprint.kind==='instrument');if(s.mode!=='world'||s.hero.dead||s.hero.hp<=0||!e||Math.hypot(e.x-s.hero.x,e.z-s.hero.z)>8)fail('Stand beside the instrument in the world.');if(e.performance||s.tick<e.cooldown)fail('Let the score finish and the instrument settle.');if(s.hero.breath<40)fail('A performance needs forty Breath.');s.hero.breath-=40;s.hero.lastSpend=s.tick;e.performance={next:s.tick+1,index:0};e.cooldown=s.tick+720;remember(s,`Began the authored score of ${e.blueprint.name}.`);}
+export function scoreNotes(blueprint){return blueprint.luma?lumaScoreNotes(blueprint.luma.word):blueprint.score.map(pitch=>({pitch,frequency:220*2**(pitch/12),code:'semitone'}));}
+export function scoreLength(blueprint){return blueprint.luma?blueprint.luma.word.length*2:blueprint.score.length;}
 export function wave(s,x,z,voice,power,reach,pitch=0){s.creation.waves.push({id:uuid(),x,z,voice,power,radius:0,maximum:reach,hit:[],pitch});if(s.creation.waves.length>48)s.creation.waves.shift();}
 
 export function tick(s,ctx){
  const c=s.creation;if(c.wardUntil<=s.tick)c.ward=0;c.notes=[];
  for(const e of s.mode==='world'?c.instances:[]){
   e.age++;if(e.id===c.equipped){e.x=s.hero.x;e.z=s.hero.z;}const b=e.blueprint;
-  if(b.kind==='instrument'&&e.performance&&s.tick>=e.performance.next){const p=e.performance,n=b.score[p.index];wave(s,e.x,e.z,b.voice,1+b.power/2,3+b.reach,n);c.notes.push({pitch:n,energy:b.power});K.emit(s,e,n,p.index);p.index++;p.next+=b.beat;if(p.index===b.score.length){e.performance=null;remember(s,`${b.name} completed its eight-note score.`);}}
+  if(b.kind==='instrument'&&e.performance&&s.tick>=e.performance.next){const p=e.performance,note=scoreNotes(b)[p.index],n=note.pitch;wave(s,e.x,e.z,b.voice,1+b.power/2,3+b.reach,n);c.notes.push(b.luma?{...note,energy:b.power}:{pitch:n,energy:b.power});K.emit(s,e,n,p.index);p.index++;p.next+=b.beat;if(p.index===scoreLength(b)){e.performance=null;remember(s,`${b.name} completed its ${scoreLength(b)}-note score.`);}}
   if(b.kind!=='creature')continue;if(K.courier(s,e,ctx)){if(e.z>-7)e.bank='near';if(e.z<-19)e.bank='far';continue;}const def=compile(b),nearest=s.enemies.filter(a=>a.hp>0&&!a.dead).sort((a,d)=>Math.hypot(a.x-e.x,a.z-e.z)-Math.hypot(d.x-e.x,d.z-e.z))[0];
   const threat=nearest&&Math.hypot(nearest.x-e.x,nearest.z-e.z)<=def.range;
   const rule=b.rules.find(r=>r.when==='always'||r.when==='threat'&&threat||r.when==='hurt'&&s.hero.hp<s.hero.maxHp*.5||r.when==='hungry'&&e.energy<def.energyCost);
@@ -136,7 +144,7 @@ export function validate(c){
   const allowed=['id','blueprint','investment','x','z','yaw','home','bank','energy','cargo','task','cooldown','cycle','performance','age','angle'];if(!e||typeof e!=='object'||Object.keys(e).some(k=>!allowed.includes(k))||allowed.filter(k=>k!=='angle').some(k=>!(k in e))||('angle' in e&&!finite(e.angle,-100000,100000)))fail('Malformed creation body.');const d=compile(e.blueprint);if(!['near','far'].includes(e.bank))fail('Invalid creation entry bank.');if(typeof e.id!=='string'||e.id.length>100||!finite(e.x,-60,60)||!finite(e.z,-65,55)||!finite(e.yaw,-100000,100000)||!finite(e.energy,0,100)||!integer(e.cooldown,0,1e10)||!integer(e.cycle,0,100)||!integer(e.age,0,1e10)||typeof e.task!=='string'||e.task.length>80||!e.home||!finite(e.home.x,-60,60)||!finite(e.home.z,-65,55))fail('Malformed creation instance.');
   if(!exact(e.investment,GOODS)||GOODS.some(k=>e.investment[k]!==d.cost[k]))fail('Creation investment must match its exact compiled bill.');
   if(e.cargo!==null&&(!exact(e.cargo,['item','count'])||e.blueprint.kind!=='creature'||!GOODS.includes(e.cargo.item)||e.cargo.count!==1))fail('Invalid carried creation inventory.');
-  if(e.performance!==null&&(!exact(e.performance,['next','index'])||e.blueprint.kind!=='instrument'||!integer(e.performance.next,0,1e10)||!integer(e.performance.index,0,7)))fail('Invalid score cursor.');
+  if(e.performance!==null&&(!exact(e.performance,['next','index'])||e.blueprint.kind!=='instrument'||!integer(e.performance.next,0,1e10)||!integer(e.performance.index,0,scoreLength(e.blueprint)-1)))fail('Invalid score cursor.');
  }
  if(new Set(c.instances.map(e=>e.id)).size!==c.instances.length)fail('Duplicate instance identity.');
  if(c.equipped!==null&&!c.instances.some(e=>e.id===c.equipped&&e.blueprint.kind==='relic'))fail('Equipped relic is missing.');

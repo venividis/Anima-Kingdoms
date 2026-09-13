@@ -1,5 +1,6 @@
 import {Renderer,Geometry,transform,multiply} from './engine.js';
 import {compile} from './creation.js';
+import {inscriptionCurves} from './luma/geometry.js';
 const rgb = hex => [1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255);
 
 // The same part renderer is used in the editor, rehearsal, and inhabited world.
@@ -14,6 +15,7 @@ export class CreationMeshes {
       ring:r.mesh(new Geometry().ring(0,0,0,.45,.05,white,40))
     };
     this.halo=r.mesh(new Geometry().ring(0,0,0,1,.022,white,64));
+    this.lumaMeshes=new Map();
   }
   draw(b,x=0,y=0,z=0,yaw=0,t=0,opts={}){
     const root=transform(x,y,z,opts.scale||1,opts.scale||1,opts.scale||1,yaw);
@@ -22,6 +24,16 @@ export class CreationMeshes {
       const m=multiply(root,transform(p.x,p.y+wing,p.z,p.w,p.h,p.d,p.yaw*Math.PI/180));
       this.r.draw(this.mesh[p.shape],m,{tint:opts.tint||rgb(p.color),glow:p.role==='light'?.45:opts.selected===i?.22:0,alpha:opts.alpha??1});
       if(opts.selected===i)this.r.draw(this.halo,multiply(root,transform(p.x,p.y+p.h*.55,p.z,Math.max(p.w,p.d)*.65,1,Math.max(p.w,p.d)*.65)),{tint:[1,.85,.55],glow:.8});
+    }
+    if(b.luma){
+      const key=b.luma.word+':'+b.luma.dimension;
+      if(!this.lumaMeshes.has(key)){
+        if(this.lumaMeshes.size>=64){const first=this.lumaMeshes.keys().next().value;this.r.dispose(this.lumaMeshes.get(first));this.lumaMeshes.delete(first);}
+        const form=new Geometry();
+        for(const curve of inscriptionCurves(b.luma)){const color='aeiou'.includes(curve.letter)?[.61,.84,.83]:[.91,.77,.55];for(let i=1;i<curve.points.length;i++)form.cone(curve.points[i-1],curve.points[i],.012,.012,color,4);}
+        this.lumaMeshes.set(key,this.r.mesh(form));
+      }
+      this.r.draw(this.lumaMeshes.get(key),root,{glow:.5,alpha:(opts.alpha??1)*.7});
     }
   }
   instances(s,t){

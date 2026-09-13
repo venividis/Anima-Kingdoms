@@ -1,0 +1,59 @@
+{
+  "environment": "Local Cloudflare Workers runtime with isolated D1; no production writes",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 8684,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/play.html",
+      "status": 200,
+      "bytes": 9798,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/shared.html",
+      "status": 200,
+      "bytes": 6013,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/luma-view.js",
+      "status": 200,
+      "bytes": 20333,
+      "contentType": "text/javascript; charset=utf-8"
+    },
+    {
+      "path": "/luma/Luma-Origin-Prefinal.woff2",
+      "status": 200,
+      "bytes": 3300,
+      "contentType": "font/woff2"
+    },
+    {
+      "path": "/luma/origin.html",
+      "status": 200,
+      "bytes": 5613428,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/api/health",
+      "status": 200,
+      "bytes": 56,
+      "contentType": "application/json"
+    },
+    {
+      "path": "/api/session",
+      "status": 201,
+      "revision": 1
+    },
+    {
+      "path": "/api/command",
+      "status": 200,
+      "revision": 2,
+      "operation": "luma.speak",
+      "mode": "a"
+    }
+  ]
+}

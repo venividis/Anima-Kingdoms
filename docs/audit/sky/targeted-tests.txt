@@ -1,0 +1,20 @@
+✔ the whole-sky controls explore both hemispheres, missing Ascendant, cycles and native fixed-width cells (557.343378ms)
+✔ a live Luma intention and safely rendered reflection survive local reopening (184.209459ms)
+✔ the shared notebook takes the server sky, survives polling and excludes the study timestamp from commands (226.596634ms)
+✔ Codex Greenwich reference survives the expanded ten-body model and true Ascendant (45.003185ms)
+✔ all 400 decimal endpoints and IEEE neighbors obey half-open sky-seal bins (5.191408ms)
+✔ the 108-cell refinement, origin invariants and calendar definitions remain distinct (7.917514ms)
+✔ horizon angles satisfy the geometric planes and carry absence at the poles (46.323609ms)
+✔ all coordinate prefixes name missing information without changing the stored sky (2.287624ms)
+✔ catalogue coverage, proper motion and horizon projection have finite reproducible directions (16.775006ms)
+✔ phase and seasonal events solve the displayed convention; polar hours remain unavailable (22.05628ms)
+✔ invalid dates and observer values cannot normalize into an unintended chart (0.268936ms)
+✔ encounters retain valid native intentions, reflections, actual work uses and old saves (28.552536ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1331.080119

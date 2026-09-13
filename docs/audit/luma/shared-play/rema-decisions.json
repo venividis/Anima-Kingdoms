@@ -1,0 +1,121 @@
+{
+  "actor": "Rema",
+  "controller": "Independent Codex sub-agent /root/restore_luma_world",
+  "recordedAt": "2026-09-12T22:28:58.701Z",
+  "realmId": "ccfb6913-4057-4a51-b4d3-edde75fe3138",
+  "settledRevision": 94,
+  "method": "A distinct authenticated actor controlled through recorded live HTTP requests to an isolated SQLite-backed realm. Shared-file relay transports requests to that HTTP server; real Date.now movement and gathering cooldowns remain unchanged.",
+  "decisions": [
+    "Arrived as Rema with an empty inventory; did not use a local device save to fund this realm.",
+    "Walked to the quarry, gathered eight stone through real gather commands and cooldowns, then walked to the Joined Span project.",
+    "Submitted native i, u and e clauses naming eight stone. Each preview was ready, with an eight-stone cost and sixteen-Mark reward; inventory and project delivery remained unchanged.",
+    "Waited for the other independent actor, Melu, to contribute eight wood. Undertook my eight-stone contribution in native Luma; that completed the span and transferred sixteen existing treasury Marks.",
+    "Replayed the exact accepted command envelope. The original revision58 receipt returned with replayed=true; no second cost or reward occurred.",
+    "Walked the actual completed span to (0,-22), with thirteen bounded HTTP movement commands and no teleport.",
+    "Imagined and intended a one-Mark gift to the explicitly quoted name Melu; these modes created no escrow and left my balance sixteen.",
+    "Undertook that gift; one real Mark entered escrow until Melu chose to accept it.",
+    "Declined Melu’s first return gift. My balance stayed fifteen and Melu confirmed their refund. Welcomed the second return gift, returning my balance to sixteen.",
+    "Recorded my game character’s native a mi me honi ta loma he. statement; this records an attributed experience claim and moved no assets."
+  ],
+  "counts": {
+    "httpRecords": 117,
+    "acceptedCommands": 47,
+    "replayedCommands": 1,
+    "operations": {
+      "move": 29,
+      "gather": 8,
+      "luma.speak": 8,
+      "gift.decline": 1,
+      "gift.accept": 1
+    }
+  },
+  "final": {
+    "you": {
+      "id": "7e94bfbe-d62a-4cb8-a475-34685d62cdf3",
+      "name": "Rema",
+      "x": -2.407412430484045e-35,
+      "z": -22.000000000000004,
+      "inventory": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0,
+        "marks": 16
+      },
+      "agent": false,
+      "expiresAt": 1791843846977
+    },
+    "project": {
+      "id": "crossing",
+      "name": "The Joined Span",
+      "x": 0,
+      "z": -3,
+      "required": {
+        "wood": 8,
+        "stone": 8
+      },
+      "delivered": {
+        "wood": 8,
+        "stone": 8
+      },
+      "complete": true,
+      "contributors": {
+        "baa58a25-0796-401f-a2d3-6519affd45a0": 8,
+        "7e94bfbe-d62a-4cb8-a475-34685d62cdf3": 8
+      }
+    },
+    "treasury": {
+      "wood": 0,
+      "stone": 0,
+      "ore": 0,
+      "food": 0,
+      "herb": 0,
+      "crystal": 0,
+      "marks": 468
+    },
+    "gifts": [
+      {
+        "id": "9dff3c79-3069-408b-a23d-c99065fc4c49",
+        "sender": "Rema",
+        "recipient": "Melu",
+        "item": "marks",
+        "quantity": 1,
+        "status": "accepted"
+      },
+      {
+        "id": "0f4506ca-a878-4dcc-be6e-3b4307b7390a",
+        "sender": "Melu",
+        "recipient": "Rema",
+        "item": "marks",
+        "quantity": 1,
+        "status": "declined"
+      },
+      {
+        "id": "985fa146-624d-421c-b3ee-f19b4f816c13",
+        "sender": "Melu",
+        "recipient": "Rema",
+        "item": "marks",
+        "quantity": 1,
+        "status": "accepted"
+      }
+    ],
+    "ledger": {
+      "residual": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0,
+        "marks": 0
+      }
+    }
+  },
+  "trace": {
+    "path": "rema.http.jsonl",
+    "sha256": "011f24dd326a994a8f6537480bf1a6bbceb79157d08e987cfd6bf265bc9e8bc7"
+  },
+  "scope": "This is fresh behavioral evidence for the reconstructed implementation after scratch pruning. It is API/core play with independent actors, not browser rendering, an audible listening judgment, human learning validation or a multiplayer load benchmark."
+}

@@ -1,0 +1,236 @@
+{
+  "source": "/workspace/scratch/dd1db9da8150/Anima-Kingdoms/public",
+  "hashes": {
+    "realm.js": "2c7bf4cbc3e543e53653134ed1ca9fc33d6f6a8c8470b532847bcadaba66bc06",
+    "kingdoms.js": "90f67616f72f301dcb65d9392bf807ef9c0c48367226425c0453a0956c9c21bb",
+    "world.js": "8432eed2613bf536b3a0c7606556f7f75e0cb9b4f8f47fcff4c8928a0de436ee",
+    "creation.js": "9f48942208f2567a8b94f029bb52b98cd228cbca801434ae153eea968ceacb82",
+    "navigation.js": "46e32a3b7ba4fe02a4e90ed0f3017d23af55b7081134945bb14fbe575c85c6f3"
+  },
+  "evidence": "Deterministic agent and legal core-function probes; no browser or human testing.",
+  "cases": [
+    {
+      "id": "guided-guard",
+      "invariant": "A queued route must not bypass combat movement limits.",
+      "manualTravel": 0.32249999999999446,
+      "guidedTravel": 0,
+      "ratio": 0,
+      "activeJourney": null,
+      "status": "passed"
+    },
+    {
+      "id": "guided-held-palm",
+      "invariant": "A queued route must not bypass combat movement limits.",
+      "manualTravel": 0.3941666666666599,
+      "guidedTravel": 0,
+      "ratio": 0,
+      "activeJourney": null,
+      "status": "passed"
+    },
+    {
+      "id": "revoked-journey",
+      "invariant": "The strengthened revoke control cancels accepted single-body queued walking.",
+      "atRevocation": {
+        "x": 8.776635393889365e-18,
+        "z": 15.928333333333333
+      },
+      "after": {
+        "x": 8.776635393889365e-18,
+        "z": 15.928333333333333
+      },
+      "movementAfterRevocation": 0,
+      "journey": null,
+      "status": "passed"
+    },
+    {
+      "id": "H37-public-channel-lock",
+      "invariant": "Prospectively accepted stewardship must permit recovery of scarce public infrastructure after its builder leaves.",
+      "agentOwnedSlots": 0,
+      "removalErrors": [
+        null
+      ],
+      "braidError": null,
+      "storage": {
+        "bridge": 10,
+        "orchard": 10,
+        "habitat": 10
+      },
+      "deliveries": {
+        "bridge": 4,
+        "orchard": 4,
+        "habitat": 4
+      },
+      "ledger": {
+        "water": 0,
+        "money": 50,
+        "fiber": 48,
+        "focus": 24,
+        "food": 4
+      },
+      "reloads": true,
+      "status": "maintenance now available; inspect terms and custody"
+    },
+    {
+      "id": "legal-agent-connected-creation",
+      "invariant": "An invited command policy completes real purchase, construction, cargo, consumption, payment and physical return without fixture mutation.",
+      "status": "passed",
+      "finalTick": 2666,
+      "agentCommands": 9,
+      "remainingGrant": 11,
+      "actions": [
+        {
+          "op": "walk",
+          "tick": 0,
+          "result": null
+        },
+        {
+          "op": "buy_crystal",
+          "tick": 94,
+          "result": null
+        },
+        {
+          "op": "walk",
+          "tick": 94,
+          "result": null
+        },
+        {
+          "op": "guide",
+          "tick": 427,
+          "result": {
+            "source": "c87cc794-e04a-4690-a4a4-2fd03417736e",
+            "receiver": "f59b6866-9922-4d6a-ad15-b40636720e6d",
+            "carrier": "9fd17d23-4c77-46d9-9eaa-38cc1382bd96"
+          }
+        },
+        {
+          "op": "fuel",
+          "tick": 427,
+          "result": null
+        },
+        {
+          "op": "feed",
+          "tick": 427,
+          "result": null
+        },
+        {
+          "op": "perform",
+          "tick": 427,
+          "result": null
+        },
+        {
+          "op": "assign",
+          "tick": 427,
+          "result": null
+        },
+        {
+          "op": "perform",
+          "tick": 2066,
+          "result": null
+        }
+      ],
+      "checkpoints": [
+        {
+          "phase": "0:pickup",
+          "tick": 428,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "0:out",
+          "tick": 442,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "1:return",
+          "tick": 1009,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "1:pickup",
+          "tick": 1552,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "1:out",
+          "tick": 1553,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        },
+        {
+          "phase": "2:return",
+          "tick": 2066,
+          "materials": {
+            "wood": 0,
+            "stone": 0,
+            "ore": 0,
+            "food": 0,
+            "herb": 0,
+            "crystal": 0
+          }
+        }
+      ],
+      "order": {
+        "id": "orchard-hearth",
+        "item": "stone",
+        "need": 2,
+        "delivered": 2,
+        "reward": 4,
+        "reserved": 0,
+        "paid": true,
+        "x": 8,
+        "z": -27
+      },
+      "money": 50,
+      "materialResidual": {
+        "wood": 0,
+        "stone": 0,
+        "ore": 0,
+        "food": 0,
+        "herb": 0,
+        "crystal": 0
+      },
+      "charge": {
+        "issued": 24,
+        "source": 8,
+        "flight": 0,
+        "receiver": 4,
+        "spent": 12,
+        "dissipated": 0
+      },
+      "limitation": "This is a scripted policy with complete local-state access. It is not an installed model service, browser interaction or a human study."
+    }
+  ]
+}

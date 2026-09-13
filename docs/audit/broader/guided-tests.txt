@@ -1,0 +1,41 @@
+✔ ordinary guided walking uses normal speed and finishes at its legal destination (27.288637ms)
+✔ guarding stops a guided walk and keeps manual guarded movement at its real speed (1.670491ms)
+✔ holding Palm cancels guided travel without adding movement during its commitment (0.91473ms)
+✔ a walk requested during a committed action cannot bypass attack movement rules (1.150377ms)
+✔ evading with a queued route gets one physical movement step (2.075662ms)
+✔ jumping yields control and a fresh route cannot add travel while airborne (0.805586ms)
+✔ revocation stops an accepted agent walk and rejects its stale epoch without mutation (7.688244ms)
+✔ revocation deliberately stops the single-body queued walk even when human-started (1.221613ms)
+✔ A01 Rejected command envelope and payload operations are atomic (47.930802ms)
+✔ A02 Exact accepted command replays without duplicate resource consumption (16.343452ms)
+✔ A02b Guide receipt replay retains only three creations and no second spending (0.909653ms)
+✔ A03 Changed payload with accepted key is rejected atomically (0.463539ms)
+✔ A04 Agent grant budget and revocation are enforced (0.865016ms)
+✔ C01 Physical two-stone delivery pays four Marks exactly once (306.468914ms)
+✔ C02 Cancellation before pickup spends no stone (19.998244ms)
+✔ C03 Cancellation during outbound cargo returns the actual unit (48.046476ms)
+✔ C04 Cancel after partial delivery preserves consumed first stone (73.298367ms)
+✔ C06 Reclaim connected source and active courier is atomic (16.602158ms)
+✔ S01 Checkpoint preserves in-flight connection packets and future arrival (16.509548ms)
+✔ S03 Checkpoint at every cargo transition retains exactly-once completion (222.715291ms)
+✔ S04a Unknown endpoint and impossible charge corruption are rejected (15.287423ms)
+✔ S04b Lease far beyond maximum charge duration is rejected (22.492658ms)
+✔ S04c Receipt operation must agree with its original typed command (0.588739ms)
+✔ S05 Known legal far-east footprint is now rejected before material spending (0.390449ms)
+✔ S06 Prior v0.10 creation world migrates without property loss (1.192029ms)
+✔ S06b Accepted legacy overhanging structure cannot create a new unloadable save (115.513062ms)
+✔ C03b Cancelled cargo waits for its owner at the fixed pickup (74.616046ms)
+✔ P01 Invited agent completes connected delivery and courier return through typed commands (193.014724ms)
+✔ E03 Activity pause preserves connection clock and pending packet deadlines (13.300995ms)
+✔ E01 Pitch filter rejects every unaccepted score note without spending charge (12.526697ms)
+✔ E02 Powered gate shares collision state and waits safely for an occupying body (16.252349ms)
+✔ E05 Fanout debits one charge per actual receiver packet (14.997895ms)
+✔ S08 Saving during each arena restores pending world work at its entrance (87.505897ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1448.081678
