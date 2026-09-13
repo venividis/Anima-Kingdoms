@@ -74,3 +74,9 @@ During reconstruction the Unicode tests exposed that a default UTF-8 decoder
 discarded U+FEFF when decoding one escape. The decoder now retains it explicitly.
 These checks validate the software contracts; human pronunciation, comprehension
 and glyph-learning studies remain separate work.
+
+The celestial extension also extracts the exact embedded MIT-licensed Astronomy
+Engine bundle into `astronomy.js` and the original three ICRS reference stars into
+`stars.js`. Their extraction is reproducible with the same script. The source
+access dates remain inherited provenance. The new game sky, authored Luma
+asterisms and material rules are explained in `docs/CELESTIAL-ATELIER.md`.

@@ -19,6 +19,18 @@ data = json.loads(scripts[0][1])
 celestial = json.loads(scripts[2][1])
 assert "luma-data" in scripts[0][0] and "celestial-data" in scripts[2][0]
 
+# The exact retained ephemeris bundle keeps its original MIT notice. A local
+# CommonJS shim exposes its browser bundle as an ES module without a CDN.
+assert "Astronomy" in scripts[3][1] and "MIT" in scripts[3][1]
+(OUT / "astronomy.js").write_text(
+    "// Retained Astronomy Engine 2.1.19 from Luma Origin. MIT license below.\n"
+    "const createAstronomy = (module, exports) => {\n"
+    + scripts[3][1] + "\nreturn module.exports;\n};\nexport const Astronomy = createAstronomy({exports:{}}, {});\n", encoding="utf-8")
+(OUT / "stars.js").write_text(
+    "// Retained ICRS epoch 2000.0 directions from Luma Origin.\nexport const STAR_CATALOG = "
+    + json.dumps(data["astronomy"], ensure_ascii=False, separators=(",", ":"))
+    + ";\n", encoding="utf-8")
+
 
 def js(value):
     return json.dumps(value, ensure_ascii=False, separators=(",", ":"))

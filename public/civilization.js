@@ -104,7 +104,8 @@ function grow(s) {
   for (const item of ITEMS) {
     const patch = c.patches[item], rule = PATCHES[item];
     if (growthStatus(s, item) !== 'Growing') continue;
-    if (++patch.progress < rule.ticks) continue;
+    patch.progress += s.cosmos?.town.garden && s.cosmos.clock % 4 === 0 ? 2 : 1;
+    if (patch.progress < rule.ticks) continue;
     const count = Math.min(rule.yield, rule.capacity - s.reserve[item], c.soil);
     patch.progress = 0;
     patch.cycles++;
@@ -172,7 +173,7 @@ function householdMeals(s) {
 function drive(s, ctx, target, phase) {
   const courier = s.civilization.courier;
   const before = {x: courier.x, z: courier.z};
-  ctx.steer(s, courier, target, COURIER_SPEED);
+  ctx.steer(s, courier, target, COURIER_SPEED * (s.cosmos?.town.bell ? 1 + s.cosmos.town.bell.quality/500 : 1));
   courier.phase = distance(before, courier) < 1e-8 ? 'route blocked' : phase;
 }
 
@@ -323,7 +324,7 @@ export function validate(s) {
   if (!exact(c.patches, ITEMS)) bad();
   for (const item of ITEMS) {
     const p = c.patches[item], rule = PATCHES[item];
-    if (!exact(p, ['enabled', 'progress', 'cycles', 'produced']) || typeof p.enabled !== 'boolean' || !integer(p.progress, 0, rule.ticks - 1) || !integer(p.cycles, 0, Math.floor(c.clock / rule.ticks)) || !integer(p.produced, p.cycles, p.cycles * rule.yield)) bad();
+    if (!exact(p, ['enabled', 'progress', 'cycles', 'produced']) || typeof p.enabled !== 'boolean' || !integer(p.progress, 0, rule.ticks - 1) || !integer(p.cycles, 0, Math.floor((c.clock + Math.ceil(c.clock / 4)) / rule.ticks)) || !integer(p.produced, p.cycles, p.cycles * rule.yield)) bad();
   }
   if (!Array.isArray(c.households) || c.households.length !== HOMES.length || new Set(c.households.map(h => h.id)).size !== HOMES.length) bad();
   for (const h of c.households) {

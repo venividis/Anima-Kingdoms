@@ -1,3 +1,4 @@
+import {migrateCosmos} from './cosmos-rules.mjs';
 import {createHmac,randomBytes,randomUUID} from 'node:crypto';
 import {HostedRules,RealmError,genesis,assertState,canonical,hash,exact,object,plainText,integer,fail} from './hosted-rules.mjs';
 
@@ -21,7 +22,7 @@ export class HostedRealm extends HostedRules {
    row=await this.sql('SELECT * FROM commons_realm WHERE id=1').first();
   }
   if(!row||hash(row.state)!==row.checksum||!/^[a-f0-9]{64}$/.test(row.secret))fail('CORRUPT_REALM','The shared record failed verification; its resources have not been reset.',503);
-  let state;try{state=assertState(JSON.parse(row.state));}catch(error){if(error instanceof RealmError)throw error;fail('CORRUPT_REALM','The shared record cannot be read.',503);}
+  let state;try{state=assertState(migrateCosmos(JSON.parse(row.state)));}catch(error){if(error instanceof RealmError)throw error;fail('CORRUPT_REALM','The shared record cannot be read.',503);}
   if(state.revision!==row.revision)fail('CORRUPT_REALM','The shared revision does not match its record.',503);
   if(row.revision){const last=await this.sql('SELECT hash FROM commons_journal WHERE revision=?',row.revision).first();if(!last||last.hash!==row.head_hash)fail('CORRUPT_REALM','The shared history does not match its record.',503);}
   this.secret=row.secret;return {row,state};

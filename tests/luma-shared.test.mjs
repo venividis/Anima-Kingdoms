@@ -135,8 +135,8 @@ test('actual HTTP arrival can lose its successful response and recover one princ
 
 test('schema two migration preserves prior escrow, credentials, journal and exact command replay',t=>{
   const f=fixture(t,{disk:true}),a=f.session('Earlier player'),b=f.session('Earlier receiver');f.gather(a.token,'grove');const envelope=f.envelope(a.token,'offer.create',{give:{item:'wood',quantity:1},want:{item:'stone',quantity:1}}),offer=f.realm.command(a.token,envelope).receipt.result.offerId,before=f.realm.read();
-  f.realm.close();const db=new DatabaseSync(f.path),legacy=structuredClone(before);legacy.schemaVersion=2;delete legacy.gifts;delete legacy.luma;const bytes=JSON.stringify(legacy);db.prepare('UPDATE realm SET state=?,checksum=? WHERE id=1').run(bytes,createHash('sha256').update(bytes).digest('hex'));db.close();
-  f.reopen();const after=f.realm.read();assert.equal(after.schemaVersion,3);assert.deepEqual(after.players,before.players);assert.deepEqual(after.offers,before.offers);assert.equal(after.revision,before.revision);assert.deepEqual(after.gifts,[]);assert.equal(f.realm.command(a.token,envelope).receipt.replayed,true);assert.equal(f.realm.state(b.token).offers.find(o=>o.id===offer).status,'open');f.invariant();
+  f.realm.close();const db=new DatabaseSync(f.path),legacy=structuredClone(before);legacy.schemaVersion=2;delete legacy.gifts;delete legacy.luma;delete legacy.cosmos;const bytes=JSON.stringify(legacy);db.prepare('UPDATE realm SET state=?,checksum=? WHERE id=1').run(bytes,createHash('sha256').update(bytes).digest('hex'));db.close();
+  f.reopen();const after=f.realm.read();assert.equal(after.schemaVersion,4);assert.deepEqual(after.players,before.players);assert.deepEqual(after.offers,before.offers);assert.equal(after.revision,before.revision);assert.deepEqual(after.gifts,[]);assert.equal(f.realm.command(a.token,envelope).receipt.replayed,true);assert.equal(f.realm.state(b.token).offers.find(o=>o.id===offer).status,'open');f.invariant();
 });
 
 test('HTTP quotas follow verified principal identity across owner and delegate, while arrival ignores forged forwarding headers',async t=>{

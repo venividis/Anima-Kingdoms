@@ -1,6 +1,6 @@
 # Anima Kingdoms
 
-The website includes the Luma workshop and a persistent Living Commons. Open the game and select **Luma** or press **G**. See [the hosted Luma guide](docs/HOSTED-LUMA.md) for the website's storage adapter and deployment checks.
+The **Celestial Atelier** connects Luma’s original writing and music to a moving sky, metallurgy, alchemy and town life. Open **Cosmos (O)** in the First Orchard or the **Cosmos** tab in the Living Commons. See the [celestial game guide](docs/CELESTIAL-ATELIER.md) for recipes, sky conventions, persistence and verification.
 
 **A word becomes a world · Luma 0.13**
 
@@ -16,7 +16,7 @@ The shared Commons has a Node/SQLite authority and its own economy. The First Or
 
 Select **Life (K)** in the local world for households, **Connect (N)** for the musical crossing and courier journey, or **Create (V)** for the five-kind blueprint workshop. Exploration, timed combat, the Root Warden, physical workers, water routing, bot CTF, local two-player duels, the range, Raincatch, Loom Table and authored sigil trials remain playable.
 
-The [previously published First Concord](https://awe-first-orchard.edwincardenas.chatgpt.site) remains the earlier deployment. This repository update has not deployed the new Commons service. See the [Luma game guide](docs/LUMA-GAME.md) and [recovery and verification record](docs/audit/luma/recovery.md).
+The [game website](https://awe-first-orchard.edwincardenas.chatgpt.site) hosts both the local Orchard and a persistent D1-backed Living Commons. See the [Luma game guide](docs/LUMA-GAME.md) and [recovery and verification record](docs/audit/luma/recovery.md).
 
 ## Run and verify
 
@@ -43,6 +43,7 @@ The standard framework uses Vinext and a Workers-compatible production build. Th
 
 ## Documentation and evidence
 
+- [Celestial Atelier: stars, rhythm, alchemy and metallurgy](docs/CELESTIAL-ATELIER.md)
 - [Luma game guide: language, shapes, music and accountable acts](docs/LUMA-GAME.md)
 - [Original uploaded Living Artwork, preserved byte for byte](public/luma/origin.html)
 - [Source extraction and language contracts](public/luma/README.md)
@@ -65,11 +66,11 @@ The standard framework uses Vinext and a Workers-compatible production build. Th
 
 ## Controls
 
-G Luma · K Life · N Connect · V Create · T attuned relic · WASD / arrows move · right-drag look · wheel / pinch zoom · Space jump · Shift run · C guard · R evade · E interact · 1–4 combat moves (hold 1 for Palm) · Tab target · X release · Z center camera · H controls and safe practice · Q worldcraft · F rain · B settlement · I character · J quests · M atlas · Escape menu/close.
+O Cosmos · G Luma · K Life · N Connect · V Create · T attuned relic · WASD / arrows move · right-drag look · wheel / pinch zoom · Space jump · Shift run · C guard · R evade · E interact · 1–4 combat moves (hold 1 for Palm) · Tab target · X release · Z center camera · H controls and safe practice · Q worldcraft · F rain · B settlement · I character · J quests · M atlas · Escape menu/close.
 
 Touch uses an analog movement stick, world-drag camera control, and visible attack / guard / run controls. The Controls panel can also show these controls on desktop.
 
-In the local game, panels and hidden tabs pause simulation. Connected destinations have walk buttons using the same movement and collision rules. Manual movement and combat actions cancel guided travel. In the shared Commons, other people continue acting while a panel is open; the server owns positions and goods. Its controls are WASD/arrows or the touch pad, E to gather, world drag to orbit, wheel/pinch to zoom, and Z to center.
+In the local game, the celestial workshop keeps the orchard running while you craft; other panels and hidden tabs pause simulation. Connected destinations have walk buttons using the same movement and collision rules. Manual movement and combat actions cancel guided travel. In the shared Commons, other people continue acting while a panel is open; the server owns positions and goods. Its controls are WASD/arrows or the touch pad, E to gather, world drag to orbit, wheel/pinch to zoom, and Z to center.
 
 ## Repository and source history
 

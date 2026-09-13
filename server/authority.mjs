@@ -1,3 +1,4 @@
+import * as Cosmos from './cosmos-rules.mjs';
 import {DatabaseSync} from 'node:sqlite';
 import {createHash,createHmac,randomBytes,randomUUID,timingSafeEqual} from 'node:crypto';
 import {mkdirSync,chmodSync,existsSync} from 'node:fs';
@@ -88,18 +89,18 @@ const held=(state,item)=>Object.values(state.players).reduce((n,p)=>n+p.inventor
   state.nodes.filter(node=>node.item===item).reduce((n,node)=>n+node.remaining,0)+state.treasury[item]+
   state.offers.filter(o=>o.status==='open'&&o.give.item===item).reduce((n,o)=>n+o.give.quantity,0)+
   (state.gifts||[]).filter(g=>g.status==='open'&&g.give.item===item).reduce((n,g)=>n+g.give.quantity,0)+
-  state.projects.reduce((n,p)=>n+(p.delivered[item]||0),0);
+  state.projects.reduce((n,p)=>n+(p.delivered[item]||0),0)+Cosmos.held(state,item);
 export function custody(state){return {residual:Object.fromEntries(ITEMS.map(item=>[item,held(state,item)-state.totals[item]]))};}
 function genesis(now) {
   const totals=emptyBag();totals.marks=500;for(const node of NODE_DEFINITIONS)totals[node.item]+=node.initial;
   const treasury=emptyBag();treasury.marks=totals.marks;
-  return {schemaVersion:3,rulesVersion:RULES_VERSION,realmId:randomUUID(),revision:0,createdAt:now,players:{},nodes:NODE_DEFINITIONS.map(node=>({...node,remaining:node.initial})),
+  return {schemaVersion:4,cosmos:Cosmos.cosmosState(),rulesVersion:RULES_VERSION,realmId:randomUUID(),revision:0,createdAt:now,players:{},nodes:NODE_DEFINITIONS.map(node=>({...node,remaining:node.initial})),
     offers:[],projects:PROJECT_DEFINITIONS.map(p=>({...p,required:{...p.required},delivered:Object.fromEntries(Object.keys(p.required).map(item=>[item,0])),complete:false,contributors:{}})),
     treasury,totals,agents:{},chat:[],events:[],blueprints:[],gifts:[],luma:{schema:1,utterances:[]}};
 }
 function assertState(s) {
   const corrupt=message=>fail('CORRUPT_REALM',`Realm custody refused: ${message}`,503);
-  if(!object(s)||s.schemaVersion!==3||s.rulesVersion!==RULES_VERSION||!Number.isSafeInteger(s.revision)||s.revision<0||typeof s.realmId!=='string'||!object(s.players)||!object(s.agents))corrupt('invalid realm schema');
+  if(!object(s)||s.schemaVersion!==4||s.rulesVersion!==RULES_VERSION||!Number.isSafeInteger(s.revision)||s.revision<0||typeof s.realmId!=='string'||!object(s.players)||!object(s.agents))corrupt('invalid realm schema');
   const bag=(b,label)=>{if(!object(b)||Object.keys(b).length!==ITEMS.length||ITEMS.some(k=>!Number.isSafeInteger(b[k])||b[k]<0||b[k]>1000000))corrupt(`invalid ${label}`);};
   bag(s.treasury,'treasury');bag(s.totals,'genesis supply');
   const expected=genesis(0).totals;if(ITEMS.some(k=>s.totals[k]!==expected[k]))corrupt('genesis supply changed');
@@ -134,6 +135,7 @@ function assertState(s) {
   if(!Array.isArray(s.chat)||s.chat.length>80||s.chat.some(c=>!s.players[c.playerId]||typeof c.text!=='string'||c.text.length>280)||!Array.isArray(s.events)||s.events.length>100)corrupt('invalid social history');
   if(!Array.isArray(s.blueprints)||s.blueprints.length>64)corrupt('invalid blueprint shelf');
   const publications=new Set(),authors={};for(const entry of s.blueprints){if(!object(entry)||typeof entry.id!=='string'||publications.has(entry.id)||!s.players[entry.authorId]||!Number.isSafeInteger(entry.publishedAt))corrupt('invalid blueprint attribution');publications.add(entry.id);authors[entry.authorId]=(authors[entry.authorId]||0)+1;if(authors[entry.authorId]>8)corrupt('too many authored publications');try{if(canonical(compileBlueprint(entry.blueprint).blueprint)!==canonical(entry.blueprint))corrupt('noncanonical blueprint');}catch{corrupt('invalid published blueprint');}}
+  try{Cosmos.validateCosmos(s);}catch(error){corrupt(error.message);}
   if(Object.values(custody(s).residual).some(value=>value!==0))corrupt('material or currency conservation failed');
   return s;
 }
@@ -164,7 +166,7 @@ export class SharedRealm {
       const s=this.read();this.validateJournal(s);this.validateCredentials(s);this.validateReceipts();
     }catch(error){try{this.db?.close();}catch{}throw error;}
   }
-  read(){const row=this.db.prepare('SELECT state,checksum FROM realm WHERE id=1').get();if(!row||hash(row.state)!==row.checksum)fail('CORRUPT_REALM','Stored realm checksum does not match; refusing to reset custody.',503);let s;try{s=JSON.parse(row.state);}catch{fail('CORRUPT_REALM','Stored realm JSON cannot be read.',503);}if(object(s)&&!Object.hasOwn(s,'schemaVersion')){s.schemaVersion=2;if(!Object.hasOwn(s,'blueprints'))s.blueprints=[];}if(object(s)&&s.schemaVersion===2){s.schemaVersion=3;if(!Object.hasOwn(s,'gifts'))s.gifts=[];if(!Object.hasOwn(s,'luma'))s.luma={schema:1,utterances:[]};}return assertState(s);}
+  read(){const row=this.db.prepare('SELECT state,checksum FROM realm WHERE id=1').get();if(!row||hash(row.state)!==row.checksum)fail('CORRUPT_REALM','Stored realm checksum does not match; refusing to reset custody.',503);let s;try{s=JSON.parse(row.state);}catch{fail('CORRUPT_REALM','Stored realm JSON cannot be read.',503);}if(object(s)&&!Object.hasOwn(s,'schemaVersion')){s.schemaVersion=2;if(!Object.hasOwn(s,'blueprints'))s.blueprints=[];}if(object(s)&&s.schemaVersion===2){s.schemaVersion=3;if(!Object.hasOwn(s,'gifts'))s.gifts=[];if(!Object.hasOwn(s,'luma'))s.luma={schema:1,utterances:[]};}return assertState(Cosmos.migrateCosmos(s));}
   write(s){assertState(s);const bytes=JSON.stringify(s);this.db.prepare('INSERT INTO realm(id,state,checksum) VALUES(1,?,?) ON CONFLICT(id) DO UPDATE SET state=excluded.state,checksum=excluded.checksum').run(bytes,hash(bytes));}
   validateCredentials(s){for(const c of this.db.prepare('SELECT * FROM credentials').all())if(!own(s.players,c.player_id)||!['owner','agent'].includes(c.role)||c.role==='agent'&&(!own(s.agents,c.id)||s.agents[c.id].playerId!==c.player_id)||!/^[a-f0-9]{64}$/.test(c.token_hash))fail('CORRUPT_REALM','Credential custody references an unknown principal or grant.',503);for(const a of this.db.prepare('SELECT * FROM arrivals').all()){const c=this.db.prepare('SELECT * FROM credentials WHERE id=?').get(a.credential_id);if(!/^[a-f0-9]{64}$/.test(a.key_hash)||!c||c.role!=='owner'||own(s.players,c.player_id)?.name!==a.name)fail('CORRUPT_REALM','An arrival receipt has lost its owning session.',503);}}
   validateJournal(s){let previous='',expected=1;const balances=new Map(),account=id=>{if(!balances.has(id))balances.set(id,emptyBag());return balances.get(id);};account('treasury').marks=500;for(const node of NODE_DEFINITIONS)account('node:'+node.id)[node.item]=node.initial;
@@ -174,7 +176,7 @@ export class SharedRealm {
       for(const transfer of transfers){if(!object(transfer)||typeof transfer.from!=='string'||typeof transfer.to!=='string'||!ITEMS.includes(transfer.item)||!Number.isSafeInteger(transfer.quantity)||transfer.quantity<1||account(transfer.from)[transfer.item]<transfer.quantity)fail('CORRUPT_REALM','The custody journal contains an unfunded transfer.',503);account(transfer.from)[transfer.item]-=transfer.quantity;account(transfer.to)[transfer.item]+=transfer.quantity;}
     }
     if(expected-1!==s.revision)fail('CORRUPT_REALM','The durable journal and realm revision disagree.',503);
-    const final=new Map([['treasury',s.treasury]]);for(const p of Object.values(s.players))final.set('player:'+p.id,p.inventory);for(const node of s.nodes)final.set('node:'+node.id,{...emptyBag(),[node.item]:node.remaining});for(const offer of s.offers)final.set('escrow:'+offer.id,{...emptyBag(),...(offer.status==='open'?{[offer.give.item]:offer.give.quantity}:{})});for(const gift of s.gifts)final.set('gift:'+gift.id,{...emptyBag(),...(gift.status==='open'?{[gift.give.item]:gift.give.quantity}:{})});for(const p of s.projects)final.set('project:'+p.id,{...emptyBag(),...p.delivered});
+    const final=new Map([['treasury',s.treasury],...Cosmos.accounts(s)]);for(const p of Object.values(s.players))final.set('player:'+p.id,p.inventory);for(const node of s.nodes)final.set('node:'+node.id,{...emptyBag(),[node.item]:node.remaining});for(const offer of s.offers)final.set('escrow:'+offer.id,{...emptyBag(),...(offer.status==='open'?{[offer.give.item]:offer.give.quantity}:{})});for(const gift of s.gifts)final.set('gift:'+gift.id,{...emptyBag(),...(gift.status==='open'?{[gift.give.item]:gift.give.quantity}:{})});for(const p of s.projects)final.set('project:'+p.id,{...emptyBag(),...p.delivered});
     for(const id of new Set([...balances.keys(),...final.keys()]))if(ITEMS.some(item=>(balances.get(id)?.[item]||0)!==(final.get(id)?.[item]||0)))fail('CORRUPT_REALM','The custody journal does not reconstruct the current asset owners.',503);
   }
   validateReceipts(){for(const saved of this.db.prepare('SELECT * FROM receipts').iterate()){
@@ -209,7 +211,7 @@ export class SharedRealm {
   agentToken(id){return 'aka_'+createHmac('sha256',this.secret).update('agent:'+id).digest('base64url');}
   state(token){const s=this.read();return this.view(s,this.credential(token,s));}
   view(s,c){const p=s.players[c.player_id],agent=c.role==='agent'?s.agents[c.id]:false;
-    return {rulesVersion:s.rulesVersion,realmId:s.realmId,revision:s.revision,serverTime:this.now(),you:{id:p.id,name:p.name,x:p.x,z:p.z,inventory:{...p.inventory},agent:agent?{id:agent.id,scopes:[...agent.scopes],remaining:agent.remaining}:false,expiresAt:c.expires_at},
+    return {rulesVersion:s.rulesVersion,realmId:s.realmId,revision:s.revision,serverTime:this.now(),cosmos:Cosmos.cosmosView(s,p.id,this.now()),you:{id:p.id,name:p.name,x:p.x,z:p.z,inventory:{...p.inventory},agent:agent?{id:agent.id,scopes:[...agent.scopes],remaining:agent.remaining}:false,expiresAt:c.expires_at},
       world:{bridgeOpen:s.projects.find(p=>p.id==='crossing').complete,bounds:BOUNDS,bridge:BRIDGE,obstacles:OBSTACLES,spawn:SPAWN},
       players:Object.values(s.players).map(p=>({id:p.id,name:p.name,x:p.x,z:p.z,online:(this.presence.get(p.id)||-Infinity)>this.now()-20000})),
       nodes:s.nodes.map(n=>({...n})),offers:s.offers.filter(o=>o.status==='open'||o.sellerId===p.id||o.buyerId===p.id).slice(-200).map(o=>({...o,sellerName:s.players[o.sellerId].name})),
@@ -262,6 +264,7 @@ export class SharedRealm {
     const p=s.players[c.player_id],now=this.now(),owner=()=>{if(c.role!=='owner')fail('OWNER_REQUIRED','Only the owning session can manage grants.',403);};
     const event=text=>{s.events.push({id:s.revision+1,at:now,playerId:p.id,text});s.events=s.events.slice(-100);};
     const near=(point,range)=>{if(distance(p,point)>range)fail('OUT_OF_REACH','Walk closer to this place first.',409);};
+    if(op.startsWith('cosmos.')){try{return Cosmos.dispatchCosmos(s,c,op,payload,now,transfers);}catch(error){fail('COSMOS_RULE',error.message,409);}}
     if(op==='luma.speak')return this.speak(s,c,payload,transfers);
     if(op==='move'){
       exact(payload,['dx','dz']);for(const key of ['dx','dz'])if(typeof payload[key]!=='number'||!Number.isFinite(payload[key])||Math.abs(payload[key])>1)fail('INVALID_MOVEMENT','Movement axes must be finite numbers from -1 to 1.');
@@ -269,7 +272,7 @@ export class SharedRealm {
     }
     if(op==='gather'){
       exact(payload,['nodeId']);const node=s.nodes.find(n=>n.id===payload.nodeId);if(!node)fail('UNKNOWN_NODE','That resource node does not exist.');near(node,3);
-      if(now-p.lastGatherAt<900)fail('COOLDOWN','Gathering takes 0.9 seconds per unit.',429);if(node.remaining<1)fail('RESOURCE_EMPTY','This finite deposit is exhausted.',409);
+      const cadence=Cosmos.gatheringDelay(s,p.id,now);if(now-p.lastGatherAt<cadence)fail('COOLDOWN',cadence===900?'Gathering takes 0.9 seconds per unit.':`Your current gathering cadence is ${(cadence/1000).toFixed(2)} seconds.`,429);if(node.remaining<1)fail('RESOURCE_EMPTY','This finite deposit is exhausted.',409);
       node.remaining--;p.inventory[node.item]++;p.lastGatherAt=now;transfers.push({from:'node:'+node.id,to:'player:'+p.id,item:node.item,quantity:1});return {item:node.item,quantity:1,remaining:node.remaining};
     }
     if(op==='offer.create'){

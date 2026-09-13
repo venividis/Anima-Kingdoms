@@ -9,9 +9,11 @@
   <link rel="icon" href="./assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./shared.css">
   <link rel="stylesheet" href="./luma.css">
+  <link rel="stylesheet" href="./cosmos.css">
 </head>
 <body>
   <div class="sky-light" aria-hidden="true"></div>
+  <canvas id="cosmos-sky" aria-hidden="true"></canvas>
   <canvas id="commons-world" tabindex="0" aria-label="The shared realm. W A S D or arrows move. E gathers nearby resources. Drag to orbit; scroll or pinch to zoom."></canvas>
   <div id="commons-labels" aria-hidden="true"></div>
   <header class="commons-header">
@@ -32,6 +34,7 @@
       <div class="dock-heading"><span id="player-label">Wayfarer</span><button id="toggle-dock" class="icon-button" aria-label="Collapse activities" aria-expanded="true">−</button></div>
       <div id="dock-body">
         <nav class="dock-tabs" aria-label="Commons panels">
+          <button data-tab="cosmos" aria-pressed="false">Cosmos</button>
           <button data-tab="luma" aria-pressed="false">Luma</button>
           <button data-tab="works" aria-pressed="true">Works</button>
           <button data-tab="exchange" aria-pressed="false">Exchange</button>

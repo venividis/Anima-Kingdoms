@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import {dirname} from 'node:path';
-import {randomUUID} from 'node:crypto';
+import {randomUUID,createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {HostedRealm} from '../server/hosted-authority.mjs';
 import {handleCommons} from '../server/hosted-http.mjs';
@@ -23,7 +23,7 @@ async function setup(){
  const act=async(token,op,payload)=>{clock+=1000;return realm().command(token,{key:randomUUID(),expectedRevision:(await realm().state(token)).revision,op,payload});};
  const walk=async(token,x,z)=>{for(let n=0;n<80;n++){const p=(await realm().state(token)).you,dx=x-p.x,dz=z-p.z,len=Math.hypot(dx,dz);if(len<.3)return;const scale=Math.max(1.75,len);await act(token,'move',{dx:dx/scale,dz:dz/scale});}throw Error('Walking did not reach the selected place.');};
  const gather=async(token,nodeId,n)=>{for(let i=0;i<n;i++)await act(token,'gather',{nodeId});};
- return {db,realm,session,act,walk,gather,now:()=>clock};
+ return {db,realm,session,act,walk,gather,now:()=>clock,advance:ms=>{clock+=ms;}};
 }
 
 test('the hosted game executes the canonical rules without a second handwritten rule set',()=>{
@@ -121,4 +121,18 @@ test('damaged persisted custody is refused without minting a replacement realm',
  await t.db.prepare('DELETE FROM commons_realm WHERE id=1').run();
  await assert.rejects(t.realm().load(),{code:'CORRUPT_REALM'});
  assert.equal((await t.db.prepare('SELECT count(*) AS n FROM commons_realm').first()).n,0);
+});
+
+test('a hosted schema-three realm migrates in place and a native alchemy process survives cold D1 requests',async()=>{
+ const t=await setup(),a=await t.session('Moonwell keeper');await t.walk(a.token,-12,5);await t.gather(a.token,'reeds',2);await t.walk(a.token,12,5);await t.gather(a.token,'fruit',1);
+ const row=await t.db.prepare('SELECT state FROM commons_realm WHERE id=1').first(),legacy=JSON.parse(row.state);delete legacy.cosmos;legacy.schemaVersion=3;const bytes=JSON.stringify(legacy);
+ await t.db.prepare('UPDATE commons_realm SET state=?,checksum=? WHERE id=1').bind(bytes,createHash('sha256').update(bytes).digest('hex')).run();
+ const migrated=await t.realm().state(a.token);assert.equal(migrated.you.inventory.herb,2);assert.equal(migrated.cosmos.workshop.job,null);
+ await t.walk(a.token,4,13);const made=await t.act(a.token,'cosmos.start',{recipe:'dew',mode:'steady',text:toNative('pe mi me peli ta "Moon dew" ki wela.')});assert.equal(made.state.you.inventory.herb,0);
+ await assert.rejects(t.act(a.token,'cosmos.advance',{cooling:'water'}),{code:'COSMOS_RULE'});
+ for(const duration of [4500,6000,3000]){t.advance(duration);await t.act(a.token,'cosmos.advance',{cooling:'water'});}
+ const product=(await t.realm().state(a.token)).cosmos.workshop.products[0];assert.equal(product.inscription,toNative('luna'));
+ const envelope={key:randomUUID(),expectedRevision:(await t.realm().state(a.token)).revision,op:'cosmos.use',payload:{id:product.id}};
+ const used=await t.realm().command(a.token,envelope);assert.ok(used.state.cosmos.effects.dewUntil>used.state.cosmos.elapsed);assert.equal((await t.realm().command(a.token,envelope)).receipt.replayed,true);
+ const saved=JSON.parse((await t.db.prepare('SELECT state FROM commons_realm WHERE id=1').first()).state);assert.equal(saved.schemaVersion,4);assert.equal(saved.cosmos.spent.herb,2);assert.ok(Object.values(used.state.ledger.residual).every(n=>n===0));
 });

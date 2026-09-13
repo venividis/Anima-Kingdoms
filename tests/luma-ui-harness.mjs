@@ -112,7 +112,7 @@ export async function mountLocal({snapshot=null}={}) {
   const window=new Window({url:'http://localhost/play.html',settings:{disableCSSFileLoading:true,disableJavaScriptFileLoading:true,disableJavaScriptEvaluation:true}});
   window.document.write(content);
   if(snapshot)window.localStorage.setItem('awe-concord-v10',JSON.stringify(snapshot));
-  const originals=new Map(),timers=new Set(),frames=[];
+  const originals=new Map(),timers=new Set(),frames=[];let animationTime=0;
   const setGlobal=(key,value)=>{originals.set(key,Object.getOwnPropertyDescriptor(globalThis,key));Object.defineProperty(globalThis,key,{configurable:true,writable:true,value});};
   const ctx=new Proxy({}, {get(target,key){
     if(key==='createLinearGradient'||key==='createRadialGradient')return ()=>({addColorStop(){}});
@@ -138,6 +138,7 @@ export async function mountLocal({snapshot=null}={}) {
     async idle(){await nextTurn();await nextTurn();},
     saved(){const raw=window.localStorage.getItem('awe-concord-v10');assert.ok(raw,'The actual game did not save');return JSON.parse(raw);},
     key(value){this.q('#world').focus();this.q('#world').dispatchEvent(new window.KeyboardEvent('keydown',{key:value,bubbles:true}));this.q('#world').dispatchEvent(new window.KeyboardEvent('keyup',{key:value,bubbles:true}));},
+    async frames(count=1){for(let i=0;i<count;i++){animationTime+=100;const frame=frames.shift();assert.ok(frame);frame(animationTime);}await this.idle();},
     async begin(){this.click(snapshot?'#continue':'#begin');await this.wait(()=>this.q('#welcome').hidden);await this.idle();},
     async close(){window.dispatchEvent(new window.Event('pagehide'));for(const timer of timers)nativeClearTimeout(timer);for(const [key,descriptor]of originals){if(descriptor)Object.defineProperty(globalThis,key,descriptor);else delete globalThis[key];}await window.happyDOM.close();}
   };

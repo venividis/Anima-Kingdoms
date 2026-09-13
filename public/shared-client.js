@@ -1,3 +1,5 @@
+import {CosmicSky,mountCosmos} from './cosmos-view.js';
+import * as Cosmos from './cosmos.js';
 import {mountLumaAtelier} from './luma-view.js';
 import {compile} from './creation.js';
 import {paintBlueprint} from './canvas-view.js';
@@ -9,6 +11,8 @@ import {waypoint, clearRoute} from './navigation.js';
 const $=id=>document.getElementById(id);
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
+let cosmicAtelier=null,skyReceivedAt=0,cosmicSound=false,cosmicAudio=null,lastCosmicBeat=-1;
+const cosmicSky=new CosmicSky($('cosmos-sky'));
 const view=new SharedView($('commons-world'));
 let state=null,tab='works',journey=null,keys={},touch=[0,0],active=false,noticeTimer,
   polling=false,walking=false,lastPoll=0,lastFrame=0,lastDock='',lastDockPlayer=null,lastStep=null,stalled=0,
@@ -36,9 +40,9 @@ function progressHTML(project) {
 }
 function acceptState(next) {
   if(state&&(state.you.id!==next.you.id||state.realmId!==next.realmId)) {
-    agentCredential=null;uploadDraft=null;journey=null;keys={};touch=[0,0];lastDock='';lumaAtelier?.dispose();lumaAtelier=null;
+    agentCredential=null;uploadDraft=null;journey=null;keys={};touch=[0,0];lastDock='';lumaAtelier?.dispose();lumaAtelier=null;cosmicAtelier?.dispose();cosmicAtelier=null;
   }
-  state=next;
+  state=next;skyReceivedAt=performance.now();
   active=true;
   $('commons-entry').hidden=true;$('service-unavailable').hidden=true;$('commons-play').hidden=false;
   $('player-label').textContent=next.you.name;
@@ -54,7 +58,7 @@ function acceptState(next) {
   $('gather-near').disabled=!nearest||connection.busy||!!connection.pending;
   $('gather-near').textContent=nearest?'Gather '+nearest.item+' · E':'Approach a resource';
   const currentFocus=document.activeElement;
-  if(tab==='luma'||!currentFocus?.matches('input,select,textarea')||!currentFocus.closest('#dock-content'))renderDock();
+  if(tab==='cosmos'||tab==='luma'||!currentFocus?.matches('input,select,textarea')||!currentFocus.closest('#dock-content'))renderDock();
 }
 function inventoryOptions(selected='wood',marks=true) {
   return (marks?ITEMS:MATERIALS).map(item=>`<option value="${item}"${item===selected?' selected':''}>${item[0].toUpperCase()+item.slice(1)}</option>`).join('');
@@ -86,6 +90,18 @@ function collapseDock(collapsed) {
 }
 function renderDock(force=false) {
   if(!state)return;
+  if(tab==='cosmos'){
+    lumaAtelier?.dispose();lumaAtelier=null;
+    if(!cosmicAtelier){
+      $('dock-content').innerHTML='<div id="cosmos-commons"></div>';
+      cosmicAtelier=mountCosmos($('cosmos-commons'),{shared:true,state:()=>({...state.cosmos,pack:state.you.inventory}),now:cosmicNow,sound:toggleCosmicSound,soundEnabled:()=>cosmicSound,reduced:()=>view.reduced,
+        action:async(op,payload)=>{const response=await connection.command('cosmos.'+op,payload);return response.receipt.result;},
+        walk:point=>travel(point,point.name)
+      });
+    }else cosmicAtelier.refresh();
+    lastDock='';lastDockPlayer=state.you.id;return;
+  }
+  cosmicAtelier?.dispose();cosmicAtelier=null;
   if(tab==='luma'){
     if(!lumaAtelier){
       $('dock-content').innerHTML='<div id="luma-commons"></div>';
@@ -122,7 +138,7 @@ function renderDock(force=false) {
     html='<p class="dock-intro">Share the designs you make in the Dream Foundry. Other wayfarers can download a blueprint, explore it in rehearsal, and build it with their own materials.</p><article class="commons-card"><h3>Leave an invention</h3><label class="field" for="blueprint-file">Choose an exported Foundry blueprint</label><input id="blueprint-file" type="file" accept=".json,application/json"><p id="blueprint-review" class="form-caption"></p><button id="publish-blueprint" class="gold-button" disabled>Share this blueprint</button><p class="form-caption">This publishes your design with your player name. Your inventory and placed creations stay in their original world.</p><a href="./play.html" class="quiet-button">Open your Dream Foundry ↗</a></article>';
     html+='<h3 class="eyebrow">OUR BLUEPRINT SHELF</h3>'+((state.blueprints||[]).length?(state.blueprints||[]).map(p=>`<article class="commons-card"><span class="card-tag">${esc(p.blueprint.kind)} · by ${esc(p.authorName)}</span><h3>${esc(p.blueprint.name)}</h3><canvas class="shelf-preview" data-blueprint-preview="${esc(p.id)}" width="270" height="150" aria-label="${esc(p.blueprint.name)} blueprint preview"></canvas><p>Revision ${p.blueprint.revision} · ${p.blueprint.parts.length} authored parts</p><button class="quiet-button" data-blueprint-download="${esc(p.id)}">Download & create your own ↗</button>${p.authorId===state.you.id?`<button class="danger-button" data-blueprint-remove="${esc(p.id)}">Remove from shared shelf</button>`:''}</article>`).join(''):'<p class="dock-intro">The shelf is waiting for its first invention.</p>');
   } else if(tab==='agents') {
-    html=`<p class="dock-intro">Invite an external agent to act through your own body and inventory. You choose its abilities, command budget, and duration. Revoke it here whenever you choose.</p><article class="commons-card"><h3>A bounded invitation</h3><form id="agent-form"><div class="field"><label for="agent-name">Agent name</label><input id="agent-name" value="My pathfinder" maxlength="24" required></div><label class="scope-choice"><input type="checkbox" name="scope" value="move" checked>Walk</label><label class="scope-choice"><input type="checkbox" name="scope" value="gather" checked>Gather</label><label class="scope-choice"><input type="checkbox" name="scope" value="project.contribute">Contribute my materials</label><label class="scope-choice"><input type="checkbox" name="scope" value="offer.create">Place offers using my goods</label><label class="scope-choice"><input type="checkbox" name="scope" value="luma.speak">Speak in Luma</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.offer">Offer my goods as gifts</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.accept">Welcome gifts to me</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.decline">Decline gifts to me</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.cancel">Withdraw my pending gifts</label><label class="scope-choice"><input type="checkbox" name="scope" value="blueprint.publish">Publish a blueprint</label><div class="row"><div class="field"><label for="agent-budget">Command budget</label><input id="agent-budget" type="number" min="1" max="1000" value="100" required></div><div class="field"><label for="agent-duration">Duration</label><select id="agent-duration"><option value="600">10 minutes</option><option value="3600">1 hour</option><option value="86400">1 day</option></select></div></div><button class="gold-button" type="submit">Create this invitation</button></form><p class="form-caption">This connects your external agent through the API. No language model runs inside this page.</p><div id="agent-key-wrap"${agentCredential?'':' hidden'}><p class="form-caption">Give this key only to your chosen agent. It can spend resources only through the scopes you selected.</p><pre id="agent-key"></pre></div></article>`;
+    html=`<p class="dock-intro">Invite an external agent to act through your own body and inventory. You choose its abilities, command budget, and duration. Revoke it here whenever you choose.</p><article class="commons-card"><h3>A bounded invitation</h3><form id="agent-form"><div class="field"><label for="agent-name">Agent name</label><input id="agent-name" value="My pathfinder" maxlength="24" required></div><label class="scope-choice"><input type="checkbox" name="scope" value="move" checked>Walk</label><label class="scope-choice"><input type="checkbox" name="scope" value="gather" checked>Gather</label><label class="scope-choice"><input type="checkbox" name="scope" value="project.contribute">Contribute my materials</label><label class="scope-choice"><input type="checkbox" name="scope" value="offer.create">Place offers using my goods</label><label class="scope-choice"><input type="checkbox" name="scope" value="luma.speak">Speak in Luma</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.offer">Offer my goods as gifts</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.accept">Welcome gifts to me</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.decline">Decline gifts to me</label><label class="scope-choice"><input type="checkbox" name="scope" value="gift.cancel">Withdraw my pending gifts</label><label class="scope-choice"><input type="checkbox" name="scope" value="cosmos.start">Begin work with my materials</label><label class="scope-choice"><input type="checkbox" name="scope" value="cosmos.strike">Follow the workshop rhythm</label><label class="scope-choice"><input type="checkbox" name="scope" value="cosmos.advance">Advance my workshop processes</label><label class="scope-choice"><input type="checkbox" name="scope" value="cosmos.reclaim">Reclaim my workshop materials</label><label class="scope-choice"><input type="checkbox" name="scope" value="cosmos.use">Use my finished works</label><label class="scope-choice"><input type="checkbox" name="scope" value="blueprint.publish">Publish a blueprint</label><div class="row"><div class="field"><label for="agent-budget">Command budget</label><input id="agent-budget" type="number" min="1" max="1000" value="100" required></div><div class="field"><label for="agent-duration">Duration</label><select id="agent-duration"><option value="600">10 minutes</option><option value="3600">1 hour</option><option value="86400">1 day</option></select></div></div><button class="gold-button" type="submit">Create this invitation</button></form><p class="form-caption">This connects your external agent through the API. No language model runs inside this page.</p><div id="agent-key-wrap"${agentCredential?'':' hidden'}><p class="form-caption">Give this key only to your chosen agent. It can spend resources only through the scopes you selected.</p><pre id="agent-key"></pre></div></article>`;
     html+=state.agents.map(a=>`<article class="commons-card"><h3>${esc(a.name)}</h3><p>${esc(a.scopes.join(' · '))}</p><p>${a.revoked?'Revoked':a.expiresAt<state.serverTime?'Expired':a.remaining+' commands left'}</p>${a.revoked?'':`<button class="danger-button" data-revoke-agent="${esc(a.id)}">Revoke ${esc(a.name)}</button>`}</article>`).join('');
   } else {
     html='<p class="dock-intro">Your possessions have one custodian. The realm checks its material and money totals after each committed change.</p><article class="commons-card"><h3>A conserved world</h3>'+ITEMS.map(item=>`<div class="ledger-line"><span>${esc(item)}</span><b>${state.ledger.residual[item]===0?'Balanced ✓':esc(state.ledger.residual[item])}</b></div>`).join('')+'</article><article class="commons-card"><h3>Return to this body</h3><p>This tab remembers your player. Keep a recovery key to return from another tab or browser before the session expires. Whoever has this key can use this player’s possessions.</p><button id="show-recovery" class="quiet-button">Reveal my recovery key</button><p id="my-recovery" class="recovery-copy" hidden></p><p class="form-caption">Your goods belong to this realm’s service. The First Orchard’s local save is a different world and cannot fund shared trades.</p></article><article class="commons-card"><h3>Continue the wider world</h3><a class="quiet-button" href="./play.html">Creation, combat & living settlement ↗</a><br><a class="quiet-button" href="./audit.html">Read the retained accountability audit ↗</a></article>';
@@ -275,9 +291,20 @@ function labelFrame() {
 }
 function frame(ms) {
   const t=ms/1000,dt=Math.min(.1,(ms-lastFrame)/1000||.016);lastFrame=ms;
-  if(!document.hidden){view.render(state,t,dt,journey);labelFrame();}
+  if(!document.hidden){cosmicSky.draw(cosmicNow(),view.yaw,view.reduced);cosmicAtelier?.tick();playCosmicMusic();view.render(state,t,dt,journey);labelFrame();}
   if(active&&!document.hidden&&!polling&&ms-lastPoll>750){polling=true;lastPoll=ms;connection.refresh().catch(error=>{disconnected=true;setStatus(connection.pending?'uncertain':'offline');if(error.status===401){active=false;$('commons-entry').hidden=false;$('commons-play').hidden=true;$('entry-status').textContent='Session expired. Restore your player key to return.';}}).finally(()=>polling=false);}
   requestAnimationFrame(frame);
 }
 if(innerWidth<780)collapseDock(true);
 setInterval(movementStep,100);requestAnimationFrame(frame);connect();
+
+function cosmicNow(){return state?.cosmos?state.cosmos.elapsed+Math.min(1500,Math.max(0,performance.now()-skyReceivedAt)):0;}
+function toggleCosmicSound(){cosmicSound=!cosmicSound;if(cosmicSound){cosmicAudio??=new (window.AudioContext||window.webkitAudioContext)();cosmicAudio.resume();}return cosmicSound;}
+function playCosmicMusic(){
+ if(!cosmicSound||!cosmicAudio||!state)return;
+ const ms=cosmicNow(),job=state.cosmos.workshop.job,age=job?ms-job.stageAt:ms;if(job&&age<Cosmos.BEAT_MS)return;
+ const beat=Cosmos.beatAt(job?age-Cosmos.BEAT_MS:age),key=`${job?.id}:${job?.stage}:${beat.index}`;if(key===lastCosmicBeat)return;lastCosmicBeat=key;
+ const word=job?Cosmos.RECIPES[job.recipe].stages[job.stage][1]:Cosmos.skyAt(ms).word,notes=Cosmos.score(word),tone=notes[beat.index%notes.length];
+ const oscillator=cosmicAudio.createOscillator(),gain=cosmicAudio.createGain(),t=cosmicAudio.currentTime;
+ oscillator.frequency.value=tone.frequency;gain.gain.setValueAtTime(0,t);gain.gain.linearRampToValueAtTime(.025,t+.025);gain.gain.exponentialRampToValueAtTime(.0001,t+.65);oscillator.connect(gain);gain.connect(cosmicAudio.destination);oscillator.start(t);oscillator.stop(t+.7);
+}

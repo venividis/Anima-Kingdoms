@@ -1,3 +1,5 @@
+import {CosmicMeshes} from './cosmos-view.js';
+import {WORKSITES} from './cosmos.js';
 import {Renderer, Geometry, transform, project} from './engine.js';
 import {makeScene, drawPerson, C} from './scene.js';
 import {GROUND} from './world.js';
@@ -19,6 +21,7 @@ export class SharedView {
     try {
       this.r = new Renderer(canvas);
       this.base = makeScene(this.r);
+      this.cosmic = new CosmicMeshes(this.r);
       const gem = new Geometry().cone([0,0,0],[0,1.2,0],.48,0,[1,1,1],6);
       gem.cone([0,0,0],[0,-.3,0],.48,0,[.65,.75,.77],6);
       this.gem = this.r.mesh(gem);
@@ -58,8 +61,10 @@ export class SharedView {
     const target=[x+(innerWidth>900?2:0),.8,z];
     const eye=[x+Math.sin(this.yaw)*len*Math.cos(pitch),1.8+Math.sin(pitch)*len,z+Math.cos(this.yaw)*len*Math.cos(pitch)];
     const time=this.reduced?0:t;
+    const daylight=state?.cosmos?.sky?.daylight??1;r.atmosphere=[.04+daylight*.12,.08+daylight*.2,.16+daylight*.16];r.ambientTint=[.54+daylight*.46,.65+daylight*.35,.91+daylight*.09];
     r.begin(eye,target,time);
     r.draw(b.distant,transform(0,Math.sin(time*.24)*.12,0));
+    if(state?.cosmos)this.cosmic.draw(state.cosmos,state.cosmos.elapsed);
     r.draw(b.earth); r.draw(b.architecture); r.draw(b.green,transform(),{sway:this.reduced?0:.004});
     r.draw(b.orchard,transform(),{tint:[.9,1.06,.93],sway:this.reduced?0:.005});
     r.draw(b.reeds,transform(),{sway:this.reduced?0:.006});
@@ -100,11 +105,13 @@ export class SharedView {
     const c=this.c,canvas=this.canvas;
     canvas.width=innerWidth;canvas.height=innerHeight;
     this.scale=this.overview?Math.min(innerWidth/120,innerHeight/105):Math.max(8,Math.min(20,340/this.distance));
-    const bg=c.createLinearGradient(0,0,0,innerHeight);bg.addColorStop(0,'#234b57');bg.addColorStop(1,'#102e37');c.fillStyle=bg;c.fillRect(0,0,innerWidth,innerHeight);
+    c.clearRect(0,0,innerWidth,innerHeight);
     const poly=(points,color)=>{c.beginPath();points.forEach(([x,z],i)=>{const p=this.project(x,0,z);i?c.lineTo(p.x,p.y):c.moveTo(p.x,p.y);});c.closePath();c.fillStyle=color;c.fill();c.strokeStyle='#c3d7b23c';c.stroke();};
     for(const g of GROUND)poly(g.poly,'#43694f');
     if(state?.world?.bridgeOpen)poly([[-3.2,-7],[3.2,-7],[3.2,-19],[-3.2,-19]],'#cbb587');
     const dot=(x,y,z,r,color)=>{const p=this.project(x,y,z);c.beginPath();c.ellipse(p.x,p.y,r*this.scale,r*this.scale*.65,0,0,Math.PI*2);c.fillStyle=color;c.fill();};
+    for(const [id,p] of Object.entries(WORKSITES)){dot(p.x,0,p.z,1.7,'#1d3048');dot(p.x,.7,p.z,.7,id==='forge'?'#e7aa6c':id==='alembic'?'#a0dce3':'#d7c19b');}
+    if(state?.cosmos?.town.bell)dot(2,1.3,25,.7,'#e3c883');if(state?.cosmos?.town.garden)dot(-2,.3,25,1,'#82ddbd');
     for(const o of state?.world?.obstacles||[]) {const p=this.project(o.x,1,o.z);c.fillStyle='#1f3940';c.fillRect(p.x-o.r*this.scale,p.y-o.r*this.scale*.64,o.r*2*this.scale,o.r*1.28*this.scale);}
     for(const n of state?.nodes||[]) {dot(n.x,0,n.z,1.7,'#102d3a');dot(n.x,.4,n.z,n.remaining?.8:.3,{wood:'#78aa79',stone:'#a7babe',ore:'#b6a1d6',food:'#edbf7d',herb:'#8cd6b4',crystal:'#99dbe8'}[n.item]);}
     for(const p of state?.projects||[]) {dot(p.x,0,p.z,2,'#28444b');dot(p.x,.5,p.z,p.complete?1.1:.6,p.complete?'#eacb8c':'#739890');}
