@@ -1,0 +1,213 @@
+{
+  "notes": "Maps are local resized/reencoded copies. Model-derived textures are extracted JPEG derivatives. Solar System Scope maps: INOVE, CC BY 4.0. NASA mission maps retain their mission credits. Extra maps not used by the current renderer may remain in this acquisition source record.",
+  "sources": [
+    {
+      "body": "sun",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_sun.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "mercury",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_mercury.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "venus_surface",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_venus_surface.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "venus_atmosphere",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_venus_atmosphere.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "earth_daymap",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "earth_nightmap",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "earth_clouds",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "moon",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_moon.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "mars",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_mars.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "jupiter",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "saturn",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_saturn.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "saturn_ring_alpha",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_saturn_ring_alpha.png",
+      "size": [
+        2048,
+        125
+      ]
+    },
+    {
+      "body": "uranus",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_uranus.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "neptune",
+      "source_page": "https://www.solarsystemscope.com/textures/",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_neptune.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "pluto",
+      "asset_url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia11/pia11707/PIA11707.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "titan",
+      "asset_url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia22/pia22770/PIA22770.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "enceladus",
+      "asset_url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18435/PIA18435.jpg",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "europa",
+      "asset_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Europa_Voyager_GalileoSSI_global_mosaic.jpg",
+      "size": [
+        1024,
+        512
+      ]
+    },
+    {
+      "body": "earth_normal_map",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_earth_normal_map.tif",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "earth_specular_map",
+      "asset_url": "https://www.solarsystemscope.com/textures/download/2k_earth_specular_map.tif",
+      "size": [
+        2048,
+        1024
+      ]
+    },
+    {
+      "body": "ceres",
+      "source_page": "https://science.nasa.gov/resource/ceres-3d-model/",
+      "asset_url": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/c/Ceres_1_1000.glb?emrc=6aa5e999d4549"
+    },
+    {
+      "body": "vesta",
+      "source_page": "https://science.nasa.gov/resource/vesta-3d-model/",
+      "asset_url": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/v/Vesta_1_100.glb?emrc=6aa6356c10188"
+    },
+    {
+      "body": "ganymede",
+      "source_page": "https://science.nasa.gov/resource/ganymede-3d-model/",
+      "asset_url": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/g/Ganymede_1_5268.glb?emrc=6aa6356be133d"
+    },
+    {
+      "body": "callisto",
+      "source_page": "https://science.nasa.gov/resource/callisto-3d-model/",
+      "asset_url": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/c/Callisto_1_4821.glb?emrc=6aa6356bb8bd4"
+    },
+    {
+      "body": "io",
+      "source_page": "https://science.nasa.gov/resource/io-3d-model/",
+      "asset_url": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/i/Io_1_3643.glb?emrc=6aa6356be5042"
+    },
+    {
+      "body": "europa",
+      "source_page": "https://science.nasa.gov/resource/europa-3d-model/",
+      "asset_url": "https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/e/Europa_1_3138.glb?emrc=6aa635e201859",
+      "size": [
+        2048,
+        1024
+      ]
+    }
+  ]
+}
