@@ -50,6 +50,7 @@ export class CanvasWorldView{
  if(s.range)for(const target of s.range.targets)if(!target.hit)dot(target.x,1,target.z,.6,'#e6b770');
  if(this.placement){const p=this.placement;paintBlueprint(c,p.blueprint,this.project.bind(this),p.x,p.z,p.yaw*Math.PI/180,.55,this.yaw);}
  dot(s.hero.x,0,s.hero.z,.65,'#081b25');dot(s.hero.x,1+s.hero.y,s.hero.z,.48,'#fff1c8');const hp=this.project(s.hero.x,1+s.hero.y,s.hero.z);c.strokeStyle='#fdf4d2';c.lineWidth=2;c.beginPath();c.moveTo(hp.x,hp.y);c.lineTo(hp.x+Math.sin(s.hero.angle-this.yaw)*16,hp.y+Math.cos(s.hero.angle-this.yaw)*11);c.stroke();
+ if(this.astralPose){const pose=this.astralPose,p=this.project(s.hero.x,pose.spiritY+1,s.hero.z);c.save();c.strokeStyle='#c3f1ff';c.globalAlpha=.65;c.lineWidth=1.4;c.beginPath();c.moveTo(hp.x,hp.y);c.quadraticCurveTo(p.x+20,(hp.y+p.y)/2,p.x,p.y);c.stroke();c.fillStyle='#cbf6ff';c.beginPath();c.ellipse(p.x,p.y,7,15,0,0,tau);c.fill();c.beginPath();c.arc(p.x,p.y-21,6,0,tau);c.fill();c.restore();}
  if(s.kingdoms.journey){const p=this.project(s.kingdoms.journey.x,0,s.kingdoms.journey.z);c.strokeStyle='#a7efce';c.beginPath();c.arc(p.x,p.y,9,0,tau);c.stroke();}
  c.fillStyle='#b7d0c3';c.font='12px system-ui';c.fillText('CARTOGRAPHIC VIEW · SAME WORLD & RULES',20,canvas.height-18);
  }
