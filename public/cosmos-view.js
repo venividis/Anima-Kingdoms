@@ -1,3 +1,5 @@
+import {mountWholeSky} from './sky-view.js';
+import {stellarField,skyGuides,starColor} from './sky-observer.js';
 import * as C from './cosmos.js';
 import {ALPHABET,LETTERS} from './luma/data.js';
 import {drawGlyph,projectLetter} from './luma/geometry.js';
@@ -13,26 +15,31 @@ const phraseFor=r=>`pe mi me peli ta ${JSON.stringify(r.name)} ki ${r.kind==='me
 /** Authored Luma asterisms are visibly separate from retained named catalogue
  * stars. The horizon panorama is a cylindrical chart, not a camera plate. */
 export class CosmicSky{
-  constructor(canvas){this.canvas=canvas;this.ctx=canvas?.getContext('2d');this.last=-Infinity;let seed=1729;const random=()=>((seed=Math.imul(seed,1664525)+1013904223>>>0)/4294967296);this.stars=Array.from({length:480},()=>({x:random(),y:random()*.7,r:.35+random()*1.15,a:.2+random()*.7}));}
+  constructor(canvas){this.canvas=canvas;this.ctx=canvas?.getContext('2d');this.last=-Infinity;this.lastYaw=null;}
   draw(ms,yaw=0,reduced=false){
-    if(!this.ctx||Math.abs(ms-this.last)<33)return;this.last=ms;
+    if(!this.ctx||Math.abs(ms-this.last)<33&&yaw===this.lastYaw)return;this.last=ms;this.lastYaw=yaw;
     const c=this.ctx,w=innerWidth,h=innerHeight,dpr=Math.min(globalThis.devicePixelRatio||1,1.5);
     if(this.canvas.width!==Math.round(w*dpr)||this.canvas.height!==Math.round(h*dpr)){this.canvas.width=Math.round(w*dpr);this.canvas.height=Math.round(h*dpr);}
     c.setTransform(dpr,0,0,dpr,0,0);const sky=C.skyAt(ms),t=reduced?0:ms/1000,night=1-sky.daylight;
     c.clearRect(0,0,w,h);const g=c.createLinearGradient(0,0,0,h);g.addColorStop(0,sky.daylight>.5?'#102c50':'#030718');g.addColorStop(.53,sky.daylight>.5?'#476d85':'#17243f');g.addColorStop(1,'#263e45');c.fillStyle=g;c.fillRect(0,0,w,h);
     c.globalCompositeOperation='screen';
     for(let i=0;i<4;i++){const x=w*(.2+i*.24),y=h*(.08+i*.025),r=w*.36;const nebula=c.createRadialGradient(x,y,0,x,y,r);nebula.addColorStop(0,['#25245826','#1d46772c','#40286525','#16577820'][i]);nebula.addColorStop(1,'#06112900');c.fillStyle=nebula;c.fillRect(0,0,w,h*.72);}
-    for(const s of this.stars){const x=((s.x-yaw/TAU*.22+1)%1)*w,y=s.y*h;c.globalAlpha=s.a*(.24+.76*night)*(reduced?1:.85+.15*Math.sin(t*.6+s.x*70));c.fillStyle=s.r>1?'#d4eaff':'#87a6d1';c.beginPath();c.arc(x,y,s.r,0,TAU);c.fill();}
-    const word=[...sky.word],beat=C.beatAt(ms);
+    for(const f of stellarField(sky)){
+      const star=f.star;if(f.altitude<0||star.mag>(reduced?5:5.8))continue;
+      const x=((f.azimuth/360-yaw/TAU+1)%1)*w,y=h*(.52-f.altitude/90*.45);
+      c.globalAlpha=Math.max(.08,1-star.mag*.11)*(.03+.97*night);c.fillStyle=starColor(star.bv);c.beginPath();c.arc(x,y,Math.max(.4,2-star.mag*.23),0,TAU);c.fill();
+    }
+    // Twenty authored letter markers follow the ecliptic at equal sectors.
+    const ecliptic=skyGuides(sky)[0].points;
     for(let i=0;i<20;i++){
-      const letter=ALPHABET[i],active=word.includes(letter),x=((i/20+.025-yaw/TAU*.2+1)%1)*w,y=h*(.16+.075*Math.sin(i*2.4+sky.sidereal*Math.PI/180));
-      c.globalAlpha=(active?.7:.17)*(.4+.6*night);c.strokeStyle=active?'#cae9ff':'#6f8ba6';c.fillStyle=c.strokeStyle;c.shadowColor='#93cfff';c.shadowBlur=active?9:0;
-      drawGlyph(c,letter,x-17,y-18,active?35:23);
-      if(active){c.globalAlpha=.4*night;c.beginPath();c.moveTo(x,y+20);c.lineTo(x+Math.sin(i*3)*55,y+65);c.stroke();c.beginPath();c.arc(x+Math.sin(i*3)*55,y+65,1.5,0,TAU);c.fill();}
+      const p=ecliptic[i*9],active=sky.word.includes(ALPHABET[i]);if(p.altitude<0)continue;
+      const x=((p.azimuth/360-yaw/TAU+1)%1)*w,y=h*(.52-p.altitude/90*.45);
+      c.globalAlpha=(active?.6:.18)*(.2+.8*night);c.strokeStyle=active?'#d9cba5':'#7796b7';c.fillStyle=c.strokeStyle;
+      drawGlyph(c,ALPHABET[i],x-12,y-12,active?26:20);
     }
     c.shadowBlur=0;c.globalAlpha=1;
     for(const star of sky.stars.filter(s=>s.altitude>0)){
-      const x=((star.azimuth/360-yaw/TAU+1)%1)*w,y=h*(.5-star.altitude/90*.43);c.fillStyle='#e5f6ff';c.globalAlpha=.35+.65*night;c.shadowColor='#6dd5ff';c.shadowBlur=14;c.beginPath();c.arc(x,y,2.3,0,TAU);c.fill();c.shadowBlur=0;c.font='12px system-ui';c.fillText(star.name,x+9,y-7);
+      const x=((star.azimuth/360-yaw/TAU+1)%1)*w,y=h*(.5-star.altitude/90*.43);c.fillStyle='#e5f6ff';c.globalAlpha=.35+.65*night;c.shadowColor='#6dd5ff';c.shadowBlur=14;c.shadowBlur=0;c.font='12px system-ui';c.fillText(star.name,x+9,y-7);
     }
     for(const body of sky.bodies.filter(b=>b.altitude>0)){
       const x=((body.azimuth/360-yaw/TAU+1)%1)*w,y=h*(.52-body.altitude/90*.45);c.fillStyle=body.color;c.globalAlpha=body.name==='Sun'?1:.8;c.shadowColor=body.color;c.shadowBlur=body.name==='Sun'?35:20;c.beginPath();c.arc(x,y,body.name==='Sun'?11:body.name==='Moon'?8:2.7,0,TAU);c.fill();
@@ -67,6 +74,7 @@ export class CosmicMeshes{
 }
 
 export function mountCosmos(root,api){
+  let observatory=null;
   let recipeId='iron',mode='steady',cooling='water',dimension=16,signature='',disposed=false,busy=false,beatSignature='';
   const $=s=>root.querySelector(s),state=()=>api.state(),now=()=>api.now();
   const message=text=>{const el=$('[data-cosmos-message]');if(el)el.textContent=text;};
@@ -74,20 +82,25 @@ export function mountCosmos(root,api){
   function refresh(force=false){
     if(disposed)return;const s=state(),w=s.workshop,signatureNow=JSON.stringify([w,s.town,s.pack]);
     if(!force&&signatureNow===signature)return;signature=signatureNow;
+    const preservedSky=$('[data-whole-sky]');preservedSky?.remove();
     const oldDraft=$('[data-cosmos-phrase]')?.value,focused=root.contains(document.activeElement)?[...document.activeElement.attributes].find(a=>a.name.startsWith('data-'))?.name:null;
     const recipe=C.RECIPES[recipeId],job=w.job,working=job&&C.RECIPES[job.recipe];
     root.innerHTML=`<div class="cosmos-workshop"><div class="cosmos-heading"><span class="eyebrow">THE CELESTIAL ATELIER</span><h2>As above, a world below.</h2><p>The sky has a voice. Give it a place in your hands.</p></div>
-      <div class="cosmos-surface"><canvas data-cosmos-chart aria-label="Live celestial chart and native Luma rhythm" role="img"></canvas><div class="cosmos-sky-caption"><strong data-sky-word></strong><span data-sky-phase></span></div><button data-sound class="cosmos-sound" aria-pressed="false">Listen to the sky</button></div>
+      <nav class="cosmos-nav" aria-label="Celestial workspace"><button data-cosmos-jump="[data-whole-sky]">Observe the sky</button><button data-cosmos-jump=".cosmos-columns">Craft at the Atelier</button><button data-cosmos-jump=".sky-encounter">My encounters</button></nav><div data-whole-sky></div><div class="cosmos-rhythm-strip"><div class="cosmos-sky-caption"><strong data-sky-word></strong><span data-sky-phase></span></div><button data-sound class="cosmos-sound" aria-pressed="false">Listen to the sky</button></div>
       <div class="cosmos-alignment" data-sky-alignment></div>
       <div class="cosmos-world-actions"><button data-walk="forge">Walk to Starforge</button><button data-walk="alembic">Walk to Moonwell</button><button data-walk="town">Walk to town hearth</button></div>
       <div class="cosmos-columns"><section><h3>${job?'Your work is alive':'Choose what becomes real'}</h3>
       ${job?`<div class="cosmos-job"><span class="eyebrow">${esc(working.name)}</span><h4 data-work-stage></h4><p data-work-copy></p><progress data-work-progress max="1" value="0" aria-label="Current process progress"></progress><div class="cosmos-readings"><span><b data-temperature></b><small>${working.kind==='metal'?'Furnace model':'Bath model'}</small></span><span><b data-work-score></b><small>work quality</small></span><span>${native(working.word)}<small>${esc(working.word)}</small></span></div><div class="cosmos-beats" data-beats></div>${job.mode==='rhythm'?'<button data-strike class="cosmos-primary full">Strike with the light</button>':'<p class="cosmos-small">Steady work completes without timed input. Watch the light or listen as it changes.</p>'}<label>Cooling method<select data-cooling><option value="water">Water · rapid quench</option><option value="air">Air · slow anneal</option></select></label><button data-advance class="cosmos-primary full" disabled>Continue when ready</button><button data-reclaim-job class="cosmos-link">Reclaim this work</button></div>`:
       `<div class="cosmos-recipes">${Object.entries(C.RECIPES).map(([id,r])=>`<button data-recipe="${id}" aria-pressed="${id===recipeId}">${native(r.word)}<span>${esc(r.name)}<small>${r.kind==='metal'?'METALLURGY':'ALCHEMY'}</small></span></button>`).join('')}</div><p class="cosmos-use">${esc(api.shared?sharedUse(recipeId):recipe.use)}</p><p class="cosmos-cost">${costText(recipe)}</p><label>Your way of working<select data-work-mode><option value="steady">Steady · no timed input</option><option value="rhythm">Rhythm · follow each light and note</option></select></label><label>Say it in Luma<textarea data-cosmos-phrase rows="2" spellcheck="false">${esc(phraseFor(recipe))}</textarea></label><div class="cosmos-native-phrase" data-native-phrase>${native(phraseFor(recipe))}</div><button data-script class="cosmos-link">Use native writing</button><button data-begin class="cosmos-primary full">Begin ${esc(recipe.name)}</button><p class="cosmos-small">${recipe.kind==='metal'?'Fire changes the ore; shaping arranges it; cooling determines its temper.':'Dissolution, circulation, and settling bring your ingredients into a new form.'} Materials come from your pack.</p>`}
-      <p data-cosmos-message role="status" aria-live="polite" class="cosmos-message"></p></section><section><h3>What your hands have made</h3><div class="cosmos-products">${w.products.length?w.products.map(p=>`<article><div>${native(C.RECIPES[p.recipe].word)}<span><strong>${esc(C.RECIPES[p.recipe].name)}</strong><small>Quality ${p.quality} · ${p.mode}</small></span></div><p>${esc(api.shared?sharedUse(p.recipe):C.RECIPES[p.recipe].use)}</p><button data-use="${p.id}" class="cosmos-primary">${['alloy','earth'].includes(p.recipe)?'Give this to the town':p.recipe==='iron'?'Temper my tool':'Drink moon dew'}</button><button data-reclaim="${p.id}" class="cosmos-link">Reclaim materials</button></article>`).join(''):'<p class="cosmos-empty">Your first work will appear here, carrying its own rhythm, sky, and quality.</p>'}</div><h3>The town answers</h3><div class="cosmos-town"><p>${s.town.bell?'A singing bell is installed. Its rhythm helps the town work.':'The hearth is waiting for a bell of singing alloy.'}</p><p>${s.town.garden?'Earth tincture nourishes the town’s rhythm of growth.':'Earth tincture can tend the town garden.'}</p></div><details><summary>The sky, letter by letter</summary><label>Retained coordinates <output data-dimension-value>${dimension}</output> / 16<input data-dimension type="range" min="1" max="16" value="${dimension}"></label><p class="cosmos-small">Each original Luma letter carries sixteen articulatory features. This curve reveals their projections. The pitches keep the source spelling.</p><p data-sky-date class="cosmos-small"></p><p class="cosmos-small">Recorded sky: ${C.SKY_MODEL.engine}. Town: 38° north, 0° east. Twelve ${api.shared?'server':'active'} minutes make a sky day. Luma asterisms and the effects on crafting are authored game rules. Temperatures are simplified craft models.</p></details></section></div></div>`;
+      <p data-cosmos-message role="status" aria-live="polite" class="cosmos-message"></p></section><section><h3>What your hands have made</h3><div class="cosmos-products">${w.products.length?w.products.map(p=>`<article><div>${native(C.RECIPES[p.recipe].word)}<span><strong>${esc(C.RECIPES[p.recipe].name)}</strong><small>Quality ${p.quality} · ${p.mode}</small></span></div><p>${esc(api.shared?sharedUse(p.recipe):C.RECIPES[p.recipe].use)}</p><button data-use="${p.id}" class="cosmos-primary">${['alloy','earth'].includes(p.recipe)?'Give this to the town':p.recipe==='iron'?'Temper my tool':'Drink moon dew'}</button><button data-reclaim="${p.id}" class="cosmos-link">Reclaim materials</button></article>`).join(''):'<p class="cosmos-empty">Your first work will appear here, carrying its own rhythm, sky, and quality.</p>'}</div><h3>The town answers</h3><div class="cosmos-town"><p>${s.town.bell?'A singing bell is installed. Its rhythm helps the town work.':'The hearth is waiting for a bell of singing alloy.'}</p><p>${s.town.garden?'Earth tincture nourishes the town’s rhythm of growth.':'Earth tincture can tend the town garden.'}</p></div><details><summary>Luma’s original letter-feature curves</summary><div class="sky-letter-surface"><canvas data-cosmos-chart aria-label="Original Luma articulatory feature projection" role="img"></canvas></div><label>Retained coordinates <output data-dimension-value>${dimension}</output> / 16<input data-dimension type="range" min="1" max="16" value="${dimension}"></label><p class="cosmos-small">Each original Luma letter carries sixteen articulatory features. This curve reveals their projections. The pitches keep the source spelling.</p><p data-sky-date class="cosmos-small"></p><p class="cosmos-small">Recorded sky: ${C.SKY_MODEL.engine}. Town: 38° north, 0° east. Twelve ${api.shared?'server':'active'} minutes make a sky day. Luma asterisms and the effects on crafting are authored game rules. Temperatures are simplified craft models.</p></details></section></div></div>`;
+    if(preservedSky)$('[data-whole-sky]').replaceWith(preservedSky);
+    else observatory=mountWholeSky($('[data-whole-sky]'),{...api,sky:()=>C.skyAt(now()),recipeName:id=>C.RECIPES[id].name});
+    observatory?.refresh();
     if(oldDraft&&!job)$('[data-cosmos-phrase]').value=oldDraft;
     $('[data-work-mode]')?.addEventListener('change',e=>{mode=e.target.value;});if($('[data-work-mode]'))$('[data-work-mode]').value=mode;
     $('[data-cooling]')?.addEventListener('change',e=>{cooling=e.target.value;});if($('[data-cooling]')){$('[data-cooling]').value=job.stage===2?job.cooling:cooling;$('[data-cooling]').disabled=job.stage===2;$('[data-cooling]').parentElement.firstChild.textContent=job.stage===2?'Cooling in progress':'Cooling for the final stage';}
     root.querySelectorAll('[data-recipe]').forEach(b=>b.onclick=()=>{recipeId=b.dataset.recipe;signature='';const area=$('[data-cosmos-phrase]');if(area)area.value=phraseFor(C.RECIPES[recipeId]);refresh(true);});
+    root.querySelectorAll('[data-cosmos-jump]').forEach(b=>b.onclick=()=>$ (b.dataset.cosmosJump)?.scrollIntoView({behavior:api.reduced?.()?'instant':'smooth',block:'start'}));
     root.querySelectorAll('[data-walk]').forEach(b=>b.onclick=()=>api.walk(C.WORKSITES[b.dataset.walk]));
     $('[data-begin]')?.addEventListener('click',()=>act('start',{recipe:recipeId,mode,text:$('[data-cosmos-phrase]').value}));
     $('[data-cosmos-phrase]')?.addEventListener('input',()=>{try{$('[data-native-phrase]').innerHTML=native($('[data-cosmos-phrase]').value);}catch{}});
@@ -103,7 +116,7 @@ export function mountCosmos(root,api){
     beatSignature='';tick();if(focused)$(`[${focused}]`)?.focus();
   }
   function tick(){
-    if(disposed)return;const ms=now(),sky=C.skyAt(ms),work=C.workStatus(state().workshop,ms);
+    if(disposed)return;observatory?.tick();const ms=now(),sky=C.skyAt(ms),work=C.workStatus(state().workshop,ms);
     const word=work?.word||sky.word;
     $('[data-sky-word]').innerHTML=`${native(word)} <small>${word}</small>`;
     $('[data-sky-phase]').textContent=`${sky.daylight>.5?'Solar':'Nocturnal'} rhythm · 80 beats / minute`;
@@ -118,7 +131,7 @@ export function mountCosmos(root,api){
     }
     paintChart($('[data-cosmos-chart]'),sky,word,work?Math.max(0,ms-work.job.stageAt-C.BEAT_MS):ms,dimension,!!api.reduced?.());
   }
-  refresh();return {refresh,tick,dispose(){disposed=true;root.innerHTML='';}};
+  refresh();return {refresh,tick,dispose(){disposed=true;observatory?.dispose();root.innerHTML='';}};
 }
 function sharedUse(id){return {iron:'Temper your gathering tool. Each gathering action becomes 0.07 seconds quicker.',alloy:'Hang a bell for everyone: up to 0.12 seconds quicker gathering, and a visible song over the hearth.',dew:'Drink for one minute of refreshed gathering: 0.10 seconds quicker per action.',earth:'Tend the town garden. Everyone gathers up to 0.06 seconds quicker. Deposits remain finite.'}[id];}
 

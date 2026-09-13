@@ -1,0 +1,4550 @@
+{
+  "reference": "Swiss Ephemeris 2.10.03",
+  "pythonBinding": 20230604,
+  "flags": "FLG_MOSEPH; houses_ex whole-sign convention; tropical",
+  "scope": "Model comparison, not observational certification. Same-UT results retain time-model disagreement. Controlled TT isolates position-model differences. Swiss software is not bundled or served.",
+  "documentation": "https://www.astro.com/swisseph/swephprg.htm",
+  "summary": {
+    "bodyCases": 70,
+    "angleCases": 168,
+    "maxSameUTLongitudeArcmin": 2.3555517912677715,
+    "maxSameTTLongitudeArcmin": 0.5810771017166871,
+    "maxAscendantArcsec": 3.828204971659943,
+    "maxMidheavenArcsec": 1.9108637373733472
+  },
+  "samples": [
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "time": {
+        "julianUT": 2378497,
+        "julianTT": 2378497.0001593996,
+        "deltaTSeconds": 13.772137882187963,
+        "convention": "UTC approximated as UT1; Espenak\u2013Meeus model for TT\u2212UT"
+      },
+      "bodies": [
+        {
+          "name": "Sun",
+          "longitude": 280.93919149929803
+        },
+        {
+          "name": "Moon",
+          "longitude": 354.7016062403136
+        },
+        {
+          "name": "Mercury",
+          "longitude": 267.9423263169549
+        },
+        {
+          "name": "Venus",
+          "longitude": 234.15082220277588
+        },
+        {
+          "name": "Mars",
+          "longitude": 244.68336154184408
+        },
+        {
+          "name": "Jupiter",
+          "longitude": 84.46436618368337
+        },
+        {
+          "name": "Saturn",
+          "longitude": 128.764282815441
+        },
+        {
+          "name": "Uranus",
+          "longitude": 177.12640429945307
+        },
+        {
+          "name": "Neptune",
+          "longitude": 226.62939687729084
+        },
+        {
+          "name": "Pluto",
+          "longitude": 331.42623231070894
+        }
+      ],
+      "angles": [
+        {
+          "latitude": -75,
+          "longitude": -120,
+          "ascendant": 321.4532583421438,
+          "midheaven": 159.3089173431675,
+          "reason": null,
+          "sidereal": 160.89130981928247
+        },
+        {
+          "latitude": -75,
+          "longitude": 0,
+          "ascendant": 4.525964533258526,
+          "midheaven": 280.0094720518952,
+          "reason": null,
+          "sidereal": 280.89130981928247
+        },
+        {
+          "latitude": -75,
+          "longitude": 150,
+          "ascendant": 207.85498397385211,
+          "midheaven": 72.36999905527551,
+          "reason": null,
+          "sidereal": 70.89130981928247
+        },
+        {
+          "latitude": -66,
+          "longitude": -120,
+          "ascendant": 302.1613548210004,
+          "midheaven": 159.3089173431675,
+          "reason": null,
+          "sidereal": 160.89130981928247
+        },
+        {
+          "latitude": -66,
+          "longitude": 0,
+          "ascendant": 6.008333343053853,
+          "midheaven": 280.0094720518952,
+          "reason": null,
+          "sidereal": 280.89130981928247
+        },
+        {
+          "latitude": -66,
+          "longitude": 150,
+          "ascendant": 85.16594914457787,
+          "midheaven": 72.36999905527551,
+          "reason": null,
+          "sidereal": 70.89130981928247
+        },
+        {
+          "latitude": -38,
+          "longitude": -120,
+          "ascendant": 270.65749626107487,
+          "midheaven": 159.3089173431675,
+          "reason": null,
+          "sidereal": 160.89130981928247
+        },
+        {
+          "latitude": -38,
+          "longitude": 0,
+          "ascendant": 8.86165622306681,
+          "midheaven": 280.0094720518952,
+          "reason": null,
+          "sidereal": 280.89130981928247
+        },
+        {
+          "latitude": -38,
+          "longitude": 150,
+          "ascendant": 149.49401228883642,
+          "midheaven": 72.36999905527551,
+          "reason": null,
+          "sidereal": 70.89130981928247
+        },
+        {
+          "latitude": 0,
+          "longitude": -120,
+          "ascendant": 252.3699990552755,
+          "midheaven": 159.3089173431675,
+          "reason": null,
+          "sidereal": 160.89130981928247
+        },
+        {
+          "latitude": 0,
+          "longitude": 0,
+          "ascendant": 11.846735960514858,
+          "midheaven": 280.0094720518952,
+          "reason": null,
+          "sidereal": 280.89130981928247
+        },
+        {
+          "latitude": 0,
+          "longitude": 150,
+          "ascendant": 159.3089173431675,
+          "midheaven": 72.36999905527551,
+          "reason": null,
+          "sidereal": 70.89130981928247
+        },
+        {
+          "latitude": 38,
+          "longitude": -120,
+          "ascendant": 237.0944611062601,
+          "midheaven": 159.3089173431675,
+          "reason": null,
+          "sidereal": 160.89130981928247
+        },
+        {
+          "latitude": 38,
+          "longitude": 0,
+          "ascendant": 17.767828625940577,
+          "midheaven": 280.0094720518952,
+          "reason": null,
+          "sidereal": 280.89130981928247
+        },
+        {
+          "latitude": 38,
+          "longitude": 150,
+          "ascendant": 164.46801001493907,
+          "midheaven": 72.36999905527551,
+          "reason": null,
+          "sidereal": 70.89130981928247
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": -120,
+          "ascendant": 229.7284542852916,
+          "midheaven": 159.3089173431675,
+          "reason": null,
+          "sidereal": 160.89130981928247
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 0,
+          "ascendant": 25.255589831765064,
+          "midheaven": 280.0094720518952,
+          "reason": null,
+          "sidereal": 280.89130981928247
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 150,
+          "ascendant": 166.5326266343287,
+          "midheaven": 72.36999905527551,
+          "reason": null,
+          "sidereal": 70.89130981928247
+        },
+        {
+          "latitude": 66,
+          "longitude": -120,
+          "ascendant": 218.34047516386354,
+          "midheaven": 159.3089173431675,
+          "reason": null,
+          "sidereal": 160.89130981928247
+        },
+        {
+          "latitude": 66,
+          "longitude": 0,
+          "ascendant": 88.079633985238,
+          "midheaven": 280.0094720518952,
+          "reason": null,
+          "sidereal": 280.89130981928247
+        },
+        {
+          "latitude": 66,
+          "longitude": 150,
+          "ascendant": 169.47021894955304,
+          "midheaven": 72.36999905527551,
+          "reason": null,
+          "sidereal": 70.89130981928247
+        },
+        {
+          "latitude": 75,
+          "longitude": -120,
+          "ascendant": 207.8750784964979,
+          "midheaven": 159.3089173431675,
+          "reason": null,
+          "sidereal": 160.89130981928247
+        },
+        {
+          "latitude": 75,
+          "longitude": 0,
+          "ascendant": 342.1127117596521,
+          "midheaven": 280.0094720518952,
+          "reason": null,
+          "sidereal": 280.89130981928247
+        },
+        {
+          "latitude": 75,
+          "longitude": 150,
+          "ascendant": 172.07937289714044,
+          "midheaven": 72.36999905527551,
+          "reason": null,
+          "sidereal": 70.89130981928247
+        }
+      ]
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "time": {
+        "julianUT": 2415021,
+        "julianTT": 2415020.9999680906,
+        "deltaTSeconds": -2.7569667901843786,
+        "convention": "UTC approximated as UT1; Espenak\u2013Meeus model for TT\u2212UT"
+      },
+      "bodies": [
+        {
+          "name": "Sun",
+          "longitude": 280.6633675096912
+        },
+        {
+          "name": "Moon",
+          "longitude": 279.61700771685025
+        },
+        {
+          "name": "Mercury",
+          "longitude": 259.6393009860311
+        },
+        {
+          "name": "Venus",
+          "longitude": 306.9960439042781
+        },
+        {
+          "name": "Mars",
+          "longitude": 284.25296772986826
+        },
+        {
+          "name": "Jupiter",
+          "longitude": 241.23405328922075
+        },
+        {
+          "name": "Saturn",
+          "longitude": 267.77314213746354
+        },
+        {
+          "name": "Uranus",
+          "longitude": 250.16742056046536
+        },
+        {
+          "name": "Neptune",
+          "longitude": 85.20566406914998
+        },
+        {
+          "name": "Pluto",
+          "longitude": 75.24379389669086
+        }
+      ],
+      "angles": [
+        {
+          "latitude": -75,
+          "longitude": -120,
+          "ascendant": 321.39109858870495,
+          "midheaven": 159.0866535246531,
+          "reason": null,
+          "sidereal": 160.68114935693302
+        },
+        {
+          "latitude": -75,
+          "longitude": 0,
+          "ascendant": 4.440370847255128,
+          "midheaven": 279.8167582888667,
+          "reason": null,
+          "sidereal": 280.681149356933
+        },
+        {
+          "latitude": -75,
+          "longitude": 150,
+          "ascendant": 208.10214808497042,
+          "midheaven": 72.17187397216422,
+          "reason": null,
+          "sidereal": 70.68114935693302
+        },
+        {
+          "latitude": -66,
+          "longitude": -120,
+          "ascendant": 302.02990600024526,
+          "midheaven": 159.0866535246531,
+          "reason": null,
+          "sidereal": 160.68114935693302
+        },
+        {
+          "latitude": -66,
+          "longitude": 0,
+          "ascendant": 5.894002777653787,
+          "midheaven": 279.8167582888667,
+          "reason": null,
+          "sidereal": 280.681149356933
+        },
+        {
+          "latitude": -66,
+          "longitude": 150,
+          "ascendant": 85.14029505645236,
+          "midheaven": 72.17187397216422,
+          "reason": null,
+          "sidereal": 70.68114935693302
+        },
+        {
+          "latitude": -38,
+          "longitude": -120,
+          "ascendant": 270.4513911567948,
+          "midheaven": 159.0866535246531,
+          "reason": null,
+          "sidereal": 160.68114935693302
+        },
+        {
+          "latitude": -38,
+          "longitude": 0,
+          "ascendant": 8.691453705797363,
+          "midheaven": 279.8167582888667,
+          "reason": null,
+          "sidereal": 280.681149356933
+        },
+        {
+          "latitude": -38,
+          "longitude": 150,
+          "ascendant": 149.1928859227968,
+          "midheaven": 72.17187397216422,
+          "reason": null,
+          "sidereal": 70.68114935693302
+        },
+        {
+          "latitude": 0,
+          "longitude": -120,
+          "ascendant": 252.1718739721642,
+          "midheaven": 159.0866535246531,
+          "reason": null,
+          "sidereal": 160.68114935693302
+        },
+        {
+          "latitude": 0,
+          "longitude": 0,
+          "ascendant": 11.617788361505724,
+          "midheaven": 279.8167582888667,
+          "reason": null,
+          "sidereal": 280.681149356933
+        },
+        {
+          "latitude": 0,
+          "longitude": 150,
+          "ascendant": 159.08665352465312,
+          "midheaven": 72.17187397216422,
+          "reason": null,
+          "sidereal": 70.68114935693302
+        },
+        {
+          "latitude": 38,
+          "longitude": -120,
+          "ascendant": 236.93219731463108,
+          "midheaven": 159.0866535246531,
+          "reason": null,
+          "sidereal": 160.68114935693302
+        },
+        {
+          "latitude": 38,
+          "longitude": 0,
+          "ascendant": 17.423870461248733,
+          "midheaven": 279.8167582888667,
+          "reason": null,
+          "sidereal": 280.681149356933
+        },
+        {
+          "latitude": 38,
+          "longitude": 150,
+          "ascendant": 164.29650977633617,
+          "midheaven": 72.17187397216422,
+          "reason": null,
+          "sidereal": 70.68114935693302
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": -120,
+          "ascendant": 229.59014346851433,
+          "midheaven": 159.0866535246531,
+          "reason": null,
+          "sidereal": 160.68114935693302
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 0,
+          "ascendant": 24.775327313763306,
+          "midheaven": 279.8167582888667,
+          "reason": null,
+          "sidereal": 280.681149356933
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 150,
+          "ascendant": 166.38274975516634,
+          "midheaven": 72.17187397216422,
+          "reason": null,
+          "sidereal": 70.68114935693302
+        },
+        {
+          "latitude": 66,
+          "longitude": -120,
+          "ascendant": 218.2430987712687,
+          "midheaven": 159.0866535246531,
+          "reason": null,
+          "sidereal": 160.68114935693302
+        },
+        {
+          "latitude": 66,
+          "longitude": 0,
+          "ascendant": 87.64131888101481,
+          "midheaven": 279.8167582888667,
+          "reason": null,
+          "sidereal": 280.681149356933
+        },
+        {
+          "latitude": 66,
+          "longitude": 150,
+          "ascendant": 169.3520788515161,
+          "midheaven": 72.17187397216422,
+          "reason": null,
+          "sidereal": 70.68114935693302
+        },
+        {
+          "latitude": 75,
+          "longitude": -120,
+          "ascendant": 207.8146704049216,
+          "midheaven": 159.0866535246531,
+          "reason": null,
+          "sidereal": 160.68114935693302
+        },
+        {
+          "latitude": 75,
+          "longitude": 0,
+          "ascendant": 342.3854681757486,
+          "midheaven": 279.8167582888667,
+          "reason": null,
+          "sidereal": 280.681149356933
+        },
+        {
+          "latitude": 75,
+          "longitude": 150,
+          "ascendant": 171.99013159125292,
+          "midheaven": 72.17187397216422,
+          "reason": null,
+          "sidereal": 70.68114935693302
+        }
+      ]
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "time": {
+        "julianUT": 2451545,
+        "julianTT": 2451545.000738971,
+        "deltaTSeconds": 63.847089569816944,
+        "convention": "UTC approximated as UT1; Espenak\u2013Meeus model for TT\u2212UT"
+      },
+      "bodies": [
+        {
+          "name": "Sun",
+          "longitude": 280.3687386398185
+        },
+        {
+          "name": "Moon",
+          "longitude": 223.32389112747416
+        },
+        {
+          "name": "Mercury",
+          "longitude": 271.88891206646304
+        },
+        {
+          "name": "Venus",
+          "longitude": 241.56523294036205
+        },
+        {
+          "name": "Mars",
+          "longitude": 327.96389907790285
+        },
+        {
+          "name": "Jupiter",
+          "longitude": 25.254199844874247
+        },
+        {
+          "name": "Saturn",
+          "longitude": 40.3961241371784
+        },
+        {
+          "name": "Uranus",
+          "longitude": 314.8061046271607
+        },
+        {
+          "name": "Neptune",
+          "longitude": 303.1954420594734
+        },
+        {
+          "name": "Pluto",
+          "longitude": 251.4547351599136
+        }
+      ],
+      "angles": [
+        {
+          "latitude": -75,
+          "longitude": -120,
+          "ascendant": 321.3289356773261,
+          "midheaven": 158.84939397425637,
+          "reason": null,
+          "sidereal": 160.45704455168226
+        },
+        {
+          "latitude": -75,
+          "longitude": 0,
+          "ascendant": 4.348759403346468,
+          "midheaven": 279.6110618554224,
+          "reason": null,
+          "sidereal": 280.45704455168226
+        },
+        {
+          "latitude": -75,
+          "longitude": 150,
+          "ascendant": 208.35661846345303,
+          "midheaven": 71.96082815328106,
+          "reason": null,
+          "sidereal": 70.45704455168226
+        },
+        {
+          "latitude": -66,
+          "longitude": -120,
+          "ascendant": 301.89402244568777,
+          "midheaven": 158.84939397425637,
+          "reason": null,
+          "sidereal": 160.45704455168226
+        },
+        {
+          "latitude": -66,
+          "longitude": 0,
+          "ascendant": 5.771763164414653,
+          "midheaven": 279.6110618554224,
+          "reason": null,
+          "sidereal": 280.45704455168226
+        },
+        {
+          "latitude": -66,
+          "longitude": 150,
+          "ascendant": 85.09168554885095,
+          "midheaven": 71.96082815328106,
+          "reason": null,
+          "sidereal": 70.45704455168226
+        },
+        {
+          "latitude": -38,
+          "longitude": -120,
+          "ascendant": 270.2336806726473,
+          "midheaven": 158.84939397425637,
+          "reason": null,
+          "sidereal": 160.45704455168226
+        },
+        {
+          "latitude": -38,
+          "longitude": 0,
+          "ascendant": 8.509813976925853,
+          "midheaven": 279.6110618554224,
+          "reason": null,
+          "sidereal": 280.45704455168226
+        },
+        {
+          "latitude": -38,
+          "longitude": 150,
+          "ascendant": 148.87029783301588,
+          "midheaven": 71.96082815328106,
+          "reason": null,
+          "sidereal": 70.45704455168226
+        },
+        {
+          "latitude": 0,
+          "longitude": -120,
+          "ascendant": 251.96082815328106,
+          "midheaven": 158.84939397425637,
+          "reason": null,
+          "sidereal": 160.45704455168226
+        },
+        {
+          "latitude": 0,
+          "longitude": 0,
+          "ascendant": 11.373869662157622,
+          "midheaven": 279.6110618554224,
+          "reason": null,
+          "sidereal": 280.45704455168226
+        },
+        {
+          "latitude": 0,
+          "longitude": 150,
+          "ascendant": 158.84939397425637,
+          "midheaven": 71.96082815328106,
+          "reason": null,
+          "sidereal": 70.45704455168226
+        },
+        {
+          "latitude": 38,
+          "longitude": -120,
+          "ascendant": 236.75796567256958,
+          "midheaven": 158.84939397425637,
+          "reason": null,
+          "sidereal": 160.45704455168226
+        },
+        {
+          "latitude": 38,
+          "longitude": 0,
+          "ascendant": 17.058395459966906,
+          "midheaven": 279.6110618554224,
+          "reason": null,
+          "sidereal": 280.45704455168226
+        },
+        {
+          "latitude": 38,
+          "longitude": 150,
+          "ascendant": 164.1138215786976,
+          "midheaven": 71.96082815328106,
+          "reason": null,
+          "sidereal": 70.45704455168226
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": -120,
+          "ascendant": 229.44091450164703,
+          "midheaven": 158.84939397425637,
+          "reason": null,
+          "sidereal": 160.45704455168226
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 0,
+          "ascendant": 24.266132807000766,
+          "midheaven": 279.6110618554224,
+          "reason": null,
+          "sidereal": 280.45704455168226
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 150,
+          "ascendant": 166.22324088699565,
+          "midheaven": 71.96082815328106,
+          "reason": null,
+          "sidereal": 70.45704455168226
+        },
+        {
+          "latitude": 66,
+          "longitude": -120,
+          "ascendant": 218.13701450656094,
+          "midheaven": 158.84939397425637,
+          "reason": null,
+          "sidereal": 160.45704455168226
+        },
+        {
+          "latitude": 66,
+          "longitude": 0,
+          "ascendant": 87.19561664140161,
+          "midheaven": 279.6110618554224,
+          "reason": null,
+          "sidereal": 280.45704455168226
+        },
+        {
+          "latitude": 66,
+          "longitude": 150,
+          "ascendant": 169.2265200403022,
+          "midheaven": 71.96082815328106,
+          "reason": null,
+          "sidereal": 70.45704455168226
+        },
+        {
+          "latitude": 75,
+          "longitude": -120,
+          "ascendant": 207.74800302938968,
+          "midheaven": 158.84939397425637,
+          "reason": null,
+          "sidereal": 160.45704455168226
+        },
+        {
+          "latitude": 75,
+          "longitude": 0,
+          "ascendant": 342.6846168329606,
+          "midheaven": 279.6110618554224,
+          "reason": null,
+          "sidereal": 280.45704455168226
+        },
+        {
+          "latitude": 75,
+          "longitude": 150,
+          "ascendant": 171.89541160600638,
+          "midheaven": 71.96082815328106,
+          "reason": null,
+          "sidereal": 70.45704455168226
+        }
+      ]
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "time": {
+        "julianUT": 2460409.25,
+        "julianTT": 2460409.2508565756,
+        "deltaTSeconds": 74.00814313441515,
+        "convention": "UTC approximated as UT1; Espenak\u2013Meeus model for TT\u2212UT"
+      },
+      "bodies": [
+        {
+          "name": "Sun",
+          "longitude": 19.386169234202576
+        },
+        {
+          "name": "Moon",
+          "longitude": 19.183407417781392
+        },
+        {
+          "name": "Mercury",
+          "longitude": 24.804845298367717
+        },
+        {
+          "name": "Venus",
+          "longitude": 4.427436087322946
+        },
+        {
+          "name": "Mars",
+          "longitude": 343.0402106413709
+        },
+        {
+          "name": "Jupiter",
+          "longitude": 49.041571852471016
+        },
+        {
+          "name": "Saturn",
+          "longitude": 344.45219616504414
+        },
+        {
+          "name": "Uranus",
+          "longitude": 51.17027713990189
+        },
+        {
+          "name": "Neptune",
+          "longitude": 358.1927736424227
+        },
+        {
+          "name": "Pluto",
+          "longitude": 301.9671437120037
+        }
+      ],
+      "angles": [
+        {
+          "latitude": -75,
+          "longitude": -120,
+          "ascendant": 30.111413418795,
+          "midheaven": 346.3985055155799,
+          "reason": null,
+          "sidereal": 347.48395025511104
+        },
+        {
+          "latitude": -75,
+          "longitude": 0,
+          "ascendant": 153.75602892997847,
+          "midheaven": 106.11927856475481,
+          "reason": null,
+          "sidereal": 107.48395025511104
+        },
+        {
+          "latitude": -75,
+          "longitude": 150,
+          "ascendant": 354.7976025112936,
+          "midheaven": 258.4879450144364,
+          "reason": null,
+          "sidereal": 257.48395025511104
+        },
+        {
+          "latitude": -66,
+          "longitude": -120,
+          "ascendant": 41.7902799980916,
+          "midheaven": 346.3985055155799,
+          "reason": null,
+          "sidereal": 347.48395025511104
+        },
+        {
+          "latitude": -66,
+          "longitude": 0,
+          "ascendant": 273.48604653069646,
+          "midheaven": 106.11927856475481,
+          "reason": null,
+          "sidereal": 107.48395025511104
+        },
+        {
+          "latitude": -66,
+          "longitude": 150,
+          "ascendant": 353.0933666600846,
+          "midheaven": 258.4879450144364,
+          "reason": null,
+          "sidereal": 257.48395025511104
+        },
+        {
+          "latitude": -38,
+          "longitude": -120,
+          "ascendant": 62.43512908087978,
+          "midheaven": 346.3985055155799,
+          "reason": null,
+          "sidereal": 347.48395025511104
+        },
+        {
+          "latitude": -38,
+          "longitude": 0,
+          "ascendant": 208.03004119739163,
+          "midheaven": 106.11927856475481,
+          "reason": null,
+          "sidereal": 107.48395025511104
+        },
+        {
+          "latitude": -38,
+          "longitude": 150,
+          "ascendant": 349.8166542099161,
+          "midheaven": 258.4879450144364,
+          "reason": null,
+          "sidereal": 257.48395025511104
+        },
+        {
+          "latitude": 0,
+          "longitude": -120,
+          "ascendant": 78.48794501443635,
+          "midheaven": 346.3985055155799,
+          "reason": null,
+          "sidereal": 347.48395025511104
+        },
+        {
+          "latitude": 0,
+          "longitude": 0,
+          "ascendant": 198.94834529093646,
+          "midheaven": 106.11927856475481,
+          "reason": null,
+          "sidereal": 107.48395025511104
+        },
+        {
+          "latitude": 0,
+          "longitude": 150,
+          "ascendant": 346.3985055155799,
+          "midheaven": 258.4879450144364,
+          "reason": null,
+          "sidereal": 257.48395025511104
+        },
+        {
+          "latitude": 38,
+          "longitude": -120,
+          "ascendant": 96.54120093628802,
+          "midheaven": 346.3985055155799,
+          "reason": null,
+          "sidereal": 347.48395025511104
+        },
+        {
+          "latitude": 38,
+          "longitude": 0,
+          "ascendant": 194.21668547730104,
+          "midheaven": 106.11927856475481,
+          "reason": null,
+          "sidereal": 107.48395025511104
+        },
+        {
+          "latitude": 38,
+          "longitude": 150,
+          "ascendant": 339.6700552802654,
+          "midheaven": 258.4879450144364,
+          "reason": null,
+          "sidereal": 257.48395025511104
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": -120,
+          "ascendant": 107.12716213239656,
+          "midheaven": 346.3985055155799,
+          "reason": null,
+          "sidereal": 347.48395025511104
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 0,
+          "ascendant": 192.32749231008177,
+          "midheaven": 106.11927856475481,
+          "reason": null,
+          "sidereal": 107.48395025511104
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 150,
+          "ascendant": 331.3110101661984,
+          "midheaven": 258.4879450144364,
+          "reason": null,
+          "sidereal": 257.48395025511104
+        },
+        {
+          "latitude": 66,
+          "longitude": -120,
+          "ascendant": 125.43102291235161,
+          "midheaven": 346.3985055155799,
+          "reason": null,
+          "sidereal": 347.48395025511104
+        },
+        {
+          "latitude": 66,
+          "longitude": 0,
+          "ascendant": 189.64154343413105,
+          "midheaven": 106.11927856475481,
+          "reason": null,
+          "sidereal": 107.48395025511104
+        },
+        {
+          "latitude": 66,
+          "longitude": 150,
+          "ascendant": 270.6030102799248,
+          "midheaven": 258.4879450144364,
+          "reason": null,
+          "sidereal": 257.48395025511104
+        },
+        {
+          "latitude": 75,
+          "longitude": -120,
+          "ascendant": 142.7896219609355,
+          "midheaven": 346.3985055155799,
+          "reason": null,
+          "sidereal": 347.48395025511104
+        },
+        {
+          "latitude": 75,
+          "longitude": 0,
+          "ascendant": 187.25623523985087,
+          "midheaven": 106.11927856475481,
+          "reason": null,
+          "sidereal": 107.48395025511104
+        },
+        {
+          "latitude": 75,
+          "longitude": 150,
+          "ascendant": 20.206339883815644,
+          "midheaven": 258.4879450144364,
+          "reason": null,
+          "sidereal": 257.48395025511104
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "time": {
+        "julianUT": 2461295,
+        "julianTT": 2461295.0008736015,
+        "deltaTSeconds": 75.47916242619976,
+        "convention": "UTC approximated as UT1; Espenak\u2013Meeus model for TT\u2212UT"
+      },
+      "bodies": [
+        {
+          "name": "Sun",
+          "longitude": 168.7778925101434
+        },
+        {
+          "name": "Moon",
+          "longitude": 173.30335676498768
+        },
+        {
+          "name": "Mercury",
+          "longitude": 181.37842134389103
+        },
+        {
+          "name": "Venus",
+          "longitude": 210.74710972976837
+        },
+        {
+          "name": "Mars",
+          "longitude": 109.97080769426243
+        },
+        {
+          "name": "Jupiter",
+          "longitude": 135.86356280317543
+        },
+        {
+          "name": "Saturn",
+          "longitude": 13.024145983297506
+        },
+        {
+          "name": "Uranus",
+          "longitude": 65.69653850549865
+        },
+        {
+          "name": "Neptune",
+          "longitude": 3.4007200736761076
+        },
+        {
+          "name": "Pluto",
+          "longitude": 303.33760157831955
+        }
+      ],
+      "angles": [
+        {
+          "latitude": -75,
+          "longitude": -120,
+          "ascendant": 219.3174106593503,
+          "midheaven": 52.92332907104965,
+          "reason": null,
+          "sidereal": 50.524777678003886
+        },
+        {
+          "latitude": -75,
+          "longitude": 0,
+          "ascendant": 323.5089115708328,
+          "midheaven": 169.69021331288985,
+          "reason": null,
+          "sidereal": 170.5247776780039
+        },
+        {
+          "latitude": -75,
+          "longitude": 150,
+          "ascendant": 20.470847875141732,
+          "midheaven": 318.0863829305456,
+          "reason": null,
+          "sidereal": 320.5247776780039
+        },
+        {
+          "latitude": -66,
+          "longitude": -120,
+          "ascendant": 73.76091920319563,
+          "midheaven": 52.92332907104965,
+          "reason": null,
+          "sidereal": 50.524777678003886
+        },
+        {
+          "latitude": -66,
+          "longitude": 0,
+          "ascendant": 306.96552354889803,
+          "midheaven": 169.69021331288985,
+          "reason": null,
+          "sidereal": 170.5247776780039
+        },
+        {
+          "latitude": -66,
+          "longitude": 150,
+          "ascendant": 27.597407820969742,
+          "midheaven": 318.0863829305456,
+          "reason": null,
+          "sidereal": 320.5247776780039
+        },
+        {
+          "latitude": -38,
+          "longitude": -120,
+          "ascendant": 122.01228126400719,
+          "midheaven": 52.92332907104965,
+          "reason": null,
+          "sidereal": 50.524777678003886
+        },
+        {
+          "latitude": -38,
+          "longitude": 0,
+          "ascendant": 279.1983152745598,
+          "midheaven": 169.69021331288985,
+          "reason": null,
+          "sidereal": 170.5247776780039
+        },
+        {
+          "latitude": -38,
+          "longitude": 150,
+          "ascendant": 40.80639461258445,
+          "midheaven": 318.0863829305456,
+          "reason": null,
+          "sidereal": 320.5247776780039
+        },
+        {
+          "latitude": 0,
+          "longitude": -120,
+          "ascendant": 138.08638293054562,
+          "midheaven": 52.92332907104965,
+          "reason": null,
+          "sidereal": 50.524777678003886
+        },
+        {
+          "latitude": 0,
+          "longitude": 0,
+          "ascendant": 261.29407653794607,
+          "midheaven": 169.69021331288985,
+          "reason": null,
+          "sidereal": 170.5247776780039
+        },
+        {
+          "latitude": 0,
+          "longitude": 150,
+          "ascendant": 52.923329071049636,
+          "midheaven": 318.0863829305456,
+          "reason": null,
+          "sidereal": 320.5247776780039
+        },
+        {
+          "latitude": 38,
+          "longitude": -120,
+          "ascendant": 148.03968077445234,
+          "midheaven": 52.92332907104965,
+          "reason": null,
+          "sidereal": 50.524777678003886
+        },
+        {
+          "latitude": 38,
+          "longitude": 0,
+          "ascendant": 244.91151859000988,
+          "midheaven": 169.69021331288985,
+          "reason": null,
+          "sidereal": 170.5247776780039
+        },
+        {
+          "latitude": 38,
+          "longitude": 150,
+          "ascendant": 70.55398244947945,
+          "midheaven": 318.0863829305456,
+          "reason": null,
+          "sidereal": 320.5247776780039
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": -120,
+          "ascendant": 152.24051049366878,
+          "midheaven": 52.92332907104965,
+          "reason": null,
+          "sidereal": 50.524777678003886
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 0,
+          "ascendant": 236.58739081374011,
+          "midheaven": 169.69021331288985,
+          "reason": null,
+          "sidereal": 170.5247776780039
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 150,
+          "ascendant": 83.81627342339128,
+          "midheaven": 318.0863829305456,
+          "reason": null,
+          "sidereal": 320.5247776780039
+        },
+        {
+          "latitude": 66,
+          "longitude": -120,
+          "ascendant": 158.34962062269287,
+          "midheaven": 52.92332907104965,
+          "reason": null,
+          "sidereal": 50.524777678003886
+        },
+        {
+          "latitude": 66,
+          "longitude": 0,
+          "ascendant": 223.36228436173758,
+          "midheaven": 169.69021331288985,
+          "reason": null,
+          "sidereal": 170.5247776780039
+        },
+        {
+          "latitude": 66,
+          "longitude": 150,
+          "ascendant": 111.88661006065176,
+          "midheaven": 318.0863829305456,
+          "reason": null,
+          "sidereal": 320.5247776780039
+        },
+        {
+          "latitude": 75,
+          "longitude": -120,
+          "ascendant": 163.8309480323014,
+          "midheaven": 52.92332907104965,
+          "reason": null,
+          "sidereal": 50.524777678003886
+        },
+        {
+          "latitude": 75,
+          "longitude": 0,
+          "ascendant": 211.09391988745716,
+          "midheaven": 169.69021331288985,
+          "reason": null,
+          "sidereal": 170.5247776780039
+        },
+        {
+          "latitude": 75,
+          "longitude": 150,
+          "ascendant": 319.4181265316005,
+          "midheaven": 318.0863829305456,
+          "reason": null,
+          "sidereal": 320.5247776780039
+        }
+      ]
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "time": {
+        "julianUT": 2488070,
+        "julianTT": 2488070.0023455415,
+        "deltaTSeconds": 202.6547912042588,
+        "convention": "UTC approximated as UT1; Espenak\u2013Meeus model for TT\u2212UT"
+      },
+      "bodies": [
+        {
+          "name": "Sun",
+          "longitude": 281.11515476297933
+        },
+        {
+          "name": "Moon",
+          "longitude": 164.44553302408463
+        },
+        {
+          "name": "Mercury",
+          "longitude": 288.82023180557735
+        },
+        {
+          "name": "Venus",
+          "longitude": 320.67387866936116
+        },
+        {
+          "name": "Mars",
+          "longitude": 29.73074971225573
+        },
+        {
+          "name": "Jupiter",
+          "longitude": 201.25952789795667
+        },
+        {
+          "name": "Saturn",
+          "longitude": 205.6592630509854
+        },
+        {
+          "name": "Uranus",
+          "longitude": 17.744231114584064
+        },
+        {
+          "name": "Neptune",
+          "longitude": 167.29096760999488
+        },
+        {
+          "name": "Pluto",
+          "longitude": 32.39807815121612
+        }
+      ],
+      "angles": [
+        {
+          "latitude": -75,
+          "longitude": -120,
+          "ascendant": 321.4612316503073,
+          "midheaven": 159.678363360683,
+          "reason": null,
+          "sidereal": 161.23181765169545
+        },
+        {
+          "latitude": -75,
+          "longitude": 0,
+          "ascendant": 4.671093319746698,
+          "midheaven": 280.3266060338529,
+          "reason": null,
+          "sidereal": 281.23181765169545
+        },
+        {
+          "latitude": -75,
+          "longitude": 150,
+          "ascendant": 207.6118863505855,
+          "midheaven": 72.68288536818085,
+          "reason": null,
+          "sidereal": 71.23181765169545
+        },
+        {
+          "latitude": -66,
+          "longitude": -120,
+          "ascendant": 302.268217428151,
+          "midheaven": 159.678363360683,
+          "reason": null,
+          "sidereal": 161.23181765169545
+        },
+        {
+          "latitude": -66,
+          "longitude": 0,
+          "ascendant": 6.199829445461849,
+          "midheaven": 280.3266060338529,
+          "reason": null,
+          "sidereal": 281.23181765169545
+        },
+        {
+          "latitude": -66,
+          "longitude": 150,
+          "ascendant": 85.68584325995238,
+          "midheaven": 72.68288536818085,
+          "reason": null,
+          "sidereal": 71.23181765169545
+        },
+        {
+          "latitude": -38,
+          "longitude": -120,
+          "ascendant": 270.93364203287217,
+          "midheaven": 159.678363360683,
+          "reason": null,
+          "sidereal": 161.23181765169545
+        },
+        {
+          "latitude": -38,
+          "longitude": 0,
+          "ascendant": 9.140053285870021,
+          "midheaven": 280.3266060338529,
+          "reason": null,
+          "sidereal": 281.23181765169545
+        },
+        {
+          "latitude": -38,
+          "longitude": 150,
+          "ascendant": 150.03794646905075,
+          "midheaven": 72.68288536818085,
+          "reason": null,
+          "sidereal": 71.23181765169545
+        },
+        {
+          "latitude": 0,
+          "longitude": -120,
+          "ascendant": 252.68288536818085,
+          "midheaven": 159.678363360683,
+          "reason": null,
+          "sidereal": 161.23181765169545
+        },
+        {
+          "latitude": 0,
+          "longitude": 0,
+          "ascendant": 12.211923272875964,
+          "midheaven": 280.3266060338529,
+          "reason": null,
+          "sidereal": 281.23181765169545
+        },
+        {
+          "latitude": 0,
+          "longitude": 150,
+          "ascendant": 159.678363360683,
+          "midheaven": 72.68288536818085,
+          "reason": null,
+          "sidereal": 71.23181765169545
+        },
+        {
+          "latitude": 38,
+          "longitude": -120,
+          "ascendant": 237.385527834606,
+          "midheaven": 159.678363360683,
+          "reason": null,
+          "sidereal": 161.23181765169545
+        },
+        {
+          "latitude": 38,
+          "longitude": 0,
+          "ascendant": 18.2889811709814,
+          "midheaven": 280.3266060338529,
+          "reason": null,
+          "sidereal": 281.23181765169545
+        },
+        {
+          "latitude": 38,
+          "longitude": 150,
+          "ascendant": 164.74116950865238,
+          "midheaven": 72.68288536818085,
+          "reason": null,
+          "sidereal": 71.23181765169545
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": -120,
+          "ascendant": 229.9930424670772,
+          "midheaven": 159.678363360683,
+          "reason": null,
+          "sidereal": 161.23181765169545
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 0,
+          "ascendant": 25.93451410686182,
+          "midheaven": 280.3266060338529,
+          "reason": null,
+          "sidereal": 281.23181765169545
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 150,
+          "ascendant": 166.7673000025866,
+          "midheaven": 72.68288536818085,
+          "reason": null,
+          "sidereal": 71.23181765169545
+        },
+        {
+          "latitude": 66,
+          "longitude": -120,
+          "ascendant": 218.54864657331544,
+          "midheaven": 159.678363360683,
+          "reason": null,
+          "sidereal": 161.23181765169545
+        },
+        {
+          "latitude": 66,
+          "longitude": 0,
+          "ascendant": 87.95861502159171,
+          "midheaven": 280.3266060338529,
+          "reason": null,
+          "sidereal": 281.23181765169545
+        },
+        {
+          "latitude": 66,
+          "longitude": 150,
+          "ascendant": 169.65072890739947,
+          "midheaven": 72.68288536818085,
+          "reason": null,
+          "sidereal": 71.23181765169545
+        },
+        {
+          "latitude": 75,
+          "longitude": -120,
+          "ascendant": 208.02164324673154,
+          "midheaven": 159.678363360683,
+          "reason": null,
+          "sidereal": 161.23181765169545
+        },
+        {
+          "latitude": 75,
+          "longitude": 0,
+          "ascendant": 341.5523739550201,
+          "midheaven": 280.3266060338529,
+          "reason": null,
+          "sidereal": 281.23181765169545
+        },
+        {
+          "latitude": 75,
+          "longitude": 150,
+          "ascendant": 172.21276283281316,
+          "midheaven": 72.68288536818085,
+          "reason": null,
+          "sidereal": 71.23181765169545
+        }
+      ]
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "time": {
+        "julianUT": 2524594,
+        "julianTT": 2524594.0051156315,
+        "deltaTSeconds": 441.9905529823154,
+        "convention": "UTC approximated as UT1; Espenak\u2013Meeus model for TT\u2212UT"
+      },
+      "bodies": [
+        {
+          "name": "Sun",
+          "longitude": 280.8399045874908
+        },
+        {
+          "name": "Moon",
+          "longitude": 102.54120909692536
+        },
+        {
+          "name": "Mercury",
+          "longitude": 300.4257654646446
+        },
+        {
+          "name": "Venus",
+          "longitude": 255.40014559794045
+        },
+        {
+          "name": "Mars",
+          "longitude": 153.30185205408026
+        },
+        {
+          "name": "Jupiter",
+          "longitude": 334.4459546609606
+        },
+        {
+          "name": "Saturn",
+          "longitude": 328.1013314807558
+        },
+        {
+          "name": "Uranus",
+          "longitude": 86.97080445014332
+        },
+        {
+          "name": "Neptune",
+          "longitude": 22.299388978675847
+        },
+        {
+          "name": "Pluto",
+          "longitude": 144.73516266325979
+        }
+      ],
+      "angles": [
+        {
+          "latitude": -75,
+          "longitude": -120,
+          "ascendant": 321.3951309584671,
+          "midheaven": 159.45372599678794,
+          "reason": null,
+          "sidereal": 161.0193042744159
+        },
+        {
+          "latitude": -75,
+          "longitude": 0,
+          "ascendant": 4.584720388409065,
+          "midheaven": 280.1317794530821,
+          "reason": null,
+          "sidereal": 281.0193042744159
+        },
+        {
+          "latitude": -75,
+          "longitude": 150,
+          "ascendant": 207.8705548342656,
+          "midheaven": 72.4824226180696,
+          "reason": null,
+          "sidereal": 71.0193042744159
+        },
+        {
+          "latitude": -66,
+          "longitude": -120,
+          "ascendant": 302.132165207504,
+          "midheaven": 159.45372599678794,
+          "reason": null,
+          "sidereal": 161.0193042744159
+        },
+        {
+          "latitude": -66,
+          "longitude": 0,
+          "ascendant": 6.084383975763558,
+          "midheaven": 280.1317794530821,
+          "reason": null,
+          "sidereal": 281.0193042744159
+        },
+        {
+          "latitude": -66,
+          "longitude": 150,
+          "ascendant": 85.67058084203862,
+          "midheaven": 72.4824226180696,
+          "reason": null,
+          "sidereal": 71.0193042744159
+        },
+        {
+          "latitude": -38,
+          "longitude": -120,
+          "ascendant": 270.72399424738495,
+          "midheaven": 159.45372599678794,
+          "reason": null,
+          "sidereal": 161.0193042744159
+        },
+        {
+          "latitude": -38,
+          "longitude": 0,
+          "ascendant": 8.968026254300536,
+          "midheaven": 280.1317794530821,
+          "reason": null,
+          "sidereal": 281.0193042744159
+        },
+        {
+          "latitude": -38,
+          "longitude": 150,
+          "ascendant": 149.73405749544742,
+          "midheaven": 72.4824226180696,
+          "reason": null,
+          "sidereal": 71.0193042744159
+        },
+        {
+          "latitude": 0,
+          "longitude": -120,
+          "ascendant": 252.4824226180696,
+          "midheaven": 159.45372599678794,
+          "reason": null,
+          "sidereal": 161.0193042744159
+        },
+        {
+          "latitude": 0,
+          "longitude": 0,
+          "ascendant": 11.980374189056107,
+          "midheaven": 280.1317794530821,
+          "reason": null,
+          "sidereal": 281.0193042744159
+        },
+        {
+          "latitude": 0,
+          "longitude": 150,
+          "ascendant": 159.45372599678794,
+          "midheaven": 72.4824226180696,
+          "reason": null,
+          "sidereal": 71.0193042744159
+        },
+        {
+          "latitude": 38,
+          "longitude": -120,
+          "ascendant": 237.22215188645634,
+          "midheaven": 159.45372599678794,
+          "reason": null,
+          "sidereal": 161.0193042744159
+        },
+        {
+          "latitude": 38,
+          "longitude": 0,
+          "ascendant": 17.941018658904497,
+          "midheaven": 280.1317794530821,
+          "reason": null,
+          "sidereal": 281.0193042744159
+        },
+        {
+          "latitude": 38,
+          "longitude": 150,
+          "ascendant": 164.5675754321344,
+          "midheaven": 72.4824226180696,
+          "reason": null,
+          "sidereal": 71.0193042744159
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": -120,
+          "ascendant": 229.85423321503382,
+          "midheaven": 159.45372599678794,
+          "reason": null,
+          "sidereal": 161.0193042744159
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 0,
+          "ascendant": 25.449224232797555,
+          "midheaven": 280.1317794530821,
+          "reason": null,
+          "sidereal": 281.0193042744159
+        },
+        {
+          "latitude": 51.4779,
+          "longitude": 150,
+          "ascendant": 166.61547798339245,
+          "midheaven": 72.4824226180696,
+          "reason": null,
+          "sidereal": 71.0193042744159
+        },
+        {
+          "latitude": 66,
+          "longitude": -120,
+          "ascendant": 218.45161894617945,
+          "midheaven": 159.45372599678794,
+          "reason": null,
+          "sidereal": 161.0193042744159
+        },
+        {
+          "latitude": 66,
+          "longitude": 0,
+          "ascendant": 87.49775982842156,
+          "midheaven": 280.1317794530821,
+          "reason": null,
+          "sidereal": 281.0193042744159
+        },
+        {
+          "latitude": 66,
+          "longitude": 150,
+          "ascendant": 169.53090743507525,
+          "midheaven": 72.4824226180696,
+          "reason": null,
+          "sidereal": 71.0193042744159
+        },
+        {
+          "latitude": 75,
+          "longitude": -120,
+          "ascendant": 207.96208948282205,
+          "midheaven": 159.45372599678794,
+          "reason": null,
+          "sidereal": 161.0193042744159
+        },
+        {
+          "latitude": 75,
+          "longitude": 0,
+          "ascendant": 341.82110392100253,
+          "midheaven": 280.1317794530821,
+          "reason": null,
+          "sidereal": 281.0193042744159
+        },
+        {
+          "latitude": 75,
+          "longitude": 150,
+          "ascendant": 172.12213792467372,
+          "midheaven": 72.4824226180696,
+          "reason": null,
+          "sidereal": 71.0193042744159
+        }
+      ]
+    }
+  ],
+  "bodies": [
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Sun",
+      "modelDegrees": 280.93919149929803,
+      "swissSameUT": 280.9391537377943,
+      "swissSameTT": 280.9391023931826,
+      "sameUTDifferenceArcmin": 0.002265690224021455,
+      "sameTTDifferenceArcmin": 0.005346366924641188
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Moon",
+      "modelDegrees": 354.7016062403136,
+      "swissSameUT": 354.69990883144,
+      "swissSameTT": 354.69928542108977,
+      "sameUTDifferenceArcmin": 0.10184453241663505,
+      "sameTTDifferenceArcmin": 0.1392491534295459
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Mercury",
+      "modelDegrees": 267.9423263169549,
+      "swissSameUT": 267.941413858171,
+      "swissSameTT": 267.94145227486007,
+      "sameUTDifferenceArcmin": 0.05474752703321428,
+      "sameTTDifferenceArcmin": 0.05244252569013952
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Venus",
+      "modelDegrees": 234.15082220277588,
+      "swissSameUT": 234.15050348569474,
+      "swissSameTT": 234.15045071579735,
+      "sameUTDifferenceArcmin": 0.019123024868576977,
+      "sameTTDifferenceArcmin": 0.022289218712217007
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Mars",
+      "modelDegrees": 244.68336154184408,
+      "swissSameUT": 244.68302167994173,
+      "swissSameTT": 244.68298670567873,
+      "sameUTDifferenceArcmin": 0.0203917141408283,
+      "sameTTDifferenceArcmin": 0.02249016992095676
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Jupiter",
+      "modelDegrees": 84.46436618368337,
+      "swissSameUT": 84.46425780146299,
+      "swissSameTT": 84.46426410308747,
+      "sameUTDifferenceArcmin": 0.006502933223373475,
+      "sameTTDifferenceArcmin": 0.006124835753666957
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Saturn",
+      "modelDegrees": 128.764282815441,
+      "swissSameUT": 128.7657262543028,
+      "swissSameTT": 128.765729639522,
+      "sameUTDifferenceArcmin": 0.08660633170791243,
+      "sameTTDifferenceArcmin": 0.08680944486002318
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Uranus",
+      "modelDegrees": 177.12640429945307,
+      "swissSameUT": 177.12664721798268,
+      "swissSameTT": 177.1266472225071,
+      "sameUTDifferenceArcmin": 0.014575111776480298,
+      "sameTTDifferenceArcmin": 0.01457538324189045
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Neptune",
+      "modelDegrees": 226.62939687729084,
+      "swissSameUT": 226.6342466271876,
+      "swissSameTT": 226.63424537734505,
+      "sameUTDifferenceArcmin": 0.2909849938049547,
+      "sameTTDifferenceArcmin": 0.29091000325252026
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "body": "Pluto",
+      "modelDegrees": 331.42623231070894,
+      "swissSameUT": 331.4199610043794,
+      "swissSameTT": 331.4199600378678,
+      "sameUTDifferenceArcmin": 0.37627837977311174,
+      "sameTTDifferenceArcmin": 0.3763363704695166
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Sun",
+      "modelDegrees": 280.6633675096912,
+      "swissSameUT": 280.6632881017334,
+      "swissSameTT": 280.6632797538298,
+      "sameUTDifferenceArcmin": 0.004764477471326245,
+      "sameTTDifferenceArcmin": 0.005265351686603026
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Moon",
+      "modelDegrees": 279.61700771685025,
+      "swissSameUT": 279.61640817995755,
+      "swissSameTT": 279.6162897078538,
+      "sameUTDifferenceArcmin": 0.03597221356244518,
+      "sameTTDifferenceArcmin": 0.04308053978661519
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Mercury",
+      "modelDegrees": 259.6393009860311,
+      "swissSameUT": 259.63935459235324,
+      "swissSameTT": 259.6393440369066,
+      "sameUTDifferenceArcmin": 0.003216379327568575,
+      "sameTTDifferenceArcmin": 0.0025830525294168183
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Venus",
+      "modelDegrees": 306.9960439042781,
+      "swissSameUT": 306.9961636760383,
+      "swissSameTT": 306.99615349880366,
+      "sameUTDifferenceArcmin": 0.007186305610957788,
+      "sameTTDifferenceArcmin": 0.006575671533255445
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Mars",
+      "modelDegrees": 284.25296772986826,
+      "swissSameUT": 284.25303429345956,
+      "swissSameTT": 284.25302798461706,
+      "sameUTDifferenceArcmin": 0.00399381547822486,
+      "sameTTDifferenceArcmin": 0.0036152849281734234
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Jupiter",
+      "modelDegrees": 241.23405328922075,
+      "swissSameUT": 241.23357617360247,
+      "swissSameTT": 241.23357457695786,
+      "sameUTDifferenceArcmin": 0.028626937096873917,
+      "sameTTDifferenceArcmin": 0.028722735773385466
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Saturn",
+      "modelDegrees": 267.77314213746354,
+      "swissSameUT": 267.7749568125278,
+      "swissSameTT": 267.77495586147785,
+      "sameUTDifferenceArcmin": 0.10888050385688075,
+      "sameTTDifferenceArcmin": 0.1088234408587141
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Uranus",
+      "modelDegrees": 250.16742056046536,
+      "swissSameUT": 250.16682936931747,
+      "swissSameTT": 250.16682891728922,
+      "sameUTDifferenceArcmin": 0.03547146887342478,
+      "sameTTDifferenceArcmin": 0.0354985905681815
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Neptune",
+      "modelDegrees": 85.20566406914998,
+      "swissSameUT": 85.20517340067272,
+      "swissSameTT": 85.20517362258609,
+      "sameUTDifferenceArcmin": 0.02944010863529911,
+      "sameTTDifferenceArcmin": 0.02942679383409086
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "body": "Pluto",
+      "modelDegrees": 75.24379389669086,
+      "swissSameUT": 75.2427546098801,
+      "swissSameTT": 75.24275475050759,
+      "sameUTDifferenceArcmin": 0.06235720864594896,
+      "sameTTDifferenceArcmin": 0.06234877099643654
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Sun",
+      "modelDegrees": 280.3687386398185,
+      "swissSameUT": 280.36891967534336,
+      "swissSameTT": 280.3689198899157,
+      "sameUTDifferenceArcmin": 0.010862131491649052,
+      "sameTTDifferenceArcmin": 0.010875005830257578
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Moon",
+      "modelDegrees": 223.32389112747416,
+      "swissSameUT": 223.32377543840957,
+      "swissSameTT": 223.32377796862258,
+      "sameUTDifferenceArcmin": 0.006941343875155326,
+      "sameTTDifferenceArcmin": 0.0067895310945687015
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Mercury",
+      "modelDegrees": 271.88891206646304,
+      "swissSameUT": 271.8892750074874,
+      "swissSameTT": 271.8892753350494,
+      "sameUTDifferenceArcmin": 0.02177646146265033,
+      "sameTTDifferenceArcmin": 0.021796115180450215
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Venus",
+      "modelDegrees": 241.56523294036205,
+      "swissSameUT": 241.5657983261687,
+      "swissSameTT": 241.56579858064381,
+      "sameUTDifferenceArcmin": 0.03392314839913979,
+      "sameTTDifferenceArcmin": 0.03393841690581212
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Mars",
+      "modelDegrees": 327.96389907790285,
+      "swissSameUT": 327.9633133185202,
+      "swissSameTT": 327.9633134817627,
+      "sameUTDifferenceArcmin": 0.035145562959542076,
+      "sameTTDifferenceArcmin": 0.035135768407599244
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Jupiter",
+      "modelDegrees": 25.254199844874247,
+      "swissSameUT": 25.25303030942177,
+      "swissSameTT": 25.25303031799833,
+      "sameUTDifferenceArcmin": 0.07017212714856669,
+      "sameTTDifferenceArcmin": 0.07017161255475912
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Saturn",
+      "modelDegrees": 40.3961241371784,
+      "swissSameUT": 40.39563895600193,
+      "swissSameTT": 40.39563895177973,
+      "sameUTDifferenceArcmin": 0.029110870587487625,
+      "sameTTDifferenceArcmin": 0.029111123920415594
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Uranus",
+      "modelDegrees": 314.8061046271607,
+      "swissSameUT": 314.8092231658263,
+      "swissSameTT": 314.80922317625027,
+      "sameUTDifferenceArcmin": 0.18711231993620459,
+      "sameTTDifferenceArcmin": 0.18711294537297363
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Neptune",
+      "modelDegrees": 303.1954420594734,
+      "swissSameUT": 303.19298122364415,
+      "swissSameTT": 303.192981231408,
+      "sameUTDifferenceArcmin": 0.14765014975523627,
+      "sameTTDifferenceArcmin": 0.14764968392455557
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "body": "Pluto",
+      "modelDegrees": 251.4547351599136,
+      "swissSameUT": 251.45470884674097,
+      "swissSameTT": 251.4547088545048,
+      "sameUTDifferenceArcmin": 0.0015787903583941443,
+      "sameTTDifferenceArcmin": 0.001578324529418751
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Sun",
+      "modelDegrees": 19.386169234202576,
+      "swissSameUT": 19.386208076809048,
+      "swissSameTT": 19.386264209978968,
+      "sameUTDifferenceArcmin": 0.0023305563883013747,
+      "sameTTDifferenceArcmin": 0.0056985465835168725
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Moon",
+      "modelDegrees": 19.183407417781392,
+      "swissSameUT": 19.18267403184567,
+      "swissSameTT": 19.183530393182767,
+      "sameUTDifferenceArcmin": 0.04400315614304873,
+      "sameTTDifferenceArcmin": 0.007378524082923832
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Mercury",
+      "modelDegrees": 24.804845298367717,
+      "swissSameUT": 24.807093669195908,
+      "swissSameTT": 24.807057253126864,
+      "sameUTDifferenceArcmin": 0.13490224969189057,
+      "sameTTDifferenceArcmin": 0.1327172855496883
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Venus",
+      "modelDegrees": 4.427436087322946,
+      "swissSameUT": 4.427215750661957,
+      "swissSameTT": 4.427286292618589,
+      "sameUTDifferenceArcmin": 0.01322019965925847,
+      "sameTTDifferenceArcmin": 0.008987682261363261
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Mars",
+      "modelDegrees": 343.0402106413709,
+      "swissSameUT": 343.0401714132829,
+      "swissSameTT": 343.04021581032936,
+      "sameUTDifferenceArcmin": 0.0023536852791039564,
+      "sameTTDifferenceArcmin": 0.00031013750799502304
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Jupiter",
+      "modelDegrees": 49.041571852471016,
+      "swissSameUT": 49.04259743508326,
+      "swissSameTT": 49.04261007439534,
+      "sameUTDifferenceArcmin": 0.061534956734590196,
+      "sameTTDifferenceArcmin": 0.062293315459100995
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Saturn",
+      "modelDegrees": 344.45219616504414,
+      "swissSameUT": 344.4537211287115,
+      "swissSameTT": 344.45372727446977,
+      "sameUTDifferenceArcmin": 0.09149782004101326,
+      "sameTTDifferenceArcmin": 0.09186656553765715
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Uranus",
+      "modelDegrees": 51.17027713990189,
+      "swissSameUT": 51.17040138057047,
+      "swissSameTT": 51.17040430764215,
+      "sameUTDifferenceArcmin": 0.007454440114997851,
+      "sameTTDifferenceArcmin": 0.0076300644155935515
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Neptune",
+      "modelDegrees": 358.1927736424227,
+      "swissSameUT": 358.18953886271964,
+      "swissSameTT": 358.1895409128427,
+      "sameUTDifferenceArcmin": 0.19408678218383102,
+      "sameTTDifferenceArcmin": 0.19396377480120464
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "body": "Pluto",
+      "modelDegrees": 301.9671437120037,
+      "swissSameUT": 301.96744034711475,
+      "swissSameTT": 301.96744099227755,
+      "sameUTDifferenceArcmin": 0.017798106663349245,
+      "sameTTDifferenceArcmin": 0.01783681643132695
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Sun",
+      "modelDegrees": 168.7778925101434,
+      "swissSameUT": 168.7783053142539,
+      "swissSameTT": 168.77838024972536,
+      "sameUTDifferenceArcmin": 0.02476824663062871,
+      "sameTTDifferenceArcmin": 0.02926437491737488
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Moon",
+      "modelDegrees": 173.30335676498768,
+      "swissSameUT": 173.30222243569537,
+      "swissSameTT": 173.30327182476574,
+      "sameUTDifferenceArcmin": 0.06805975753877647,
+      "sameTTDifferenceArcmin": 0.005096413316323378
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Mercury",
+      "modelDegrees": 181.37842134389103,
+      "swissSameUT": 181.37912496053704,
+      "swissSameTT": 181.37925408410862,
+      "sameUTDifferenceArcmin": 0.0422169987604093,
+      "sameTTDifferenceArcmin": 0.049964413055363366
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Venus",
+      "modelDegrees": 210.74710972976837,
+      "swissSameUT": 210.74989817646437,
+      "swissSameTT": 210.74994705546763,
+      "sameUTDifferenceArcmin": 0.16730680176010537,
+      "sameTTDifferenceArcmin": 0.17023954195565238
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Mars",
+      "modelDegrees": 109.97080769426243,
+      "swissSameUT": 109.97097052000588,
+      "swissSameTT": 109.9710181299461,
+      "sameUTDifferenceArcmin": 0.009769544606683667,
+      "sameTTDifferenceArcmin": 0.012626141020177784
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Jupiter",
+      "modelDegrees": 135.86356280317543,
+      "swissSameUT": 135.86418535024146,
+      "swissSameTT": 135.86420088788947,
+      "sameUTDifferenceArcmin": 0.03735282396178263,
+      "sameTTDifferenceArcmin": 0.03828508284243526
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Saturn",
+      "modelDegrees": 13.024145983297506,
+      "swissSameUT": 13.026960402410186,
+      "swissSameTT": 13.026955182313758,
+      "sameUTDifferenceArcmin": 0.16886514676002662,
+      "sameTTDifferenceArcmin": 0.16855194097445292
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Uranus",
+      "modelDegrees": 65.69653850549865,
+      "swissSameUT": 65.69677457812722,
+      "swissSameTT": 65.69677452946121,
+      "sameUTDifferenceArcmin": 0.014164357714889775,
+      "sameTTDifferenceArcmin": 0.014161437752591155
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Neptune",
+      "modelDegrees": 3.4007200736761076,
+      "swissSameUT": 3.397265574232855,
+      "swissSameTT": 3.3972635215787994,
+      "sameUTDifferenceArcmin": 0.20726996659504948,
+      "sameTTDifferenceArcmin": 0.20739312583827996
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "body": "Pluto",
+      "modelDegrees": 303.33760157831955,
+      "swissSameUT": 303.3378929713015,
+      "swissSameTT": 303.33789182582245,
+      "sameUTDifferenceArcmin": 0.017483578918700005,
+      "sameTTDifferenceArcmin": 0.017414850174191088
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Sun",
+      "modelDegrees": 281.11515476297933,
+      "swissSameUT": 281.1138879125277,
+      "swissSameTT": 281.11517895399106,
+      "sameUTDifferenceArcmin": 0.07601102709941188,
+      "sameTTDifferenceArcmin": 0.0014514607039473049
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Moon",
+      "modelDegrees": 164.44553302408463,
+      "swissSameUT": 164.42795678860224,
+      "swissSameTT": 164.4457405327804,
+      "sameUTDifferenceArcmin": 1.0545741289428179,
+      "sameTTDifferenceArcmin": 0.012450521746814047
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Mercury",
+      "modelDegrees": 288.82023180557735,
+      "swissSameUT": 288.81803920625197,
+      "swissSameTT": 288.8200976205662,
+      "sameUTDifferenceArcmin": 0.13155595952298427,
+      "sameTTDifferenceArcmin": 0.00805110067062742
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Venus",
+      "modelDegrees": 320.67387866936116,
+      "swissSameUT": 320.6719917790906,
+      "swissSameTT": 320.673514918253,
+      "sameUTDifferenceArcmin": 0.11321341623329317,
+      "sameTTDifferenceArcmin": 0.021825066490919198
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Mars",
+      "modelDegrees": 29.73074971225573,
+      "swissSameUT": 29.72942026385082,
+      "swissSameTT": 29.729938853300723,
+      "sameUTDifferenceArcmin": 0.07976690429416067,
+      "sameTTDifferenceArcmin": 0.04865153729951999
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Jupiter",
+      "modelDegrees": 201.25952789795667,
+      "swissSameUT": 201.25920967736005,
+      "swissSameTT": 201.25934280940413,
+      "sameUTDifferenceArcmin": 0.019093235797527086,
+      "sameTTDifferenceArcmin": 0.011105313152484086
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Saturn",
+      "modelDegrees": 205.6592630509854,
+      "swissSameUT": 205.66042667684567,
+      "swissSameTT": 205.66049918324546,
+      "sameUTDifferenceArcmin": 0.06981755161632464,
+      "sameTTDifferenceArcmin": 0.07416793560366841
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Uranus",
+      "modelDegrees": 17.744231114584064,
+      "swissSameUT": 17.74365827902483,
+      "swissSameTT": 17.743664579894105,
+      "sameUTDifferenceArcmin": 0.03437013355437557,
+      "sameTTDifferenceArcmin": 0.03399208139796883
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Neptune",
+      "modelDegrees": 167.29096760999488,
+      "swissSameUT": 167.28630397734287,
+      "swissSameTT": 167.28629451059552,
+      "sameUTDifferenceArcmin": 0.27981795912069174,
+      "sameTTDifferenceArcmin": 0.2803859639612938
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "body": "Pluto",
+      "modelDegrees": 32.39807815121612,
+      "swissSameUT": 32.400707914285064,
+      "swissSameTT": 32.400701256527185,
+      "sameUTDifferenceArcmin": 0.1577857841363084,
+      "sameTTDifferenceArcmin": 0.15738631866440755
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Sun",
+      "modelDegrees": 280.8399045874908,
+      "swissSameUT": 280.8365817864608,
+      "swissSameTT": 280.8398709865956,
+      "sameUTDifferenceArcmin": 0.19936806180226085,
+      "sameTTDifferenceArcmin": 0.002016053713305155
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Moon",
+      "modelDegrees": 102.54120909692536,
+      "swissSameUT": 102.50194990040424,
+      "swissSameTT": 102.54053233764056,
+      "sameUTDifferenceArcmin": 2.3555517912677715,
+      "sameTTDifferenceArcmin": 0.04060555708804259
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Mercury",
+      "modelDegrees": 300.4257654646446,
+      "swissSameUT": 300.42371102739713,
+      "swissSameTT": 300.42717739272337,
+      "sameUTDifferenceArcmin": 0.12326623484796073,
+      "sameTTDifferenceArcmin": 0.08471568472600666
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Venus",
+      "modelDegrees": 255.40014559794045,
+      "swissSameUT": 255.39637643662803,
+      "swissSameTT": 255.4004025203073,
+      "sameUTDifferenceArcmin": 0.22614967874517333,
+      "sameTTDifferenceArcmin": 0.01541534201066952
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Mars",
+      "modelDegrees": 153.30185205408026,
+      "swissSameUT": 153.30078572306962,
+      "swissSameTT": 153.30085870646934,
+      "sameUTDifferenceArcmin": 0.06397986063802819,
+      "sameTTDifferenceArcmin": 0.05960085665492443
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Jupiter",
+      "modelDegrees": 334.4459546609606,
+      "swissSameUT": 334.445238874937,
+      "swissSameTT": 334.4458478817656,
+      "sameUTDifferenceArcmin": 0.04294716141544086,
+      "sameTTDifferenceArcmin": 0.006406751699614688
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Saturn",
+      "modelDegrees": 328.1013314807558,
+      "swissSameUT": 328.0999518971508,
+      "swissSameTT": 328.10025725483246,
+      "sameUTDifferenceArcmin": 0.08277501630004735,
+      "sameTTDifferenceArcmin": 0.06445355539995035
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Uranus",
+      "modelDegrees": 86.97080445014332,
+      "swissSameUT": 86.97217981720323,
+      "swissSameTT": 86.97204699184023,
+      "sameUTDifferenceArcmin": 0.08252202359358307,
+      "sameTTDifferenceArcmin": 0.0745525018146509
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Neptune",
+      "modelDegrees": 22.299388978675847,
+      "swissSameUT": 22.297391945837905,
+      "swissSameTT": 22.297390112700835,
+      "sameUTDifferenceArcmin": 0.11982197027691655,
+      "sameTTDifferenceArcmin": 0.1199319584998193
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "body": "Pluto",
+      "modelDegrees": 144.73516266325979,
+      "swissSameUT": 144.74489906613292,
+      "swissSameTT": 144.74484728162173,
+      "sameUTDifferenceArcmin": 0.584184172387836,
+      "sameTTDifferenceArcmin": 0.5810771017166871
+    }
+  ],
+  "angles": [
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": -120,
+      "ascendant": 321.4532583421438,
+      "midheaven": 159.3089173431675,
+      "reason": null,
+      "sidereal": 160.89130981928247,
+      "swissAscendant": 321.4532863618836,
+      "swissMidheaven": 159.30904668406154,
+      "ascendantDifferenceArcsec": 0.1008710633868759,
+      "midheavenDifferenceArcsec": 0.4656272185229682
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 0,
+      "ascendant": 4.525964533258526,
+      "midheaven": 280.0094720518952,
+      "reason": null,
+      "sidereal": 280.89130981928247,
+      "swissAscendant": 4.526014550358396,
+      "swissMidheaven": 280.0095838899825,
+      "ascendantDifferenceArcsec": 0.18006155956982184,
+      "midheavenDifferenceArcsec": 0.40261711415041646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 150,
+      "ascendant": 207.85498397385211,
+      "midheaven": 72.36999905527551,
+      "reason": null,
+      "sidereal": 70.89130981928247,
+      "swissAscendant": 207.85485429627897,
+      "swissMidheaven": 72.37011290371873,
+      "ascendantDifferenceArcsec": 0.46683926331070325,
+      "midheavenDifferenceArcsec": 0.40985439559335646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": -120,
+      "ascendant": 302.1613548210004,
+      "midheaven": 159.3089173431675,
+      "reason": null,
+      "sidereal": 160.89130981928247,
+      "swissAscendant": 302.1614217098557,
+      "swissMidheaven": 159.30904668406154,
+      "ascendantDifferenceArcsec": 0.2407998791341015,
+      "midheavenDifferenceArcsec": 0.4656272185229682
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 0,
+      "ascendant": 6.008333343053853,
+      "midheaven": 280.0094720518952,
+      "reason": null,
+      "sidereal": 280.89130981928247,
+      "swissAscendant": 6.008399961595069,
+      "swissMidheaven": 280.0095838899825,
+      "ascendantDifferenceArcsec": 0.2398267483613381,
+      "midheavenDifferenceArcsec": 0.40261711415041646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 150,
+      "ascendant": 85.16594914457787,
+      "midheaven": 72.36999905527551,
+      "reason": null,
+      "sidereal": 70.89130981928247,
+      "swissAscendant": 85.16600379218963,
+      "swissMidheaven": 72.37011290371873,
+      "ascendantDifferenceArcsec": 0.19673140234317543,
+      "midheavenDifferenceArcsec": 0.40985439559335646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": -120,
+      "ascendant": 270.65749626107487,
+      "midheaven": 159.3089173431675,
+      "reason": null,
+      "sidereal": 160.89130981928247,
+      "swissAscendant": 270.6576104573443,
+      "swissMidheaven": 159.30904668406154,
+      "ascendantDifferenceArcsec": 0.41110656986802496,
+      "midheavenDifferenceArcsec": 0.4656272185229682
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 0,
+      "ascendant": 8.86165622306681,
+      "midheaven": 280.0094720518952,
+      "reason": null,
+      "sidereal": 280.89130981928247,
+      "swissAscendant": 8.861754852913153,
+      "swissMidheaven": 280.0095838899825,
+      "ascendantDifferenceArcsec": 0.3550674468556281,
+      "midheavenDifferenceArcsec": 0.40261711415041646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 150,
+      "ascendant": 149.49401228883642,
+      "midheaven": 72.36999905527551,
+      "reason": null,
+      "sidereal": 70.89130981928247,
+      "swissAscendant": 149.4941913290844,
+      "swissMidheaven": 72.37011290371873,
+      "ascendantDifferenceArcsec": 0.6445448927479447,
+      "midheavenDifferenceArcsec": 0.40985439559335646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": -120,
+      "ascendant": 252.3699990552755,
+      "midheaven": 159.3089173431675,
+      "reason": null,
+      "sidereal": 160.89130981928247,
+      "swissAscendant": 252.37011290371873,
+      "swissMidheaven": 159.30904668406154,
+      "ascendantDifferenceArcsec": 0.40985439559335646,
+      "midheavenDifferenceArcsec": 0.4656272185229682
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "ascendant": 11.846735960514858,
+      "midheaven": 280.0094720518952,
+      "reason": null,
+      "sidereal": 280.89130981928247,
+      "swissAscendant": 11.846867868527257,
+      "swissMidheaven": 280.0095838899825,
+      "ascendantDifferenceArcsec": 0.47486884466252377,
+      "midheavenDifferenceArcsec": 0.40261711415041646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 150,
+      "ascendant": 159.3089173431675,
+      "midheaven": 72.36999905527551,
+      "reason": null,
+      "sidereal": 70.89130981928247,
+      "swissAscendant": 159.30904668406157,
+      "swissMidheaven": 72.37011290371873,
+      "ascendantDifferenceArcsec": 0.46562721862528633,
+      "midheavenDifferenceArcsec": 0.40985439559335646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": -120,
+      "ascendant": 237.0944611062601,
+      "midheaven": 159.3089173431675,
+      "reason": null,
+      "sidereal": 160.89130981928247,
+      "swissAscendant": 237.09455730844445,
+      "swissMidheaven": 159.30904668406154,
+      "ascendantDifferenceArcsec": 0.34632786366728396,
+      "midheavenDifferenceArcsec": 0.4656272185229682
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 0,
+      "ascendant": 17.767828625940577,
+      "midheaven": 280.0094720518952,
+      "reason": null,
+      "sidereal": 280.89130981928247,
+      "swissAscendant": 17.768024507270436,
+      "swissMidheaven": 280.0095838899825,
+      "ascendantDifferenceArcsec": 0.7051727874909375,
+      "midheavenDifferenceArcsec": 0.40261711415041646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 150,
+      "ascendant": 164.46801001493907,
+      "midheaven": 72.36999905527551,
+      "reason": null,
+      "sidereal": 70.89130981928247,
+      "swissAscendant": 164.4681087718447,
+      "swissMidheaven": 72.37011290371873,
+      "ascendantDifferenceArcsec": 0.35552486026517727,
+      "midheavenDifferenceArcsec": 0.40985439559335646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": -120,
+      "ascendant": 229.7284542852916,
+      "midheaven": 159.3089173431675,
+      "reason": null,
+      "sidereal": 160.89130981928247,
+      "swissAscendant": 229.72853767857484,
+      "swissMidheaven": 159.30904668406154,
+      "ascendantDifferenceArcsec": 0.3002158196409255,
+      "midheavenDifferenceArcsec": 0.4656272185229682
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 0,
+      "ascendant": 25.255589831765064,
+      "midheaven": 280.0094720518952,
+      "reason": null,
+      "sidereal": 280.89130981928247,
+      "swissAscendant": 25.255859177615008,
+      "swissMidheaven": 280.0095838899825,
+      "ascendantDifferenceArcsec": 0.9696450597971307,
+      "midheavenDifferenceArcsec": 0.40261711415041646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 150,
+      "ascendant": 166.5326266343287,
+      "midheaven": 72.36999905527551,
+      "reason": null,
+      "sidereal": 70.89130981928247,
+      "swissAscendant": 166.53271258614006,
+      "swissMidheaven": 72.37011290371873,
+      "ascendantDifferenceArcsec": 0.3094265209369951,
+      "midheavenDifferenceArcsec": 0.40985439559335646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": -120,
+      "ascendant": 218.34047516386354,
+      "midheaven": 159.3089173431675,
+      "reason": null,
+      "sidereal": 160.89130981928247,
+      "swissAscendant": 218.3405357171281,
+      "swissMidheaven": 159.30904668406154,
+      "ascendantDifferenceArcsec": 0.21799175236765223,
+      "midheavenDifferenceArcsec": 0.4656272185229682
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 0,
+      "ascendant": 88.079633985238,
+      "midheaven": 280.0094720518952,
+      "reason": null,
+      "sidereal": 280.89130981928247,
+      "swissAscendant": 88.07981308732992,
+      "swissMidheaven": 280.0095838899825,
+      "ascendantDifferenceArcsec": 0.6447675309118495,
+      "midheavenDifferenceArcsec": 0.40261711415041646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 150,
+      "ascendant": 169.47021894955304,
+      "midheaven": 72.36999905527551,
+      "reason": null,
+      "sidereal": 70.89130981928247,
+      "swissAscendant": 169.4702863113105,
+      "swissMidheaven": 72.37011290371873,
+      "ascendantDifferenceArcsec": 0.2425023268529003,
+      "midheavenDifferenceArcsec": 0.40985439559335646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": -120,
+      "ascendant": 207.8750784964979,
+      "midheaven": 159.3089173431675,
+      "reason": null,
+      "sidereal": 160.89130981928247,
+      "swissAscendant": 207.8751175243311,
+      "swissMidheaven": 159.30904668406154,
+      "ascendantDifferenceArcsec": 0.14050019950673232,
+      "midheavenDifferenceArcsec": 0.4656272185229682
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 0,
+      "ascendant": 342.1127117596521,
+      "midheaven": 280.0094720518952,
+      "reason": null,
+      "sidereal": 280.89130981928247,
+      "swissAscendant": 342.112544517867,
+      "swissMidheaven": 280.0095838899825,
+      "ascendantDifferenceArcsec": 0.602070426384671,
+      "midheavenDifferenceArcsec": 0.40261711415041646
+    },
+    {
+      "date": "1800-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 150,
+      "ascendant": 172.07937289714044,
+      "midheaven": 72.36999905527551,
+      "reason": null,
+      "sidereal": 70.89130981928247,
+      "swissAscendant": 172.07942352389867,
+      "swissMidheaven": 72.37011290371873,
+      "ascendantDifferenceArcsec": 0.1822563296059343,
+      "midheavenDifferenceArcsec": 0.40985439559335646
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": -120,
+      "ascendant": 321.39109858870495,
+      "midheaven": 159.0866535246531,
+      "reason": null,
+      "sidereal": 160.68114935693302,
+      "swissAscendant": 321.39109177121503,
+      "swissMidheaven": 159.08664715595432,
+      "ascendantDifferenceArcsec": 0.024542963706153387,
+      "midheavenDifferenceArcsec": 0.022927315546894533
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 0,
+      "ascendant": 4.440370847255128,
+      "midheaven": 279.8167582888667,
+      "reason": null,
+      "sidereal": 280.681149356933,
+      "swissAscendant": 4.440368534390856,
+      "swissMidheaven": 279.8167525895074,
+      "ascendantDifferenceArcsec": 0.008326311365181027,
+      "midheavenDifferenceArcsec": 0.02051769345143839
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 150,
+      "ascendant": 208.10214808497042,
+      "midheaven": 72.17187397216422,
+      "reason": null,
+      "sidereal": 70.68114935693302,
+      "swissAscendant": 208.10216419242923,
+      "swissMidheaven": 72.17186743819701,
+      "ascendantDifferenceArcsec": 0.05798685169793316,
+      "midheavenDifferenceArcsec": 0.023522282003796136
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": -120,
+      "ascendant": 302.02990600024526,
+      "midheaven": 159.0866535246531,
+      "reason": null,
+      "sidereal": 160.68114935693302,
+      "swissAscendant": 302.0298963637578,
+      "swissMidheaven": 159.08664715595432,
+      "ascendantDifferenceArcsec": 0.03469135481282137,
+      "midheavenDifferenceArcsec": 0.022927315546894533
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 0,
+      "ascendant": 5.894002777653787,
+      "midheaven": 279.8167582888667,
+      "reason": null,
+      "sidereal": 280.681149356933,
+      "swissAscendant": 5.893999568352241,
+      "swissMidheaven": 279.8167525895074,
+      "ascendantDifferenceArcsec": 0.011553485592230572,
+      "midheavenDifferenceArcsec": 0.02051769345143839
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 150,
+      "ascendant": 85.14029505645236,
+      "midheaven": 72.17187397216422,
+      "reason": null,
+      "sidereal": 70.68114935693302,
+      "swissAscendant": 85.14031867263083,
+      "swissMidheaven": 72.17186743819701,
+      "ascendantDifferenceArcsec": 0.08501824243012379,
+      "midheavenDifferenceArcsec": 0.023522282003796136
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": -120,
+      "ascendant": 270.4513911567948,
+      "midheaven": 159.0866535246531,
+      "reason": null,
+      "sidereal": 160.68114935693302,
+      "swissAscendant": 270.45138179157027,
+      "swissMidheaven": 159.08664715595432,
+      "ascendantDifferenceArcsec": 0.03371480825080653,
+      "midheavenDifferenceArcsec": 0.022927315546894533
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 0,
+      "ascendant": 8.691453705797363,
+      "midheaven": 279.8167582888667,
+      "reason": null,
+      "sidereal": 280.681149356933,
+      "swissAscendant": 8.691448590675163,
+      "swissMidheaven": 279.8167525895074,
+      "ascendantDifferenceArcsec": 0.018414439944081096,
+      "midheavenDifferenceArcsec": 0.02051769345143839
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 150,
+      "ascendant": 149.1928859227968,
+      "midheaven": 72.17187397216422,
+      "reason": null,
+      "sidereal": 70.68114935693302,
+      "swissAscendant": 149.1928795431852,
+      "swissMidheaven": 72.17186743819701,
+      "ascendantDifferenceArcsec": 0.02296660172760312,
+      "midheavenDifferenceArcsec": 0.023522282003796136
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": -120,
+      "ascendant": 252.1718739721642,
+      "midheaven": 159.0866535246531,
+      "reason": null,
+      "sidereal": 160.68114935693302,
+      "swissAscendant": 252.171867438197,
+      "swissMidheaven": 159.08664715595432,
+      "ascendantDifferenceArcsec": 0.02352228190147798,
+      "midheavenDifferenceArcsec": 0.022927315546894533
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "ascendant": 11.617788361505724,
+      "midheaven": 279.8167582888667,
+      "reason": null,
+      "sidereal": 280.681149356933,
+      "swissAscendant": 11.617781015184763,
+      "swissMidheaven": 279.8167525895074,
+      "ascendantDifferenceArcsec": 0.026446755441611458,
+      "midheavenDifferenceArcsec": 0.02051769345143839
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 150,
+      "ascendant": 159.08665352465312,
+      "midheaven": 72.17187397216422,
+      "reason": null,
+      "sidereal": 70.68114935693302,
+      "swissAscendant": 159.08664715595432,
+      "swissMidheaven": 72.17186743819701,
+      "ascendantDifferenceArcsec": 0.022927315649212687,
+      "midheavenDifferenceArcsec": 0.023522282003796136
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": -120,
+      "ascendant": 236.93219731463108,
+      "midheaven": 159.0866535246531,
+      "reason": null,
+      "sidereal": 160.68114935693302,
+      "swissAscendant": 236.9321937654465,
+      "swissMidheaven": 159.08664715595432,
+      "ascendantDifferenceArcsec": 0.012777064500824054,
+      "midheavenDifferenceArcsec": 0.022927315546894533
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 0,
+      "ascendant": 17.423870461248733,
+      "midheaven": 279.8167582888667,
+      "reason": null,
+      "sidereal": 280.681149356933,
+      "swissAscendant": 17.423858061654638,
+      "swissMidheaven": 279.8167525895074,
+      "ascendantDifferenceArcsec": 0.04463853870220191,
+      "midheavenDifferenceArcsec": 0.02051769345143839
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 150,
+      "ascendant": 164.29650977633617,
+      "midheaven": 72.17187397216422,
+      "reason": null,
+      "sidereal": 70.68114935693302,
+      "swissAscendant": 164.29650423493942,
+      "swissMidheaven": 72.17186743819701,
+      "ascendantDifferenceArcsec": 0.01994902828528211,
+      "midheavenDifferenceArcsec": 0.023522282003796136
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": -120,
+      "ascendant": 229.59014346851433,
+      "midheaven": 159.0866535246531,
+      "reason": null,
+      "sidereal": 160.68114935693302,
+      "swissAscendant": 229.59014129828765,
+      "swissMidheaven": 159.08664715595432,
+      "ascendantDifferenceArcsec": 0.00781281604531614,
+      "midheavenDifferenceArcsec": 0.022927315546894533
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 0,
+      "ascendant": 24.775327313763306,
+      "midheaven": 279.8167582888667,
+      "reason": null,
+      "sidereal": 280.681149356933,
+      "swissAscendant": 24.77530760273969,
+      "swissMidheaven": 279.8167525895074,
+      "ascendantDifferenceArcsec": 0.07095968500152594,
+      "midheavenDifferenceArcsec": 0.02051769345143839
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 150,
+      "ascendant": 166.38274975516634,
+      "midheaven": 72.17187397216422,
+      "reason": null,
+      "sidereal": 70.68114935693302,
+      "swissAscendant": 166.38274469769476,
+      "swissMidheaven": 72.17186743819701,
+      "ascendantDifferenceArcsec": 0.01820689769829187,
+      "midheavenDifferenceArcsec": 0.023522282003796136
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": -120,
+      "ascendant": 218.2430987712687,
+      "midheaven": 159.0866535246531,
+      "reason": null,
+      "sidereal": 160.68114935693302,
+      "swissAscendant": 218.24309838364587,
+      "swissMidheaven": 159.08664715595432,
+      "ascendantDifferenceArcsec": 0.00139544220019161,
+      "midheavenDifferenceArcsec": 0.022927315546894533
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 0,
+      "ascendant": 87.64131888101481,
+      "midheaven": 279.8167582888667,
+      "reason": null,
+      "sidereal": 280.681149356933,
+      "swissAscendant": 87.64126103334681,
+      "swissMidheaven": 279.8167525895074,
+      "ascendantDifferenceArcsec": 0.2082516048631078,
+      "midheavenDifferenceArcsec": 0.02051769345143839
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 150,
+      "ascendant": 169.3520788515161,
+      "midheaven": 72.17187397216422,
+      "reason": null,
+      "sidereal": 70.68114935693302,
+      "swissAscendant": 169.35207462644237,
+      "swissMidheaven": 72.17186743819701,
+      "ascendantDifferenceArcsec": 0.015210265405585233,
+      "midheavenDifferenceArcsec": 0.023522282003796136
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": -120,
+      "ascendant": 207.8146704049216,
+      "midheaven": 159.0866535246531,
+      "reason": null,
+      "sidereal": 160.68114935693302,
+      "swissAscendant": 207.8146710775128,
+      "swissMidheaven": 159.08664715595432,
+      "ascendantDifferenceArcsec": 0.0024213283154495002,
+      "midheavenDifferenceArcsec": 0.022927315546894533
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 0,
+      "ascendant": 342.3854681757486,
+      "midheaven": 279.8167582888667,
+      "reason": null,
+      "sidereal": 280.681149356933,
+      "swissAscendant": 342.3854703337214,
+      "swissMidheaven": 279.8167525895074,
+      "ascendantDifferenceArcsec": 0.007768702084831602,
+      "midheavenDifferenceArcsec": 0.02051769345143839
+    },
+    {
+      "date": "1900-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 150,
+      "ascendant": 171.99013159125292,
+      "midheaven": 72.17187397216422,
+      "reason": null,
+      "sidereal": 70.68114935693302,
+      "swissAscendant": 171.99012824070968,
+      "swissMidheaven": 72.17186743819701,
+      "ascendantDifferenceArcsec": 0.012061955658282386,
+      "midheavenDifferenceArcsec": 0.023522282003796136
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": -120,
+      "ascendant": 321.3289356773261,
+      "midheaven": 158.84939397425637,
+      "reason": null,
+      "sidereal": 160.45704455168226,
+      "swissAscendant": 321.32893618531676,
+      "swissMidheaven": 158.8494242028326,
+      "ascendantDifferenceArcsec": 0.0018287663351657102,
+      "midheavenDifferenceArcsec": 0.10882287444928807
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 0,
+      "ascendant": 4.348759403346468,
+      "midheaven": 279.6110618554224,
+      "reason": null,
+      "sidereal": 280.45704455168226,
+      "swissAscendant": 4.348771277802737,
+      "swissMidheaven": 279.61108780028457,
+      "ascendantDifferenceArcsec": 0.04274804259694065,
+      "midheavenDifferenceArcsec": 0.09340150377283862
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 150,
+      "ascendant": 208.35661846345303,
+      "midheaven": 71.96082815328106,
+      "reason": null,
+      "sidereal": 70.45704455168226,
+      "swissAscendant": 208.35659948676604,
+      "swissMidheaven": 71.96085379694814,
+      "ascendantDifferenceArcsec": 0.06831607315689325,
+      "midheavenDifferenceArcsec": 0.09231720146090083
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": -120,
+      "ascendant": 301.89402244568777,
+      "midheaven": 158.84939397425637,
+      "reason": null,
+      "sidereal": 160.45704455168226,
+      "swissAscendant": 301.89403115114675,
+      "swissMidheaven": 158.8494242028326,
+      "ascendantDifferenceArcsec": 0.03133965233246272,
+      "midheavenDifferenceArcsec": 0.10882287444928807
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 0,
+      "ascendant": 5.771763164414653,
+      "midheaven": 279.6110618554224,
+      "reason": null,
+      "sidereal": 280.45704455168226,
+      "swissAscendant": 5.771778834689414,
+      "swissMidheaven": 279.61108780028457,
+      "ascendantDifferenceArcsec": 0.05641298914724757,
+      "midheavenDifferenceArcsec": 0.09340150377283862
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 150,
+      "ascendant": 85.09168554885095,
+      "midheaven": 71.96082815328106,
+      "reason": null,
+      "sidereal": 70.45704455168226,
+      "swissAscendant": 85.09172706680788,
+      "swissMidheaven": 71.96085379694814,
+      "ascendantDifferenceArcsec": 0.1494646449486936,
+      "midheavenDifferenceArcsec": 0.09231720146090083
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": -120,
+      "ascendant": 270.2336806726473,
+      "midheaven": 158.84939397425637,
+      "reason": null,
+      "sidereal": 160.45704455168226,
+      "swissAscendant": 270.2337033704325,
+      "swissMidheaven": 158.8494242028326,
+      "ascendantDifferenceArcsec": 0.08171202671292122,
+      "midheavenDifferenceArcsec": 0.10882287444928807
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 0,
+      "ascendant": 8.509813976925853,
+      "midheaven": 279.6110618554224,
+      "reason": null,
+      "sidereal": 280.45704455168226,
+      "swissAscendant": 8.509836773692669,
+      "swissMidheaven": 279.61108780028457,
+      "ascendantDifferenceArcsec": 0.08206836052977451,
+      "midheavenDifferenceArcsec": 0.09340150377283862
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 150,
+      "ascendant": 148.87029783301588,
+      "midheaven": 71.96082815328106,
+      "reason": null,
+      "sidereal": 70.45704455168226,
+      "swissAscendant": 148.8703421905294,
+      "swissMidheaven": 71.96085379694814,
+      "ascendantDifferenceArcsec": 0.15968704871056616,
+      "midheavenDifferenceArcsec": 0.09231720146090083
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": -120,
+      "ascendant": 251.96082815328106,
+      "midheaven": 158.84939397425637,
+      "reason": null,
+      "sidereal": 160.45704455168226,
+      "swissAscendant": 251.96085379694813,
+      "swissMidheaven": 158.8494242028326,
+      "ascendantDifferenceArcsec": 0.09231720146090083,
+      "midheavenDifferenceArcsec": 0.10882287444928807
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "ascendant": 11.373869662157622,
+      "midheaven": 279.6110618554224,
+      "reason": null,
+      "sidereal": 280.45704455168226,
+      "swissAscendant": 11.373899604604901,
+      "swissMidheaven": 279.61108780028457,
+      "ascendantDifferenceArcsec": 0.10779281017221365,
+      "midheavenDifferenceArcsec": 0.09340150377283862
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 150,
+      "ascendant": 158.84939397425637,
+      "midheaven": 71.96082815328106,
+      "reason": null,
+      "sidereal": 70.45704455168226,
+      "swissAscendant": 158.8494242028326,
+      "swissMidheaven": 71.96085379694814,
+      "ascendantDifferenceArcsec": 0.10882287444928807,
+      "midheavenDifferenceArcsec": 0.09231720146090083
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": -120,
+      "ascendant": 236.75796567256958,
+      "midheaven": 158.84939397425637,
+      "reason": null,
+      "sidereal": 160.45704455168226,
+      "swissAscendant": 236.7579894758867,
+      "swissMidheaven": 158.8494242028326,
+      "ascendantDifferenceArcsec": 0.0856919415809898,
+      "midheavenDifferenceArcsec": 0.10882287444928807
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 0,
+      "ascendant": 17.058395459966906,
+      "midheaven": 279.6110618554224,
+      "reason": null,
+      "sidereal": 280.45704455168226,
+      "swissAscendant": 17.05843837602945,
+      "swissMidheaven": 279.61108780028457,
+      "ascendantDifferenceArcsec": 0.15449782514451726,
+      "midheavenDifferenceArcsec": 0.09340150377283862
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 150,
+      "ascendant": 164.1138215786976,
+      "midheaven": 71.96082815328106,
+      "reason": null,
+      "sidereal": 70.45704455168226,
+      "swissAscendant": 164.11384393699038,
+      "swissMidheaven": 71.96085379694814,
+      "ascendantDifferenceArcsec": 0.08048985396271746,
+      "midheavenDifferenceArcsec": 0.09231720146090083
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": -120,
+      "ascendant": 229.44091450164703,
+      "midheaven": 158.84939397425637,
+      "reason": null,
+      "sidereal": 160.45704455168226,
+      "swissAscendant": 229.44093613075552,
+      "swissMidheaven": 158.8494242028326,
+      "ascendantDifferenceArcsec": 0.07786479055766904,
+      "midheavenDifferenceArcsec": 0.10882287444928807
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 0,
+      "ascendant": 24.266132807000766,
+      "midheaven": 279.6110618554224,
+      "reason": null,
+      "sidereal": 280.45704455168226,
+      "swissAscendant": 24.26618920267986,
+      "swissMidheaven": 279.61108780028457,
+      "ascendantDifferenceArcsec": 0.20302444479511905,
+      "midheavenDifferenceArcsec": 0.09340150377283862
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 150,
+      "ascendant": 166.22324088699565,
+      "midheaven": 71.96082815328106,
+      "reason": null,
+      "sidereal": 70.45704455168226,
+      "swissAscendant": 166.2232600920843,
+      "swissMidheaven": 71.96085379694814,
+      "ascendantDifferenceArcsec": 0.06913831913379909,
+      "midheavenDifferenceArcsec": 0.09231720146090083
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": -120,
+      "ascendant": 218.13701450656094,
+      "midheaven": 158.84939397425637,
+      "reason": null,
+      "sidereal": 160.45704455168226,
+      "swissAscendant": 218.1370315344708,
+      "swissMidheaven": 158.8494242028326,
+      "ascendantDifferenceArcsec": 0.061300475454117986,
+      "midheavenDifferenceArcsec": 0.10882287444928807
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 0,
+      "ascendant": 87.19561664140161,
+      "midheaven": 279.6110618554224,
+      "reason": null,
+      "sidereal": 280.45704455168226,
+      "swissAscendant": 87.1956070046095,
+      "swissMidheaven": 279.61108780028457,
+      "ascendantDifferenceArcsec": 0.03469245166343171,
+      "midheavenDifferenceArcsec": 0.09340150377283862
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 150,
+      "ascendant": 169.2265200403022,
+      "midheaven": 71.96082815328106,
+      "reason": null,
+      "sidereal": 70.45704455168226,
+      "swissAscendant": 169.22653480474304,
+      "swissMidheaven": 71.96085379694814,
+      "ascendantDifferenceArcsec": 0.05315198700373003,
+      "midheavenDifferenceArcsec": 0.09231720146090083
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": -120,
+      "ascendant": 207.74800302938968,
+      "midheaven": 158.84939397425637,
+      "reason": null,
+      "sidereal": 160.45704455168226,
+      "swissAscendant": 207.7480150439893,
+      "swissMidheaven": 158.8494242028326,
+      "ascendantDifferenceArcsec": 0.04325255868025124,
+      "midheavenDifferenceArcsec": 0.10882287444928807
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 0,
+      "ascendant": 342.6846168329606,
+      "midheaven": 279.6110618554224,
+      "reason": null,
+      "sidereal": 280.45704455168226,
+      "swissAscendant": 342.6845702887791,
+      "swissMidheaven": 279.61108780028457,
+      "ascendantDifferenceArcsec": 0.16755905335230636,
+      "midheavenDifferenceArcsec": 0.09340150377283862
+    },
+    {
+      "date": "2000-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 150,
+      "ascendant": 171.89541160600638,
+      "midheaven": 71.96082815328106,
+      "reason": null,
+      "sidereal": 70.45704455168226,
+      "swissAscendant": 171.8954225075766,
+      "swissMidheaven": 71.96085379694814,
+      "ascendantDifferenceArcsec": 0.039245652794761554,
+      "midheavenDifferenceArcsec": 0.09231720146090083
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": -75,
+      "longitude": -120,
+      "ascendant": 30.111413418795,
+      "midheaven": 346.3985055155799,
+      "reason": null,
+      "sidereal": 347.48395025511104,
+      "swissAscendant": 30.111408426511936,
+      "swissMidheaven": 346.39848809630814,
+      "ascendantDifferenceArcsec": 0.017972219040984783,
+      "midheavenDifferenceArcsec": 0.06270937842600688
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": -75,
+      "longitude": 0,
+      "ascendant": 153.75602892997847,
+      "midheaven": 106.11927856475481,
+      "reason": null,
+      "sidereal": 107.48395025511104,
+      "swissAscendant": 153.75604552550442,
+      "swissMidheaven": 106.11926356814226,
+      "ascendantDifferenceArcsec": 0.05974389341645292,
+      "midheavenDifferenceArcsec": 0.053987805176802794
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": -75,
+      "longitude": 150,
+      "ascendant": 354.7976025112936,
+      "midheaven": 258.4879450144364,
+      "reason": null,
+      "sidereal": 257.48395025511104,
+      "swissAscendant": 354.7975957787389,
+      "swissMidheaven": 258.48793005304833,
+      "ascendantDifferenceArcsec": 0.02423719674879976,
+      "midheavenDifferenceArcsec": 0.05386099696806923
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": -66,
+      "longitude": -120,
+      "ascendant": 41.7902799980916,
+      "midheaven": 346.3985055155799,
+      "reason": null,
+      "sidereal": 347.48395025511104,
+      "swissAscendant": 41.79027194138007,
+      "swissMidheaven": 346.39848809630814,
+      "ascendantDifferenceArcsec": 0.029004161478951573,
+      "midheavenDifferenceArcsec": 0.06270937842600688
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": -66,
+      "longitude": 0,
+      "ascendant": 273.48604653069646,
+      "midheaven": 106.11927856475481,
+      "reason": null,
+      "sidereal": 107.48395025511104,
+      "swissAscendant": 273.4860321088613,
+      "swissMidheaven": 106.11926356814226,
+      "ascendantDifferenceArcsec": 0.05191860652757896,
+      "midheavenDifferenceArcsec": 0.053987805176802794
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": -66,
+      "longitude": 150,
+      "ascendant": 353.0933666600846,
+      "midheaven": 258.4879450144364,
+      "reason": null,
+      "sidereal": 257.48395025511104,
+      "swissAscendant": 353.09335772021456,
+      "swissMidheaven": 258.48793005304833,
+      "ascendantDifferenceArcsec": 0.032183532152885164,
+      "midheavenDifferenceArcsec": 0.05386099696806923
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": -38,
+      "longitude": -120,
+      "ascendant": 62.43512908087978,
+      "midheaven": 346.3985055155799,
+      "reason": null,
+      "sidereal": 347.48395025511104,
+      "swissAscendant": 62.43511613585231,
+      "swissMidheaven": 346.39848809630814,
+      "ascendantDifferenceArcsec": 0.04660209887106248,
+      "midheavenDifferenceArcsec": 0.06270937842600688
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": -38,
+      "longitude": 0,
+      "ascendant": 208.03004119739163,
+      "midheaven": 106.11927856475481,
+      "reason": null,
+      "sidereal": 107.48395025511104,
+      "swissAscendant": 208.03001637489447,
+      "swissMidheaven": 106.11926356814226,
+      "ascendantDifferenceArcsec": 0.08936098975027562,
+      "midheavenDifferenceArcsec": 0.053987805176802794
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": -38,
+      "longitude": 150,
+      "ascendant": 349.8166542099161,
+      "midheaven": 258.4879450144364,
+      "reason": null,
+      "sidereal": 257.48395025511104,
+      "swissAscendant": 349.81664106723554,
+      "swissMidheaven": 258.48793005304833,
+      "ascendantDifferenceArcsec": 0.047313650111391325,
+      "midheavenDifferenceArcsec": 0.05386099696806923
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 0,
+      "longitude": -120,
+      "ascendant": 78.48794501443635,
+      "midheaven": 346.3985055155799,
+      "reason": null,
+      "sidereal": 347.48395025511104,
+      "swissAscendant": 78.48793005304834,
+      "swissMidheaven": 346.39848809630814,
+      "ascendantDifferenceArcsec": 0.05386099676343292,
+      "midheavenDifferenceArcsec": 0.06270937842600688
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "ascendant": 198.94834529093646,
+      "midheaven": 106.11927856475481,
+      "reason": null,
+      "sidereal": 107.48395025511104,
+      "swissAscendant": 198.9483279318935,
+      "swissMidheaven": 106.11926356814226,
+      "ascendantDifferenceArcsec": 0.06249255469583659,
+      "midheavenDifferenceArcsec": 0.053987805176802794
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 0,
+      "longitude": 150,
+      "ascendant": 346.3985055155799,
+      "midheaven": 258.4879450144364,
+      "reason": null,
+      "sidereal": 257.48395025511104,
+      "swissAscendant": 346.39848809630814,
+      "swissMidheaven": 258.48793005304833,
+      "ascendantDifferenceArcsec": 0.06270937842600688,
+      "midheavenDifferenceArcsec": 0.05386099696806923
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 38,
+      "longitude": -120,
+      "ascendant": 96.54120093628802,
+      "midheaven": 346.3985055155799,
+      "reason": null,
+      "sidereal": 347.48395025511104,
+      "swissAscendant": 96.54118643534417,
+      "swissMidheaven": 346.39848809630814,
+      "ascendantDifferenceArcsec": 0.05220339785410033,
+      "midheavenDifferenceArcsec": 0.06270937842600688
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 38,
+      "longitude": 0,
+      "ascendant": 194.21668547730104,
+      "midheaven": 106.11927856475481,
+      "reason": null,
+      "sidereal": 107.48395025511104,
+      "swissAscendant": 194.2166723971336,
+      "swissMidheaven": 106.11926356814226,
+      "ascendantDifferenceArcsec": 0.047088602764233656,
+      "midheavenDifferenceArcsec": 0.053987805176802794
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 38,
+      "longitude": 150,
+      "ascendant": 339.6700552802654,
+      "midheaven": 258.4879450144364,
+      "reason": null,
+      "sidereal": 257.48395025511104,
+      "swissAscendant": 339.6700299941012,
+      "swissMidheaven": 258.48793005304833,
+      "ascendantDifferenceArcsec": 0.09103019112899347,
+      "midheavenDifferenceArcsec": 0.05386099696806923
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 51.4779,
+      "longitude": -120,
+      "ascendant": 107.12716213239656,
+      "midheaven": 346.3985055155799,
+      "reason": null,
+      "sidereal": 347.48395025511104,
+      "swissAscendant": 107.12714920923263,
+      "swissMidheaven": 346.39848809630814,
+      "ascendantDifferenceArcsec": 0.04652339011954609,
+      "midheavenDifferenceArcsec": 0.06270937842600688
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 0,
+      "ascendant": 192.32749231008177,
+      "midheaven": 106.11927856475481,
+      "reason": null,
+      "sidereal": 107.48395025511104,
+      "swissAscendant": 192.32748097770877,
+      "swissMidheaven": 106.11926356814226,
+      "ascendantDifferenceArcsec": 0.04079654277120426,
+      "midheavenDifferenceArcsec": 0.053987805176802794
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 150,
+      "ascendant": 331.3110101661984,
+      "midheaven": 258.4879450144364,
+      "reason": null,
+      "sidereal": 257.48395025511104,
+      "swissAscendant": 331.31097666540603,
+      "swissMidheaven": 258.48793005304833,
+      "ascendantDifferenceArcsec": 0.12060285253028269,
+      "midheavenDifferenceArcsec": 0.05386099696806923
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 66,
+      "longitude": -120,
+      "ascendant": 125.43102291235161,
+      "midheaven": 346.3985055155799,
+      "reason": null,
+      "sidereal": 347.48395025511104,
+      "swissAscendant": 125.43101426659554,
+      "swissMidheaven": 346.39848809630814,
+      "ascendantDifferenceArcsec": 0.031124721795094956,
+      "midheavenDifferenceArcsec": 0.06270937842600688
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 66,
+      "longitude": 0,
+      "ascendant": 189.64154343413105,
+      "midheaven": 106.11927856475481,
+      "reason": null,
+      "sidereal": 107.48395025511104,
+      "swissAscendant": 189.6415346039581,
+      "swissMidheaven": 106.11926356814226,
+      "ascendantDifferenceArcsec": 0.03178862265258431,
+      "midheavenDifferenceArcsec": 0.053987805176802794
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 66,
+      "longitude": 150,
+      "ascendant": 270.6030102799248,
+      "midheaven": 258.4879450144364,
+      "reason": null,
+      "sidereal": 257.48395025511104,
+      "swissAscendant": 270.60299855940724,
+      "swissMidheaven": 258.48793005304833,
+      "ascendantDifferenceArcsec": 0.042193863123429765,
+      "midheavenDifferenceArcsec": 0.05386099696806923
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 75,
+      "longitude": -120,
+      "ascendant": 142.7896219609355,
+      "midheaven": 346.3985055155799,
+      "reason": null,
+      "sidereal": 347.48395025511104,
+      "swissAscendant": 142.78961781787845,
+      "swissMidheaven": 346.39848809630814,
+      "ascendantDifferenceArcsec": 0.014915005397142522,
+      "midheavenDifferenceArcsec": 0.06270937842600688
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 75,
+      "longitude": 0,
+      "ascendant": 187.25623523985087,
+      "midheaven": 106.11927856475481,
+      "reason": null,
+      "sidereal": 107.48395025511104,
+      "swissAscendant": 187.25622863289388,
+      "swissMidheaven": 106.11926356814226,
+      "ascendantDifferenceArcsec": 0.023785045152635576,
+      "midheavenDifferenceArcsec": 0.053987805176802794
+    },
+    {
+      "date": "2024-04-08T18:00:00Z",
+      "latitude": 75,
+      "longitude": 150,
+      "ascendant": 20.206339883815644,
+      "midheaven": 258.4879450144364,
+      "reason": null,
+      "sidereal": 257.48395025511104,
+      "swissAscendant": 20.206362421864924,
+      "swissMidheaven": 258.48793005304833,
+      "ascendantDifferenceArcsec": 0.08113697740554926,
+      "midheavenDifferenceArcsec": 0.05386099696806923
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": -75,
+      "longitude": -120,
+      "ascendant": 219.3174106593503,
+      "midheaven": 52.92332907104965,
+      "reason": null,
+      "sidereal": 50.524777678003886,
+      "swissAscendant": 219.3174016179126,
+      "swissMidheaven": 52.92334997557329,
+      "ascendantDifferenceArcsec": 0.03254917569393001,
+      "midheavenDifferenceArcsec": 0.07525628509483795
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": -75,
+      "longitude": 0,
+      "ascendant": 323.5089115708328,
+      "midheaven": 169.69021331288985,
+      "reason": null,
+      "sidereal": 170.5247776780039,
+      "swissAscendant": 323.508918973565,
+      "swissMidheaven": 169.6902358813731,
+      "ascendantDifferenceArcsec": 0.02664983589966141,
+      "midheavenDifferenceArcsec": 0.08124653968479834
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": -75,
+      "longitude": 150,
+      "ascendant": 20.470847875141732,
+      "midheaven": 318.0863829305456,
+      "reason": null,
+      "sidereal": 320.5247776780039,
+      "swissAscendant": 20.47085496050042,
+      "swissMidheaven": 318.08640374988704,
+      "ascendantDifferenceArcsec": 0.02550729122958728,
+      "midheavenDifferenceArcsec": 0.07494962919736281
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": -66,
+      "longitude": -120,
+      "ascendant": 73.76091920319563,
+      "midheaven": 52.92332907104965,
+      "reason": null,
+      "sidereal": 50.524777678003886,
+      "swissAscendant": 73.76092383382647,
+      "swissMidheaven": 52.92334997557329,
+      "ascendantDifferenceArcsec": 0.016670270974827872,
+      "midheavenDifferenceArcsec": 0.07525628509483795
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": -66,
+      "longitude": 0,
+      "ascendant": 306.96552354889803,
+      "midheaven": 169.69021331288985,
+      "reason": null,
+      "sidereal": 170.5247776780039,
+      "swissAscendant": 306.9655366412376,
+      "swissMidheaven": 169.6902358813731,
+      "ascendantDifferenceArcsec": 0.04713242235538928,
+      "midheavenDifferenceArcsec": 0.08124653968479834
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": -66,
+      "longitude": 150,
+      "ascendant": 27.597407820969742,
+      "midheaven": 318.0863829305456,
+      "reason": null,
+      "sidereal": 320.5247776780039,
+      "swissAscendant": 27.59741810908162,
+      "swissMidheaven": 318.08640374988704,
+      "ascendantDifferenceArcsec": 0.0370372027191479,
+      "midheavenDifferenceArcsec": 0.07494962919736281
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": -38,
+      "longitude": -120,
+      "ascendant": 122.01228126400719,
+      "midheaven": 52.92332907104965,
+      "reason": null,
+      "sidereal": 50.524777678003886,
+      "swissAscendant": 122.0123043966683,
+      "swissMidheaven": 52.92334997557329,
+      "ascendantDifferenceArcsec": 0.08327758000632457,
+      "midheavenDifferenceArcsec": 0.07525628509483795
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": -38,
+      "longitude": 0,
+      "ascendant": 279.1983152745598,
+      "midheaven": 169.69021331288985,
+      "reason": null,
+      "sidereal": 170.5247776780039,
+      "swissAscendant": 279.19833485208005,
+      "swissMidheaven": 169.6902358813731,
+      "ascendantDifferenceArcsec": 0.07047907299693179,
+      "midheavenDifferenceArcsec": 0.08124653968479834
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": -38,
+      "longitude": 150,
+      "ascendant": 40.80639461258445,
+      "midheaven": 318.0863829305456,
+      "reason": null,
+      "sidereal": 320.5247776780039,
+      "swissAscendant": 40.806410881013036,
+      "swissMidheaven": 318.08640374988704,
+      "ascendantDifferenceArcsec": 0.058566342943322525,
+      "midheavenDifferenceArcsec": 0.07494962919736281
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 0,
+      "longitude": -120,
+      "ascendant": 138.08638293054562,
+      "midheaven": 52.92332907104965,
+      "reason": null,
+      "sidereal": 50.524777678003886,
+      "swissAscendant": 138.0864037498871,
+      "swissMidheaven": 52.92334997557329,
+      "ascendantDifferenceArcsec": 0.07494962929968096,
+      "midheavenDifferenceArcsec": 0.07525628509483795
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "ascendant": 261.29407653794607,
+      "midheaven": 169.69021331288985,
+      "reason": null,
+      "sidereal": 170.5247776780039,
+      "swissAscendant": 261.29409595108785,
+      "swissMidheaven": 169.6902358813731,
+      "ascendantDifferenceArcsec": 0.06988731042838481,
+      "midheavenDifferenceArcsec": 0.08124653968479834
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 0,
+      "longitude": 150,
+      "ascendant": 52.923329071049636,
+      "midheaven": 318.0863829305456,
+      "reason": null,
+      "sidereal": 320.5247776780039,
+      "swissAscendant": 52.92334997557329,
+      "swissMidheaven": 318.08640374988704,
+      "ascendantDifferenceArcsec": 0.07525628509483795,
+      "midheavenDifferenceArcsec": 0.07494962919736281
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 38,
+      "longitude": -120,
+      "ascendant": 148.03968077445234,
+      "midheaven": 52.92332907104965,
+      "reason": null,
+      "sidereal": 50.524777678003886,
+      "swissAscendant": 148.0396979045822,
+      "swissMidheaven": 52.92334997557329,
+      "ascendantDifferenceArcsec": 0.061668467503750435,
+      "midheavenDifferenceArcsec": 0.07525628509483795
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 38,
+      "longitude": 0,
+      "ascendant": 244.91151859000988,
+      "midheaven": 169.69021331288985,
+      "reason": null,
+      "sidereal": 170.5247776780039,
+      "swissAscendant": 244.91153470366368,
+      "swissMidheaven": 169.6902358813731,
+      "ascendantDifferenceArcsec": 0.05800915367899506,
+      "midheavenDifferenceArcsec": 0.08124653968479834
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 38,
+      "longitude": 150,
+      "ascendant": 70.55398244947945,
+      "midheaven": 318.0863829305456,
+      "reason": null,
+      "sidereal": 320.5247776780039,
+      "swissAscendant": 70.55400698096847,
+      "swissMidheaven": 318.08640374988704,
+      "ascendantDifferenceArcsec": 0.0883133605157127,
+      "midheavenDifferenceArcsec": 0.07494962919736281
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": -120,
+      "ascendant": 152.24051049366878,
+      "midheaven": 52.92332907104965,
+      "reason": null,
+      "sidereal": 50.524777678003886,
+      "swissAscendant": 152.24052566588958,
+      "swissMidheaven": 52.92334997557329,
+      "ascendantDifferenceArcsec": 0.054619994875793054,
+      "midheavenDifferenceArcsec": 0.07525628509483795
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 0,
+      "ascendant": 236.58739081374011,
+      "midheaven": 169.69021331288985,
+      "reason": null,
+      "sidereal": 170.5247776780039,
+      "swissAscendant": 236.58740440804857,
+      "swissMidheaven": 169.6902358813731,
+      "ascendantDifferenceArcsec": 0.048939510440959566,
+      "midheavenDifferenceArcsec": 0.08124653968479834
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 150,
+      "ascendant": 83.81627342339128,
+      "midheaven": 318.0863829305456,
+      "reason": null,
+      "sidereal": 320.5247776780039,
+      "swissAscendant": 83.81629753735801,
+      "swissMidheaven": 318.08640374988704,
+      "ascendantDifferenceArcsec": 0.08681028023147519,
+      "midheavenDifferenceArcsec": 0.07494962919736281
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 66,
+      "longitude": -120,
+      "ascendant": 158.34962062269287,
+      "midheaven": 52.92332907104965,
+      "reason": null,
+      "sidereal": 50.524777678003886,
+      "swissAscendant": 158.3496326401965,
+      "swissMidheaven": 52.92334997557329,
+      "ascendantDifferenceArcsec": 0.043263013037631026,
+      "midheavenDifferenceArcsec": 0.07525628509483795
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 66,
+      "longitude": 0,
+      "ascendant": 223.36228436173758,
+      "midheaven": 169.69021331288985,
+      "reason": null,
+      "sidereal": 170.5247776780039,
+      "swissAscendant": 223.3622934266834,
+      "swissMidheaven": 169.6902358813731,
+      "ascendantDifferenceArcsec": 0.03263380498310653,
+      "midheavenDifferenceArcsec": 0.08124653968479834
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 66,
+      "longitude": 150,
+      "ascendant": 111.88661006065176,
+      "midheaven": 318.0863829305456,
+      "reason": null,
+      "sidereal": 320.5247776780039,
+      "swissAscendant": 111.88662533815481,
+      "swissMidheaven": 318.08640374988704,
+      "ascendantDifferenceArcsec": 0.05499901099028648,
+      "midheavenDifferenceArcsec": 0.07494962919736281
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 75,
+      "longitude": -120,
+      "ascendant": 163.8309480323014,
+      "midheaven": 52.92332907104965,
+      "reason": null,
+      "sidereal": 50.524777678003886,
+      "swissAscendant": 163.83095701468034,
+      "swissMidheaven": 52.92334997557329,
+      "ascendantDifferenceArcsec": 0.03233656419752151,
+      "midheavenDifferenceArcsec": 0.07525628509483795
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 75,
+      "longitude": 0,
+      "ascendant": 211.09391988745716,
+      "midheaven": 169.69021331288985,
+      "reason": null,
+      "sidereal": 170.5247776780039,
+      "swissAscendant": 211.0939249030508,
+      "swissMidheaven": 169.6902358813731,
+      "ascendantDifferenceArcsec": 0.0180561371166732,
+      "midheavenDifferenceArcsec": 0.08124653968479834
+    },
+    {
+      "date": "2026-09-11T12:00:00Z",
+      "latitude": 75,
+      "longitude": 150,
+      "ascendant": 319.4181265316005,
+      "midheaven": 318.0863829305456,
+      "reason": null,
+      "sidereal": 320.5247776780039,
+      "swissAscendant": 319.41812981297176,
+      "swissMidheaven": 318.08640374988704,
+      "ascendantDifferenceArcsec": 0.011812936600108515,
+      "midheavenDifferenceArcsec": 0.07494962919736281
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": -120,
+      "ascendant": 321.4612316503073,
+      "midheaven": 159.678363360683,
+      "reason": null,
+      "sidereal": 161.23181765169545,
+      "swissAscendant": 321.4611428678152,
+      "swissMidheaven": 159.6778325652004,
+      "ascendantDifferenceArcsec": 0.3196169714556163,
+      "midheavenDifferenceArcsec": 1.9108637373733472
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 0,
+      "ascendant": 4.671093319746698,
+      "midheaven": 280.3266060338529,
+      "reason": null,
+      "sidereal": 281.23181765169545,
+      "swissAscendant": 4.670887175514425,
+      "swissMidheaven": 280.3261478960436,
+      "ascendantDifferenceArcsec": 0.7421192361562134,
+      "midheavenDifferenceArcsec": 1.6492961134417783
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 150,
+      "ascendant": 207.6118863505855,
+      "midheaven": 72.68288536818085,
+      "reason": null,
+      "sidereal": 71.23181765169545,
+      "swissAscendant": 207.6123780261657,
+      "swissMidheaven": 72.68242319115726,
+      "ascendantDifferenceArcsec": 1.7700320886433474,
+      "midheavenDifferenceArcsec": 1.6638372849342886
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": -120,
+      "ascendant": 302.268217428151,
+      "midheaven": 159.678363360683,
+      "reason": null,
+      "sidereal": 161.23181765169545,
+      "swissAscendant": 302.2679746506384,
+      "swissMidheaven": 159.6778325652004,
+      "ascendantDifferenceArcsec": 0.8739990453477731,
+      "midheavenDifferenceArcsec": 1.9108637373733472
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 0,
+      "ascendant": 6.199829445461849,
+      "midheaven": 280.3266060338529,
+      "reason": null,
+      "sidereal": 281.23181765169545,
+      "swissAscendant": 6.199555588079203,
+      "swissMidheaven": 280.3261478960436,
+      "ascendantDifferenceArcsec": 0.9858865774958758,
+      "midheavenDifferenceArcsec": 1.6492961134417783
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 150,
+      "ascendant": 85.68584325995238,
+      "midheaven": 72.68288536818085,
+      "reason": null,
+      "sidereal": 71.23181765169545,
+      "swissAscendant": 85.68547054474973,
+      "swissMidheaven": 72.68242319115726,
+      "ascendantDifferenceArcsec": 1.3417747295193294,
+      "midheavenDifferenceArcsec": 1.6638372849342886
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": -120,
+      "ascendant": 270.93364203287217,
+      "midheaven": 159.678363360683,
+      "reason": null,
+      "sidereal": 161.23181765169545,
+      "swissAscendant": 270.93319332412204,
+      "swissMidheaven": 159.6778325652004,
+      "ascendantDifferenceArcsec": 1.615351500458928,
+      "midheavenDifferenceArcsec": 1.9108637373733472
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 0,
+      "ascendant": 9.140053285870021,
+      "midheaven": 280.3266060338529,
+      "reason": null,
+      "sidereal": 281.23181765169545,
+      "swissAscendant": 9.13964993220755,
+      "swissMidheaven": 280.3261478960436,
+      "ascendantDifferenceArcsec": 1.452073184918845,
+      "midheavenDifferenceArcsec": 1.6492961134417783
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 150,
+      "ascendant": 150.03794646905075,
+      "midheaven": 72.68288536818085,
+      "reason": null,
+      "sidereal": 71.23181765169545,
+      "swissAscendant": 150.03719807986568,
+      "swissMidheaven": 72.68242319115726,
+      "ascendantDifferenceArcsec": 2.6942010662764915,
+      "midheavenDifferenceArcsec": 1.6638372849342886
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": -120,
+      "ascendant": 252.68288536818085,
+      "midheaven": 159.678363360683,
+      "reason": null,
+      "sidereal": 161.23181765169545,
+      "swissAscendant": 252.68242319115726,
+      "swissMidheaven": 159.6778325652004,
+      "ascendantDifferenceArcsec": 1.6638372849342886,
+      "midheavenDifferenceArcsec": 1.9108637373733472
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "ascendant": 12.211923272875964,
+      "midheaven": 280.3266060338529,
+      "reason": null,
+      "sidereal": 281.23181765169545,
+      "swissAscendant": 12.211386903168663,
+      "swissMidheaven": 280.3261478960436,
+      "ascendantDifferenceArcsec": 1.9309309462983038,
+      "midheavenDifferenceArcsec": 1.6492961134417783
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 150,
+      "ascendant": 159.678363360683,
+      "midheaven": 72.68288536818085,
+      "reason": null,
+      "sidereal": 71.23181765169545,
+      "swissAscendant": 159.6778325652004,
+      "swissMidheaven": 72.68242319115726,
+      "ascendantDifferenceArcsec": 1.9108637373733472,
+      "midheavenDifferenceArcsec": 1.6638372849342886
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": -120,
+      "ascendant": 237.385527834606,
+      "midheaven": 159.678363360683,
+      "reason": null,
+      "sidereal": 161.23181765169545,
+      "swissAscendant": 237.3851266942512,
+      "swissMidheaven": 159.6778325652004,
+      "ascendantDifferenceArcsec": 1.4441052772667717,
+      "midheavenDifferenceArcsec": 1.9108637373733472
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 0,
+      "ascendant": 18.2889811709814,
+      "midheaven": 280.3266060338529,
+      "reason": null,
+      "sidereal": 281.23181765169545,
+      "swissAscendant": 18.28819437698783,
+      "swissMidheaven": 280.3261478960436,
+      "ascendantDifferenceArcsec": 2.832458376849445,
+      "midheavenDifferenceArcsec": 1.6492961134417783
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 150,
+      "ascendant": 164.74116950865238,
+      "midheaven": 72.68288536818085,
+      "reason": null,
+      "sidereal": 71.23181765169545,
+      "swissAscendant": 164.74076768294807,
+      "swissMidheaven": 72.68242319115726,
+      "ascendantDifferenceArcsec": 1.446572535485302,
+      "midheavenDifferenceArcsec": 1.6638372849342886
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": -120,
+      "ascendant": 229.9930424670772,
+      "midheaven": 159.678363360683,
+      "reason": null,
+      "sidereal": 161.23181765169545,
+      "swissAscendant": 229.9926899681288,
+      "swissMidheaven": 159.6778325652004,
+      "ascendantDifferenceArcsec": 1.2689962142985678,
+      "midheavenDifferenceArcsec": 1.9108637373733472
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 0,
+      "ascendant": 25.93451410686182,
+      "midheaven": 280.3266060338529,
+      "reason": null,
+      "sidereal": 281.23181765169545,
+      "swissAscendant": 25.933450716591924,
+      "swissMidheaven": 280.3261478960436,
+      "ascendantDifferenceArcsec": 3.828204971659943,
+      "midheavenDifferenceArcsec": 1.6492961134417783
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 150,
+      "ascendant": 166.7673000025866,
+      "midheaven": 72.68288536818085,
+      "reason": null,
+      "sidereal": 71.23181765169545,
+      "swissAscendant": 166.76695141594706,
+      "swissMidheaven": 72.68242319115726,
+      "ascendantDifferenceArcsec": 1.2549119023674393,
+      "midheavenDifferenceArcsec": 1.6638372849342886
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": -120,
+      "ascendant": 218.54864657331544,
+      "midheaven": 159.678363360683,
+      "reason": null,
+      "sidereal": 161.23181765169545,
+      "swissAscendant": 218.54838457142364,
+      "swissMidheaven": 159.6778325652004,
+      "ascendantDifferenceArcsec": 0.9432068104729296,
+      "midheavenDifferenceArcsec": 1.9108637373733472
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 0,
+      "ascendant": 87.95861502159171,
+      "midheaven": 280.3266060338529,
+      "reason": null,
+      "sidereal": 281.23181765169545,
+      "swissAscendant": 87.95812111817911,
+      "swissMidheaven": 280.3261478960436,
+      "ascendantDifferenceArcsec": 1.7780522853740877,
+      "midheavenDifferenceArcsec": 1.6492961134417783
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 150,
+      "ascendant": 169.65072890739947,
+      "midheaven": 72.68288536818085,
+      "reason": null,
+      "sidereal": 71.23181765169545,
+      "swissAscendant": 169.6504569388495,
+      "swissMidheaven": 72.68242319115726,
+      "ascendantDifferenceArcsec": 0.9790867799324587,
+      "midheavenDifferenceArcsec": 1.6638372849342886
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": -120,
+      "ascendant": 208.02164324673154,
+      "midheaven": 159.678363360683,
+      "reason": null,
+      "sidereal": 161.23181765169545,
+      "swissAscendant": 208.0214698734505,
+      "swissMidheaven": 159.6778325652004,
+      "ascendantDifferenceArcsec": 0.6241438117058351,
+      "midheavenDifferenceArcsec": 1.9108637373733472
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 0,
+      "ascendant": 341.5523739550201,
+      "midheaven": 280.3266060338529,
+      "reason": null,
+      "sidereal": 281.23181765169545,
+      "swissAscendant": 341.5530858455035,
+      "swissMidheaven": 280.3261478960436,
+      "ascendantDifferenceArcsec": 2.562805740399199,
+      "midheavenDifferenceArcsec": 1.6492961134417783
+    },
+    {
+      "date": "2100-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 150,
+      "ascendant": 172.21276283281316,
+      "midheaven": 72.68288536818085,
+      "reason": null,
+      "sidereal": 71.23181765169545,
+      "swissAscendant": 172.21255921997343,
+      "swissMidheaven": 72.68242319115726,
+      "ascendantDifferenceArcsec": 0.7330062230153089,
+      "midheavenDifferenceArcsec": 1.6638372849342886
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": -120,
+      "ascendant": 321.3951309584671,
+      "midheaven": 159.45372599678794,
+      "reason": null,
+      "sidereal": 161.0193042744159,
+      "swissAscendant": 321.395097843598,
+      "swissMidheaven": 159.45353239395556,
+      "ascendantDifferenceArcsec": 0.11921352875106095,
+      "midheavenDifferenceArcsec": 0.6969701965772401
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 0,
+      "ascendant": 4.584720388409065,
+      "midheaven": 280.1317794530821,
+      "reason": null,
+      "sidereal": 281.0193042744159,
+      "swissAscendant": 4.58464515135387,
+      "swissMidheaven": 280.1316122555399,
+      "ascendantDifferenceArcsec": 0.2708533987174633,
+      "midheavenDifferenceArcsec": 0.6019111520117804
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": -75,
+      "longitude": 150,
+      "ascendant": 207.8705548342656,
+      "midheaven": 72.4824226180696,
+      "reason": null,
+      "sidereal": 71.0193042744159,
+      "swissAscendant": 207.87073397248017,
+      "swissMidheaven": 72.48225372680857,
+      "ascendantDifferenceArcsec": 0.644897572476566,
+      "midheavenDifferenceArcsec": 0.6080085397456969
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": -120,
+      "ascendant": 302.132165207504,
+      "midheaven": 159.45372599678794,
+      "reason": null,
+      "sidereal": 161.0193042744159,
+      "swissAscendant": 302.132075468425,
+      "swissMidheaven": 159.45353239395556,
+      "ascendantDifferenceArcsec": 0.3230606843544592,
+      "midheavenDifferenceArcsec": 0.6969701965772401
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 0,
+      "ascendant": 6.084383975763558,
+      "midheaven": 280.1317794530821,
+      "reason": null,
+      "sidereal": 281.0193042744159,
+      "swissAscendant": 6.084284020594832,
+      "swissMidheaven": 280.1316122555399,
+      "ascendantDifferenceArcsec": 0.35983860744863705,
+      "midheavenDifferenceArcsec": 0.6019111520117804
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": -66,
+      "longitude": 150,
+      "ascendant": 85.67058084203862,
+      "midheaven": 72.4824226180696,
+      "reason": null,
+      "sidereal": 71.0193042744159,
+      "swissAscendant": 85.67044909351822,
+      "swissMidheaven": 72.48225372680857,
+      "ascendantDifferenceArcsec": 0.474294673449549,
+      "midheavenDifferenceArcsec": 0.6080085397456969
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": -120,
+      "ascendant": 270.72399424738495,
+      "midheaven": 159.45372599678794,
+      "reason": null,
+      "sidereal": 161.0193042744159,
+      "swissAscendant": 270.7238296282231,
+      "swissMidheaven": 159.45353239395556,
+      "ascendantDifferenceArcsec": 0.5926289827129949,
+      "midheavenDifferenceArcsec": 0.6969701965772401
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 0,
+      "ascendant": 8.968026254300536,
+      "midheaven": 280.1317794530821,
+      "reason": null,
+      "sidereal": 281.0193042744159,
+      "swissAscendant": 8.967878999047674,
+      "swissMidheaven": 280.1316122555399,
+      "ascendantDifferenceArcsec": 0.530118910330657,
+      "midheavenDifferenceArcsec": 0.6019111520117804
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": -38,
+      "longitude": 150,
+      "ascendant": 149.73405749544742,
+      "midheaven": 72.4824226180696,
+      "reason": null,
+      "sidereal": 71.0193042744159,
+      "swissAscendant": 149.73378539957267,
+      "swissMidheaven": 72.48225372680857,
+      "ascendantDifferenceArcsec": 0.979545149095884,
+      "midheavenDifferenceArcsec": 0.6080085397456969
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": -120,
+      "ascendant": 252.4824226180696,
+      "midheaven": 159.45372599678794,
+      "reason": null,
+      "sidereal": 161.0193042744159,
+      "swissAscendant": 252.48225372680855,
+      "swissMidheaven": 159.45353239395556,
+      "ascendantDifferenceArcsec": 0.6080085397456969,
+      "midheavenDifferenceArcsec": 0.6969701965772401
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 0,
+      "ascendant": 11.980374189056107,
+      "midheaven": 280.1317794530821,
+      "reason": null,
+      "sidereal": 281.0193042744159,
+      "swissAscendant": 11.980178281564763,
+      "swissMidheaven": 280.1316122555399,
+      "ascendantDifferenceArcsec": 0.7052669687936941,
+      "midheavenDifferenceArcsec": 0.6019111520117804
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 0,
+      "longitude": 150,
+      "ascendant": 159.45372599678794,
+      "midheaven": 72.4824226180696,
+      "reason": null,
+      "sidereal": 71.0193042744159,
+      "swissAscendant": 159.45353239395556,
+      "swissMidheaven": 72.48225372680857,
+      "ascendantDifferenceArcsec": 0.6969701965772401,
+      "midheavenDifferenceArcsec": 0.6080085397456969
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": -120,
+      "ascendant": 237.22215188645634,
+      "midheaven": 159.45372599678794,
+      "reason": null,
+      "sidereal": 161.0193042744159,
+      "swissAscendant": 237.22200570639458,
+      "swissMidheaven": 159.45353239395556,
+      "ascendantDifferenceArcsec": 0.5262482223429288,
+      "midheavenDifferenceArcsec": 0.6969701965772401
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 0,
+      "ascendant": 17.941018658904497,
+      "midheaven": 280.1317794530821,
+      "reason": null,
+      "sidereal": 281.0193042744159,
+      "swissAscendant": 17.940730830974402,
+      "swissMidheaven": 280.1316122555399,
+      "ascendantDifferenceArcsec": 1.0361805483398712,
+      "midheavenDifferenceArcsec": 0.6019111520117804
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 38,
+      "longitude": 150,
+      "ascendant": 164.5675754321344,
+      "midheaven": 72.4824226180696,
+      "reason": null,
+      "sidereal": 71.0193042744159,
+      "swissAscendant": 164.56742868449555,
+      "swissMidheaven": 72.48225372680857,
+      "ascendantDifferenceArcsec": 0.5282914998133492,
+      "midheavenDifferenceArcsec": 0.6080085397456969
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": -120,
+      "ascendant": 229.85423321503382,
+      "midheaven": 159.45372599678794,
+      "reason": null,
+      "sidereal": 161.0193042744159,
+      "swissAscendant": 229.85410490051945,
+      "swissMidheaven": 159.45353239395556,
+      "ascendantDifferenceArcsec": 0.4619322517328328,
+      "midheavenDifferenceArcsec": 0.6969701965772401
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 0,
+      "ascendant": 25.449224232797555,
+      "midheaven": 280.1317794530821,
+      "reason": null,
+      "sidereal": 281.0193042744159,
+      "swissAscendant": 25.44883396680914,
+      "swissMidheaven": 280.1316122555399,
+      "ascendantDifferenceArcsec": 1.404957558293063,
+      "midheavenDifferenceArcsec": 0.6019111520117804
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 51.4779,
+      "longitude": 150,
+      "ascendant": 166.61547798339245,
+      "midheaven": 72.4824226180696,
+      "reason": null,
+      "sidereal": 71.0193042744159,
+      "swissAscendant": 166.61535062591855,
+      "swissMidheaven": 72.48225372680857,
+      "ascendantDifferenceArcsec": 0.45848690604088915,
+      "midheavenDifferenceArcsec": 0.6080085397456969
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": -120,
+      "ascendant": 218.45161894617945,
+      "midheaven": 159.45372599678794,
+      "reason": null,
+      "sidereal": 161.0193042744159,
+      "swissAscendant": 218.45152370362217,
+      "swissMidheaven": 159.45353239395556,
+      "ascendantDifferenceArcsec": 0.3428732062047857,
+      "midheavenDifferenceArcsec": 0.6969701965772401
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 0,
+      "ascendant": 87.49775982842156,
+      "midheaven": 280.1317794530821,
+      "reason": null,
+      "sidereal": 281.0193042744159,
+      "swissAscendant": 87.49756398636389,
+      "swissMidheaven": 280.1316122555399,
+      "ascendantDifferenceArcsec": 0.7050314076423092,
+      "midheavenDifferenceArcsec": 0.6019111520117804
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 66,
+      "longitude": 150,
+      "ascendant": 169.53090743507525,
+      "midheaven": 72.4824226180696,
+      "reason": null,
+      "sidereal": 71.0193042744159,
+      "swissAscendant": 169.53080802090446,
+      "swissMidheaven": 72.48225372680857,
+      "ascendantDifferenceArcsec": 0.3578910148462455,
+      "midheavenDifferenceArcsec": 0.6080085397456969
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": -120,
+      "ascendant": 207.96208948282205,
+      "midheaven": 159.45372599678794,
+      "reason": null,
+      "sidereal": 161.0193042744159,
+      "swissAscendant": 207.96202652208382,
+      "swissMidheaven": 159.45353239395556,
+      "ascendantDifferenceArcsec": 0.22665865764111004,
+      "midheavenDifferenceArcsec": 0.6969701965772401
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 0,
+      "ascendant": 341.82110392100253,
+      "midheaven": 280.1317794530821,
+      "reason": null,
+      "sidereal": 281.0193042744159,
+      "swissAscendant": 341.8213649851721,
+      "swissMidheaven": 280.1316122555399,
+      "ascendantDifferenceArcsec": 0.9398310105325436,
+      "midheavenDifferenceArcsec": 0.6019111520117804
+    },
+    {
+      "date": "2200-01-01T12:00:00Z",
+      "latitude": 75,
+      "longitude": 150,
+      "ascendant": 172.12213792467372,
+      "midheaven": 72.4824226180696,
+      "reason": null,
+      "sidereal": 71.0193042744159,
+      "swissAscendant": 172.12206347109566,
+      "swissMidheaven": 72.48225372680857,
+      "ascendantDifferenceArcsec": 0.26803288103565137,
+      "midheavenDifferenceArcsec": 0.6080085397456969
+    }
+  ]
+}

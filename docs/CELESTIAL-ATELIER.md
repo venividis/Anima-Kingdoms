@@ -1,5 +1,7 @@
 # The Celestial Atelier
 
+The **Whole Sky edition 2** expands this workshop with 9,096 catalogue stars, ten Solar System objects, a Codex-compatible Ascendant seal, event exploration and an encounter notebook. Read [The whole sky, in Luma](WHOLE-SKY-LUMA.md) for the complete current sky contract. The recipe and custody rules below remain active.
+
 Open **Cosmos (O)** in the First Orchard, or the **Cosmos** tab in the Living Commons. The original Luma alphabet appears across a moving sky and in an interactive celestial chart. Walk to the Starforge or Moonwell to turn gathered materials into work with a lasting use. This extends the existing game and both save systems.
 
 ## First work
@@ -25,11 +27,11 @@ The ephemeris is the original MIT-licensed Astronomy Engine 2.1.19 bundle inside
 
 The game sky starts at 2026-09-12 18:00 UTC over an authored town at 38° north, 0° east. One game-clock second advances the ephemeris by 120 seconds. Local time advances only during active orchard simulation; the celestial workshop keeps that simulation running. Other local panels, hidden tabs and arenas pause the celestial clock. The shared sky follows server elapsed time, including time while a player is away. A work never advances to its next process or consumes itself without a command.
 
-Seven classical bodies use geocentric ecliptic positions and topocentric apparent horizons. The three named stars use rotated fixed reference directions; proper motion is not modeled. The panorama is a cylindrical sky chart. Its decorative stars and twenty native Luma asterisms are authored artwork, visibly distinct from the three named catalog stars. It is not a telescope image or a newly researched star atlas.
+Ten Solar System objects use geocentric ecliptic positions and topocentric apparent horizons; the seven classical bodies retain the crafting-aspect role. The three named stars use rotated fixed reference directions; proper motion is not modeled. The panorama is a cylindrical sky chart. The Whole Sky edition replaces the decorative star field with the sourced Yale catalogue. Twenty native Luma markers are an authored ecliptic letter ring. The panorama remains a chart, not a telescope image.
 
 Solar altitude and lunar illumination supply modest, disclosed craft-quality bonuses. Close conjunctions, sextiles, squares, trines and oppositions supply another bounded bonus. Material behavior and these correspondences are invented game rules, not a physical claim about alchemy or metallurgy. Furnace and bath temperatures are simplified process models. Water favors Star-iron and Moon dew; air favors Singing alloy and Earth tincture.
 
-All letters keep their source musical spelling: `q = 5f + u` gives two ordered pitches from `[1, 9/8, 5/4, 3/2, 5/3]` at 220 Hz. Workshop scores follow their stage's word at 80 beats per minute. The same stage clock controls notes and strike cues. One strike per beat can improve quality; steady work has no timing requirement. Sound is opt-in and visual cues remain available. The chart retains the original sixteen articulatory features; the sky's separate sixteen coordinates embed seven body longitudes plus sidereal angle as eight cosine/sine pairs.
+All letters keep their source musical spelling: `q = 5f + u` gives two ordered pitches from `[1, 9/8, 5/4, 3/2, 5/3]` at 220 Hz. Workshop scores follow their stage's word at 80 beats per minute. The same stage clock controls notes and strike cues. One strike per beat can improve quality; steady work has no timing requirement. Sound is opt-in and visual cues remain available. The chart retains the original sixteen articulatory features; the sky's separate sixteen coordinates now embed seven body longitudes plus the Ascendant as eight cosine/sine pairs, matching the Codex.
 
 ## Persistence and authority
 

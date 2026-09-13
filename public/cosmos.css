@@ -1,3 +1,4 @@
+@import url("./sky.css");
 @import url('./luma/font.css');
 #cosmos-sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
 #sky,.sky-light{background:#030718!important}
@@ -63,3 +64,5 @@
 @media(max-width:720px){.cosmos-columns{grid-template-columns:1fr;gap:26px}.cosmos-panel{inset:7px!important;max-height:calc(100dvh - 14px);width:calc(100vw - 14px)!important}.cosmos-panel #panel-content{padding:18px}.cosmos-heading h2{font-size:28px}.cosmos-surface{height:245px}#cosmos-live{top:103px;right:12px;max-width:178px;font-size:12px;padding:8px 10px}#cosmos-live small{font-size:12px}.cosmos-recipes button{min-height:73px}}
 @media(max-height:580px){#cosmos-live{top:96px;right:18px}.cosmos-panel #panel-content{padding-top:12px}.cosmos-surface{height:210px}.cosmos-heading p{display:none}}
 @media(prefers-reduced-motion:reduce){.cosmos-workshop *{animation:none!important;transition:none!important}}
+
+.cosmos-nav{display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;z-index:3;background:#0a1224f5;border-bottom:1px solid var(--celestial-line);padding:10px 0;margin:16px 0}.cosmos-nav button{font-size:13px;padding:8px 12px}.cosmos-rhythm-strip{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:20px 0}.cosmos-rhythm-strip .cosmos-sky-caption,.cosmos-rhythm-strip .cosmos-sound{position:static}.whole-sky,.cosmos-columns,.sky-encounter{scroll-margin-top:70px}

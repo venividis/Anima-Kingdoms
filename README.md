@@ -1,5 +1,8 @@
 # Anima Kingdoms
 
+
+**Whole Sky edition 2:** open **Cosmos (O)** to explore 9,096 catalogue stars, ten Solar System objects, both hemispheres, the native sixteen-digit sky seal and its music, celestial events, and a persistent intention/reflection notebook. [Read the complete sky & Luma guide](docs/WHOLE-SKY-LUMA.md).
+
 The **Celestial Atelier** connects Luma’s original writing and music to a moving sky, metallurgy, alchemy and town life. Open **Cosmos (O)** in the First Orchard or the **Cosmos** tab in the Living Commons. See the [celestial game guide](docs/CELESTIAL-ATELIER.md) for recipes, sky conventions, persistence and verification.
 
 **A word becomes a world · Luma 0.13**

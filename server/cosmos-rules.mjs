@@ -29,7 +29,15 @@ export function dispatchCosmos(s,credential,op,payload,now,transfers){
   const event=text=>{s.events.push({id:s.revision+1,at:now,playerId:id,text});s.events=s.events.slice(-100);};
   const ledger=(to,item,quantity)=>transfers.push({from:'atelier:'+id,to,item,quantity});
   let result;
-  if(op==='cosmos.start'){
+  if(op==='cosmos.observe'){
+    if(credential.role==='agent')fail('Sky intentions belong to the person speaking.');
+    if(!exact(payload,['practice']))fail('Choose a practice for the current town sky.');
+    result=C.observeSky(w,ms,payload.practice);c.workshops[id]=w;
+  }else if(op==='cosmos.reflect'){
+    if(credential.role==='agent')fail('A personal reflection belongs to the person speaking.');
+    if(!exact(payload,['id','text']))fail('Choose your encounter and reflection.');
+    result=C.reflectSky(w,payload.id,payload.text,ms);
+  }else if(op==='cosmos.start'){
     if(!exact(payload,['recipe','mode','text']))fail('Select a recipe, work mode and complete Luma sentence.');
     const phrase=C.resolveWorkshopPhrase(payload.text),r=C.RECIPES[payload.recipe];
     if(phrase.operation!=='start'||phrase.recipe!==payload.recipe)fail('The spoken recipe must match the selected work.');
@@ -67,7 +75,7 @@ export function dispatchCosmos(s,credential,op,payload,now,transfers){
     }else{
       if(e.dewUntil>ms)fail('Your previous dew is still active. Keep this one.');e.dewUntil=ms+60000;
     }
-    c.effects[id]=e;C.takeProduct(w,work.id);
+    c.effects[id]=e;C.takeProduct(w,work.id);C.recordSkyUse(w,work,ms);
     for(const [item,n] of Object.entries(recipe.cost)){c.spent[item]+=n;ledger('cosmos:spent',item,n);}
     result={used:work.recipe,quality:work.quality};event(`${p.name} put ${recipe.name} to work${['alloy','earth'].includes(work.recipe)?' for the whole town':''}.`);
   }else fail('Unknown workshop action.');

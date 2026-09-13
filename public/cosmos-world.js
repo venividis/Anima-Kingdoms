@@ -21,7 +21,13 @@ export function command(s,op,payload={},ctx={}){
   const spend=(cost)=>{for(const [item,n] of Object.entries(cost))if(draft.pack[item]<n)fail(`You need ${n} ${item}. Gather or trade for it first.`);for(const [item,n] of Object.entries(cost))draft.pack[item]-=n;};
   const consumed=r=>{for(const [item,n] of Object.entries(r.cost))draft.spent[item]+=n;};
   let result;
-  if(op==='start'){
+  if(op==='observe'){
+    if(!exact(payload,['practice']))fail('Choose a practice for the current town sky.');
+    result=C.observeSky(w,now,payload.practice);
+  }else if(op==='reflect'){
+    if(!exact(payload,['id','text']))fail('Choose your encounter and reflection.');
+    result=C.reflectSky(w,payload.id,payload.text,now);
+  }else if(op==='start'){
     if(!exact(payload,['recipe','mode','text']))fail('Choose the recipe, work mode and complete Luma sentence.');
     const phrase=C.resolveWorkshopPhrase(payload.text),r=C.RECIPES[payload.recipe];
     if(phrase.operation!=='start'||phrase.recipe!==payload.recipe)fail('The sentence must name the recipe you selected.');
@@ -56,7 +62,7 @@ export function command(s,op,payload={},ctx={}){
       draft.hero.breath=Math.min(100,draft.hero.breath+30+Math.floor(p.quality/3));
       c.dewUntil=c.clock+3600;
     }
-    C.takeProduct(w,p.id);consumed(r);result={used:p.recipe,quality:p.quality};
+    C.takeProduct(w,p.id);C.recordSkyUse(w,p,now);consumed(r);result={used:p.recipe,quality:p.quality};
   }else fail('Unknown celestial workshop action.');
   validate(draft);ctx.record?.(draft,op==='start'?`You began ${C.RECIPES[payload.recipe].name} in Luma.`:result.product?`${C.RECIPES[result.product.recipe].name} is finished · quality ${result.product.quality}.`:op==='use'?`${C.RECIPES[result.used].name} now serves ${result.used==='alloy'||result.used==='earth'?'the town':'your journey'}.`:`Starforge: ${op}.`,'cosmos');
   ctx.validate?.(draft);Object.assign(s,draft);return result;
